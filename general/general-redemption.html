@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>通用-Redemption 提现知识库</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+h1 { color: #2c3e50; border-bottom: 3px solid #27ae60; padding-bottom: 15px; }
+h2 { color: #34495e; margin-top: 30px; border-left: 4px solid #27ae60; padding-left: 10px; background: #f0fdf4; padding: 8px 10px; }
+h3 { color: #555; margin-top: 20px; }
+.warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
+.note { background: #e8f4fd; border-left: 4px solid #3498db; padding: 10px 15px; margin: 15px 0; }
+table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+th { background-color: #27ae60; color: white; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+a { color: #3498db; }
+.status-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; padding: 15px; margin: 10px 0; }
+.status-box h4 { margin-top: 0; color: #2c3e50; }
+</style>
+</head>
+<body>
+
+<h1>💰 通用-Redemption 提现知识库</h1>
+
+<div class="warning">
+<strong>⚠️ 项目组特殊规则覆盖提示：</strong><br>
+本文档为通用框架，各项目组可能有特殊规则（如最低提现金额差异、手续费差异、状态码显示差异、PayPal限额差异等）。<br>
+处理客诉时，请先查本文档，再查对应项目组知识库确认是否有特殊规则。
+</div>
+
+<p><strong>最后更新：</strong>2026-06-22</p>
+
+<hr>
+
+<h2>一、提现基础规则（全项目组通用）</h2>
+
+<h3>1.1 基本原则</h3>
+<ul>
+<li>1 sweepstakes coin = 1 USD</li>
+<li>SC 必须<strong>至少玩过1次</strong>才能提现（Redeemable/Played SC）</li>
+<li><strong>GC 不可提现</strong></li>
+<li>提现前必须完成 <strong>KYC-ID</strong> 验证</li>
+<li>已提现金额 2000 以上需完成 <strong>KYC-POA</strong> 验证</li>
+</ul>
+
+<h3>1.2 通用提现方式</h3>
+<table>
+<thead><tr><th>方式</th><th>通用说明</th><th>项目组差异</th></tr></thead>
+<tbody>
+<tr><td><strong>PayPal</strong></td><td>通过合作平台向玩家PayPal账户打款</td><td>单笔限额不同（1500SC/500SC）</td></tr>
+<tr><td><strong>ACH</strong></td><td>通过合作平台向玩家银行账户打款</td><td>通用</td></tr>
+<tr><td><strong>Cash App</strong></td><td>2025-07-21 起所有项目组已停用</td><td>通用停用</td></tr>
+<tr><td><strong>Prizeout</strong></td><td>第三方Gift Card兑换平台</td><td>Legends/Acorn部分玩家可见</td></tr>
+<tr><td><strong>Debit Card</strong></td><td>通过合作平台向玩家借记卡打款</td><td>2025-09-09新增</td></tr>
+<tr><td><strong>Refund</strong></td><td>对之前充值进行退款实现等效益打款</td><td>由支付组风控决定</td></tr>
+</tbody>
+</table>
+
+<h3>1.3 通用最低提现金额</h3>
+<ul>
+<li>大部分项目组最低 <strong>1SC</strong> 或 <strong>0.5SC</strong></li>
+<li>部分玩家可能看到不同的最低金额，以 Redemption page 显示为准</li>
+<li>Prizeout 手续费后最低 <strong>5SC</strong>（因为平台最低兑换额度为5刀）</li>
+</ul>
+
+<h3>1.4 通用手续费说明</h3>
+<ul>
+<li>各项目组手续费根据配置动态显示在 redeem page</li>
+<li>Debit Card 提现手续费固定 <strong>$1/笔</strong>（2025-09-09更新）</li>
+<li>必须清晰说明两个金额：扣除前原始金额 + 实际到账金额</li>
+</ul>
+
+<hr>
+
+<h2>二、提现状态码通用定义</h2>
+
+<div class="status-box">
+<h4>🟡 1/Pending / 103/Pending / 106/Reviewing / Luckhit 0/Pending</h4>
+<p><strong>含义：</strong>玩家成功提交提现请求，正在审核中</p>
+<p><strong>处理：</strong>可为玩家提供取消提现服务</p>
+<p><strong>时效：</strong>通常不超过3天</p>
+<p><strong>话术：</strong>Each request is reviewed manually by our agents to ensure the safety of players' accounts.</p>
+</div>
+
+<div class="status-box">
+<h4>🟡 113/Queuing</h4>
+<p><strong>含义：</strong>审核通过，正在排队打款</p>
+<p><strong>处理：</strong>金额越大排队时间越长，无法取消</p>
+<p><strong>PayPal时效：</strong>通常24小时内到账</p>
+<p><strong>ACH时效：</strong>银行处理通常最多3个工作日</p>
+<p><strong>Debit Card时效：</strong>即时到账</p>
+<p><strong>Prizeout时效：</strong>通常3小时内到账</p>
+</div>
+
+<div class="status-box">
+<h4>🟢 116/To be Claimed (PayPal/ACH)</h4>
+<p><strong>含义：</strong>已发送到第三方，等待玩家领取/银行处理</p>
+<p><strong>PayPal：</strong>不活跃账户需手动点击 claim 邮件领取，30天不领取退回</p>
+<p><strong>ACH：</strong>银行正在处理，最多3个工作日</p>
+<p><strong>处理：</strong>无法取消，安抚玩家耐心等待</p>
+</div>
+
+<div class="status-box">
+<h4>🟢 3/Redeemed (Succeed)</h4>
+<p><strong>含义：</strong>第三方已打出款项</p>
+<p><strong>PayPal：</strong>通常即时到账，但取决于玩家PayPal账户状态</p>
+<p><strong>ACH：</strong>第三方已打款给银行，银行还需处理到账</p>
+<p><strong>Debit Card：</strong>通常即时到账，银行可能需几分钟处理</p>
+<p><strong>注意：</strong>此状态不代表玩家已收到，只是第三方已发出</p>
+</div>
+
+<div class="status-box">
+<h4>🔴 4/Failed</h4>
+<p><strong>含义：</strong>打款失败</p>
+<p><strong>PayPal失败原因：</strong>邮箱未注册PayPal、PayPal账户被封、30天未领取超时退回</p>
+<p><strong>ACH失败原因：</strong>Bank Account Number错误（不是Card Number）、ABA Code错误</p>
+<p><strong>处理：</strong>金额退回游戏账户，让玩家修正信息后重新提现</p>
+</div>
+
+<div class="status-box">
+<h4>🔴 5/Canceled / 6/Canceled</h4>
+<p><strong>含义：</strong>玩家取消提现请求</p>
+<p><strong>处理：</strong>SC金额24小时内退回游戏账户</p>
+<p><strong>注意：</strong>系统不会自动取消，所有取消均由玩家主动发起</p>
+</div>
+
+<div class="status-box">
+<h4>🟡 105/Problematic</h4>
+<p><strong>含义：</strong>该笔提现被视为可疑</p>
+<p><strong>处理：</strong>填写工单说明情况，二线向项目组咨询</p>
+</div>
+
+<div class="status-box">
+<h4>🟢 200/Refund / 5/Refund</h4>
+<p><strong>含义：</strong>提现以退款方式发送给玩家</p>
+<p><strong>处理：</strong>退款到原支付渠道，信用卡/ACH需一周，PayPal即时</p>
+</div>
+
+<hr>
+
+<h2>三、通用提现时间说明</h2>
+
+<table>
+<thead><tr><th>方式</th><th>正常时效</th><th>超时处理</th></tr></thead>
+<tbody>
+<tr><td>PayPal</td><td>24小时内</td><td>超过24小时提工单二线加速</td></tr>
+<tr><td>ACH</td><td>最多3个工作日</td><td>超过3天提工单二线查询</td></tr>
+<tr><td>Cash App</td><td>已停用</td><td>-</td></tr>
+<tr><td>Prizeout</td><td>3小时内</td><td>超过3小时提工单二线加速</td></tr>
+<tr><td>Debit Card</td><td>即时到账</td><td>超过1天提工单二线核实</td></tr>
+</tbody>
+</table>
+
+<h3>3.1 周末延迟说明（ACH）</h3>
+<div class="note">
+Dear Player,<br>
+Thank you for your patience.<br>
+Kindly note bank will need a few business days to issue the transfer to your bank account. Because during the weekend banks are not working, so the waiting time will be a little bit longer than weekdays.<br>
+Please kindly wait for another 1-2 business days for bank to send the transactions to your bank account if you redeem during the weekend.<br>
+If you need further assistance, please let us know.<br>
+Hope you have a wonderful day.
+</div>
+
+<hr>
+
+<h2>四、取消提现通用规则</h2>
+
+<table>
+<thead><tr><th>状态</th><th>能否取消</th><th>操作</th></tr></thead>
+<tbody>
+<tr><td>1/103/106 Pending</td><td>✅ 可以</td><td>部分项目组玩家可自行取消，部分需客服填表</td></tr>
+<tr><td>113/Queuing</td><td>❌ 不可以</td><td>已锁定准备打款，无法取消</td></tr>
+<tr><td>116/To be Claimed</td><td>❌ 不可以</td><td>已发送给第三方，无法取消</td></tr>
+<tr><td>3/Redeemed</td><td>❌ 不可以</td><td>已成功打款，无法取消</td></tr>
+<tr><td>4/Failed</td><td>❌ 已失败</td><td>金额已退回账户，重新提现即可</td></tr>
+</tbody>
+</table>
+
+<h3>4.1 取消通用话术</h3>
+<div class="note">
+Dear Player,<br>
+Thank you for your patience.<br>
+We have submitted a request to cancel your redemption.<br>
+However, please note that if the redemption is processed before the cancellation request is approved, the transaction may still go through. Therefore, we cannot guarantee that the redemption will be successfully canceled.<br>
+If the redemption is successfully canceled, the SC amount will be returned to your account within 24 hours.<br>
+Please keep an eye on the redemption status on the redemption page as well as any changes in your account balance.<br>
+If you have any further questions, feel free to contact us again.
+</div>
+
+<hr>
+
+<h2>五、PayPal 提现通用限制</h2>
+
+<ul>
+<li>单笔 PayPal redemption 不能超过 <strong>1500SC</strong> 或 <strong>500SC</strong></li>
+<li>超过会被手动标记失败，退回账户让玩家重新提现</li>
+<li>单日累积 PayPal redemption 限额（UTC-8 时区计算）：
+  <ul>
+    <li>没有 PayPal 充值记录的：每日限额 <strong>1500SC</strong></li>
+    <li>之前有过 PayPal 充值记录的：每日限额 <strong>5000SC</strong></li>
+  </ul>
+</li>
+<li>超过限额只能选择第二天再次 PayPal 提现，或尝试 ACH 提现</li>
+<li><strong>不需要跟玩家说明原因</strong>，让玩家尝试 ACH 提现即可</li>
+</ul>
+
+<hr>
+
+<h2>六、提现账户管理通用规则</h2>
+
+<h3>6.1 PayPal 邮箱唯一性</h3>
+<ul>
+<li>一个 PayPal 邮箱只能供一个账号提现使用</li>
+<li>如果在另一个账号上使用同一个 redemption email，会提示 "Email bound to another account"</li>
+</ul>
+
+<h3>6.2 修改提现账户通用流程</h3>
+<ol>
+<li>先搜索是否有可取消的提现，如有则取消避免打款到错误账号</li>
+<li>填写工单向二线索取 Face Authentication 链接</li>
+<li>玩家完成验证后，二线帮忙重置或换绑</li>
+</ol>
+
+<h3>6.3 ACH 账户修改</h3>
+<ul>
+<li>需 Face Authentication 验证</li>
+<li>验证通过后二线重置 ACH profile，玩家自行更新正确信息</li>
+<li>客服绝不能索要银行账号/路由号码等敏感信息</li>
+</ul>
+
+<hr>
+
+<h2>七、索要 Transaction ID / 打款凭证通用流程</h2>
+
+<h3>7.1 通用步骤</h3>
+<ol>
+<li>先按对应状态话术引导玩家自行查询（PayPal流水/银行流水/Cash App Activity）</li>
+<li>如果玩家坚持说没收到，要求提供录屏/截图</li>
+<li>录屏需包含：账户确认 + 规定时间段内完整流水</li>
+<li>确认录屏符合要求后，提交工单让二线问支付组索要凭证</li>
+</ol>
+
+<h3>7.2 各渠道录屏要求</h3>
+<table>
+<thead><tr><th>渠道</th><th>录屏要求</th><th>时间段</th></tr></thead>
+<tbody>
+<tr><td>PayPal</td><td>确认PayPal邮箱 + 搜索Pagsmile/Essentials + 10天流水</td><td>3/Redeemed后10天内 UTC-0</td></tr>
+<tr><td>ACH</td><td>确认ACH账号尾号 + 10天银行流水</td><td>3/Redeemed后10天内 UTC-0</td></tr>
+<tr><td>Cash App</td><td>确认Cash App账户 + Activity页面 + 2天流水</td><td>3/Redeemed后2天内 UTC-0</td></tr>
+<tr><td>Debit Card</td><td>确认卡号前6后4 + 10天Bank Statement</td><td>3/Redeemed后10天内 UTC-0</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>八、退款方式提现通用规则</h2>
+
+<h3>8.1 原则</h3>
+<ul>
+<li>退款只能原路径退回</li>
+<li>退款历史额度之和 = 玩家历史充值额度之和</li>
+<li>退款只退订单金额，不进行部分退款</li>
+</ul>
+
+<h3>8.2 时效</h3>
+<ul>
+<li>PayPal 和 Cash App：即时到账</li>
+<li>信用卡和 ACH：需银行处理，一般一周</li>
+</ul>
+
+<h3>8.3 多笔退款</h3>
+<ul>
+<li>可能退很多笔，多平台退款到账时间不一致</li>
+<li>需从支付中心查出所有对应退款明细给玩家</li>
+</ul>
+
+<hr>
+
+<p><em>本文档为通用规则，项目组特殊规则（如限额、手续费比例、界面差异）请查阅对应项目组知识库。</em></p>
+
+</body>
+</html>

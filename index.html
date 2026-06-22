@@ -3,127 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>客服知识库首页</title>
+<title>客服知识库总首页</title>
 <style>
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
-h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-h2 { color: #34495e; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 10px; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1000px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; }
+h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #3498db; padding-left: 12px; background: #f8f9fa; padding: 10px 12px; }
 h3 { color: #555; margin-top: 25px; }
+.project-box { background: #f0f7ff; border: 1px solid #b8d4f0; border-radius: 8px; padding: 15px 20px; margin: 15px 0; }
+.project-box h3 { margin-top: 0; color: #2c3e50; }
+.project-box ul { margin: 10px 0; padding-left: 20px; }
+.project-box li { margin: 6px 0; }
 table { border-collapse: collapse; width: 100%; margin: 15px 0; }
 th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
 th { background-color: #4472C4; color: white; }
 tr:nth-child(even) { background-color: #f9f9f9; }
-tr:hover { background-color: #f1f1f1; }
-a { color: #3498db; text-decoration: none; }
-a:hover { text-decoration: underline; }
-blockquote { background: #f8f9fa; border-left: 4px solid #3498db; padding: 10px 15px; margin: 15px 0; color: #666; }
-hr { border: none; border-top: 1px solid #ddd; margin: 30px 0; }
-ul li { margin: 5px 0; }
+a { color: #3498db; text-decoration: none; font-weight: 500; }
+a:hover { text-decoration: underline; color: #e74c3c; }
+.tag { display: inline-block; background: #e8f4fd; color: #2980b9; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-right: 5px; }
+.warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
 </style>
 </head>
 <body>
 
-<h1>客服知识库首页</h1>
+<h1>🎰 客服知识库总首页</h1>
 
-<blockquote>
-<p>最后更新：2026-06-17</p>
-<p>使用方法：点击对应模块查看详细规则、话术和处理流程</p>
-</blockquote>
+<div class="warning">
+<strong>📌 使用规则：</strong><br>
+1. 先查 <strong>通用知识库</strong> 了解基础规则<br>
+2. 再查对应 <strong>项目组知识库</strong> 了解特殊规则<br>
+3. 两者冲突时，以 <strong>项目组知识库</strong> 为准
+</div>
+
+<p><strong>最后更新：</strong>2026-06-22</p>
 
 <hr>
 
-<h2>快速导航</h2>
+<h2>📚 通用知识库（所有项目组共用）</h2>
 
 <table>
 <thead>
 <tr><th>模块</th><th>内容</th><th>链接</th></tr>
 </thead>
 <tbody>
-<tr><td><strong>充值</strong></td><td>充值渠道、失败处理、风控、退款、Extra Fee、Unauthorized</td><td><a href="purchase.html">purchase.html</a></td></tr>
-<tr><td><strong>提现</strong></td><td>提现方式、状态码、手续费、取消、换绑、超时、退款方式</td><td><a href="redemption.html">redemption.html</a></td></tr>
-<tr><td><strong>KYC</strong></td><td>验证等级、证件要求、SSN、状态处理、多账号、删除信息</td><td><a href="kyc.html">kyc.html</a></td></tr>
-<tr><td><strong>美国非法州</strong></td><td>封禁州、限制州、SOP、话术、年龄限制</td><td><a href="us-states.html">us-states.html</a></td></tr>
-<tr><td><strong>加拿大非法州</strong></td><td>不运营省、合法省、年龄限制、Bundles</td><td><a href="ca-states.html">ca-states.html</a></td></tr>
-<tr><td><strong>机台规则</strong></td><td>Tada、Shoot&Win、特殊功能、已知bug、显示问题</td><td><a href="slots.html">slots.html</a></td></tr>
-<tr><td><strong>CS-TAG</strong></td><td>客服标签体系（Purchase/Account/Redemption/Game Bug等全标签）</td><td><a href="cs-tag.html">cs-tag.html</a></td></tr>
+<tr><td><strong>通用-Purchase</strong></td><td>充值基础规则、失败处理、风控、退款、Extra Fee、Unauthorized（各项目组通用框架）</td><td><a href="general/purchase.html">general/purchase.html</a></td></tr>
+<tr><td><strong>通用-Redemption</strong></td><td>提现基础规则、状态码定义、手续费通用说明、取消流程（各项目组通用框架）</td><td><a href="general/redemption.html">general/redemption.html</a></td></tr>
+<tr><td><strong>通用-KYC</strong></td><td>KYC等级、证件要求、SSN验证、通用处理流程</td><td><a href="general/kyc.html">general/kyc.html</a></td></tr>
+<tr><td><strong>通用-States</strong></td><td>美国/加拿大非法州、限制州、年龄限制、通用SOP</td><td><a href="general/states.html">general/states.html</a></td></tr>
+<tr><td><strong>通用-CS-TAG</strong></td><td>全标签体系（Purchase/Account/Redemption/Game Bug等）</td><td><a href="general/cs-tag.html">general/cs-tag.html</a></td></tr>
+<tr><td><strong>通用-RSG</strong></td><td>RSG通用规则、Take a Break、Self Exclusion、Freeze流程</td><td><a href="general/rsg.html">general/rsg.html</a></td></tr>
+<tr><td><strong>通用-Account</strong></td><td>账号基础规则、多账号处理、Ban/Freeze通用流程</td><td><a href="general/account.html">general/account.html</a></td></tr>
+<tr><td><strong>通用-Slots</strong></td><td>机台通用规则、Tada系列、Shoot&Win、已知Bug清单</td><td><a href="general/slots.html">general/slots.html</a></td></tr>
+<tr><td><strong>通用-Complaint</strong></td><td>投诉处理流程、升级标准、补偿发放标准</td><td><a href="general/complaint.html">general/complaint.html</a></td></tr>
+<tr><td><strong>通用-AMOE</strong></td><td>AMOE替代参与方式、免费参与流程</td><td><a href="general/amoe.html">general/amoe.html</a></td></tr>
 </tbody>
 </table>
 
 <hr>
 
-<h2>通用规则速查</h2>
+<h2>🎮 项目组专属知识库</h2>
 
-<h3>时间标准</h3>
+<div class="project-box">
+<h3>🎯 Yea Master 项目组</h3>
 <ul>
-<li>后台时间、AI平台时间、回复玩家时间：<strong>全部为 UTC+0</strong></li>
-<li>游戏内奖励刷新：<strong>00:00 UTC-8 PST</strong>（等于08:00 UTC+0）</li>
+<li><strong>包含游戏：</strong>Yea Master GP&iOS, Cool Spin, Dosh Fever, Tactical Syndicate, Go Gold Minds, Caishen Rush Slots, Slootopia 等</li>
+<li><strong>特殊规则：</strong>提现限额、充值渠道、RSG设置、专属活动、专属机台规则</li>
+<li><strong>知识库链接：</strong><a href="yea-master/index.html">yea-master/index.html</a></li>
 </ul>
+</div>
 
-<h3>术语规范</h3>
-<table>
-<thead><tr><th>正确</th><th>禁用</th></tr></thead>
-<tbody>
-<tr><td>redemption / redeemed</td><td>withdraw / withdrawal</td></tr>
-<tr><td>purchase / purchased</td><td>deposit</td></tr>
-<tr><td>used/consumed xx sc for the spin</td><td>bet</td></tr>
-<tr><td>Game Integrity</td><td>Fair</td></tr>
-</tbody>
-</table>
-
-<h3>货币规则</h3>
+<div class="project-box">
+<h3>🌰 Acorn 项目组</h3>
 <ul>
-<li><strong>GC</strong>：只能用于玩小游戏，不能提现</li>
-<li><strong>Unplayed SC</strong>：通过促销/活动获得，需至少玩过1次才能提现，游戏中优先消耗</li>
-<li><strong>Redeemable/Played SC</strong>：通过游戏赢得，可redeem真实奖励</li>
-<li>Balance 不分开显示SC类型，玩家只能在 redeem page 查看</li>
+<li><strong>包含游戏：</strong>Lucky Acorn, Spin Sorcery, Riches Flow Casino, Coin Keeper Spin, Regal 21 Blackjack, Cash Bridge Slots 等</li>
+<li><strong>特殊规则：</strong>ACH Pay直充、缓存信用卡机制、KYC Merge、账号转移记录</li>
+<li><strong>知识库链接：</strong><a href="acorn/index.html">acorn/index.html</a></li>
 </ul>
+</div>
 
-<h3>金额表述</h3>
+<div class="project-box">
+<h3>👑 Legends 项目组</h3>
 <ul>
-<li>必须清晰说明两个金额：
-  <ol>
-    <li>扣除手续费前的原始金额（Deducted/Original Amount）</li>
-    <li>玩家实际收到的金额（Receive/Net Amount）</li>
-  </ol>
-</li>
-<li>标准格式：'Your redemption of $142.50 (deducted $150.00)'</li>
+<li><strong>包含游戏：</strong>Cider Casino, Lavish Luck, Luxe Mirage Reels, Strike and Solve, Lucky Gold Rush, Prowess Spin 等</li>
+<li><strong>特殊规则：</strong>Cash App充值、提现手续费实验、KYC机器人自助开单、Prizeout兑换</li>
+<li><strong>知识库链接：</strong><a href="legends/index.html">legends/index.html</a></li>
 </ul>
+</div>
 
-<h3>回复格式</h3>
+<div class="project-box">
+<h3>🃏 Poker Hit 项目组</h3>
 <ul>
-<li>开头：Hi player, thanks for your patience</li>
-<li>结尾：Thanks for your understanding</li>
-<li>所有回复需中英双语（英文在前，中文在后，或根据场景灵活安排）</li>
-<li>金额带$符号，时间标注UTC</li>
+<li><strong>包含游戏：</strong>Poker Hit 系列</li>
+<li><strong>特殊规则：</strong>扑克游戏规则、Poker专属提现限额、Poker专属充值方式、Poker KYC特殊要求</li>
+<li><strong>知识库链接：</strong><a href="poker/index.html">poker/index.html</a></li>
 </ul>
+</div>
 
-<h3>表格规则</h3>
+<div class="project-box">
+<h3>🎲 Tang Luck 项目组</h3>
 <ul>
-<li>涉及流水/充值/提现/多账号需生成图片表格</li>
-<li>样式：蓝色表头(#4472C4)、白色/浅蓝(#D9E2F3)交替行</li>
-<li>表头使用英文（Player ID, Nickname, Status等）</li>
-<li>时间列必须标注UTC</li>
-<li>不要在正文中插入图片表格的Markdown链接，表格图片仅在最后以纯下载链接提供</li>
+<li><strong>包含游戏：</strong>Tang Luck 系列</li>
+<li><strong>特殊规则：</strong>项目组专属规则（待补充）</li>
+<li><strong>知识库链接：</strong><a href="tang-luck/index.html">tang-luck/index.html</a></li>
 </ul>
+</div>
+
+<div class="project-box">
+<h3>🍀 Luck Hit 项目组</h3>
+<ul>
+<li><strong>包含游戏：</strong>Luck Hit 系列（Spin Sorcery Web等）</li>
+<li><strong>特殊规则：</strong>提现方式选择、ACH/PayPal切换、专属活动</li>
+<li><strong>知识库链接：</strong><a href="luck-hit/index.html">luck-hit/index.html</a></li>
+</ul>
+</div>
 
 <hr>
 
-<h2>常见场景速查</h2>
+<h2>🔍 快速查询流程</h2>
 
 <table>
-<thead><tr><th>场景</th><th>操作</th><th>文档</th></tr></thead>
+<thead>
+<tr><th>客诉类型</th><th>查询顺序</th><th>示例</th></tr>
+</thead>
 <tbody>
-<tr><td>充值失败</td><td>查失败原因→安抚→换方式/工单</td><td>purchase.html</td></tr>
-<tr><td>充值未到账</td><td>查订单→支付中心→业务服→补发/工单</td><td>purchase.html</td></tr>
-<tr><td>ACH提现116</td><td>解释排队打款中，最多3个工作日，不是失败</td><td>redemption.html</td></tr>
-<tr><td>PayPal提现未收到</td><td>查116→claim邮件→30天退回→换绑邮箱</td><td>redemption.html</td></tr>
-<tr><td>KYC失败</td><td>看状态码→指引重新上传/工单</td><td>kyc.html</td></tr>
-<tr><td>多账号</td><td>让玩家选择保留一个→Ban其余→更新工单</td><td>kyc.html</td></tr>
-<tr><td>非法州弹窗</td><td>关VPN→查州属→截图→工单/话术</td><td>us-states.html</td></tr>
-<tr><td>机台争议</td><td>查流水→核对规则→解释/工单</td><td>slots.html</td></tr>
-<tr><td><strong>需要打标签</strong></td><td>根据客诉类型查对应Tag代码→标注工单</td><td><strong>cs-tag.html</strong></td></tr>
+<tr><td>充值失败</td><td>1. 通用-Purchase → 2. 项目组-Purchase</td><td>通用查失败话术 → Yea Master查具体渠道</td></tr>
+<tr><td>ACH提现116</td><td>1. 通用-Redemption → 2. 项目组-Redemption</td><td>通用查116话术 → Acorn查ACH特殊规则</td></tr>
+<tr><td>KYC失败</td><td>1. 通用-KYC → 2. 项目组-KYC</td><td>通用查证件要求 → Legends查SSN切换POA</td></tr>
+<tr><td>需要打标签</td><td>直接查 通用-CS-TAG</td><td>全标签体系通用</td></tr>
+<tr><td>非法州弹窗</td><td>直接查 通用-States</td><td>各项目组通用</td></tr>
+<tr><td>RSG设置</td><td>1. 通用-RSG → 2. 项目组-RSG</td><td>通用查流程 → 项目组查具体限制值</td></tr>
+<tr><td>机台争议</td><td>1. 通用-Slots → 2. 项目组-Slots</td><td>通用查Tada规则 → 项目组查专属机台</td></tr>
 </tbody>
 </table>
+
+<hr>
+
+<h2>⚠️ 重要提示</h2>
+
+<ul>
+<li><strong>通用规则 vs 项目组规则冲突时：</strong>以项目组规则为准（项目组规则会标注"覆盖通用规则"）</li>
+<li><strong>新增项目组：</strong>复制任一项目组文件夹，修改专属内容即可</li>
+<li><strong>更新维护：</strong>通用规则更新后，需检查各项目组是否需要同步更新</li>
+<li><strong>TAG体系：</strong>全项目组统一使用通用-CS-TAG，项目组特有标签在项目组知识库中补充</li>
+</ul>
 
 <hr>
 

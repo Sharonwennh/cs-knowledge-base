@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>通用-States 非法州/限制州知识库</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+h1 { color: #2c3e50; border-bottom: 3px solid #e67e22; padding-bottom: 15px; }
+h2 { color: #34495e; margin-top: 30px; border-left: 4px solid #e67e22; padding-left: 10px; background: #fdf6f0; padding: 8px 10px; }
+h3 { color: #555; margin-top: 20px; }
+.warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
+.note { background: #e8f4fd; border-left: 4px solid #3498db; padding: 10px 15px; margin: 15px 0; }
+table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+th { background-color: #e67e22; color: white; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+a { color: #3498db; }
+</style>
+</head>
+<body>
+
+<h1>🗺️ 通用-States 非法州/限制州知识库</h1>
+
+<div class="warning">
+<strong>⚠️ 适用范围：</strong>本文档适用于所有项目组。各项目组在非法州/限制州处理上遵循统一SOP，但不同游戏类型（Slots vs Poker）可能有不同的限制州列表，请注意区分。
+</div>
+
+<p><strong>最后更新：</strong>2026-06-22</p>
+
+<hr>
+
+<h2>一、美国非法州处理 SOP（通用）</h2>
+
+<h3>1.1 玩家突然收到非法州弹窗</h3>
+<ol>
+<li>先让玩家<strong>关闭VPN/代理服务</strong>，重启游戏后看是否正常</li>
+<li>如果玩家临时去了非法州，告知游戏不在该地区运营，回到合法州即可继续游玩</li>
+<li>如果玩家说尝试了没有开代理还是收到弹窗：
+  <ul>
+    <li>请求玩家告知所在州属</li>
+    <li>请求玩家提供弹窗截图（不同bundle UI不一样，不要发送弹窗例图，让玩家提供自己看到的即可）</li>
+  </ul>
+</li>
+</ol>
+
+<h3>1.2 玩家告知的州属不在非法州之列但仍看到弹窗</h3>
+<ul>
+<li>原因：玩家没有打开定位，被默认划分到不运营地区</li>
+<li>回复玩家并发送指引打开定位服务的图片</li>
+</ul>
+
+<div class="note">
+Dear Player,<br>
+Our game is only available in selected regions. To verify your eligibility, we require access to your device's location information. Please enable location permissions in your device settings to continue playing.
+</div>
+
+<h3>1.3 玩家确实在非法州</h3>
+
+<p><strong>a. 普通非法州提示（图1类型）：</strong></p>
+<ul>
+<li>只是提示所在州不支持游戏</li>
+<li>玩家确实一直在非法州的：提工单让二线同学及时 Escalated Issue 表格中的非法州核查处理表，等待项目组处理意见</li>
+</ul>
+
+<p><strong>b. History 提示（图2类型，如纽约NY）：</strong></p>
+<ul>
+<li>给玩家说明：我们即将退出该州的经营，建议从即刻起不再进行充值</li>
+<li>建议在提现功能截止日期之前使用完余额并处理完提现</li>
+<li>提现功能截止后将无法游戏，也无法发起任何提现请求</li>
+<li>账号登录关闭时间开始后将无法登录游戏</li>
+</ul>
+
+<p><strong>注意：</strong>目前NY玩家仍可正常提现和玩SC游戏，只是无法充值。所有提现以退款形式发放。</p>
+
+<h3>1.4 二线处理</h3>
+<ul>
+<li>二线得到项目组处理意见后，告知一线处理办法</li>
+<li>一线按办法处理并回复玩家</li>
+</ul>
+
+<hr>
+
+<h2>二、美国完全封禁州（所有游戏类型）</h2>
+
+<table>
+<thead><tr><th>州</th><th>缩写</th></tr></thead>
+<tbody>
+<tr><td>Washington</td><td>WA</td></tr>
+<tr><td>Nevada</td><td>NV</td></tr>
+<tr><td>Idaho</td><td>ID</td></tr>
+<tr><td>Michigan</td><td>MI</td></tr>
+<tr><td>Connecticut</td><td>CT</td></tr>
+<tr><td>Delaware</td><td>DE</td></tr>
+<tr><td>Kentucky</td><td>KY</td></tr>
+<tr><td>New Jersey</td><td>NJ</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>三、美国限制州/退出时间表（2026年6月更新）</h2>
+
+<table>
+<thead><tr><th>州</th><th>缩写</th><th>状态</th><th>时间线</th></tr></thead>
+<tbody>
+<tr><td>Louisiana</td><td>LA</td><td>完全退出</td><td>2026-04-01起</td></tr>
+<tr><td>Tennessee</td><td>TN</td><td>禁用充值→禁用提现</td><td>2026-05-12禁用充值，05-22禁用提现</td></tr>
+<tr><td>Indiana</td><td>IN</td><td>限制充值→完全退出</td><td>2026-05-15限制充值，06-15完全退出</td></tr>
+<tr><td>Maine</td><td>ME</td><td>关闭充值→完全退出</td><td>2026-06-01关闭充值，07-01完全退出</td></tr>
+<tr><td>Iowa</td><td>IA</td><td>关闭充值/AMOE→完全退出</td><td>2026-06-20关闭充值/AMOE，06-30完全退出</td></tr>
+<tr><td>Montana</td><td>MT</td><td>禁用充值→禁用SC→禁用登录</td><td>2026-06-15禁用充值，07-15禁用SC，08-15禁用登录</td></tr>
+<tr><td>Utah</td><td>UT</td><td>禁用充值/AMOE</td><td>2026-05-05起</td></tr>
+<tr><td>California</td><td>CA</td><td>禁止提现，新玩家无法进入</td><td>2025-12-15起</td></tr>
+<tr><td>New York</td><td>NY</td><td>禁止提现</td><td>2025-12-08起</td></tr>
+<tr><td>Alabama</td><td>AL</td><td>将于2025-07-22开始运营</td><td>-</td></tr>
+<tr><td>Florida</td><td>FL</td><td>将于2025-07-22开始运营</td><td>-</td></tr>
+<tr><td>Georgia</td><td>GA</td><td>将于2025-07-22开始运营</td><td>-</td></tr>
+<tr><td>Minnesota</td><td>MN</td><td>将于2025-07-22开始运营</td><td>-</td></tr>
+<tr><td>South Carolina</td><td>SC</td><td>将于2025-07-22开始运营</td><td>-</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>四、加拿大运营规则</h2>
+
+<h3>4.1 不运营的省</h3>
+<table>
+<thead><tr><th>省</th><th>缩写</th></tr></thead>
+<tbody>
+<tr><td>Ontario</td><td>ON</td></tr>
+<tr><td>Quebec</td><td>QC</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+Dear Player,<br><br>
+Thank you for your interest in our game! Please note that our services are currently not available in Quebec or Ontario due to regional regulations.<br>
+However, you're welcome to play from any other legally supported province in Canada. Our system will automatically check your location when you access the game.<br><br>
+We sincerely appreciate your understanding and support. If you have any questions, feel free to reach out.<br><br>
+Thank you for your understanding.
+</div>
+
+<h3>4.2 合法游玩的省/地区（最低年龄18岁）</h3>
+<ul>
+<li>Manitoba (MB)</li>
+<li>Alberta (AB)</li>
+</ul>
+
+<h3>4.3 合法游玩的省/地区（最低年龄19岁）</h3>
+<ul>
+<li>Nova Scotia (NS)</li>
+<li>New Brunswick (NB)</li>
+<li>British Columbia (BC)</li>
+<li>Prince Edward Island (PE)</li>
+<li>Saskatchewan (SK)</li>
+<li>Newfoundland and Labrador (NL)</li>
+<li>Northwest Territories (NT)</li>
+<li>Nunavut (NU)</li>
+<li>Yukon (YT)</li>
+</ul>
+
+<h3>4.4 年龄限制话术（未充值玩家）</h3>
+<div class="note">
+Dear Player,<br><br>
+Thank you for your interest in our game. Please note that players must be at least 18/19 years old to access our services.<br><br>
+If you are under 18/19, we kindly ask that you uninstall the game to comply with our policies. We appreciate your understanding and cooperation.<br><br>
+Thank you for your support, and happy gaming!
+</div>
+
+<hr>
+
+<h2>五、通用话术（所有Bundle）</h2>
+
+<div class="note">
+Dear Player,<br><br>
+Thank you for your interest in our game! Could you kindly let us know which state you're located in?<br>
+We'd like to inform you that due to regional restrictions, our services are currently unavailable in certain Regions. If you're in a restricted region at the moment, you won't be able to access the game. However, you're welcome to enjoy it when you're in a supported location—our system will automatically detect your region upon entry.<br>
+We truly appreciate your support and understanding. If you have any questions, feel free to reach out.<br><br>
+Happy gaming!
+</div>
+
+<hr>
+
+<p><em>本文档为通用规则，各项目组在非法州处理上遵循统一SOP。</em></p>
+
+</body>
+</html>
