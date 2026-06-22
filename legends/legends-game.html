@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legends Game - Knowledge Base</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+h1 { color: #2c3e50; border-bottom: 3px solid #9b59b6; padding-bottom: 15px; }
+h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #9b59b6; padding-left: 12px; background: #f8f9fa; padding: 10px 12px; }
+h3 { color: #555; margin-top: 25px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+.note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
+.warning { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px 15px; margin: 15px 0; }
+.info { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 10px 15px; margin: 15px 0; }
+.script-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; padding: 15px; margin: 10px 0; }
+.script-box strong { color: #9b59b6; }
+ul { margin: 10px 0; }
+li { margin: 6px 0; }
+.back-link { display: inline-block; margin-bottom: 20px; padding: 8px 16px; background: #3498db; color: white; border-radius: 4px; text-decoration: none; }
+.back-link:hover { background: #2980b9; color: white; }
+table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+th { background-color: #4472C4; color: white; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+.lang-en { color: #2c3e50; }
+.lang-cn { color: #555; margin-top: 8px; padding-left: 15px; border-left: 3px solid #9b59b6; }
+</style>
+</head>
+<body>
+
+<a href="../index.html" class="back-link">← Back to Home / 返回首页</a>
+
+<h1>👑 Legends 项目组 — Game 游戏知识库</h1>
+
+<hr>
+
+<h2>🕐 Activity Day Calculation Time Zone / 活动时间计算时区</h2>
+
+<p class="lang-en">The daily cutoff time for activity day calculations is <strong>12:00 AM (00:00) UTC-8</strong>.</p>
+<p class="lang-cn">活动日计算的每日截止时间为<strong>凌晨 12:00（00:00）UTC-8</strong>。</p>
+
+<p class="lang-en">Unless otherwise specified, all activity timelines (e.g., daily reward cycles, activity validity periods) are calculated based on this time zone.</p>
+<p class="lang-cn">除非另有说明，所有活动时间线（例如每日奖励周期、活动有效期）均基于此时区计算。</p>
+
+<hr>
+
+<h2>🔄 Update: UID & App ID Data Migration Note / UID 与 App ID 数据迁移说明</h2>
+
+<p class="lang-en"><strong>Legends Series Games:</strong> App ID: 317 & App ID: 154</p>
+<p class="lang-cn"><strong>Legends 系列游戏：</strong>App ID: 317 & App ID: 154</p>
+
+<p class="lang-en">If you encounter a player whose UID shows under Bundle 317 in AI Help, but searching the UID in Overview returns App ID: 154 — this is <strong>normal and expected</strong>.</p>
+<p class="lang-cn">如果您遇到玩家在 AI Help 中显示为 Bundle 317，但在 Overview 中搜索 UID 返回 App ID: 154 — 这是<strong>正常且符合预期的</strong>。</p>
+
+<h3>Reason / 原因</h3>
+<p class="lang-en">App ID: 317 bundle was removed from the App Store previously. The Project Team completed a data migration, and some players from Bundle 317 were migrated to App ID: 154.</p>
+<p class="lang-cn">App ID: 317 的 Bundle 之前已从 App Store 下架。项目组完成了数据迁移，部分 Bundle 317 的玩家被迁移到了 App ID: 154。</p>
+
+<h3>Important / 重要说明</h3>
+<ul>
+<li class="lang-en">- Player's account details remain unchanged (balance, history, KYC, progress, etc.).</li>
+<li class="lang-cn">- 玩家的账号详情保持不变（余额、历史记录、KYC、进度等）。</li>
+<li class="lang-en">- All player information can be queried normally under App ID: 154.</li>
+<li class="lang-cn">- 所有玩家信息可在 App ID: 154 下正常查询。</li>
+</ul>
+
+<div class="note">
+<p class="lang-en"><strong>Example:</strong> YWZRFKF5 — AI help shows App ID: 317, but Overview belongs to 154, which is normal and same player account information.</p>
+<p class="lang-cn"><strong>示例：</strong>YWZRFKF5 — AI Help 显示 App ID: 317，但 Overview 属于 154，这是正常的，属于同一玩家账号信息。</p>
+</div>
+
+<hr>
+
+<h2>📅 Daily Rewards / 每日奖励</h2>
+
+<h3>Version Comparison / 版本对比</h3>
+<table>
+<thead>
+<tr><th>Feature / 特性</th><th>Old Version / 旧版本</th><th>New Version / 新版本</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>SC Rewards / SC 奖励</td>
+<td>SC is included in the daily reward every day / 每天都有 SC 奖励</td>
+<td>SC rewards only available on the 3rd and 7th days / 仅第 3 天和第 7 天有 SC 奖励</td>
+</tr>
+<tr>
+<td>New Player Bonus / 新玩家奖励</td>
+<td colspan="2">The 7-day login reward for new players is relatively higher; the reward for subsequent 7-day login cycles will be reduced / 新玩家的 7 天登录奖励较高，后续 7 天循环登录奖励会有所降低</td>
+</tr>
+<tr>
+<td>Transition / 过渡</td>
+<td colspan="2">Users still on the old-version daily reward system will switch to the new-version non-first-7-day reward cycle after claiming the current 7-day rewards / 仍在旧版本每日奖励系统的用户，领取完当前 7 天奖励后将切换到新版非首个 7 天奖励周期</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Claim Rules / 领取规则</h3>
+<p class="lang-en"><strong>1. Day Counter:</strong> The day counter advances to the next day only after the player claims the reward. For example: After claiming the Day 1 reward, if the player does not log in for X days, they can still claim the Day 2 reward upon their next login.</p>
+<p class="lang-cn"><strong>1. 天数计数：</strong>只有在玩家领取奖励后，天数才会跳转到下一天。例如：领取第 1 天奖励后，如果玩家连续 X 天未登录，再次登录时仍可领取第 2 天奖励。</p>
+
+<p class="lang-en"><strong>2. Manual Claiming:</strong> Rewards require manual claiming. Logging in without claiming the reward will not advance the day counter, nor will it count toward check-in-related task progress.</p>
+<p class="lang-cn"><strong>2. 手动领取：</strong>奖励需要手动领取。只登录不领取奖励不会推进天数计数，也不会计入签到相关任务进度。</p>
+
+<div class="info">
+<p class="lang-en"><strong>Backend Reason:</strong> Login</p>
+<p class="lang-cn"><strong>后台流水原因：</strong>Login</p>
+</div>
+
+<hr>
+
+<h2>📦 Daily Package / 每日礼包</h2>
+
+<p class="lang-en">Players have only one chance per day to select and purchase one offer from three available options.</p>
+<p class="lang-cn">玩家每天只有一次机会从三个可选优惠中选择一个进行购买。</p>
+
+<div class="info">
+<p class="lang-en"><strong>Backend Reason:</strong> Purchase--start_pack</p>
+<p class="lang-cn"><strong>后台流水原因：</strong>Purchase--start_pack</p>
+</div>
+
+<hr>
+
+<h2>📆 Weekly Subscription / 周订阅</h2>
+
+<h3>1. Rewards After Purchase / 购买后奖励</h3>
+<p class="lang-en">Two types of rewards are available:</p>
+<p class="lang-cn">有两种类型的奖励：</p>
+<ul>
+<li class="lang-en"><strong>a. Take Rightaway:</strong> Rewards are available immediately after purchase.</li>
+<li class="lang-cn"><strong>a. 立即获得：</strong>购买后立即获得奖励。</li>
+<li class="lang-en"><strong>b. Additional Income in 7 Days:</strong> Rewards require manual claiming, and the player must log in continuously. Missing a login or failing to claim manually will result in losing the reward. The Day 1 reward can be claimed on the day of purchase.</li>
+<li class="lang-cn"><strong>b. 7 天额外收益：</strong>奖励需要手动领取，且玩家必须连续登录。错过登录或未能手动领取将导致失去奖励。第 1 天奖励可在购买当天领取。</li>
+</ul>
+
+<h3>2. Multiple Subscriptions & Reward Calculation / 多重订阅与奖励计算</h3>
+<ul>
+<li class="lang-en">- Multiple Weekly Subscriptions can be purchased. Login rewards are calculated independently.</li>
+<li class="lang-cn">- 可以购买多个周订阅。登录奖励独立计算。</li>
+<li class="lang-en">- For subscriptions of different prices: Daily login rewards can be claimed separately each day.</li>
+<li class="lang-cn">- 不同价格的订阅：每日登录奖励可以每天分别领取。</li>
+<li class="lang-en">- For subscriptions of the same price: The daily login reward claim period will be extended.</li>
+<li class="lang-cn">- 相同价格的订阅：每日登录奖励领取期限将延长。</li>
+</ul>
+
+<h3>3. Auto-Renewal / 自动续费</h3>
+<div class="warning">
+<p class="lang-en"><strong>Now available for part of players (A/B test).</strong> Some products have not yet launched the Weekly Subscription Auto-Renewal and still use the original one-time Weekly Subscription.</p>
+<p class="lang-cn"><strong>现已对部分玩家开放（A/B 测试）。</strong>部分产品尚未上线周订阅自动续费功能，仍使用原始的一次性周订阅。</p>
+</div>
+
+<p class="lang-en">It is normal for some players to <strong>not see</strong> the Weekly Subscription Auto-Renewal activity. For such players, respond: <em>"This activity is still being optimized and will be launched in the future. Thank you for your support."</em></p>
+<p class="lang-cn">部分玩家<strong>看不到</strong>周订阅自动续费活动是正常的。对于此类玩家，回复：<em>"该活动仍在优化中，将于未来上线。感谢您的支持。"</em></p>
+
+<h3>Eligibility for Reward Reissue / 补发奖励资格</h3>
+
+<h4>a. Player's Own Fault (Forgot to Claim/No Login) / 玩家自身原因（忘记领取/未登录）</h4>
+<ul>
+<li class="lang-en">1. Verify via Gameflow history that the player did not claim the reward.</li>
+<li class="lang-cn">1. 通过 Gameflow 流水核实玩家未领取奖励。</li>
+<li class="lang-en">2. The player is requesting compensation for the first time.</li>
+<li class="lang-cn">2. 玩家是首次要求补偿。</li>
+<li class="lang-en">3. After reissuing, inform the player: <em>"As a valued player, we have applied for a one-time reward reissue for you. However, this service will not be available in the future. Please remember to log in to the game and claim rewards manually."</em></li>
+<li class="lang-cn">3. 补发后告知玩家：<em>"作为我们的尊贵玩家，我们已为您申请了一次性奖励补发。但是，今后将无法再次提供此服务。请记住登录游戏并手动领取奖励。"</em></li>
+</ul>
+
+<h4>b. Game Glitches Preventing Login / 游戏故障导致无法登录</h4>
+<p class="lang-en">After verifying the unclaimed reward amount via Gameflow history, reissue the reward to the player. You will need to submit a task after you confirm this player indeed can not login for that missing rewards days and need to report this bug issue to Tier 2.</p>
+<p class="lang-cn">通过 Gameflow 流水核实未领取奖励金额后，向玩家补发奖励。您需要在确认该玩家确实无法在缺失奖励的天数登录后提交工单，并需要将此 Bug 问题报告给二线。</p>
+
+<div class="note">
+<p class="lang-en"><strong>Common Player Misunderstanding:</strong> Many players mistakenly believe they can receive three types of rewards. In fact, "Additional Income in 7 Days" on the interface represents the total of 7-day login rewards. For example: Purchasing a $7 Weekly Subscription allows daily claims of 0.5 SC + 2000 GC, so "Additional Income in 7 Days" will show 3.5 SC + 14000 GC.</p>
+<p class="lang-cn"><strong>玩家常见误解：</strong>许多玩家误以为可以领取三种奖励。实际上，界面上的"7 天额外收益"代表 7 天登录奖励的总和。例如：购买 $7 周订阅每天可领取 0.5 SC + 2000 GC，因此"7 天额外收益"将显示 3.5 SC + 14000 GC。</p>
+</div>
+
+<div class="warning">
+<p class="lang-en"><strong>Note:</strong> For players with low rollover ratio, this activity may not be visible, or the reward amount may change. Refer to Rollover Rate below.</p>
+<p class="lang-cn"><strong>注意：</strong>对于低周转率玩家，此活动可能不可见，或奖励金额可能发生变化。请参考下方的周转率说明。</p>
+</div>
+
+<h3>Auto-Renewal Details / 自动续费详情</h3>
+
+<h4>1. Eligibility & Subscription Tiers / 资格与订阅档位</h4>
+<p class="lang-en">Currently, select players can sign up for weekly subscription auto-renewal directly on the Weekly Subscription page.</p>
+<p class="lang-cn">目前，部分玩家可以直接在周订阅页面注册周订阅自动续费。</p>
+
+<p class="lang-en"><strong>Auto-Renewal Cycle:</strong> Charges occur once per week (weekly billing cycle).</p>
+<p class="lang-cn"><strong>自动续费周期：</strong>每周扣费一次（每周计费周期）。</p>
+
+<p class="lang-en"><strong>Subscription Tiers:</strong> Three options are available: <strong>$7, $30, and $90</strong>. Players may subscribe to <strong>multiple tiers simultaneously</strong> (e.g., subscribe to both $7 and $30 tiers at the same time).</p>
+<p class="lang-cn"><strong>订阅档位：</strong>有三种选项：<strong>$7、$30 和 $90</strong>。玩家可以同时订阅<strong>多个档位</strong>（例如同时订阅 $7 和 $30 档位）。</p>
+
+<h4>2. Subscription Process & Reward Distribution / 订阅流程与奖励发放</h4>
+<p class="lang-en">After selecting the desired auto-renewal tier(s), a payment page will pop up. Players choose their preferred payment method for auto-deduction. Once the first payment is successful, auto-renewal will be activated immediately.</p>
+<p class="lang-cn">选择所需的自动续费档位后，将弹出支付页面。玩家选择首选支付方式用于自动扣费。首次支付成功后，自动续费将立即激活。</p>
+
+<p class="lang-en">After each successful auto-renewal deduction, players will receive the corresponding subscription rewards <strong>via Inbox</strong>.</p>
+<p class="lang-cn">每次自动续费扣费成功后，玩家将通过<strong>站内信</strong>收到相应的订阅奖励。</p>
+
+<h4>3. Notification Mechanisms / 通知机制</h4>
+<p class="lang-en"><strong>Pre-Billing Reminder:</strong> Players will receive an email at their registered account email 5 minutes before each auto-renewal deduction. This email includes:</p>
+<p class="lang-cn"><strong>扣费前提醒：</strong>玩家将在每次自动续费扣费前 5 分钟收到注册账号邮箱的邮件。该邮件包含：</p>
+<ul>
+<li class="lang-en">- The date of the upcoming charge</li>
+<li class="lang-cn">- 即将到来的扣费日期</li>
+<li class="lang-en">- A link to manage their auto-renewal settings</li>
+<li class="lang-cn">- 管理自动续费设置的链接</li>
+</ul>
+
+<p class="lang-en"><strong>Failed Subscription Notice:</strong> If auto-renewal fails (e.g., insufficient funds, payment method expired), players will receive a "Subscription Failed" email. This email also includes a link to update their purchase method promptly.</p>
+<p class="lang-cn"><strong>订阅失败通知：</strong>如果自动续费失败（例如余额不足、支付方式过期），玩家将收到"订阅失败"邮件。该邮件还包含及时更新支付方式的链接。</p>
+
+<h4>4. How to Manage Subscriptions / 如何管理订阅</h4>
+<p class="lang-en">Players can manage their weekly auto-renewal subscriptions (both active and inactive) in-game via the following steps:</p>
+<p class="lang-cn">玩家可以通过以下步骤在游戏内管理每周自动续费订阅（包括活跃和非活跃的）：</p>
+<ul>
+<li class="lang-en">1. Go to the Lobby page</li>
+<li class="lang-cn">1. 前往大厅页面</li>
+<li class="lang-en">2. Click the menu icon in the top-right corner</li>
+<li class="lang-cn">2. 点击右上角的菜单图标</li>
+<li class="lang-en">3. Select <strong>"Manage Subscription"</strong></li>
+<li class="lang-cn">3. 选择<strong>"管理订阅"</strong></li>
+</ul>
+
+<p class="lang-en">Within the "Manage Subscription" section, players can:</p>
+<p class="lang-cn">在"管理订阅"部分，玩家可以：</p>
+<ul>
+<li class="lang-en">- Update or change their purchase method</li>
+<li class="lang-cn">- 更新或更改支付方式</li>
+<li class="lang-en">- Cancel active auto-renewal subscriptions</li>
+<li class="lang-cn">- 取消活跃的自动续费订阅</li>
+<li class="lang-en">- View key details: current auto-renewal status, next billing date, and current payment method</li>
+<li class="lang-cn">- 查看关键详情：当前自动续费状态、下次计费日期和当前支付方式</li>
+</ul>
+
+<hr>
+
+<h2>💰 Cash Back Rewards Back / 返现奖励</h2>
+
+<h3>Activity Availability / 活动可见性</h3>
+<p class="lang-en">This activity appears only once and will disappear after the player purchases this item.</p>
+<p class="lang-cn">此活动仅出现一次，玩家购买后将消失。</p>
+
+<h3>Activity Tiers / 活动档位</h3>
+<p class="lang-en">Randomly available in tiers of <strong>$1, $2, and $10</strong>.</p>
+<p class="lang-cn">随机以 <strong>$1、$2 和 $10</strong> 档位出现。</p>
+
+<h3>Rewards After Purchase / 购买后奖励</h3>
+<p class="lang-en">1. Immediately receive 1 unplayed SC / 2 or 10 unplayed SC.</p>
+<p class="lang-cn">1. 立即获得 1 个未游玩 SC / 2 或 10 个未游玩 SC。</p>
+
+<p class="lang-en">2. Receive a <strong>100 SC redemption reserve/fund</strong> (this 100 SC will not be added to the player's in-game balance).</p>
+<p class="lang-cn">2. 获得一个 <strong>100 SC 提现储备/基金</strong>（这 100 SC 不会添加到玩家的游戏余额中）。</p>
+
+<h3>Redemption Reserve/Fund Usage Rules / 提现储备/基金使用规则</h3>
+
+<p class="lang-en">Players are randomly divided into two groups (<strong>do not disclose the grouping to players</strong>):</p>
+<p class="lang-cn">玩家被随机分为两组（<strong>请勿向玩家透露分组信息</strong>）：</p>
+
+<h4>Group A / A组</h4>
+<p class="lang-en">For each redemption, 10% of the requested redemption amount is deducted from the 100 SC reserve, the remaining 90% is deducted from the player's played SC.</p>
+<p class="lang-cn">每次提现时，请求提现金额的 10% 从 100 SC 储备中扣除，剩余 90% 从玩家的已游玩 SC 中扣除。</p>
+
+<p class="lang-en"><strong>Example:</strong> If the player submits a 100 SC redemption, 90 SC is deducted from their balance, and 10 SC is deducted from the reserve.</p>
+<p class="lang-cn"><strong>示例：</strong>如果玩家提交 100 SC 提现，90 SC 从其余额中扣除，10 SC 从储备中扣除。</p>
+
+<h4>Group B / B组</h4>
+<p class="lang-en">A 10% rebate is given only for the first redemption and 1% rebate is given for a single redemption of ≥100 SC on the following redemption request.</p>
+<p class="lang-cn">仅在首次提现时给予 10% 返利，后续单次提现 ≥100 SC 时给予 1% 返利。</p>
+
+<h4>Insufficient Reserve Handling / 储备不足处理</h4>
+<p class="lang-en">Regardless of the group, if 10% of the redemption amount (which should be covered by the reserve) exceeds the remaining reserve balance, only the available reserve balance will be used, and the rest will be deducted from the player's played SC.</p>
+<p class="lang-cn">无论哪组，如果提现金额的 10%（应由储备覆盖）超过剩余储备余额，仅使用可用储备余额，其余部分从玩家的已游玩 SC 中扣除。</p>
+
+<h3>Common Player Misunderstandings / 玩家常见误解</h3>
+<p class="lang-en">1. Players may mistakenly believe the activity adds an extra 10% to their redemption amount. In reality, the redemption amount remains unchanged—only 10% of it is covered by the reserve.</p>
+<p class="lang-cn">1. 玩家可能误以为活动在提现金额上额外增加 10%。实际上，提现金额保持不变——只有其中的 10% 由储备覆盖。</p>
+
+<p class="lang-en">2. If players have questions about the redemption amount or suspect the reserve did not cover 10%, check the redemption record in Game Flow. The transaction details will show the exact SC amount deducted from the player's in-game balance. Compare this amount with the total redemption amount to calculate how much SC was covered by the reserve.</p>
+<p class="lang-cn">2. 如果玩家对提现金额有疑问或怀疑储备未覆盖 10%，请在 Game Flow 中查看提现记录。交易详情将显示从玩家游戏余额中扣除的确切 SC 金额。将此金额与总提现金额对比，即可计算储备覆盖了多少 SC。</p>
+
+<hr>
+
+<h2>🎯 Buyin Rebate / 充值返利</h2>
+
+<h3>Task Requirements / 任务要求</h3>
+<p class="lang-en">Complete purchases on Y days within a specified X-day period to finish the task.</p>
+<p class="lang-cn">在指定的 X 天周期内，在 Y 天完成购买即可完成任务。</p>
+
+<h3>Time Limit / 时间限制</h3>
+<p class="lang-en">The task must be completed within the specified time, otherwise progress will be reset to zero.</p>
+<p class="lang-cn">任务必须在规定时间内完成，否则进度将清零。</p>
+
+<h3>Rebate Amount / 返利金额</h3>
+<p class="lang-en">Rebates are calculated on the highest purchase per day, where a "day" is defined as every 24-hour interval following the last rebate reward claim time.</p>
+<p class="lang-cn">返利按每天最高购买金额计算，"天"的定义为上次返利奖励领取时间后的每 24 小时间隔。</p>
+
+<h3>Reward Claim / 奖励领取</h3>
+<p class="lang-en">If the player completes the task, they must claim the reward before the countdown ends; otherwise, the activity will refresh.</p>
+<p class="lang-cn">如果玩家完成任务，必须在倒计时结束前领取奖励；否则活动将刷新。</p>
+
+<h3>Activity Tiers / 活动档位</h3>
+<p class="lang-en">Three tiers total:</p>
+<p class="lang-cn">共三个档位：</p>
+<ol>
+<li class="lang-en">Purchase on 3 days within 5 days</li>
+<li class="lang-cn">5 天内完成 3 天购买</li>
+<li class="lang-en">Purchase on 5 days within 7 days</li>
+<li class="lang-cn">7 天内完成 5 天购买</li>
+<li class="lang-en">Purchase on 7 days within 9 days</li>
+<li class="lang-cn">9 天内完成 7 天购买</li>
+</ol>
+
+<h3>Tier Progression / 档位进阶</h3>
+<p class="lang-en">Completing the current tier automatically unlocks the next tier. The final tier (Purchase on 7 days within 9 days) is permanent.</p>
+<p class="lang-cn">完成当前档位自动解锁下一档位。最终档位（9 天内完成 7 天购买）为永久档位。</p>
+
+<p class="lang-en">Players who have claimed the "continuous recharge reward" three or more times will only need to complete the "7 purchases within 9 days" tier.</p>
+<p class="lang-cn">已领取"连续充值奖励"三次及以上的玩家，只需完成"9 天内完成 7 天购买"档位。</p>
+
+<h3>Activity Validity Period / 活动有效期</h3>
+<p class="lang-en">The duration of each round starts when the player claims the tier. The total duration is X days × 24 hours.</p>
+<p class="lang-cn">每轮持续时间从玩家领取档位时开始。总持续时间为 X 天 × 24 小时。</p>
+
+<div class="warning">
+<p class="lang-en"><strong>Update as of 2025-07-10:</strong> If the player completes a tier task but does not claim the reward before the countdown ends, the activity will automatically reset to the next tier.</p>
+<p class="lang-cn"><strong>2025-07-10 更新：</strong>如果玩家完成了档位任务但未在倒计时结束前领取奖励，活动将自动重置到下一档位。</p>
+
+<p class="lang-en"><strong>Example:</strong> Player A is on the "5 purchases within 7 days" tier. They complete the task but do not claim the reward. After the countdown ends, the activity resets to the "7 purchases within 9 days" tier. It remains permanent.</p>
+<p class="lang-cn"><strong>示例：</strong>玩家 A 当前档位为"7 天内完成 5 天购买"。他们完成了任务但未领取奖励。倒计时结束后，活动重置为"9 天内完成 7 天购买"档位。该档位将永久保持。</p>
+</div>
+
+<div class="info">
+<p class="lang-en"><strong>Update (2025-08-14):</strong> For the Legends project team's Buy-in Rebate, players will no longer encounter issues where they cannot claim the reward. If a player meets the reward criteria but fails to click "Claim", an in-game message will be sent to them the next day.</p>
+<p class="lang-cn"><strong>更新（2025-08-14）：</strong>对于 Legends 项目组的充值返利，玩家将不再遇到无法领取奖励的问题。如果玩家满足奖励条件但未能点击"领取"，次日将发送游戏内消息提醒。</p>
+
+<p class="lang-en">If a player reports not receiving the in-game message, first ask them to provide a screenshot of their inbox. Then, check the inbox transaction records again. If the message is still not found, submit a task to the Tier 2 team to inquire about the in-game message sending records.</p>
+<p class="lang-cn">如果玩家反映未收到游戏内消息，首先要求他们提供收件箱截图。然后再次检查收件箱交易记录。如果仍未找到消息，请提交工单给二线团队查询游戏内消息发送记录。</p>
+
+<p class="lang-en"><strong>Corresponding Game Flow Reasons:</strong> 1. Inbox - Rebate Reward; 2. Continuous Purchase Activity Reward</p>
+<p class="lang-cn"><strong>对应 Game Flow 原因：</strong>1. Inbox - Rebate Reward；2. Continuous Purchase Activity Reward</p>
+</div>
+
+<h3>Reference Script (Rule Explanation) / 参考话术（规则解释）</h3>
+<div class="script-box">
+<p class="lang-en"><strong>English Script:</strong></p>
+<p class="lang-en">Dear Player,<br>
+Thank you for reaching out to us.<br>
+There is a countdown on the event page for your reference, which helps players to pay attention to the expired time, not the time you can collect the rebate. Actually, when you meet the condition, buying for Y days during X days before the countdown is over, you can take all the rebates immediately. If you forget to claim the rebate reward on time, if you meet the criteria, the rebate reward will be sent to your inbox automatically during next day.<br>
+If the countdown is zero, the event will be updated.<br>
+So we suggest players to collect the rewards timely.<br>
+Have a great day.</p>
+
+<p class="lang-cn"><strong>中文话术：</strong></p>
+<p class="lang-cn">亲爱的玩家，您好！<br>
+感谢您联系我们。<br>
+活动页面上有一个倒计时供您参考，这是帮助玩家注意过期时间，而非您可以领取返利的时间。实际上，当您满足条件，在倒计时结束前 X 天内完成 Y 天购买，您可以立即领取所有返利。如果您忘记及时领取返利奖励，如果满足条件，返利奖励将在次日自动发送到您的收件箱。<br>
+如果倒计时为零，活动将更新。<br>
+因此我们建议玩家及时领取奖励。<br>
+祝您有美好的一天。</p>
+</div>
+
+<div class="warning">
+<p class="lang-en"><strong>Update 2026-01-14:</strong> The following rule for the Buy-In Rebate activity <strong>remains unchanged</strong>: The activity period resets on a 24-hour UTC-0 cycle, starting from the time the player last collected the Buy-in Rebate reward.</p>
+<p class="lang-cn"><strong>2026-01-14 更新：</strong>充值返利活动的以下规则<strong>保持不变</strong>：活动周期以 UTC-0 的 24 小时为周期重置，从玩家上次领取充值返利奖励的时间开始计算。</p>
+</div>
+
+<h3>Key Update: Rebate Progress Calculation / 关键更新：返利进度计算</h3>
+<p class="lang-en">The rebate progress (based on player Purchases) is now calculated according to the <strong>UTC-8 calendar day (not the 24-hour reset cycle)</strong>.</p>
+<p class="lang-cn">返利进度（基于玩家购买）现在按照 <strong>UTC-8 日历日（而非 24 小时重置周期）</strong>计算。</p>
+
+<h4>Example 1: Purchase Timing Impact / 示例1：购买时间影响</h4>
+<p class="lang-en">If a player starts the rebate activity at 5:00 PM (UTC-8) and makes Purchases at:</p>
+<p class="lang-cn">如果玩家在 UTC-8 下午 5:00 开始返利活动，并在以下时间购买：</p>
+<ol>
+<li class="lang-en">6:00 PM (same UTC-8 day) → 02:00 UTC-0</li>
+<li class="lang-cn">6:00 PM（同一 UTC-8 日）→ 02:00 UTC-0</li>
+<li class="lang-en">2:00 AM (next UTC-8 day) → 10:00 UTC-0</li>
+<li class="lang-cn">2:00 AM（下一 UTC-8 日）→ 10:00 UTC-0</li>
+</ol>
+
+<p class="lang-en">These two Purchases will be counted as <strong>2 calendar days</strong> (not 1 day) for rebate progress tracking.</p>
+<p class="lang-cn">这两次购买在返利进度追踪中将被计为<strong>2 个日历日</strong>（而非 1 天）。</p>
+
+<h4>Example 2: Player-Specific Case (Player ID: VXRY7B5K) / 示例2：具体玩家案例（玩家 ID: VXRY7B5K）</h4>
+<ul>
+<li class="lang-en">Player's Activity Period (UTC-0): 2026-01-03 03:05:09 — 2026-01-12 03:05:08</li>
+<li class="lang-cn">玩家活动周期（UTC-0）：2026-01-03 03:05:09 — 2026-01-12 03:05:08</li>
+<li class="lang-en">Rebate Progress Calculation: Purchases are counted by UTC-8 calendar days. The player completed 5 valid Purchase progress (consistent with backend events record).</li>
+<li class="lang-cn">返利进度计算：购买按 UTC-8 日历日计数。玩家完成了 5 个有效购买进度（与后台事件记录一致）。</li>
+<li class="lang-en">Note: Under the previous calculation method, the player would have been credited with 6 valid Purchase progress. Now, only Purchases falling within separate UTC-8 calendar days are counted.</li>
+<li class="lang-cn">注意：按照之前的计算方法，玩家会被计入 6 个有效购买进度。现在，仅计算落在不同 UTC-8 日历日内的购买。</li>
+</ul>
+
+<hr>
+
+<h2>🛡️ New Player Protection Money Return / 新玩家保护资金返还</h2>
+
+<p class="lang-en">Within 24 hours of successful registration, the player can accumulate SC rewards when obtaining SC through non-purchase methods. The maximum reward amount is <strong>100 SC</strong>.</p>
+<p class="lang-cn">成功注册后 24 小时内，玩家通过非购买方式获得 SC 时可以累积 SC 奖励。最高奖励金额为<strong>100 SC</strong>。</p>
+
+<h3>Reward Structure / 奖励结构</h3>
+<p class="lang-en">Two parts total:</p>
+<p class="lang-cn">共两部分：</p>
+<ol>
+<li class="lang-en"><strong>Free reward:</strong> Claimable directly 24 hours after registration.</li>
+<li class="lang-cn"><strong>免费奖励：</strong>注册后 24 小时可直接领取。</li>
+<li class="lang-en"><strong>Purchase-linked reward:</strong> Claimable only after recharging via the activity page. The Purchase entry on the activity page appears 24 hours after registration.</li>
+<li class="lang-cn"><strong>充值关联奖励：</strong>仅通过活动页面充值后可领取。活动页面上的充值入口在注册后 24 小时出现。</li>
+</ol>
+
+<h3>Claim Period / 领取期限</h3>
+<p class="lang-en">Rewards can be claimed on Days 2 and 3 (i.e., within 1-3 days of the activity start). No claims are allowed after 3 days, and the activity disappears.</p>
+<p class="lang-cn">奖励可在第 2 天和第 3 天领取（即活动开始后 1-3 天内）。3 天后不允许领取，活动消失。</p>
+
+<h3>Activity Termination / 活动终止</h3>
+<p class="lang-en">The activity disappears immediately after the player claims all rewards (both free and Purchase-linked).</p>
+<p class="lang-cn">玩家领取所有奖励（免费和充值关联）后，活动立即消失。</p>
+
+<p class="lang-en">The <strong>"STORAGE AVAILABLE"</strong> activity will appear only after this activity ends (Now Online).</p>
+<p class="lang-cn"><strong>"STORAGE AVAILABLE"</strong> 活动仅在此活动结束后出现（现已上线）。</p>
+
+<h3>24-Hour Lockout / 24 小时锁定</h3>
+<p class="lang-en">No rewards can be claimed within 24 hours of registration. The page will display the available claim time.</p>
+<p class="lang-cn">注册后 24 小时内无法领取奖励。页面将显示可领取时间。</p>
+
+<hr>
+
+<h2>🎰 JACKPOT</h2>
+
+<h3>Spin Cost / 旋转消耗</h3>
+<p class="lang-en">Players consume Acorns to spin.</p>
+<p class="lang-cn">玩家消耗 Acorns 进行旋转。</p>
+
+<h3>Acorn Adjustment / Acorn 调节</h3>
+<p class="lang-en">The number of Acorns consumed per spin can be adjusted by the player to <strong>1, 5, 10, 20, or 50</strong>.</p>
+<p class="lang-cn">每次旋转消耗的 Acorns 数量可由玩家调节为 <strong>1、5、10、20 或 50</strong>。</p>
+
+<h3>Reward Correlation / 奖励关联</h3>
+<p class="lang-en">More Acorns consumed per spin result in richer rewards.</p>
+<p class="lang-cn">每次旋转消耗的 Acorns 越多，奖励越丰厚。</p>
+
+<h3>GOALS / 目标</h3>
+<p class="lang-en">Serves as the Jackpot paytable.</p>
+<p class="lang-cn">作为 Jackpot 的赔付表。</p>
+
+<h3>Jackpot Reward Note / Jackpot 奖励说明</h3>
+<p class="lang-en">The "JACKPOT" amount in the paytable represents a portion (not the entire amount) of the total jackpot pool shown in the interface.</p>
+<p class="lang-cn">赔付表中的"JACKPOT"金额代表界面显示的总奖池的一部分（而非全部）。</p>
+
+<h3>Special Symbols & Rewards / 特殊符号与奖励</h3>
+<p class="lang-en">1. Symbols "777" and "77" unlock Free Spins, displayed in the format <strong>"A × B"</strong>:</p>
+<p class="lang-cn">1. 符号"777"和"77"解锁免费旋转，显示格式为 <strong>"A × B"</strong>：</p>
+<ul>
+<li class="lang-en">- A = SC consumption equivalent per Free Spin</li>
+<li class="lang-cn">- A = 每次免费旋转的 SC 消耗当量</li>
+<li class="lang-en">- B = Number of Free Spins</li>
+<li class="lang-cn">- B = 免费旋转次数</li>
+<li class="lang-en">- Players can use the won Free Spins on slots in the Lobby after exiting the Jackpot activity.</li>
+<li class="lang-cn">- 玩家退出 Jackpot 活动后，可以在大厅的老虎机上使用赢得的免费旋转。</li>
+</ul>
+
+<p class="lang-en">2. Three clover symbols unlock Loyalty POINTS.</p>
+<p class="lang-cn">2. 三个三叶草符号解锁忠诚度积分。</p>
+
+<hr>
+
+<h2>📋 DAILY MISSION / 每日任务</h2>
+
+<p class="lang-en">The "Check In" task is only counted after the player claims the reward in Daily Rewards. Simply logging in to the game will not count toward the task.</p>
+<p class="lang-cn">"签到"任务只有在玩家在每日奖励中领取奖励后才会计数。仅登录游戏不会计入任务。</p>
+
+<hr>
+
+<h2>🏆 Winner Leaderboard / 赢家排行榜</h2>
+
+<h3>Rank Limit / 排名限制</h3>
+<p class="lang-en">Only the top 50 players are displayed on the leaderboard.</p>
+<p class="lang-cn">排行榜仅显示前 50 名玩家。</p>
+
+<h3>Qualification Criteria / 上榜条件</h3>
+<p class="lang-en">In SC games, the player must <strong>win > 100 SC</strong> in a single spin, and the winning SC amount must be <strong>≥ 5 times</strong> the SC consumed for that spin.</p>
+<p class="lang-cn">在 SC 游戏中，玩家单次旋转必须<strong>赢得 > 100 SC</strong>，且赢得的 SC 金额必须<strong>≥ 5 倍</strong>于该次旋转消耗的 SC。</p>
+
+<h3>Leaderboard Columns / 排行榜列</h3>
+<ul>
+<li class="lang-en"><strong>RANK:</strong> Player's ranking</li>
+<li class="lang-cn"><strong>RANK：</strong>玩家排名</li>
+<li class="lang-en"><strong>REWARDS:</strong> Player's reward (sent via <strong>Inbox</strong> message every Monday at 00:00 UTC-8 / 08:00 UTC-0)</li>
+<li class="lang-cn"><strong>REWARDS：</strong>玩家奖励（每周一 UTC-8 00:00 / UTC-0 08:00 通过<strong>站内信</strong>发送）</li>
+<li class="lang-en"><strong>PLAYER:</strong> Player name/ID</li>
+<li class="lang-cn"><strong>PLAYER：</strong>玩家名称/ID</li>
+<li class="lang-en"><strong>GET:</strong> The player's maximum single-spin winning SC (<strong>not the ranking reward</strong>)</li>
+<li class="lang-cn"><strong>GET：</strong>玩家单次旋转最大赢取 SC（<strong>非排名奖励</strong>）</li>
+<li class="lang-en"><strong>MULTIPLE:</strong> The multiple of the maximum single-spin winning SC relative to the SC consumed for that spin</li>
+<li class="lang-cn"><strong>MULTIPLE：</strong>单次旋转最大赢取 SC 相对于该次旋转消耗 SC 的倍数</li>
+<li class="lang-en"><strong>GAME:</strong> The game where the player achieved the record</li>
+<li class="lang-cn"><strong>GAME：</strong>玩家创造记录的游戏</li>
+</ul>
+
+<hr>
+
+<h2>📧 Bind Email / Phone Number Rewards / 绑定邮箱/手机号奖励</h2>
+
+<p class="lang-en">The Legends project Team offers rewards for binding an email address or phone number (the reward for successfully binding either is <strong>0.50 SC</strong>), along with inbox messages prompting players to bind their email or phone number.</p>
+<p class="lang-cn">Legends 项目组为绑定邮箱地址或手机号的玩家提供奖励（成功绑定任一奖励为<strong>0.50 SC</strong>），同时通过站内信提示玩家绑定邮箱或手机号。</p>
+
+<p class="lang-en">For other items—including KYC verification, version updates, and redemption rewards—no inbox messages will be sent to prompt players to complete the action or to distribute the reward.</p>
+<p class="lang-cn">对于其他项目——包括 KYC 验证、版本更新和提现奖励——不会发送站内信提示玩家完成操作或发放奖励。</p>
+
+<h3>Handling Player Inquiries / 处理玩家咨询</h3>
+<p class="lang-en">If a player inquires about not receiving the reward after successfully binding their email or phone number:</p>
+<p class="lang-cn">如果玩家咨询成功绑定邮箱或手机号后未收到奖励：</p>
+<ol>
+<li class="lang-en">First, ask the player to check their inbox for unclaimed rewards and take a screenshot.</li>
+<li class="lang-cn">首先，要求玩家检查收件箱中是否有未领取奖励，并截图。</li>
+<li class="lang-en">After the player confirms no rewards are present, ask them to take a screenshot of the inbox, then Tier 1 staff must also check the inbox reward transaction records.</li>
+<li class="lang-cn">玩家确认没有奖励后，要求他们截图收件箱，然后一线员工也必须检查收件箱奖励交易记录。</li>
+<li class="lang-en">If no reward transaction records are found, submit a task to Tier 2 staff for further inquiry. After review, Tier 2 will decide whether to reissue the reward to the inquiring player. Tier 1 staff should respond to the player based on Tier 2's reissue result.</li>
+<li class="lang-cn">如果未找到奖励交易记录，请提交工单给二线员工进一步查询。审核后，二线将决定是否向咨询玩家补发奖励。一线员工应根据二线的补发结果回复玩家。</li>
+</ol>
+
+<hr>
+
+<h2>🎲 Update 2024-11-30: Legends Lucky Flip Offline / 更新：Legends Lucky Flip 下线</h2>
+
+<p class="lang-en">Legends Lucky Flip purchase activity has been taken offline.</p>
+<p class="lang-cn">Legends Lucky Flip 购买活动已下线。</p>
+
+<h3>Reference Response Script / 参考回复话术</h3>
+<div class="script-box">
+<p class="lang-en"><strong>English Script:</strong></p>
+<p class="lang-en">"The Lucky Flip activity has indeed been taken offline. We are adjusting the system settings and will release new content updates in the future. Thank you for your understanding and support. You may choose other purchase options to make a purchase."</p>
+
+<p class="lang-cn"><strong>中文话术：</strong></p>
+<p class="lang-cn">"Lucky Flip 活动确实已下线。我们正在调整系统设置，将于未来发布新内容更新。感谢您的理解与支持。您可以选择其他购买选项进行购买。"</p>
+</div>
+
+<hr>
+
+<p class="lang-en"><em>Last Updated: 2026-06-22</em></p>
+<p class="lang-cn"><em>最后更新：2026-06-22</em></p>
+
+</body>
+</html>
