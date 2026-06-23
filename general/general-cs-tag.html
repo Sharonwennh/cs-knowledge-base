@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用-CS-TAG 标签体系 | 客服知识库</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1200px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #9b59b6; padding-bottom: 15px; }
+        h2 { color: #34495e; margin-top: 40px; border-left: 5px solid #9b59b6; padding-left: 12px; background: #f8f9fa; padding: 10px 12px; font-size: 1.3em; }
+        h3 { color: #555; margin-top: 20px; border-bottom: 2px solid #eee; padding-bottom: 6px; font-size: 1.1em; }
+        .back-link { display: inline-block; margin-bottom: 20px; padding: 8px 16px; background: #3498db; color: white; border-radius: 4px; text-decoration: none; }
+        .back-link:hover { background: #2980b9; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
+        .toc { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; padding: 15px 20px; margin: 20px 0; }
+        .toc h3 { margin-top: 0; border-bottom: none; }
+        .toc ul { columns: 2; column-gap: 30px; margin: 10px 0; padding-left: 20px; }
+        .toc li { margin: 4px 0; }
+        .toc a { color: #3498db; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        table { border-collapse: collapse; width: 100%; margin: 15px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+        th { background-color: #4472C4; color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #eef5ff; }
+        .tag-code { font-family: 'SF Mono', Monaco, monospace; font-weight: bold; font-size: 0.95em; }
+        .cat-badge { display: inline-block; padding: 2px 8px; border-radius: 3px; color: white; font-size: 0.8em; font-weight: bold; margin-right: 6px; }
+        .summary-table { width: 50%; margin: 20px 0; }
+        .summary-table th { background-color: #2c3e50; }
+        .section-anchor { display: block; position: relative; top: -20px; visibility: hidden; }
+        .desc-cn { color: #555; }
+        .desc-en { color: #777; font-size: 0.92em; }
+        .level2-label { color: #666; font-size: 0.9em; }
+        @media (max-width: 768px) {
+            .toc ul { columns: 1; }
+            table { font-size: 0.8em; }
+            th, td { padding: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="back-link">&larr; Back to Home / 返回首页</a>
+
+<h1>&#127991; 通用-CS-TAG 标签体系（全标签双语对照）</h1>
+
+<p><strong>最后更新：</strong>2026-06-23</p>
+
+<div class="note">
+    <strong>使用说明：</strong>CS-TAG 用于工单分类和快速定位问题类型。处理客诉时，请根据玩家问题选择对应标签。标签格式为 <code>分类前缀-问题描述</code>，部分标签含缩写注释。
+</div>
+
+<div class="toc">
+    <h3>&#128204; 快速导航 / Quick Navigation</h3>
+    <ul>
+        <li><a href="#purchase"><span class="cat-badge" style="background:#e74c3c">Purchase</span> 充值 (20)</a></li>
+        <li><a href="#account"><span class="cat-badge" style="background:#3498db">Account</span> 账号 (22)</a></li>
+        <li><a href="#redemption"><span class="cat-badge" style="background:#27ae60">Redemption</span> 提现 (41)</a></li>
+        <li><a href="#verification-email"><span class="cat-badge" style="background:#9b59b6">Verification Email</span> 验证邮件 (3)</a></li>
+        <li><a href="#game-session"><span class="cat-badge" style="background:#f39c12">Game Session</span> 游戏会话 (2)</a></li>
+        <li><a href="#game-bug"><span class="cat-badge" style="background:#e67e22">Game Bug</span> 游戏Bug (25)</a></li>
+        <li><a href="#general-inquiry"><span class="cat-badge" style="background:#1abc9c">General Inquiry</span> 通用咨询 (25)</a></li>
+        <li><a href="#ai-help-operate"><span class="cat-badge" style="background:#34495e">AI Help Operate</span> 系统操作 (10)</a></li>
+        <li><a href="#first-response"><span class="cat-badge" style="background:#16a085">First Response</span> 首次回复 (5)</a></li>
+        <li><a href="#in-game-agent"><span class="cat-badge" style="background:#2980b9">In-game Agent</span> 游戏内客服 (5)</a></li>
+        <li><a href="#sumsub-applicant"><span class="cat-badge" style="background:#8e44ad">Sumsub Applicant</span> Sumsub KYC (12)</a></li>
+        <li><a href="#others"><span class="cat-badge" style="background:#7f8c8d">Others</span> 其他 (9)</a></li>
+        <li><a href="#rejected-tickets"><span class="cat-badge" style="background:#c0392b">Rejected Tickets</span> 无效工单 (3)</a></li>
+    </ul>
+</div>
+
+<a class="section-anchor" id="purchase"></a>
+<h2><span class="cat-badge" style="background:#e74c3c">Purchase</span> 充值</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-No-Credit</span></td>
+        <td class="level2-label">Purchase Error</td>
+        <td class="desc-en">Charged but purchase package not received</td>
+        <td class="desc-cn">已扣款但充值礼包未到账</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">UA-P</span></td>
+        <td class="level2-label">Purchase Error</td>
+        <td class="desc-en">Unable to purchase (all channels failed, not blacklisted/fraud blocked)</td>
+        <td class="desc-cn">无法充值（所有渠道均失败，非黑名单/欺诈拦截）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Fail</span></td>
+        <td class="level2-label">Purchase Error</td>
+        <td class="desc-en">Purchase shows &quot;failed&quot; or stays pending</td>
+        <td class="desc-cn">充值显示&quot;失败&quot;或一直处于pending状态</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Dup-Charge</span></td>
+        <td class="level2-label">Purchase Error</td>
+        <td class="desc-en">Duplicate charge (player reports one purchase but charged multiple times)</td>
+        <td class="desc-cn">重复扣款（玩家只购买一次但被扣多次）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Actum</span></td>
+        <td class="level2-label">Purchase Error</td>
+        <td class="desc-en">Actum bad debt order (unable to purchase / failed, requires escalation)</td>
+        <td class="desc-cn">Actum坏账订单（无法充值/失败，需升级）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Bonus-NR</span></td>
+        <td class="level2-label">Purchase Error</td>
+        <td class="desc-en">Purchased bonus spins not received (NR: Not Received)</td>
+        <td class="desc-cn">购买的bonus spins未到账（NR: Not Received）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Sutton</span></td>
+        <td class="level2-label">Purchase Error</td>
+        <td class="desc-en">Specific Card BIN-Related Purchase Failure (BIN 403163 or 440393)</td>
+        <td class="desc-cn">特定卡BIN相关充值失败（BIN为403163或440393，发卡行问题）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Extra-Fee</span></td>
+        <td class="level2-label">Purchase Error</td>
+        <td class="desc-en">Extra fees charged (e.g., bank tax, service fees)</td>
+        <td class="desc-cn">额外费用（如银行税、服务费等）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Inquiry</span></td>
+        <td class="level2-label">Purchase Inquiry</td>
+        <td class="desc-en">Payment method inquiries (change card, available methods, why can&#x27;t purchase via Apple Pay/PayPal, unbind card etc.)</td>
+        <td class="desc-cn">充值方式咨询（换卡、可用方式、为何不能用Apple Pay/PayPal、解绑卡等）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Limit</span></td>
+        <td class="level2-label">Purchase Inquiry</td>
+        <td class="desc-en">Game Play limit requests (RSG weekly/monthly limit, unable to purchase after limit)</td>
+        <td class="desc-cn">游戏充值限额（RSG周/月限额，达到限额后无法充值）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Limit-Daily</span></td>
+        <td class="level2-label">Purchase Inquiry</td>
+        <td class="desc-en">Daily purchase cap (e.g., Jackpot Spinning 777, Lucky Legends Web2Apk users)</td>
+        <td class="desc-cn">每日充值上限（如Jackpot Spinning 777、Lucky Legends Web2Apk用户）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Restrict-HF</span></td>
+        <td class="level2-label">Purchase Inquiry</td>
+        <td class="desc-en">Temporarily blacklisted in payment center (1-hour duration, reason: high-frequency purchase limit)</td>
+        <td class="desc-cn">支付中心临时黑名单（1小时，原因：高频充值限制）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Restrict-HR</span></td>
+        <td class="level2-label">Purchase Inquiry</td>
+        <td class="desc-en">Blacklisted in payment center (reason: too many cards)</td>
+        <td class="desc-cn">支付中心黑名单（原因：too many cards）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Event-Rules</span></td>
+        <td class="level2-label">Purchase Inquiry</td>
+        <td class="desc-en">Event-related purchase inquiries (cashback, rebate, subscriptions, etc.)</td>
+        <td class="desc-cn">充值活动相关咨询（cashback、rebate、subscription等）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Refund</span></td>
+        <td class="level2-label">Purchase Refund</td>
+        <td class="desc-en">Refund request with no reason given (must tag reason after identified)</td>
+        <td class="desc-cn">退款请求（未说明原因，确认原因后需补标签）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Unauth</span></td>
+        <td class="level2-label">Purchase Refund</td>
+        <td class="desc-en">Unauthorized purchase (player denies purchase / not made by them)</td>
+        <td class="desc-cn">未经授权的充值（玩家否认/非本人操作）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Mistake</span></td>
+        <td class="level2-label">Purchase Refund</td>
+        <td class="desc-en">Wrong purchase (player admits mistake, requests refund)</td>
+        <td class="desc-cn">充错（玩家承认操作错误，要求退款）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-As-R</span></td>
+        <td class="level2-label">Purchase Refund</td>
+        <td class="desc-en">Purchase mistaken for redemption, refund requested</td>
+        <td class="desc-cn">把充值当成提现，要求退款</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-Cko-Fraud</span></td>
+        <td class="level2-label">Purchase Refund</td>
+        <td class="desc-en">CKO fraud-related purchase dispute</td>
+        <td class="desc-cn">CKO欺诈相关充值争议</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Dispute</span></td>
+        <td class="level2-label">Purchase Refund</td>
+        <td class="desc-en">Dispute filed against a successful purchase</td>
+        <td class="desc-cn">对成功充值发起争议</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="account"></a>
+<h2><span class="cat-badge" style="background:#3498db">Account</span> 账号</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">E-Case</span></td>
+        <td class="level2-label">Account Login</td>
+        <td class="desc-en">Player cannot log in. After providing email/screenshot, found to be case-sensitive input error</td>
+        <td class="desc-cn">玩家无法登录。提供邮箱/截图后，发现是大小写输入错误</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Load-Stuck</span></td>
+        <td class="level2-label">Account Login</td>
+        <td class="desc-en">Player cannot load into the game</td>
+        <td class="desc-cn">玩家无法加载进入游戏</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Lost</span></td>
+        <td class="level2-label">Account Login</td>
+        <td class="desc-en">Player reports account lost, or created a new one after logging in. Needs help to recover original account</td>
+        <td class="desc-cn">玩家报告账号丢失，或登录后创建了新的。需要帮助找回原账号</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Login-UA</span></td>
+        <td class="level2-label">Account Login</td>
+        <td class="desc-en">Player login failure without reason. Anonymous tickets with unlogged tag, or ticket shows UID but player claims unable to log in</td>
+        <td class="desc-cn">玩家无原因登录失败。匿名工单+未登录标签，或工单显示UID但玩家声称无法登录</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Multi</span></td>
+        <td class="level2-label">Account Inquiry</td>
+        <td class="desc-en">Player created multiple accounts. Guide player to keep only one account; others require suspension</td>
+        <td class="desc-cn">玩家创建多账号。引导玩家只保留一个；其他需封禁</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Inquiry</span></td>
+        <td class="level2-label">Account Inquiry</td>
+        <td class="desc-en">All Account Related Issue: forgot password, needs reset, sees &quot;account already registered,&quot; asks how to create account, how to bind email/phone, what is current email/phone number</td>
+        <td class="desc-cn">账号相关问题：忘记密码、需重置、显示&quot;账号已注册&quot;、问如何创建账号、如何绑定邮箱/手机、当前邮箱/手机号是什么</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-KYC</span></td>
+        <td class="level2-label">Account Inquiry</td>
+        <td class="desc-en">General Account KYC request, KYC rejected, KYC cannot complete, etc.</td>
+        <td class="desc-cn">账号KYC相关：KYC申请、被拒、无法完成等</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Freeze-LT</span></td>
+        <td class="level2-label">Account Suspension</td>
+        <td class="desc-en">Account suspended (Freeze or Banned) due to low turnover ratio; purchases fully refunded, required by producer</td>
+        <td class="desc-cn">账号被冻结/封禁（低流水比例；充值全额退款，项目组要求）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Freeze-Multi</span></td>
+        <td class="level2-label">Account Suspension</td>
+        <td class="desc-en">Account suspended (Freeze or Banned) due to multiple accounts, as instructed by project team</td>
+        <td class="desc-cn">账号被冻结/封禁（多账号，项目组要求）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Freeze-minor</span></td>
+        <td class="level2-label">Account Suspension</td>
+        <td class="desc-en">Player reported underage minor, or system detected underage in registration, redemption, or KYC. Must suspend account, notify player, and record in Ban Notice table</td>
+        <td class="desc-cn">玩家举报未成年，或系统在注册/提现/KYC中检测到未成年。必须封号、通知玩家、记录在Ban Notice表</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Freeze-PP</span></td>
+        <td class="level2-label">Account Suspension</td>
+        <td class="desc-en">Account suspended (Freeze or Banned) after player contacted PayPal/payment group for refund</td>
+        <td class="desc-cn">玩家联系PayPal/支付组要求退款后账号被冻结/封禁</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Freeze-Dispute</span></td>
+        <td class="level2-label">Account Suspension</td>
+        <td class="desc-en">Account suspended (Freeze or Banned) due to unresolved dispute</td>
+        <td class="desc-cn">未解决争议导致账号被冻结/封禁</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Freeze-P-Exp</span></td>
+        <td class="level2-label">Account Suspension</td>
+        <td class="desc-en">Account suspended (Freeze or Banned) due to malicious exploitation of Purchase loophole</td>
+        <td class="desc-cn">恶意利用充值漏洞导致账号被冻结/封禁</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Unfreeze-DTS</span></td>
+        <td class="level2-label">Account Suspension</td>
+        <td class="desc-en">Player previously wants delete account / Take a Break / Self Exclusion now demand unfreeze account (DTS: delete account / Take a Break / Self Exclusion)</td>
+        <td class="desc-cn">玩家之前要求删号/休息/自我排除，现在要求解冻（DTS: delete account / Take a Break / Self Exclusion）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Unfreeze-Unauth</span></td>
+        <td class="level2-label">Account Suspension</td>
+        <td class="desc-en">Player previously reported Unauthorized purchase or unauthorized login. Now demand unfreeze the account</td>
+        <td class="desc-cn">玩家之前举报未经授权充值/登录，现在要求解冻账号</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Ban-TZ</span></td>
+        <td class="level2-label">Account Suspension</td>
+        <td class="desc-en">Account suspended because player changed device time zone or traveled abroad (e.g., UTC+8). TZ: Time Zone</td>
+        <td class="desc-cn">玩家修改设备时区或出国（如UTC+8）导致账号被封禁（TZ: Time Zone）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Ban-HighRisk</span></td>
+        <td class="level2-label">Account Suspension</td>
+        <td class="desc-en">Player has Banned Due to High-Risk Controversial</td>
+        <td class="desc-cn">高争议风险玩家被封禁</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-KYC-Merge</span></td>
+        <td class="level2-label">Account Modification</td>
+        <td class="desc-en">When player inquires about an account issue, account has a KYC Merge record (Legends Games) or an &quot;Account Transfer&quot; record (Acorn Games) in Gameflow or Action Records</td>
+        <td class="desc-cn">玩家咨询账号问题，发现账号有KYC合并记录（Legends）或&quot;账号转移&quot;记录（Acorn）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-E-Mod</span></td>
+        <td class="level2-label">Account Modification</td>
+        <td class="desc-en">Player requests to modify email due to stolen, invalid, or incorrect email</td>
+        <td class="desc-cn">玩家因邮箱被盗/无效/错误要求修改邮箱</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Del</span></td>
+        <td class="level2-label">Account Modification</td>
+        <td class="desc-en">Player requests to delete account</td>
+        <td class="desc-cn">玩家要求删除账号</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Del-Error</span></td>
+        <td class="level2-label">Account Modification</td>
+        <td class="desc-en">Account shows deletion reason &quot;user self-deletion.&quot; Backend shows no agent operation</td>
+        <td class="desc-cn">账号显示删除原因为&quot;用户自行删除&quot;，后台无客服操作记录</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Self Exclusion</span></td>
+        <td class="level2-label">Account Modification</td>
+        <td class="desc-en">Player reports gambling problem and requests permanent deletion, or temporary pause to stop playing</td>
+        <td class="desc-cn">玩家报告赌博问题，要求永久删除或临时暂停游戏</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="redemption"></a>
+<h2><span class="cat-badge" style="background:#27ae60">Redemption</span> 提现</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-General</span></td>
+        <td class="level2-label">Redemption General Inquiry</td>
+        <td class="desc-en">General redemption inquiries (methods, eligibility, how to receive funds, etc.)</td>
+        <td class="desc-cn">通用提现咨询（方式、资格、如何收款等）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Cancel</span></td>
+        <td class="level2-label">Redemption General Inquiry</td>
+        <td class="desc-en">Redemption Cancellation request</td>
+        <td class="desc-cn">取消提现请求</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-KYC</span></td>
+        <td class="level2-label">Redemption General Inquiry</td>
+        <td class="desc-en">KYC-related inquiries (failure reasons, how to verify, whether passed, acceptable documents, etc.)</td>
+        <td class="desc-cn">KYC相关咨询（失败原因、如何验证、是否通过、可接受文件等）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Fee</span></td>
+        <td class="level2-label">Redemption General Inquiry</td>
+        <td class="desc-en">Complaints about high fees or sudden fee increase</td>
+        <td class="desc-cn">手续费高或突然涨价投诉</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-A</span></td>
+        <td class="level2-label">Redemption General Inquiry</td>
+        <td class="desc-en">Redemption Account inquiries (basic redemption account inquire method, where sent to, check if it&#x27;s correct redemption account)</td>
+        <td class="desc-cn">提现账户咨询（基本信息、发到哪里、核对账户是否正确）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-A-Change</span></td>
+        <td class="level2-label">Redemption General Inquiry</td>
+        <td class="desc-en">Redemption Account Change (Paypal, ACH, Venmo)</td>
+        <td class="desc-cn">更改提现账户（PayPal/ACH/Venmo）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-A-BadInfo</span></td>
+        <td class="level2-label">Redemption General Inquiry</td>
+        <td class="desc-en">Before Binding actual Redemption Accounts, a pop-up window will sometimes shows up that requires players to verify redemption information. This tag is specific to this information input error</td>
+        <td class="desc-cn">绑定提现账户前弹窗要求验证提现信息，此标签专用于信息输入错误</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-PP-info</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">Paypal account authentication inquiries, how to use this method etc.</td>
+        <td class="desc-cn">PayPal账户认证咨询、如何使用等</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-ACH-info</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">ACH account authentication inquiries, how to use this method etc.</td>
+        <td class="desc-cn">ACH账户认证咨询、如何使用等</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-PO-info</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">Prizeout account authentication inquiries, how to use this method etc.</td>
+        <td class="desc-cn">Prizeout账户认证咨询、如何使用等</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-DC-info</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">Debit Card account authentication inquiries, how to use this method etc.</td>
+        <td class="desc-cn">Debit Card账户认证咨询、如何使用等</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-VM-info</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">Venmo account authentication inquiries, how to use this method etc.</td>
+        <td class="desc-cn">Venmo账户认证咨询、如何使用等</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-PP-gone</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">Players don&#x27;t have access to their Paypal account anymore</td>
+        <td class="desc-cn">玩家无法访问PayPal账户 anymore</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-ACH-gone</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">Players don&#x27;t have access to their ACH account anymore</td>
+        <td class="desc-cn">玩家无法访问ACH账户 anymore</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-DC-gone</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">Players don&#x27;t have access to their Debit Card anymore</td>
+        <td class="desc-cn">玩家无法访问Debit Card anymore</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-VM-gone</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">Players don&#x27;t have access to their Venmo account anymore</td>
+        <td class="desc-cn">玩家无法访问Venmo账户 anymore</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-E-PP</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">Paypal Redemption Email Verification</td>
+        <td class="desc-cn">PayPal提现邮箱验证</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-E-PO</span></td>
+        <td class="level2-label">Redemption Account Inquiry</td>
+        <td class="desc-en">Prizeout Redemption Email Verification</td>
+        <td class="desc-cn">Prizeout提现邮箱验证</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Time-Pending</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">Inquiry during normal redemption processing time (player asks why funds have not been received yet)</td>
+        <td class="desc-cn">正常处理时间内，玩家问为什么还没收到钱</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Time-Sent</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">Player inquires about receiving time (e.g., submitted on May 15, sent on May 17, player asks on May 18; When not OT)</td>
+        <td class="desc-cn">玩家询问具体到账时间（非超时情况）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-OT-PP-XXX</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">Paypal Redemption pending over 24hours + Current Backend Redemption Status. eg.:R-OT-PP-113</td>
+        <td class="desc-cn">PayPal提现超过24小时未到账+后台状态码（如R-OT-PP-113）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-OT-ACH-XXX</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">ACH Redemption pending over 3 Days + Current Backend Redemption Status. eg.:R-OT-ACH-106</td>
+        <td class="desc-cn">ACH提现超过3天未到账+后台状态码（如R-OT-ACH-106）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-OT-PO-XXX</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">Prizeout Redemption pending over 3 Hours + Current Backend Redemption Status. eg.:R-OT-PO-103</td>
+        <td class="desc-cn">Prizeout提现超过3小时未到账+后台状态码（如R-OT-PO-103）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-OT-DC-XXX</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">Debit Card Redemption pending over 24hours + Current Backend Redemption Status. eg.:R-OT-DC-1</td>
+        <td class="desc-cn">Debit Card提现超过24小时未到账+后台状态码（如R-OT-DC-1）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-OT-VM-XXX</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">Venmo Redemption pending over 24hours + Current Backend Redemption Status. eg.:R-OT-VM-1</td>
+        <td class="desc-cn">Venmo提现超过24小时未到账+后台状态码（如R-OT-VM-1）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-OT-104/105</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">Redemption status 104/105 pending &gt;3hours.</td>
+        <td class="desc-cn">状态码104/105且pending超过3小时</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-OT-2/Lock</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">Redemption lock-in status pending &gt;7days.</td>
+        <td class="desc-cn">提现锁定状态超过7天</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-GC</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">Golden Acorns/Gold Coins inquiries (why not redeemable, whether convertible to cash, etc.)</td>
+        <td class="desc-cn">金猪/GC咨询（为什么不可提现、能否换现金等）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-PP-Limit</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">PayPal redemption limit (≤$1500 per transaction, ≤$5000 per day, UTC-8 refreshed)</td>
+        <td class="desc-cn">PayPal提现限额（单笔≤$1500，每日≤$5000，UTC-8刷新）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-PP-Reset</span></td>
+        <td class="level2-label">Redemption Timeframe Inquiry</td>
+        <td class="desc-en">PayPal redemption weekly maintenance. Maintenance is scheduled to be completed every Thursday at 00:00 UTC+0. Players can retry using PayPal for Redemptions after this time.</td>
+        <td class="desc-cn">PayPal每周维护（周四00:00 UTC+0完成，维护后重试）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Unable to Redeem</span></td>
+        <td class="level2-label">Redemption Issue</td>
+        <td class="desc-en">Unable to redeem (no specific reason provided, follow-up needed to identify cause). Correct info entered but unable to submit redemption.</td>
+        <td class="desc-cn">无法提现（无具体原因，需跟进确认）。信息正确但无法提交提现。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Fail-PP</span></td>
+        <td class="level2-label">Redemption Issue</td>
+        <td class="desc-en">Paypal Redemption failed</td>
+        <td class="desc-cn">PayPal提现失败</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Fail-ACH</span></td>
+        <td class="level2-label">Redemption Issue</td>
+        <td class="desc-en">ACH Redemption failed</td>
+        <td class="desc-cn">ACH提现失败</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Fail-PO</span></td>
+        <td class="level2-label">Redemption Issue</td>
+        <td class="desc-en">Prizeout Redemption failed</td>
+        <td class="desc-cn">Prizeout提现失败</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Fail-VM</span></td>
+        <td class="level2-label">Redemption Issue</td>
+        <td class="desc-en">Venmo Redemption failed</td>
+        <td class="desc-cn">Venmo提现失败</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Fail-DC</span></td>
+        <td class="level2-label">Redemption Issue</td>
+        <td class="desc-en">Debit Card Redemption failed</td>
+        <td class="desc-cn">Debit Card提现失败</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Cheat</span></td>
+        <td class="level2-label">Redemption Issue</td>
+        <td class="desc-en">Redemption pending, no payout for now. Project team provided reason: [Pending, suspected cheating requires verification] (mainly seen in Legends project)</td>
+        <td class="desc-cn">提现pending，暂未打款。项目组反馈：疑似作弊需验证（多见于Legends）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-AML</span></td>
+        <td class="level2-label">Redemption Issue</td>
+        <td class="desc-en">Redemption pending, no payout for now. Project team provided reason: [Pending, suspected money laundering requires verification]. AML stands for Anti Money Laundering</td>
+        <td class="desc-cn">提现pending，暂未打款。项目组反馈：疑似洗钱需验证（AML: Anti Money Laundering）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-CAN-CAP</span></td>
+        <td class="level2-label">Other Redemption Issue</td>
+        <td class="desc-en">Currently, the only redemption channel available for Canadian (CA) players is PayPal. However, PayPal has a daily total redemption limit. If the daily limit is fully exhausted, players will not receive any response when clicking the &quot;Redeem&quot; button. Players try redeeming again after the daily refresh at 00:00 UTC-8.</td>
+        <td class="desc-cn">加拿大玩家唯一可用提现渠道为PayPal，但有每日限额。限额耗尽后点击Redeem无反应。UTC-8 00:00刷新后重试。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-F-Free-169</span></td>
+        <td class="level2-label">Other Redemption Issue</td>
+        <td class="desc-en">Jackpot go ios Player join Free-fee Tuesday, but redemption fee was not waived</td>
+        <td class="desc-cn">Jackpot Go iOS玩家参加周二免手续费活动，但手续费未免除</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">0203-R-DC-Failed</span></td>
+        <td class="level2-label">Other Redemption Issue</td>
+        <td class="desc-en">When players contact to ask about the reason for their failed redemptions, first check the table: 2026-02-03 Debit Card Redemption Failed Player List.</td>
+        <td class="desc-cn">玩家询问提现失败原因，先查2026-02-03 Debit Card提现失败名单</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="verification-email"></a>
+<h2><span class="cat-badge" style="background:#9b59b6">Verification Email</span> 验证邮件</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">V-E-Inquiry</span></td>
+        <td class="level2-label">Verification Email Inquiry</td>
+        <td class="desc-en">Player reports not receiving account, redemption, or reset password verification email</td>
+        <td class="desc-cn">玩家未收到账号/提现/重置密码验证邮件</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Sub-Cancel</span></td>
+        <td class="level2-label">Email Error</td>
+        <td class="desc-en">Player reports not receiving various emails. Records show the player unsubscribed</td>
+        <td class="desc-cn">玩家未收到各类邮件，记录显示玩家已退订</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">E-Not-Sent</span></td>
+        <td class="level2-label">Email Error</td>
+        <td class="desc-en">Player reports clicking to verify but did not receive verification email. This tag need to added to ticket when Tier 2 inform in task email was not sent out by system</td>
+        <td class="desc-cn">玩家点击验证但未收到邮件。Tier 2确认系统未发出时添加此标签</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="game-session"></a>
+<h2><span class="cat-badge" style="background:#f39c12">Game Session</span> 游戏会话</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Crash</span></td>
+        <td class="level2-label">Game Session Error</td>
+        <td class="desc-en">Game crashes back to lobby (either during a round or before entering the slot). Game keeps spinning without stopping.</td>
+        <td class="desc-cn">游戏崩溃回大厅（游戏中或进入机台前）。游戏一直spin不停。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-No-Reward</span></td>
+        <td class="level2-label">Game Session Inquiry</td>
+        <td class="desc-en">Round reward not received (confirmed missing → compensate or escalate). (If later found already received → belongs to G-Gameflow Tag.)</td>
+        <td class="desc-cn">未收到局内奖励（确认缺失→补偿或升级；若后来发现已收到→转G-Gameflow）</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="game-bug"></a>
+<h2><span class="cat-badge" style="background:#e67e22">Game Bug</span> 游戏Bug</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Lag</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Game freezes, temporarily freezes then recovers, Glitches or completely stuck.</td>
+        <td class="desc-cn">游戏卡顿、暂时冻结后恢复、完全卡住</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-App-Crash</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Crash on game main screen; in-session crashes are categorized under &quot;session crash&quot;</td>
+        <td class="desc-cn">游戏主屏幕崩溃（局内崩溃归类于G-Crash）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Crash-Freq</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Repeated game crashes. Freq:Frequent</td>
+        <td class="desc-cn">频繁游戏崩溃（Freq: Frequent）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Con-Lost</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Forced exit after &quot;lost connection&quot; prompt. Con:Connection</td>
+        <td class="desc-cn">&quot;连接丢失&quot;提示后强制退出（Con: Connection）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Scr-BW</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Black screen / white screen. Scr:Scr-BW: Black/White</td>
+        <td class="desc-cn">黑屏/白屏（Scr: Screen, BW: Black/White）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Con-Err</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Connection error or network error. Con: Connection, Err: Error</td>
+        <td class="desc-cn">连接错误或网络错误（Con: Connection, Err: Error）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Net-Err</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Player unable to enter game, stuck on loading screen. Net: Network, Err: Error</td>
+        <td class="desc-cn">玩家无法进入游戏，卡在加载界面（Net: Network, Err: Error）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Display Error</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Interface display anomalies</td>
+        <td class="desc-cn">界面显示异常</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Text Error</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">In-game text errors</td>
+        <td class="desc-cn">游戏内文字错误</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Sound Error</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Sudden loss of music/audio in-game; cannot toggle music &amp; sound.</td>
+        <td class="desc-cn">游戏内突然丢失音乐/音频；无法切换音乐和声音</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Slot-Load-Stuck</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Player unable to enter slot/game, stuck on loading screen.</td>
+        <td class="desc-cn">玩家无法进入机台/游戏，卡在加载界面</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Slot-Region-UA</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Some individual slot machines are inaccessible due to regional restrictions, showing the error:&quot;Sorry, this game is not available in your location / region&quot;. This occurs because certain third-party slot machines cannot operate in some regions, making them unplayable for players.</td>
+        <td class="desc-cn">某些机台因地区限制无法访问，显示&quot;Sorry, this game is not available in your location/region&quot;（第三方机台在某些地区无法运营）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">UA-Freeze</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Special tag for backend unable to submit freeze request (currently Poker &amp; Luckhit).</td>
+        <td class="desc-cn">后台无法提交冻结请求的特殊标签（目前Poker &amp; Luckhit）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">R-Unplayed SC-Ded</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Unplayed SC deducted during redemption. Ded: Deducted</td>
+        <td class="desc-cn">提现时Unplayed SC被扣除（Ded: Deducted）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Winner_415-Bug</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Slot display issues: HYPERNOVAMEGAWAYS</td>
+        <td class="desc-cn">机台显示问题：HYPERNOVAMEGAWAYS</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Winner_406-Bug</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">Slot display issues: Atlantis.</td>
+        <td class="desc-cn">机台显示问题：Atlantis</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-SC-NR 347</span></td>
+        <td class="level2-label">Game Bug</td>
+        <td class="desc-en">2025-10-29 Acorn project team App ID: 347. Event or purchase SC balance not credited to players&#x27; game accounts</td>
+        <td class="desc-cn">2025-10-29 Acorn项目App ID: 347，活动或购买SC余额未到账</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">7.10 Login Disappeared</span></td>
+        <td class="level2-label">Other Bug</td>
+        <td class="desc-en">App ID 136 7-day login rewards disappeared.</td>
+        <td class="desc-cn">App ID 136 的7天登录奖励消失</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">725RP</span></td>
+        <td class="level2-label">Other Bug</td>
+        <td class="desc-en">2025-07-25, payout platform sent duplicate redemption.</td>
+        <td class="desc-cn">2025-07-25，支付平台发送了重复redemption</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">825AcornError</span></td>
+        <td class="level2-label">Other Bug</td>
+        <td class="desc-en">2025-08-25, player topped up $300 but transaction record shows only 20SC reward.</td>
+        <td class="desc-cn">2025-08-25，玩家充值$300但交易记录只显示20SC奖励</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">12-15 CA-UA</span></td>
+        <td class="level2-label">Other Bug</td>
+        <td class="desc-en">For players from CA (California) reporting login failures. Add the corresponding ticket tag: 12-15 CA-UA for California players. Submit a task and escalate it to Tier 2.</td>
+        <td class="desc-cn">加州（CA）玩家登录失败专用标签。提交任务升级给Tier 2</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">12-15 NY-UA</span></td>
+        <td class="level2-label">Other Bug</td>
+        <td class="desc-en">For players from NY (New York) reporting login failures. Add the corresponding ticket tag: 12-15 NY-UA for New York players. Submit a task and escalate it to Tier 2.</td>
+        <td class="desc-cn">纽约（NY）玩家登录失败专用标签。提交任务升级给Tier 2</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">260227-Gleam-RefSpin</span></td>
+        <td class="level2-label">Other Bug</td>
+        <td class="desc-en">Bug: Referral spin issues – players unable to spin after clicking the spin button. Game: Gleaming Series games. After clicking the Spin button, the wheel does not spin and spin attempts are not deducted.</td>
+        <td class="desc-cn">推荐spin问题：Gleaming Series游戏，点击Spin按钮后转盘不转且次数不扣除</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">4-1 Booming</span></td>
+        <td class="level2-label">Other Bug</td>
+        <td class="desc-en">There is a bug Last night on the Booming series slot machines: spins do not consume SC, but rewards are issued normally. The Acorn Project team has temporarily Banned all affected players&#x27; accounts.</td>
+        <td class="desc-cn">Booming系列机台bug：spin不消耗SC但奖励正常发放。Acorn项目组已临时封禁受影响玩家</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">4.21-Invitation Reward spin bug</span></td>
+        <td class="level2-label">Other Bug</td>
+        <td class="desc-en">Malfunction of Friend Invitation Reward Wheel. Due to a bug, players were able to perform the Reward spin an unlimited number of times after successfully inviting a friend.</td>
+        <td class="desc-cn">好友邀请奖励转盘故障：成功邀请后可无限次奖励spin</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="general-inquiry"></a>
+<h2><span class="cat-badge" style="background:#1abc9c">General Inquiry</span> 通用咨询</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Ad-No-Reward</span></td>
+        <td class="level2-label">Ad Inquiry</td>
+        <td class="desc-en">Ad reward not received after watching.</td>
+        <td class="desc-cn">看完广告未收到奖励</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Ad-Net-Error</span></td>
+        <td class="level2-label">Ad Inquiry</td>
+        <td class="desc-en">Ad shows network error.</td>
+        <td class="desc-cn">广告显示网络错误</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Ad-Black</span></td>
+        <td class="level2-label">Ad Inquiry</td>
+        <td class="desc-en">Black screen or crash after clicking ad.</td>
+        <td class="desc-cn">点击广告后黑屏或崩溃</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Ad-Mislead</span></td>
+        <td class="level2-label">Ad Inquiry</td>
+        <td class="desc-en">False/misleading ads.</td>
+        <td class="desc-cn">虚假/误导性广告</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Ad-Bonus-Spin</span></td>
+        <td class="level2-label">Ad Inquiry</td>
+        <td class="desc-en">62/290 Ads in these two games contain promotional content for the HowlingWolves slot. If the player can provide a screenshot showing the 20 free bonus rounds, a reward can be issued.</td>
+        <td class="desc-cn">62/290两款游戏广告包含HowlingWolves机台推广内容，玩家提供截图证明20次免费bonus rounds可发放奖励</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Ad-Down-Reward</span></td>
+        <td class="level2-label">Ad Inquiry</td>
+        <td class="desc-en">Promo ad reward not received (download/redemption). Down: Download</td>
+        <td class="desc-cn">推广广告奖励未收到（下载/提现相关。Down: Download）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SoM-Inquiry</span></td>
+        <td class="level2-label">Ad Inquiry</td>
+        <td class="desc-en">For all subsequent player inquiries regarding social media platform-related issues (eg. campaigns on Facebook or Instagram). SoM stands For Social Media</td>
+        <td class="desc-cn">社交媒体平台相关问题（如Facebook或Instagram活动。SoM: Social Media）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">EVE-Inquiry</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Non-purchase event inquiries, player had concern on how event works (event rules etc)</td>
+        <td class="desc-cn">非充值活动咨询，玩家问活动规则等</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">EVE-LF</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Lucky Flip event inquiries.</td>
+        <td class="desc-cn">Lucky Flip活动咨询</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">EVE-MR</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Money Return event inquiries.</td>
+        <td class="desc-cn">Money Return活动咨询</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Invitation</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Invitation function inquiries (whether available, how to invite).</td>
+        <td class="desc-cn">邀请功能咨询（是否可用、如何邀请）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Promo Code</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Promo code inquiries (availability, usage).</td>
+        <td class="desc-cn">兑换码咨询（可用性、使用方法）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Download</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Download issues (where/how to download).</td>
+        <td class="desc-cn">下载问题（哪里下载/如何下载）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Update</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Game update inquiries (next update, content).</td>
+        <td class="desc-cn">游戏更新咨询（下次更新、内容）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Rules</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Game rules inquiries (how to play, slot rules, bet settings).</td>
+        <td class="desc-cn">游戏规则咨询（怎么玩、机台规则、下注设置）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Gameflow</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Gameflow record inquiries (daily reward, comeback reward, match reward, SC/GC balance, etc.).</td>
+        <td class="desc-cn">游戏流程记录咨询（每日奖励、回归奖励、对局奖励、SC/GC余额等）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-LT-HR</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Acorn: low turnover/high redemption ratio players cannot see some in-game events. LT for Low Turnover, HR for High Redemption</td>
+        <td class="desc-cn">Acorn：低流水/高提现比例玩家看不到某些游戏内活动（LT: Low Turnover, HR: High Redemption）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-LR</span></td>
+        <td class="level2-label">Event Inquiry</td>
+        <td class="desc-en">Legends : low Rollover ratio players cannot see some in-game events. LR for low Rollover ratio</td>
+        <td class="desc-cn">Legends：低流水比例玩家看不到某些游戏内活动（LR: Low Rollover）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Integrity</span></td>
+        <td class="level2-label">General Question</td>
+        <td class="desc-en">Fairness complaints (game is scam, fraud, etc.).</td>
+        <td class="desc-cn">公平性投诉（游戏是骗局、欺诈等）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-General</span></td>
+        <td class="level2-label">General Question</td>
+        <td class="desc-en">Inquiries about gameplay and settings (can win real money?, playing without purchase, free SC/GC, how to win, change avatar, change name, sound settings, etc.)</td>
+        <td class="desc-cn">游戏玩法和设置咨询（能否赢真钱、不充值怎么玩、免费SC/GC、如何获胜、改头像、改名字、声音设置等）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-Region Restrict</span></td>
+        <td class="level2-label">General Question</td>
+        <td class="desc-en">Player located in restricted state (via IP check or player self-report).</td>
+        <td class="desc-cn">玩家位于限制州（通过IP检测或玩家自报）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-KYC-Restrict States</span></td>
+        <td class="level2-label">General Question</td>
+        <td class="desc-en">KYC shows player in restricted state.</td>
+        <td class="desc-cn">KYC显示玩家在限制州</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Unsubscription</span></td>
+        <td class="level2-label">General Question</td>
+        <td class="desc-en">Unsubscribe from emails inquiries.</td>
+        <td class="desc-cn">退订邮件咨询</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">P-To win</span></td>
+        <td class="level2-label">General Question</td>
+        <td class="desc-en">Complaints about needing purchase to win.</td>
+        <td class="desc-cn">投诉需要充值才能赢</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">AMOE</span></td>
+        <td class="level2-label">General Question</td>
+        <td class="desc-en">Any AMOE related inquiries</td>
+        <td class="desc-cn">任何AMOE相关咨询</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="ai-help-operate"></a>
+<h2><span class="cat-badge" style="background:#34495e">AI Help Operate</span> 系统操作</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">W-AI</span></td>
+        <td class="level2-label">Reassign Ticket</td>
+        <td class="desc-en">This tag is only needed if an error occurs during the initial system allocation and the order needs to be transferred. However, if the player later raises other issues, such as initially raising redemption and then purchasing, the W-AI tag is not required.</td>
+        <td class="desc-cn">初始系统分配错误需转派时使用。若玩家后续提出其他问题（如先问提现后问充值），则不需要此标签</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">OFS-A-Event</span></td>
+        <td class="level2-label">Reassign Ticket</td>
+        <td class="desc-en">Out-of-Scope: player initially asks about a topic within your job scope but later raises questions that belong to Acorn Event queue.</td>
+        <td class="desc-cn">超范围：玩家最初问职责范围内问题，后转问Acorn活动队列问题</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">OFS-L-Event</span></td>
+        <td class="level2-label">Reassign Ticket</td>
+        <td class="desc-en">Out-of-Scope: player initially asks about a topic within your job scope but later raises questions that belong to Legends Event queue.</td>
+        <td class="desc-cn">超范围：玩家最初问职责范围内问题，后转问Legends活动队列问题</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">OFS-Redemption</span></td>
+        <td class="level2-label">Reassign Ticket</td>
+        <td class="desc-en">Out-of-Scope: player initially asks about a topic within your job scope but later raises questions that belong to Redemption queue.</td>
+        <td class="desc-cn">超范围：玩家最初问职责范围内问题，后转问提现队列问题</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">OFS-Purchase</span></td>
+        <td class="level2-label">Reassign Ticket</td>
+        <td class="desc-en">Out-of-Scope: player initially asks about a topic within your job scope but later raises questions that belong to Purchase queue.</td>
+        <td class="desc-cn">超范围：玩家最初问职责范围内问题，后转问充值队列问题</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Need Reply</span></td>
+        <td class="level2-label">Need Reply</td>
+        <td class="desc-en">Escalation cases: Waiting for reply from Tier 2 or player. Transfer ticket: Waiting for other team to handle. Ticket will not auto-close after added this tag.</td>
+        <td class="desc-cn">升级案例：等待Tier 2或玩家回复。转派工单：等待其他团队处理。加此标签后工单不会自动关闭</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">No ID-Re</span></td>
+        <td class="level2-label">UID cannot be found</td>
+        <td class="desc-en">For any subsequent cases where the UID cannot be found in the Backend, please explain to the player that due to a system issue, they need to close the game, restart it, and then submit a support ticket. After replying, you may mark the ticket as &quot;Resolved&quot;.</td>
+        <td class="desc-cn">后台找不到UID。告知玩家因系统问题需关闭游戏、重启、重新提交工单。回复后可标记为&quot;Resolved&quot;</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">A-event</span></td>
+        <td class="level2-label">In-Game Channel Agents</td>
+        <td class="desc-en">For Transferred tickets concerning in-game events under the Acorn Project Team.</td>
+        <td class="desc-cn">转派工单：Acorn项目组游戏内活动</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">L-event</span></td>
+        <td class="level2-label">In-Game Channel Agents</td>
+        <td class="desc-en">For Transferred tickets concerning in-game events under the Legends Project Team.</td>
+        <td class="desc-cn">转派工单：Legends项目组游戏内活动</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Machine</span></td>
+        <td class="level2-label">In-Game Channel Agents</td>
+        <td class="desc-en">For tickets related to in-game slots machines (e.g., machine malfunctions, gameplay issues on specific machines).</td>
+        <td class="desc-cn">转派工单：游戏内机台问题（机台故障、特定机台玩法问题）</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="first-response"></a>
+<h2><span class="cat-badge" style="background:#16a085">First Response</span> 首次回复</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">F-R</span></td>
+        <td class="level2-label">Transferring Ticket Tag</td>
+        <td class="desc-en">First response Agent confirms Ticket issue belongs to Redemption Queue. Then transfer to redemption Queue Agent</td>
+        <td class="desc-cn">首次回复客服确认工单属于Redemption队列，转给提现队列客服</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">F-P</span></td>
+        <td class="level2-label">Transferring Ticket Tag</td>
+        <td class="desc-en">First response Agent confirms Ticket issue belongs to Purchase Queue. Then transfer to Purchase Queue Agent</td>
+        <td class="desc-cn">首次回复客服确认工单属于Purchase队列，转给充值队列客服</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">F-A-event</span></td>
+        <td class="level2-label">Transferring Ticket Tag</td>
+        <td class="desc-en">First response Agent confirms Ticket issue belongs to Acorn Event Queue. Then transfer to Acorn Event Queue Agent</td>
+        <td class="desc-cn">首次回复客服确认工单属于Acorn Event队列，转给Acorn活动队列客服</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">F-L-event</span></td>
+        <td class="level2-label">Transferring Ticket Tag</td>
+        <td class="desc-en">First response Agent confirms Ticket issue belongs to Legends Event Queue. Then transfer to Legends Event Queue Agent</td>
+        <td class="desc-cn">首次回复客服确认工单属于Legends Event队列，转给Legends活动队列客服</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">F-Ingame</span></td>
+        <td class="level2-label">Transferring Ticket Tag</td>
+        <td class="desc-en">First response Agents confirm Ticket issue does not belong to their own job scope and does not belong to redemption+Purchase+Acorn event+Legends event Queue. Then transfer to Ingame Channel Queue Agent</td>
+        <td class="desc-cn">首次回复客服确认工单不属于自己工作范围，也不属于提现+充值+Acorn活动+Legends活动队列，转给Ingame Channel队列客服</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="in-game-agent"></a>
+<h2><span class="cat-badge" style="background:#2980b9">In-game Agent</span> 游戏内客服</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">I-F</span></td>
+        <td class="level2-label">Transferring Ticket Tag</td>
+        <td class="desc-en">In-game Channel Agent confirms Ticket issue belongs to FRA Queue. Then transfer to FRA Queue Agent</td>
+        <td class="desc-cn">游戏内渠道客服确认工单属于FRA队列，转给FRA队列客服</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">I-R</span></td>
+        <td class="level2-label">Transferring Ticket Tag</td>
+        <td class="desc-en">In-game Channel Agent confirms Ticket issue belongs to Redemption Queue. Then transfer to redemption Queue Agent</td>
+        <td class="desc-cn">游戏内渠道客服确认工单属于Redemption队列，转给提现队列客服</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">I-P</span></td>
+        <td class="level2-label">Transferring Ticket Tag</td>
+        <td class="desc-en">In-game Channel Agent confirms Ticket issue belongs to Purchase Queue. Then transfer to Purchase Queue Agent</td>
+        <td class="desc-cn">游戏内渠道客服确认工单属于Purchase队列，转给充值队列客服</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">I-A-event</span></td>
+        <td class="level2-label">Transferring Ticket Tag</td>
+        <td class="desc-en">In-game Channel Agent confirms Ticket issue belongs to Acorn Event Queue. Then transfer to Acorn Event Queue Agent</td>
+        <td class="desc-cn">游戏内渠道客服确认工单属于Acorn Event队列，转给Acorn活动队列客服</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">I-L-event</span></td>
+        <td class="level2-label">Transferring Ticket Tag</td>
+        <td class="desc-en">In-game Channel Agent confirms Ticket issue belongs to Legends Event Queue. Then transfer to Legends Event Queue Agent</td>
+        <td class="desc-cn">游戏内渠道客服确认工单属于Legends Event队列，转给Legends活动队列客服</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="sumsub-applicant"></a>
+<h2><span class="cat-badge" style="background:#8e44ad">Sumsub Applicant</span> Sumsub KYC</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-Approve</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When you click &quot;Approve&quot; to pass the player&#x27;s KYC via Sumsub.</td>
+        <td class="desc-cn">点击&quot;Approve&quot;通过玩家KYC（Sumsub）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-Reset</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When you reset the player&#x27;s KYC process via Sumsub.</td>
+        <td class="desc-cn">通过Sumsub重置玩家KYC流程</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-Dup</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">For the multi-account Tickets that T1 agents can process directly using the Sumsub Applicant feature, without the need to create a task for T2.</td>
+        <td class="desc-cn">多账号工单，T1客服可直接使用Sumsub Applicant功能处理，无需为T2创建任务</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-T2-BLACKLIST</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When you can&#x27;t handle the KYC ticket due to BLACKLIST Tag in sumsub applicant backend and need to submit it to Tier 2.</td>
+        <td class="desc-cn">Sumsub后台有BLACKLIST标签，无法处理，需提交Tier 2</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-T2-BLOCKLIST</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When you can&#x27;t handle the KYC ticket due to BLOCKLIST Tag in sumsub applicant backend and need to submit it to Tier 2.</td>
+        <td class="desc-cn">Sumsub后台有BLOCKLIST标签，无法处理，需提交Tier 2</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-T2-DUP</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When you can&#x27;t handle the KYC ticket due to Duplicate Tag in sumsub applicant backend and need to submit it to Tier 2.</td>
+        <td class="desc-cn">Sumsub后台有Duplicate标签，无法处理，需提交Tier 2</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-T2-FORGERY</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When you can&#x27;t handle the KYC ticket due to FORGERY Tag in sumsub applicant backend and need to submit it to Tier 2.</td>
+        <td class="desc-cn">Sumsub后台有FORGERY标签，无法处理，需提交Tier 2</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-T2-WUR</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When you can&#x27;t handle the KYC ticket due to WRONG_USER_REGION Tag in sumsub applicant backend and need to submit it to Tier 2.</td>
+        <td class="desc-cn">Sumsub后台有WRONG_USER_REGION标签，无法处理，需提交Tier 2</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-T2-Unsat-Age</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When you can&#x27;t handle the KYC ticket due to Unsatisfactory age Tag in sumsub applicant backend and need to submit it to Tier 2.</td>
+        <td class="desc-cn">Sumsub后台有Unsatisfactory age标签，无法处理，需提交Tier 2</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-T2-Image-limit</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When you can&#x27;t handle the KYC ticket due to Images limit reached Tag in sumsub applicant backend and need to submit it to Tier 2.</td>
+        <td class="desc-cn">Sumsub后台有Images limit reached标签，无法处理，需提交Tier 2</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-T2-Other</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When you can&#x27;t handle the KYC ticket And the sumsub applicant tag does not belong to Below 7 scenarios (BLACKLIST, BLOCKLIST, DUP, FORGERY, WUR, Unsat-Age, Image-limit).</td>
+        <td class="desc-cn">无法处理KYC工单，且Sumsub applicant标签不属于以上7种场景（BLACKLIST/BLOCKLIST/DUP/FORGERY/WUR/Unsat-Age/Image-limit）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">SA-IR</span></td>
+        <td class="level2-label">KYC Handling Tag</td>
+        <td class="desc-en">When no Sumsub button is needed; just tell the player to continue KYC. Or Player is KYC-rejected need to freeze.</td>
+        <td class="desc-cn">不需要Sumsub按钮时；只需告诉玩家继续KYC。或玩家KYC被拒需要冻结</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="others"></a>
+<h2><span class="cat-badge" style="background:#7f8c8d">Others</span> 其他</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Feedback</span></td>
+        <td class="level2-label">Feedback</td>
+        <td class="desc-en">Escalate to Tier 2 with recommendation</td>
+        <td class="desc-cn">反馈（升级给Tier 2并附建议）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">G-Violation</span></td>
+        <td class="level2-label">Report Violation</td>
+        <td class="desc-en">Player avatar/nickname violation</td>
+        <td class="desc-cn">玩家头像/昵称违规</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Ad-Content</span></td>
+        <td class="level2-label">Report Violation</td>
+        <td class="desc-en">Report inappropriate ad content</td>
+        <td class="desc-cn">举报不当广告内容</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Later</span></td>
+        <td class="level2-label">Later</td>
+        <td class="desc-en">Reply later</td>
+        <td class="desc-cn">稍后回复</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Tier 2</span></td>
+        <td class="level2-label">Tier 2</td>
+        <td class="desc-en">Ticket transferred from Tier 1, Tier 2 agent needs to add this tag</td>
+        <td class="desc-cn">从Tier 1转派的工单，Tier 2客服需添加此标签</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Device-error</span></td>
+        <td class="level2-label">Device Incompatibility</td>
+        <td class="desc-en">Player reports game interface cannot display fullscreen.</td>
+        <td class="desc-cn">玩家报告游戏界面无法全屏显示</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">LGL</span></td>
+        <td class="level2-label">Lawsuit Risk</td>
+        <td class="desc-en">Ticket with yellow-highlighted text, This player may have lawsuit risk against Company</td>
+        <td class="desc-cn">黄标高亮文本，玩家可能有诉讼风险</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Suicide</span></td>
+        <td class="level2-label">Lawsuit Risk</td>
+        <td class="desc-en">Players Making Suicide Threats</td>
+        <td class="desc-cn">玩家有自杀威胁</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Closeable</span></td>
+        <td class="level2-label">Closeable</td>
+        <td class="desc-en">Player&#x27;s question has all been answered, and currently has no other issues that need to be resolved. This ticket can be tagged with the Closeable tag</td>
+        <td class="desc-cn">玩家问题已全部回答，当前无其他待解决问题</td>
+    </tr>
+</table>
+
+<a class="section-anchor" id="rejected-tickets"></a>
+<h2><span class="cat-badge" style="background:#c0392b">Rejected Tickets</span> 无效工单</h2>
+<table>
+    <tr>
+        <th style="width:12%">Tag</th>
+        <th style="width:15%">Level 2</th>
+        <th style="width:35%">Description (EN)</th>
+        <th style="width:38%">Description (CN)</th>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Blank Ticket</span></td>
+        <td class="level2-label">Blank Ticket</td>
+        <td class="desc-en">Empty email content or empty ticket submission.</td>
+        <td class="desc-cn">空邮件或空工单提交</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Spam</span></td>
+        <td class="level2-label">Spam</td>
+        <td class="desc-en">Pornographic content, images, or unreadable characters (if player replies with garbled content after first response).</td>
+        <td class="desc-cn">色情内容、图片或乱码（首次回复后玩家回复乱码内容）</td>
+    </tr>
+    <tr>
+        <td><span class="tag-code">Ad-Promo</span></td>
+        <td class="level2-label">Ad-Promo</td>
+        <td class="desc-en">Advertising, promotional messages.</td>
+        <td class="desc-cn">广告、推广信息</td>
+    </tr>
+</table>
+
+<h2>&#128202; 标签统计 / Summary</h2>
+<table class="summary-table">
+    <tr>
+        <th>Category (EN)</th>
+        <th>Category (CN)</th>
+        <th>Count</th>
+    </tr>
+    <tr>
+        <td>Purchase</td>
+        <td>充值</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Account</td>
+        <td>账号</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>Redemption</td>
+        <td>提现</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>Verification Email</td>
+        <td>验证邮件</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Game Session</td>
+        <td>游戏会话</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Game Bug</td>
+        <td>游戏Bug</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>General Inquiry</td>
+        <td>通用咨询</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>AI Help Operate</td>
+        <td>系统操作</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>First Response</td>
+        <td>首次回复</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>In-game Agent</td>
+        <td>游戏内客服</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Sumsub Applicant</td>
+        <td>Sumsub KYC</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>Others</td>
+        <td>其他</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Rejected Tickets</td>
+        <td>无效工单</td>
+        <td>3</td>
+    </tr>
+    <tr style="font-weight:bold; background:#eef5ff;">
+        <td>Total</td>
+        <td>总计</td>
+        <td>182</td>
+    </tr>
+</table>
+
+<div class="note">
+    <strong>备注：</strong>各项目组可能拥有专属标签，请查阅对应项目组知识库。标签体系将持续更新，如有新增标签请及时同步。
+</div>
+
+<p><em>本文档为通用标签体系，项目组专属标签请查阅对应项目组知识库。</em></p>
+
+</body>
+</html>
