@@ -7,10 +7,11 @@
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1000px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
         h1 { color: #2c3e50; border-bottom: 3px solid #9b59b6; padding-bottom: 15px; }
-        h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #9b59b6; padding-left: 12px; background: #f5eef8; padding: 10px 12px; }
+        h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #9b59b6; padding-left: 12px; background: #f5eef8; padding: 10px 12px; scroll-margin-top: 20px; }
         h3 { color: #555; margin-top: 25px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
         .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
         .warning { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px 15px; margin: 15px 0; }
+        .info { background: #e8f4fd; border-left: 4px solid #3498db; padding: 10px 15px; margin: 15px 0; font-size: 14px; }
         table { border-collapse: collapse; width: 100%; margin: 15px 0; }
         th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
         th { background-color: #9b59b6; color: white; }
@@ -19,6 +20,20 @@
         .back-link:hover { background: #2980b9; }
         a { color: #3498db; }
         ul li { margin: 8px 0; }
+
+        .toc { background: #f8f9fa; padding: 15px 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #e9ecef; }
+        .toc strong { color: #2c3e50; display: block; margin-bottom: 10px; font-size: 16px; }
+        .toc a { display: inline-block; padding: 4px 10px; margin: 3px 5px 3px 0; text-decoration: none; background: #fff; border: 1px solid #dee2e6; border-radius: 4px; font-size: 13px; transition: all 0.2s; }
+        .toc a:hover { background: #9b59b6; color: #fff; border-color: #9b59b6; }
+
+        .back-to-top { position: fixed; bottom: 25px; right: 25px; background: #9b59b6; color: #fff; padding: 10px 14px; border-radius: 50%; text-decoration: none; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); opacity: 0.8; transition: opacity 0.2s; z-index: 999; }
+        .back-to-top:hover { opacity: 1; }
+
+        .todo-box { background: #f8f9fa; border: 1px dashed #adb5bd; padding: 12px 15px; margin: 15px 0; border-radius: 6px; color: #6c757d; font-size: 14px; }
+        .todo-box::before { content: "📝 "; }
+
+        .link-card { display: inline-block; padding: 6px 14px; background: #f5eef8; color: #9b59b6; border-radius: 4px; text-decoration: none; margin: 3px 5px 3px 0; font-size: 13px; border: 1px solid #d8c5e0; }
+        .link-card:hover { background: #9b59b6; color: #fff; }
     </style>
 </head>
 <body>
@@ -36,16 +51,26 @@
 
 <p><strong>最后更新：</strong>2026-06-22</p>
 
+<div class="toc">
+    <strong>📑 快速导航</strong>
+    <a href="#games">📱 包含游戏</a>
+    <a href="#purchase">💳 Purchase</a>
+    <a href="#redemption">💰 Redemption</a>
+    <a href="#kyc">🆔 KYC</a>
+    <a href="#slots">🎮 机台/活动</a>
+    <a href="#tag">🏷️ TAG</a>
+</div>
+
 <hr>
 
-<h2>📱 包含游戏</h2>
+<h2 id="games">📱 包含游戏</h2>
 <ul>
     <li>Poker Hit 系列</li>
 </ul>
 
 <hr>
 
-<h2>💳 Poker Hit - Purchase 特殊规则</h2>
+<h2 id="purchase">💳 Poker Hit - Purchase 特殊规则</h2>
 
 <h3>充值渠道</h3>
 <table>
@@ -58,19 +83,20 @@
     <tr><td>Cash App</td><td>❌ 已停用</td><td>2025-07-11 起停用</td></tr>
 </table>
 
-<h3>特殊规则（待补充）</h3>
-<ul>
-    <li>Poker Hit 专属充值规则（待补充）</li>
-    <li>Poker Hit 专属活动（待补充）</li>
-</ul>
+<div class="info">
+    <strong>🔗 相关通用规则：</strong>
+    <a href="../general/general-purchase.html" class="link-card">通用-Purchase</a>
+    <a href="../general/general-purchase.html#failure" class="link-card">充值失败处理</a>
+    <a href="../general/general-purchase.html#risk" class="link-card">风控规则</a>
+</div>
 
-<div class="warning">
-    <strong>待补充内容：</strong>请 Poker Hit 项目组提供专属规则文档，补充到本文档中。
+<div class="todo-box">
+    Poker Hit 专属充值规则、专属活动待补充 — 请项目组提供文档后更新
 </div>
 
 <hr>
 
-<h2>💰 Poker Hit - Redemption 特殊规则</h2>
+<h2 id="redemption">💰 Poker Hit - Redemption 特殊规则</h2>
 
 <h3>提现方式</h3>
 <table>
@@ -82,39 +108,56 @@
     <tr><td>Cash App</td><td>❌ 已停用</td><td>2025-07-21 起停用</td></tr>
 </table>
 
-<h3>特殊规则（待补充）</h3>
-<ul>
-    <li>Poker Hit 专属提现限额（待补充）</li>
-    <li>Poker Hit 专属手续费（待补充）</li>
-</ul>
+<div class="info">
+    <strong>🔗 相关通用规则：</strong>
+    <a href="../general/general-redemption.html" class="link-card">通用-Redemption</a>
+    <a href="../general/general-redemption.html#status-codes" class="link-card">状态码速查</a>
+    <a href="../general/general-redemption.html#cancel" class="link-card">取消规则</a>
+</div>
+
+<div class="todo-box">
+    Poker Hit 专属提现限额、专属手续费待补充 — 请项目组提供文档后更新
+</div>
 
 <hr>
 
-<h2>🆔 Poker Hit - KYC 特殊规则</h2>
+<h2 id="kyc">🆔 Poker Hit - KYC 特殊规则</h2>
 <ul>
-    <li>KYC 触发条件：通用规则</li>
-    <li>特殊规则（待补充）</li>
+    <li>KYC 触发条件：通用规则（提现前需 KYC-ID，2000 以上需 KYC-POA）</li>
+    <li>SSN 验证：通用规则</li>
 </ul>
+
+<div class="info">
+    <strong>🔗 相关通用规则：</strong>
+    <a href="../general/general-kyc.html" class="link-card">通用-KYC</a>
+</div>
+
+<div class="todo-box">
+    Poker Hit 专属 KYC 规则待补充
+</div>
 
 <hr>
 
-<h2>🎮 Poker Hit - 专属机台/活动</h2>
-<ul>
-    <li>Poker Hit 专属机台规则（待补充）</li>
-    <li>Poker Hit 专属活动规则（待补充）</li>
-</ul>
+<h2 id="slots">🎮 Poker Hit - 专属机台/活动</h2>
+
+<div class="todo-box">
+    Poker Hit 专属机台规则、专属活动规则待补充 — 请项目组提供文档后更新
+</div>
 
 <hr>
 
-<h2>🏷️ Poker Hit - 专属 TAG</h2>
+<h2 id="tag">🏷️ Poker Hit - 专属 TAG</h2>
 <p>通用 TAG 请查阅 <a href="../general/general-cs-tag.html">通用-CS-TAG</a></p>
-<ul>
-    <li>Poker Hit 专属 TAG（待补充）</li>
-</ul>
+
+<div class="todo-box">
+    Poker Hit 专属 TAG 待补充 — 请项目组提供常见客诉标签清单
+</div>
 
 <hr>
 
 <p><em>本文档为 Poker Hit 项目组专属规则，通用规则请查阅<a href="../index.html">通用知识库</a>。</em></p>
+
+<a href="#" class="back-to-top" title="返回顶部">↑</a>
 
 </body>
 </html>

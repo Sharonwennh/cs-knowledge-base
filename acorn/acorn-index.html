@@ -6,7 +6,7 @@
 <style>
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1000px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
 h1 { color: #2c3e50; border-bottom: 3px solid #d35400; padding-bottom: 15px; }
-h2 { color: #34495e; margin-top: 30px; border-left: 5px solid #d35400; padding-left: 12px; background: #fdf6f0; padding: 10px 12px; cursor: pointer; }
+h2 { color: #34495e; margin-top: 30px; border-left: 5px solid #d35400; padding-left: 12px; background: #fdf6f0; padding: 10px 12px; scroll-margin-top: 20px; cursor: pointer; }
 h3 { color: #555; margin-top: 20px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
 h4 { color: #666; margin-top: 15px; }
 .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
@@ -19,9 +19,33 @@ tr:nth-child(even) { background-color: #f9f9f9; }
 a { color: #3498db; }
 ul li { margin: 4px 0; }
 .tag { display: inline-block; background: #e8f4fd; color: #2980b9; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-right: 5px; }
+
+/* TOC */
+.toc { background: #f8f9fa; padding: 15px 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #e9ecef; }
+.toc strong { color: #2c3e50; display: block; margin-bottom: 10px; font-size: 16px; }
+.toc a { display: inline-block; padding: 4px 10px; margin: 3px 5px 3px 0; text-decoration: none; background: #fff; border: 1px solid #dee2e6; border-radius: 4px; font-size: 13px; transition: all 0.2s; }
+.toc a:hover { background: #d35400; color: #fff; border-color: #d35400; }
+
+/* 返回顶部 */
+.back-to-top { position: fixed; bottom: 25px; right: 25px; background: #d35400; color: #fff; padding: 10px 14px; border-radius: 50%; text-decoration: none; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); opacity: 0.8; transition: opacity 0.2s; z-index: 999; }
+.back-to-top:hover { opacity: 1; }
+
+/* 跨页链接 */
+.link-card { display: inline-block; padding: 6px 14px; background: #fdf6f0; color: #d35400; border-radius: 4px; text-decoration: none; margin: 3px 5px 3px 0; font-size: 13px; border: 1px solid #f0d5c0; }
+.link-card:hover { background: #d35400; color: #fff; }
+
+/* 表格横向滚动 */
+.table-scroll { overflow-x: auto; margin: 15px 0; border: 1px solid #ddd; border-radius: 4px; }
+.table-scroll table { margin: 0; min-width: 800px; }
+
+/* 返回首页 */
+.back-link { display: inline-block; margin-bottom: 20px; padding: 8px 16px; background: #3498db; color: white; border-radius: 4px; text-decoration: none; }
+.back-link:hover { background: #2980b9; }
 </style>
 </head>
 <body>
+
+<a href="../index.html" class="back-link">← Back to Home / 返回首页</a>
 
 <h1>🌰 Acorn 项目组专属知识库</h1>
 
@@ -34,9 +58,40 @@ ul li { margin: 4px 0; }
 
 <p><strong>最后更新：</strong>2026-06-22</p>
 
+<div class="toc">
+<strong>📑 快速导航</strong>
+<a href="#bundles">📦 Bundles</a>
+<a href="#timezone">⏰ 跨天时间</a>
+<a href="#referral">👥 Referral</a>
+<a href="#daily-rewards">🎁 Daily Rewards</a>
+<a href="#daily-pack">📦 Daily Package</a>
+<a href="#weekly">🔄 Weekly Sub</a>
+<a href="#cashback">💰 Cash Back</a>
+<a href="#lucky-flip">🎰 Lucky Flip</a>
+<a href="#buyin">📈 Buyin Rebate</a>
+<a href="#newbie">🛡️ Newbie Protection</a>
+<a href="#storage">🐷 Storage/Golden Pig</a>
+<a href="#bank">🏦 Money Bank</a>
+<a href="#jackpot">🎲 Jackpot</a>
+<a href="#mission">📋 Daily Mission</a>
+<a href="#challenge">🏆 Daily Challenge</a>
+<a href="#leaderboard">🏅 Leaderboard</a>
+<a href="#acorn-ios">📱 Acorn Fun iOS</a>
+<a href="#jackpot-go">🎰 Jackpot Go</a>
+<a href="#gleaming">✨ Gleaming</a>
+<a href="#acorn-web">🌐 Acorn Web</a>
+<a href="#limits">🚫 特殊限制</a>
+<a href="#account">👤 Account</a>
+<a href="#redemption">💰 Redemption</a>
+<a href="#purchase">💳 Purchase</a>
+<a href="#compensation">🎁 Compensation</a>
+<a href="#fairness">🎯 Fairness</a>
+<a href="#updates">📌 Updates</a>
+</div>
+
 <hr>
 
-<h2>📱 包含游戏 / Bundles</h2>
+<h2 id="bundles">📱 包含游戏 / Bundles</h2>
 
 <table>
 <thead><tr><th>系列</th><th>App ID / Bundle</th><th>备注</th></tr></thead>
@@ -74,14 +129,20 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>⏰ 服务器跨天时间</h2>
+<h2 id="timezone">⏰ 服务器跨天时间</h2>
 <div class="important">
 <strong>UTC-8 时区的 0 点</strong>（即 UTC+0 的 08:00）。如果没有特殊说明，活动时间按照此时区计算天数。
 </div>
 
+<div class="note">
+<strong>🔗 相关通用规则：</strong>
+<a href="../general/general-redemption.html" class="link-card">通用-Redemption</a>
+<a href="../general/general-states.html" class="link-card">States 规则</a>
+</div>
+
 <hr>
 
-<h2>👥 Referral Program 邀请好友</h2>
+<h2 id="referral">👥 Referral Program 邀请好友</h2>
 
 <h3>Acorn Fun Web (208)</h3>
 <ul>
@@ -111,7 +172,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🎁 Daily Rewards 每日登录奖励</h2>
+<h2 id="daily-rewards">🎁 Daily Rewards 每日登录奖励</h2>
 <ul>
 <li><strong>老版本：</strong>每天奖励都有 SC</li>
 <li><strong>新版本：</strong>只有第3天和第7天有 SC 奖励</li>
@@ -123,14 +184,14 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>📦 Daily Package 每日礼包</h2>
+<h2 id="daily-pack">📦 Daily Package 每日礼包</h2>
 <ul>
 <li>每天只有一次机会从三个 offer 中选一个购买</li>
 </ul>
 
 <hr>
 
-<h2>🔄 Weekly Subscription 周订阅</h2>
+<h2 id="weekly">🔄 Weekly Subscription 周订阅</h2>
 
 <h3>购买后奖励</h3>
 <ul>
@@ -171,7 +232,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>💰 Cash Back / Rewards Back 返现活动</h2>
+<h2 id="cashback">💰 Cash Back / Rewards Back 返现活动</h2>
 
 <h3>活动规则</h3>
 <ul>
@@ -210,7 +271,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🎰 Lucky Flip 翻牌活动</h2>
+<h2 id="lucky-flip">🎰 Lucky Flip 翻牌活动</h2>
 <ul>
 <li>登录游戏触发，<strong>不常驻</strong>界面，多次关闭后一定时间内不弹出</li>
 <li>先在十张卡片中<strong>免费翻出一张</strong>，显示道具内容</li>
@@ -231,7 +292,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>📈 Buyin Rebate 连续充值返利</h2>
+<h2 id="buyin">📈 Buyin Rebate 连续充值返利</h2>
 
 <h3>规则</h3>
 <ul>
@@ -274,7 +335,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🛡️ New Player Protection / Money Return 新人保护</h2>
+<h2 id="newbie">🛡️ New Player Protection / Money Return 新人保护</h2>
 <ul>
 <li>注册成功24h内，通过<strong>非充值方式</strong>获得SC时可累计SC奖励，最高不超过100</li>
 <li>奖励分两部分：
@@ -294,7 +355,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🐷 Storage Available / Golden PIG 存储罐</h2>
+<h2 id="storage">🐷 Storage Available / Golden PIG 存储罐</h2>
 <ul>
 <li>玩 slots 时，单次 spin 消耗 SC ≥ 0.5，每次会有一部分 SC 存入 storage</li>
 <li>次日可免费领取前一日 storage 中的 SC</li>
@@ -305,7 +366,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🏦 Money Bank 银行</h2>
+<h2 id="bank">🏦 Money Bank 银行</h2>
 <ul>
 <li>只有 <strong>Redeemable SC</strong> 可存入银行产生利息</li>
 <li>Principle = 存入银行的本金额度</li>
@@ -315,7 +376,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🎲 JACKPOT 活动</h2>
+<h2 id="jackpot">🎲 JACKPOT 活动</h2>
 
 <h3>Acorn & Winning Oasis / Acorn Fun Web</h3>
 <ul>
@@ -364,7 +425,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>📋 Daily Mission 每日任务</h2>
+<h2 id="mission">📋 Daily Mission 每日任务</h2>
 <ul>
 <li>Check In 任务需要玩家在 <strong>Daily Rewards 领取奖励后</strong>才会计数一次</li>
 <li>只登录游戏不领取 = 不计数</li>
@@ -372,7 +433,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🏆 Daily Challenges 每日挑战</h2>
+<h2 id="challenge">🏆 Daily Challenges 每日挑战</h2>
 
 <h3>页面结构</h3>
 <ul>
@@ -407,7 +468,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🏅 Winner Leaderboard / Hall of Fame 排行榜</h2>
+<h2 id="leaderboard">🏅 Winner Leaderboard / Hall of Fame 排行榜</h2>
 
 <h3>上榜条件</h3>
 <ul>
@@ -437,7 +498,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🎰 Acorn Fun IOS (365) 专属活动</h2>
+<h2 id="acorn-ios">🎰 Acorn Fun IOS (365) 专属活动</h2>
 
 <h3>Free Spin Feature（非 Bonus Buy）</h3>
 <ul>
@@ -492,7 +553,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🎰 Jackpot Go 专属活动</h2>
+<h2 id="jackpot-go">🎰 Jackpot Go 专属活动</h2>
 
 <h3>Awarded Feature（2025-08-05 / 2025-09-02更新）</h3>
 <ul>
@@ -559,7 +620,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>✨ Gleaming Games 专属活动</h2>
+<h2 id="gleaming">✨ Gleaming Games 专属活动</h2>
 
 <h3>LUCKY ROULETTE 幸运转盘</h3>
 <ul>
@@ -598,7 +659,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🌐 Acorn Fun Web 专属活动</h2>
+<h2 id="acorn-web">🌐 Acorn Fun Web 专属活动</h2>
 
 <h3>Buy From Winning Balance</h3>
 <ul>
@@ -659,7 +720,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🚫 特殊游戏限制（高提现比 / 低周转率）</h2>
+<h2 id="limits">🚫 特殊游戏限制（高提现比 / 低周转率）</h2>
 
 <div class="important">
 <strong>不可跟玩家说明被限制的原因！</strong>
@@ -699,7 +760,7 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>👤 Account 账号相关</h2>
+<h2 id="account">👤 Account 账号相关</h2>
 
 <h3>Profile Page 等级奖励</h3>
 <ul>
@@ -756,7 +817,14 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>💰 Redemption 提现特殊规则</h2>
+<h2 id="redemption">💰 Redemption 提现特殊规则</h2>
+
+<div class="info">
+<strong>🔗 相关通用规则：</strong>
+<a href="../general/general-redemption.html" class="link-card">通用-Redemption</a>
+<a href="../general/general-redemption.html#status-codes" class="link-card">状态码速查</a>
+<a href="../general/general-redemption.html#paypal-limits" class="link-card">PayPal 限额</a>
+</div>
 
 <h3>查看提现记录</h3>
 <ul>
@@ -806,7 +874,14 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>💳 Purchase 充值特殊规则</h2>
+<h2 id="purchase">💳 Purchase 充值特殊规则</h2>
+
+<div class="info">
+<strong>🔗 相关通用规则：</strong>
+<a href="../general/general-purchase.html" class="link-card">通用-Purchase</a>
+<a href="../general/general-purchase.html#failure" class="link-card">充值失败处理</a>
+<a href="../general/general-purchase.html#risk" class="link-card">风控规则</a>
+</div>
 
 <h3>ACH Pay 直充（271 Bundle）</h3>
 <ul>
@@ -839,8 +914,9 @@ ul li { margin: 4px 0; }
 
 <hr>
 
-<h2>🎁 Acorn Compensation 补偿标准</h2>
+<h2 id="compensation">🎁 Acorn Compensation 补偿标准</h2>
 
+<div class="table-scroll">
 <table>
 <thead>
 <tr><th>问题类型</th><th>对外分类</th><th>Unpaid</th><th>Paid 1-4</th><th>Paid 5-6</th><th>Paid 7-9</th><th>超R（Paid 10+）且剩余价值 > 6000/110000</th><th>站内信标题</th></tr>
@@ -920,6 +996,7 @@ ul li { margin: 4px 0; }
 </tr>
 </tbody>
 </table>
+</div>
 
 <h3>Free Play 话术</h3>
 <div class="note">
@@ -937,7 +1014,7 @@ Have a wonderful day!
 
 <hr>
 
-<h2>🎯 公平性投诉处理</h2>
+<h2 id="fairness">🎯 公平性投诉处理</h2>
 
 <h3>首次反馈</h3>
 <div class="note">
@@ -971,7 +1048,7 @@ Have a great day.
 
 <hr>
 
-<h2>📌 45744 更新：Online Rewards 下线</h2>
+<h2 id="updates">📌 45744 更新：Online Rewards 下线</h2>
 <ul>
 <li>Acorn 项目组所有马甲包 bundles 下架了 Online Rewards 在线奖励</li>
 <li>玩家询问时告知：活动下线了，后续会有更多精彩活动，敬请期待！</li>
@@ -985,6 +1062,8 @@ Have a great day.
 <hr>
 
 <p><em>本文档为 Acorn 项目组专属规则，通用规则请查阅 <a href="../general/general-purchase.html">通用-Purchase</a>、<a href="../general/general-redemption.html">通用-Redemption</a>、<a href="../general/general-kyc.html">通用-KYC</a> 等。</em></p>
+
+<a href="#" class="back-to-top" title="返回顶部">↑</a>
 
 </body>
 <!-- updated -->
