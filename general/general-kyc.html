@@ -1,146 +1,425 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>通用-KYC | 客服知识库</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1000px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
-        h1 { color: #2c3e50; border-bottom: 3px solid #9b59b6; padding-bottom: 15px; }
-        h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #9b59b6; padding-left: 12px; background: #f5eef8; padding: 10px 12px; }
-        h3 { color: #555; margin-top: 25px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
-        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
-        .warning { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px 15px; margin: 15px 0; }
-        .info { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 10px 15px; margin: 15px 0; }
-        table { border-collapse: collapse; width: 100%; margin: 15px 0; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #9b59b6; color: white; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
-        .back-link { display: inline-block; margin-bottom: 20px; padding: 8px 16px; background: #3498db; color: white; border-radius: 4px; text-decoration: none; }
-        .back-link:hover { background: #2980b9; }
-        a { color: #3498db; }
-        ul li { margin: 8px 0; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General KYC Knowledge Base</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #dbeafe;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --bg: #ffffff;
+      --bg-alt: #f9fafb;
+      --border: #e5e7eb;
+      --code-bg: #f3f4f6;
+      --warning: #f59e0b;
+      --warning-bg: #fffbeb;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --success: #16a34a;
+      --success-bg: #f0fdf4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg-alt);
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg);
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    .subtitle {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-light);
+      color: var(--primary);
+    }
+    h3 {
+      font-size: 1.15rem;
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: var(--text);
+    }
+    h4 {
+      font-size: 1rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    p, ul, ol {
+      margin-bottom: 1rem;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    thead th {
+      background: #4472C4;
+      color: #fff;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 600;
+    }
+    tbody td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr:nth-child(even) { background: #D9E2F3; }
+    tbody tr:nth-child(odd) { background: #fff; }
+    code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 0.9em;
+      color: var(--primary);
+    }
+    .highlight-box {
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      border-left: 4px solid;
+    }
+    .highlight-box.warning {
+      background: var(--warning-bg);
+      border-color: var(--warning);
+    }
+    .highlight-box.danger {
+      background: var(--danger-bg);
+      border-color: var(--danger);
+    }
+    .highlight-box.success {
+      background: var(--success-bg);
+      border-color: var(--success);
+    }
+    .highlight-box.info {
+      background: var(--primary-light);
+      border-color: var(--primary);
+    }
+    .toc {
+      background: var(--bg-alt);
+      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .toc h3 { margin-top: 0; font-size: 1.1rem; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin-bottom: 0.3rem; }
+    .toc a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .toc a:hover { text-decoration: underline; }
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-item strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--primary);
+    }
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2rem 0;
+    }
+    .lang-en { color: #374151; }
+    .lang-zh { color: #6b7280; font-size: 0.95em; }
+  </style>
 </head>
 <body>
+<div class="container">
 
-<a href="../index.html" class="back-link">← Back to Home / 返回首页</a>
+  <h1>General KYC Knowledge Base</h1>
+  <p class="subtitle">KYC 通用知识库 | Last Updated: 2026-06-23</p>
 
-<h1>🆔 通用-KYC 验证指南</h1>
+  <!-- TOC -->
+  <div class="toc">
+    <h3>Table of Contents / 目录</h3>
+    <ul>
+      <li><a href="#overview">1. Overview / 概述</a></li>
+      <li><a href="#kyc-flow">2. KYC Verification Flow / KYC 验证流程</a></li>
+      <li><a href="#document-requirements">3. Document Requirements / 证件要求</a></li>
+      <li><a href="#enhanced-kyc">4. Enhanced KYC / 高级验证</a></li>
+      <li><a href="#ssn-verification">5. SSN Verification / SSN 验证</a></li>
+      <li><a href="#rejection-reasons">6. Common Rejection Reasons / 常见拒绝原因</a></li>
+      <li><a href="#cs-guidelines">7. CS Guidelines / 客服规范</a></li>
+      <li><a href="#faq">8. FAQ / 常见问题</a></li>
+    </ul>
+  </div>
 
-<p><strong>最后更新：</strong>2026-06-23</p>
+  <!-- 1. Overview -->
+  <h2 id="overview">1. Overview / 概述</h2>
+  <p>
+    <span class="lang-en">KYC (Know Your Customer) verification is mandatory for all players before they can redeem real prizes. The process is handled through our verification partner <strong>Sumsub</strong>.</span><br>
+    <span class="lang-zh">KYC（了解您的客户）验证是所有玩家提现真实奖励前必须完成的步骤。验证流程由我们的合作伙伴 <strong>Sumsub</strong> 处理。</span>
+  </p>
+  <p>
+    <span class="lang-en">The standard KYC process consists of two stages: <strong>KYC-ID</strong> (Identity Verification) and <strong>KYC-POA</strong> (Proof of Address). In some cases, <strong>SSN Verification</strong> may be offered as an alternative to POA.</span><br>
+    <span class="lang-zh">标准 KYC 流程包含两个阶段：<strong>KYC-ID</strong>（身份验证）和 <strong>KYC-POA</strong>（地址证明）。在某些情况下，<strong>SSN 验证</strong>可作为 POA 的替代方式。</span>
+  </p>
+  <div class="highlight-box info">
+    <strong>Key Point / 要点：</strong> KYC review typically takes <strong>1-3 business days</strong>. / KYC 审核通常需要 <strong>1-3 个工作日</strong>。
+  </div>
 
-<div class="note">
-    <strong>适用范围：</strong>本文档为各项目组通用 KYC 规则。项目组如有特殊规则，请查阅对应项目组知识库。
+  <!-- 2. KYC Flow -->
+  <h2 id="kyc-flow">2. KYC Verification Flow / KYC 验证流程</h2>
+  <h3>Step 1: KYC-ID (Identity Verification) / 身份验证</h3>
+  <ul>
+    <li><span class="lang-en">Player submits a valid US government-issued ID document.</span> <span class="lang-zh">玩家提交有效的美国政府签发的身份证件。</span></li>
+    <li><span class="lang-en">Accepted documents: Driver's License, Passport, State ID Card.</span> <span class="lang-zh">接受的证件：驾照、护照、州身份证。</span></li>
+    <li><span class="lang-en"><strong>Non-US documents are NOT accepted.</strong></span> <span class="lang-zh"><strong>不接受非美国证件。</strong></span></li>
+  </ul>
+
+  <h3>Step 2: KYC-POA (Proof of Address) / 地址证明</h3>
+  <ul>
+    <li><span class="lang-en">Triggered after KYC-ID is approved.</span> <span class="lang-zh">在 KYC-ID 通过审核后触发。</span></li>
+    <li><span class="lang-en">Player uploads a proof of address document (utility bill, bank statement, etc.).</span> <span class="lang-zh">玩家上传地址证明文件（水电账单、银行对账单等）。</span></li>
+    <li><span class="lang-en">Alternatively, player may be offered <strong>SSN Verification</strong> as a substitute for POA.</span> <span class="lang-zh">或者，玩家可能会被提供 <strong>SSN 验证</strong> 作为 POA 的替代。</span></li>
+  </ul>
+
+  <h3>Status Definitions / 状态说明</h3>
+  <table>
+    <thead>
+      <tr><th>Status / 状态</th><th>Description / 说明</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pending</td><td>Document submitted, awaiting review. / 已提交，等待审核。</td></tr>
+      <tr><td>Approved</td><td>Verification passed. / 验证通过。</td></tr>
+      <tr><td>Rejected</td><td>Verification failed; player must resubmit. / 验证失败，需重新提交。</td></tr>
+      <tr><td>Action Required</td><td>Additional documents or information needed. / 需要补充文件或信息。</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 3. Document Requirements -->
+  <h2 id="document-requirements">3. Document Requirements / 证件要求</h2>
+  <h3>Identity Document (KYC-ID) / 身份证件</h3>
+  <ul>
+    <li><span class="lang-en">Must be a <strong>US government-issued</strong> photo ID.</span> <span class="lang-zh">必须是<strong>美国政府签发</strong>的带照片证件。</span></li>
+    <li><span class="lang-en">Document must be <strong>valid and not expired</strong>.</span> <span class="lang-zh">证件必须<strong>有效且未过期</strong>。</span></li>
+    <li><span class="lang-en">Photo must be <strong>clear and legible</strong> — all text, photo, and security features visible.</span> <span class="lang-zh">照片必须<strong>清晰可读</strong> — 所有文字、照片和安全特征可见。</span></li>
+    <li><span class="lang-en">No screenshots or photocopies; must be a photo of the physical document.</span> <span class="lang-zh">不接受截图或复印件；必须是实体证件的照片。</span></li>
+  </ul>
+
+  <h3>Address Document (KYC-POA) / 地址证明文件</h3>
+  <ul>
+    <li><span class="lang-en">Must show the <strong>same name</strong> as the identity document.</span> <span class="lang-zh">必须显示与身份证件<strong>相同的姓名</strong>。</span></li>
+    <li><span class="lang-en">Must be dated <strong>within the last 3 months</strong>.</span> <span class="lang-zh">日期必须在<strong>最近 3 个月内</strong>。</span></li>
+    <li><span class="lang-en">Accepted: Utility bill, bank statement, government letter, rental agreement.</span> <span class="lang-zh">接受：水电账单、银行对账单、政府信函、租房合同。</span></li>
+    <li><span class="lang-en">Not accepted: Mobile phone bills, insurance cards, handwritten documents.</span> <span class="lang-zh">不接受：手机账单、保险卡、手写文件。</span></li>
+  </ul>
+
+  <!-- 4. Enhanced KYC -->
+  <h2 id="enhanced-kyc">4. Enhanced KYC / 高级验证</h2>
+  <p>
+    <span class="lang-en">Enhanced KYC is triggered for high-risk accounts or large redemption requests.</span><br>
+    <span class="lang-zh">高级验证针对高风险账户或大额提现请求触发。</span>
+  </p>
+  <div class="highlight-box warning">
+    <strong>Critical Rule / 关键规则：</strong><br>
+    <span class="lang-en">For Enhanced KYC, the <strong>identity document and address document must be DIFFERENT</strong> documents. You cannot use the same document for both.</span><br>
+    <span class="lang-zh">高级验证要求<strong>身份文件和地址文件必须是不同的证件</strong>。不能对两者使用同一份文件。</span>
+  </div>
+  <ul>
+    <li><span class="lang-en">Example: Driver's License for ID + Bank Statement for POA = Valid.</span> <span class="lang-zh">示例：驾照作为 ID + 银行对账单作为 POA = 有效。</span></li>
+    <li><span class="lang-en">Example: Driver's License for ID + Driver's License for POA = Invalid.</span> <span class="lang-zh">示例：驾照作为 ID + 驾照作为 POA = 无效。</span></li>
+  </ul>
+
+  <!-- 5. SSN Verification -->
+  <h2 id="ssn-verification">5. SSN Verification / SSN 验证</h2>
+  <p>
+    <span class="lang-en"><strong>SSN verification has the same validity as POA.</strong> It is offered as an alternative method when KYC-POA is triggered.</span><br>
+    <span class="lang-zh"><strong>SSN 验证的效力等同于 POA。</strong>当 KYC-POA 触发时，可作为替代方式提供。</span>
+  </p>
+
+  <h3>Verification Levels / 验证等级</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Level Name</th>
+        <th>Type / 类型</th>
+        <th>Required Fields / 必填字段</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>xxx-ssn-level</code></td>
+        <td>Full SSN Verification / 完整 SSN 验证</td>
+        <td>SSN (123-45-6789) + Country</td>
+      </tr>
+      <tr>
+        <td><code>xxx-pssn-level</code></td>
+        <td>Partial SSN + Phone / 后四位 SSN + 手机验证</td>
+        <td>Date of birth + Country + Last 4 Digits of SSN + Phone verification code</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Flow / 流程</h3>
+  <ol>
+    <li><span class="lang-en">Player completes <strong>KYC-ID</strong> first.</span> <span class="lang-zh">玩家先完成 <strong>KYC-ID</strong>。</span></li>
+    <li><span class="lang-en">When <strong>KYC-POA</strong> is triggered, the player may be directed to SSN verification instead of traditional POA document upload.</span> <span class="lang-zh">当触发 <strong>KYC-POA</strong> 时，玩家可被引导至 SSN 验证，替代传统 POA 文件上传。</span></li>
+    <li><span class="lang-en">Player selects <strong>United States of America</strong> as country and enters the required SSN information.</span> <span class="lang-zh">玩家选择 <strong>美国</strong> 并输入所需 SSN 信息。</span></li>
+    <li><span class="lang-en">For <code>xxx-pssn-level</code>, after entering the last 4 digits of SSN, the player must complete phone verification by entering a valid US phone number to receive a verification code.</span> <span class="lang-zh">对于 <code>xxx-pssn-level</code>，输入 SSN 后四位后，必须输入有效的美国手机号接收验证码完成手机验证。</span></li>
+  </ol>
+
+  <h3>Rejection Handling / 拒绝处理</h3>
+  <p>
+    <span class="lang-en">If a player's SSN verification is <strong>finally rejected</strong>, two options are available:</span><br>
+    <span class="lang-zh">若玩家 SSN 验证被<strong>最终拒绝</strong>，有两种处理方式：</span>
+  </p>
+  <ul>
+    <li><span class="lang-en"><strong>Switch to POA</strong> — allow the player to upload traditional Proof of Address documents instead.</span> <span class="lang-zh"><strong>切换到 POA</strong> — 允许玩家改传传统地址证明文件。</span></li>
+    <li><span class="lang-en"><strong>Contact Customer Service</strong> — if the player is unable to proceed or has questions.</span> <span class="lang-zh"><strong>联系客服</strong> — 若玩家无法继续或有疑问。</span></li>
+  </ul>
+
+  <div class="highlight-box danger">
+    <strong>Privacy Warning / 隐私警告：</strong><br>
+    <span class="lang-en">CS agents must <strong>NEVER</strong> ask players to provide their full SSN via chat or email. All SSN data must be entered by the player directly in the Sumsub verification page.</span><br>
+    <span class="lang-zh">客服<strong>绝不能</strong>在聊天或邮件中要求玩家提供完整 SSN。所有 SSN 数据必须由玩家直接在 Sumsub 验证页面输入。</span>
+  </div>
+
+  <!-- 6. Common Rejection Reasons -->
+  <h2 id="rejection-reasons">6. Common Rejection Reasons / 常见拒绝原因</h2>
+  <table>
+    <thead>
+      <tr><th>Reason / 原因</th><th>Solution / 解决方案</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Photo unclear / 照片不清晰</td>
+        <td>Retake with good lighting, no glare. / 在光线充足、无反光的环境下重新拍摄。</td>
+      </tr>
+      <tr>
+        <td>Document expired / 证件过期</td>
+        <td>Submit a valid, unexpired document. / 提交有效、未过期的证件。</td>
+      </tr>
+      <tr>
+        <td>Info mismatch / 信息不匹配</td>
+        <td>Ensure name matches exactly across all documents. / 确保证件上的姓名完全一致。</td>
+      </tr>
+      <tr>
+        <td>Wrong document type / 证件类型错误</td>
+        <td>Use accepted US ID for KYC-ID; valid POA for KYC-POA. / KYC-ID 使用接受的美国证件；KYC-POA 使用有效地址证明。</td>
+      </tr>
+      <tr>
+        <td>Same doc for Enhanced KYC / 高级验证使用同一文件</td>
+        <td>Provide two different documents. / 提供两份不同的文件。</td>
+      </tr>
+      <tr>
+        <td>SSN verification failed / SSN 验证失败</td>
+        <td>Switch to POA document upload or contact CS. / 切换到 POA 文件上传或联系客服。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 7. CS Guidelines -->
+  <h2 id="cs-guidelines">7. CS Guidelines / 客服规范</h2>
+  <h3>Do's / 应该做</h3>
+  <ul>
+    <li><span class="lang-en">Guide players to the Sumsub verification page for all document submissions.</span> <span class="lang-zh">引导玩家前往 Sumsub 验证页面提交所有文件。</span></li>
+    <li><span class="lang-en">Explain the 1-3 business day review timeline clearly.</span> <span class="lang-zh">清楚说明 1-3 个工作日的审核时间。</span></li>
+    <li><span class="lang-en">For SSN issues, offer to switch to POA if SSN verification fails.</span> <span class="lang-zh">SSN 验证失败时，主动提供切换到 POA 的选项。</span></li>
+    <li><span class="lang-en">Verify player identity before discussing any KYC details.</span> <span class="lang-zh">在讨论任何 KYC 详情前，先验证玩家身份。</span></li>
+  </ul>
+
+  <h3>Don'ts / 不应该做</h3>
+  <ul>
+    <li><span class="lang-en">Do <strong>NOT</strong> ask players to send documents via chat/email.</span> <span class="lang-zh"><strong>不要</strong>要求玩家通过聊天/邮件发送文件。</span></li>
+    <li><span class="lang-en">Do <strong>NOT</strong> ask for full SSN, bank account numbers, or routing numbers.</span> <span class="lang-zh"><strong>不要</strong>索要完整 SSN、银行账号或路由号码。</span></li>
+    <li><span class="lang-en">Do <strong>NOT</strong> promise exact approval times.</span> <span class="lang-zh"><strong>不要</strong>承诺确切的通过时间。</span></li>
+    <li><span class="lang-en">Do <strong>NOT</strong> manually approve or bypass KYC for any player.</span> <span class="lang-zh"><strong>不要</strong>手动批准或绕过任何玩家的 KYC。</span></li>
+  </ul>
+
+  <h3>Standard Reply Template / 标准回复模板</h3>
+  <div class="highlight-box success">
+    <p>Hi player, thanks for your patience.</p>
+    <p>We understand your concern about the KYC verification. To complete your KYC, please follow the instructions on the verification page and submit the required documents. Our verification partner Sumsub will review your submission, which typically takes 1-3 business days.</p>
+    <p>Please ensure your documents are clear, valid, and match the information on your account. If you have any trouble uploading, feel free to let us know and we'll be happy to guide you.</p>
+    <p>Thanks for your understanding.</p>
+    <hr style="margin: 1rem 0; border: 0; border-top: 1px solid #ccc;">
+    <p>您好玩家，感谢您的耐心。</p>
+    <p>我们理解您对 KYC 验证的顾虑。请按照验证页面的指示提交所需文件，我们的验证合作伙伴 Sumsub 将进行审核，通常需要 1-3 个工作日。</p>
+    <p>请确保您的文件清晰、有效，并与账户信息一致。如果上传过程中遇到任何问题，请随时告诉我们，我们很乐意为您提供指导。</p>
+    <p>感谢您的理解。</p>
+  </div>
+
+  <!-- 8. FAQ -->
+  <h2 id="faq">8. FAQ / 常见问题</h2>
+
+  <div class="faq-item">
+    <strong>Q: Why do I need to complete KYC? / 为什么我需要完成 KYC？</strong>
+    <p><span class="lang-en">KYC is required by law to verify your identity before you can redeem real prizes. It helps ensure the security of your account and prevents fraud.</span></p>
+    <p><span class="lang-zh">KYC 是法律要求的，在您提现真实奖励前必须验证身份。这有助于确保账户安全并防止欺诈。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: I don't have a US ID. Can I use my passport from another country? / 我没有美国证件，可以用其他国家的护照吗？</strong>
+    <p><span class="lang-en">No. We only accept US government-issued IDs. Non-US documents are not accepted for KYC verification.</span></p>
+    <p><span class="lang-zh">不可以。我们只接受美国政府签发的证件。非美国证件不接受用于 KYC 验证。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: Why am I being asked for my SSN? / 为什么要求我提供 SSN？</strong>
+    <p><span class="lang-en">SSN verification is used as a secure alternative to Proof of Address (POA) to confirm your identity. It is processed securely by our verification partner Sumsub and has the same validity as POA.</span></p>
+    <p><span class="lang-zh">SSN 验证是作为地址证明（POA）的安全替代方式，用于确认您的身份。由我们的验证合作伙伴 Sumsub 安全处理，效力等同于 POA。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: My SSN verification failed. What should I do? / 我的 SSN 验证失败了，怎么办？</strong>
+    <p><span class="lang-en">If your SSN verification is finally rejected, we can switch you to the standard POA document upload instead. Please upload a valid proof of address document (utility bill, bank statement, etc.).</span></p>
+    <p><span class="lang-zh">如果您的 SSN 验证最终被拒绝，我们可以为您切换到标准的 POA 文件上传方式。请上传有效的地址证明文件（水电账单、银行对账单等）。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: I don't have a US phone number for pssn-level verification. / 我没有美国手机号来完成 pssn-level 验证。</strong>
+    <p><span class="lang-en">The phone verification step requires a valid US phone number. If you cannot complete this, please contact us and we will switch you to the POA document upload method or the full SSN verification method instead.</span></p>
+    <p><span class="lang-zh">手机验证步骤需要有效的美国手机号。如果您无法完成，请联系我们，我们将为您切换到 POA 文件上传方式或完整 SSN 验证方式。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: How long does KYC take? / KYC 需要多久？</strong>
+    <p><span class="lang-en">KYC review typically takes 1-3 business days. You will be notified once the review is complete.</span></p>
+    <p><span class="lang-zh">KYC 审核通常需要 1-3 个工作日。审核完成后您会收到通知。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: My KYC was rejected but I don't know why. / 我的 KYC 被拒绝了，但不知道原因。</strong>
+    <p><span class="lang-en">Please check the rejection reason shown on your verification page. Common reasons include unclear photos, expired documents, or information mismatch. If the reason is unclear, please send us a screenshot and we will assist you.</span></p>
+    <p><span class="lang-zh">请查看验证页面上显示的拒绝原因。常见原因包括照片不清晰、证件过期或信息不匹配。如果原因不清楚，请发送截图给我们，我们会协助您。</span></p>
+  </div>
+
+  <div class="divider"></div>
+  <p style="text-align: center; color: var(--text-light); font-size: 0.85rem;">
+    CS Knowledge Base — General KYC | sharonwennh.github.io/cs-knowledge-base
+  </p>
+
 </div>
-
-<hr>
-
-<h2>📌 KYC 触发条件</h2>
-<ul>
-    <li><strong>KYC-ID（身份验证）：</strong>玩家首次提现前必须完成</li>
-    <li><strong>KYC-POA（地址验证）：</strong>单笔提现金额 ≥ $2000 或累计提现达到一定金额时必须完成</li>
-    <li>KYC 审核通常需要 <strong>1-3 个工作日</strong></li>
-</ul>
-
-<hr>
-
-<h2>📝 证件要求</h2>
-
-<h3>可接受证件（仅限美国证件）</h3>
-<ul>
-    <li>✅ 美国驾照（Driver's License）</li>
-    <li>✅ 美国护照（Passport）</li>
-    <li>✅ 美国州身份证（State ID Card）</li>
-</ul>
-
-<div class="warning">
-    <strong>❌ 不接受非美国证件：</strong>包括中国身份证、其他国家护照/驾照等。如玩家提交非美国证件，需引导其提供美国证件或联系 T2 处理。
-</div>
-
-<h3>证件照片要求</h3>
-<ul>
-    <li>照片必须<strong>清晰、完整、无遮挡</strong></li>
-    <li>证件四角必须可见</li>
-    <li>不接受截图、复印件、打印件或经过编辑的图片</li>
-    <li>证件必须在<strong>有效期内</strong></li>
-</ul>
-
-<hr>
-
-<h2>🔍 SSN 验证</h2>
-<ul>
-    <li>部分玩家可能需要提供 SSN（社会安全号码）进行验证</li>
-    <li>如果玩家没有 SSN，可提交工单给 <strong>KYC T2</strong> 申请 KYC-POA 验证链接</li>
-    <li>SSN 验证失败时，引导玩家确认号码输入正确</li>
-</ul>
-
-<hr>
-
-<h2>📍 Enhanced KYC（增强验证）</h2>
-<ul>
-    <li>当系统要求 Enhanced KYC 时，玩家需要提交<strong>两份不同</strong>的文件：
-        <ul>
-            <li><strong>身份文件：</strong>驾照/护照/州身份证（证明身份）</li>
-            <li><strong>地址文件：</strong>水电账单、银行对账单、租赁合同等（证明地址）</li>
-        </ul>
-    </li>
-    <li><strong>关键要求：</strong>身份文件与地址文件<strong>必须为不同证件</strong>。例如：不能用驾照同时作为身份和地址证明。</li>
-</ul>
-
-<hr>
-
-<h2>❌ 常见 KYC 失败原因</h2>
-
-<table>
-    <tr><th>失败原因</th><th>处理方式</th></tr>
-    <tr><td>照片不清晰 / 模糊</td><td>引导玩家重新拍摄，确保光线充足、对焦清晰</td></tr>
-    <tr><td>证件信息不匹配</td><td>核实玩家注册姓名与证件姓名是否一致</td></tr>
-    <tr><td>证件过期</td><td>要求玩家提供在有效期内的证件</td></tr>
-    <tr><td>地址证明不符合要求</td><td>引导提供水电账单、银行对账单等官方文件</td></tr>
-    <tr><td>非美国证件</td><td>告知只接受美国证件，或提交工单给 T2</td></tr>
-    <tr><td>证件被遮挡 / 不完整</td><td>要求提供四角完整可见的证件照片</td></tr>
-</table>
-
-<hr>
-
-<h2>🔄 KYC 处理流程</h2>
-<ol>
-    <li>玩家提交 KYC 申请（上传证件照片）</li>
-    <li>系统或人工审核（1-3 个工作日）</li>
-    <li>审核结果：
-        <ul>
-            <li><strong>通过：</strong>玩家可正常提现</li>
-            <li><strong>拒绝：</strong>根据拒绝原因引导玩家重新提交或升级 T2</li>
-            <li><strong>要求补充：</strong>引导玩家补充所需材料</li>
-        </ul>
-    </li>
-</ol>
-
-<hr>
-
-<h2>📋 KYC Merge / 账号转移记录</h2>
-<ul>
-    <li><strong>Legends Games：</strong>显示为 "KYC Merge" 记录</li>
-    <li><strong>Acorn Games：</strong>显示为 "Account Transfer" 记录</li>
-    <li>当玩家咨询账号问题，发现账号有 KYC Merge / Account Transfer 记录时，按<strong>多账号流程</strong>处理</li>
-</ul>
-
-<hr>
-
-<h2>🔗 相关链接</h2>
-<ul>
-    <li>Sumsub KYC 审核面板操作指南：<a href="general-sumsub-kyc.html">通用-Sumsub KYC</a></li>
-    <li>CS-TAG 标签体系：<a href="general-cs-tag.html">通用-CS-TAG</a></li>
-</ul>
-
-<div class="info">
-    <strong>提示：</strong>本文档为通用 KYC 规则。各项目组可能有特殊 KYC 要求（如 Lavish Luck 的机器人自助开单实验），请同时查阅对应项目组知识库。
-</div>
-
-<hr>
-
-<p><em>本文档为通用 KYC 规则，项目组专属 KYC 规则请查阅对应项目组知识库。</em></p>
-
 </body>
 </html>
