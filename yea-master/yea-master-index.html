@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yea Master 项目组知识库</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1000px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
-        h1 { color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 15px; }
-        h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #e74c3c; padding-left: 12px; background: #fdf2f2; padding: 10px 12px; }
-        h3 { color: #555; margin-top: 25px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
-        h4 { color: #666; margin-top: 20px; }
-        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
-        .warning { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px 15px; margin: 15px 0; }
-        .info { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 10px 15px; margin: 15px 0; }
-        .success { background: #d4edda; border-left: 4px solid #28a745; padding: 10px 15px; margin: 15px 0; }
-        table { border-collapse: collapse; width: 100%; margin: 15px 0; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #e74c3c; color: white; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
-        .back-link { display: inline-block; margin-bottom: 20px; padding: 8px 16px; background: #3498db; color: white; border-radius: 4px; text-decoration: none; }
-        .back-link:hover { background: #2980b9; }
-        a { color: #3498db; }
-        ul li { margin: 8px 0; }
-        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
-        pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; border: 1px solid #e9ecef; }
-        .template { background: #f8f9fa; padding: 15px; border-left: 4px solid #6c757d; margin: 15px 0; font-style: italic; }
-        .img-placeholder { background: #e9ecef; border: 2px dashed #adb5bd; padding: 30px; text-align: center; color: #6c757d; margin: 15px 0; border-radius: 8px; }
-        .img-placeholder strong { color: #495057; }
-        .link-card { display: inline-block; padding: 12px 20px; background: #e74c3c; color: white; border-radius: 6px; text-decoration: none; margin: 5px 10px 5px 0; font-weight: bold; }
-        .link-card:hover { background: #c0392b; }
-        .toc { background: #f8f9fa; padding: 15px 20px; border-radius: 8px; margin: 20px 0; }
-        .toc a { display: block; padding: 5px 0; text-decoration: none; }
-        .toc a:hover { text-decoration: underline; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yea Master 项目组知识库</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1000px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+h1 { color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 15px; }
+h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #e74c3c; padding-left: 12px; background: #fdf2f2; padding: 10px 12px; scroll-margin-top: 20px; font-size: 20px; }
+h3 { color: #555; margin-top: 25px; border-bottom: 2px solid #eee; padding-bottom: 8px; font-size: 17px; }
+h4 { color: #666; margin-top: 20px; font-size: 15px; }
+.note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
+.warning { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px 15px; margin: 15px 0; }
+.info { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 10px 15px; margin: 15px 0; font-size: 14px; }
+.success { background: #d4edda; border-left: 4px solid #28a745; padding: 10px 15px; margin: 15px 0; }
+.important { background: #ffe6e6; border-left: 4px solid #e74c3c; padding: 10px 15px; margin: 15px 0; }
+table { border-collapse: collapse; width: 100%; margin: 15px 0; font-size: 14px; }
+th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; }
+th { background-color: #e74c3c; color: white; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+.back-link { display: inline-block; margin-bottom: 20px; padding: 8px 16px; background: #3498db; color: white; border-radius: 4px; text-decoration: none; }
+.back-link:hover { background: #2980b9; }
+a { color: #3498db; }
+ul li { margin: 6px 0; }
+ol li { margin: 6px 0; }
+code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; border: 1px solid #e9ecef; }
+.template { background: #f8f9fa; padding: 15px; border-left: 4px solid #6c757d; margin: 15px 0; font-style: italic; }
+.link-card { display: inline-block; padding: 6px 14px; background: #fdf2f2; color: #e74c3c; border-radius: 4px; text-decoration: none; margin: 3px 5px 3px 0; font-size: 13px; border: 1px solid #f5c6cb; }
+.link-card:hover { background: #e74c3c; color: #fff; }
+
+.toc { background: #f8f9fa; padding: 15px 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #e9ecef; }
+.toc strong { color: #2c3e50; display: block; margin-bottom: 10px; font-size: 16px; }
+.toc a { display: inline-block; padding: 4px 10px; margin: 3px 5px 3px 0; text-decoration: none; background: #fff; border: 1px solid #dee2e6; border-radius: 4px; font-size: 13px; transition: all 0.2s; }
+.toc a:hover { background: #e74c3c; color: #fff; border-color: #e74c3c; }
+
+.back-to-top { position: fixed; bottom: 25px; right: 25px; background: #e74c3c; color: #fff; padding: 10px 14px; border-radius: 50%; text-decoration: none; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); opacity: 0.8; transition: opacity 0.2s; z-index: 999; }
+.back-to-top:hover { opacity: 1; }
+
+.kb-img { max-width: 280px; border: 1px solid #ddd; border-radius: 8px; margin: 10px 0; display: block; }
+.kb-img-caption { font-size: 12px; color: #666; margin: 4px 0 15px; }
+
+.img-row { display: flex; gap: 15px; flex-wrap: wrap; align-items: flex-start; }
+.img-row .kb-img { max-width: 260px; }
+
+.todo-box { background: #f8f9fa; border: 1px dashed #adb5bd; padding: 12px 15px; margin: 15px 0; border-radius: 6px; color: #6c757d; font-size: 14px; }
+</style>
+<base target="_blank">
 </head>
 <body>
 
@@ -41,57 +55,255 @@
 <h1>🎯 Yea Master 项目组知识库</h1>
 
 <div class="note">
-    <strong>📌 使用规则：</strong><br>
-    1. 先查 <a href="../index.html">通用知识库</a> 了解基础规则<br>
-    2. 再查本文档了解 Yea Master 项目组 <strong>特殊规则</strong><br>
-    3. 两者冲突时，以本文档为准
+<strong>📌 使用规则：</strong><br>
+1. 先查 <a href="../index.html">通用知识库</a> 了解基础规则<br>
+2. 再查本文档了解 Yea Master 项目组 <strong>特殊规则</strong><br>
+3. 两者冲突时，以本文档为准
 </div>
 
 <p><strong>最后更新：</strong>2026-06-23</p>
 
 <div class="toc">
-    <strong>📑 目录导航</strong><br>
-    <a href="#games">📱 包含游戏</a>
-    <a href="#homepage">🏠 首页界面</a>
-    <a href="#slots">🎮 专属机台规则</a>
-    <a href="#piggy">🐷 金猪（Piggy Bank）</a>
-    <a href="#weekly">📅 周卡（Weekly Subscription）</a>
-    <a href="#daily">📋 每日任务（Daily Mission）</a>
-    <a href="#christmas">🎄 圣诞礼物（Christmas List）</a>
-    <a href="#gc-jp">🎰 GC 兑换 JP</a>
-    <a href="#dosh">🎮 Dosh Fever 专属规则</a>
-    <a href="#purchase">💳 Purchase 充值规则</a>
-    <a href="#redemption">💰 Redemption 提现规则</a>
-    <a href="#kyc">🆔 KYC 特殊规则</a>
-    <a href="#tag">🏷️ 专属 TAG</a>
+<strong>📑 目录导航</strong>
+<a href="#games">📱 包含游戏</a>
+<a href="#homepage">🏠 首页界面</a>
+<a href="#login">🔐 登录与密码</a>
+<a href="#ads">📺 广告活动</a>
+<a href="#charge-acts">🎁 充值活动</a>
+<a href="#slots">🎮 机台规则</a>
+<a href="#piggy">🐷 金猪</a>
+<a href="#weekly">📅 周卡</a>
+<a href="#daily">📋 每日任务</a>
+    <a href="#tournament">🏁 Tournament</a>
+<a href="#christmas">🎄 圣诞礼物</a>
+<a href="#gc-jp">🎰 GC 兑换 JP</a>
+    <a href="#club">🏆 CLUB</a>
+<a href="#dosh">🎮 Dosh Fever</a>
+<a href="#referral">👥 Cool Spin 邀请</a>
+<a href="#purchase">💳 充值</a>
+<a href="#redemption">💰 提现</a>
+<a href="#kyc">🆔 KYC</a>
+<a href="#bug">🐛 已知Bug</a>
+<a href="#tag">🏷️ TAG</a>
 </div>
 
 <hr>
 
 <h2 id="games">📱 包含游戏</h2>
 <ul>
-    <li>Yea Master GP & iOS</li>
-    <li>Cool Spin</li>
-    <li>Dosh Fever</li>
-    <li>Tactical Syndicate</li>
-    <li>Go Gold Minds</li>
-    <li>Caishen Rush Slots</li>
-    <li>Slootopia</li>
+<li>Yea Master GP & iOS</li>
+<li>Cool Spin</li>
+<li>Dosh Fever</li>
+<li>Tactical Syndicate</li>
+<li>Go Gold Minds</li>
+<li>Caishen Rush Slots</li>
+<li>Slootopia</li>
 </ul>
 
 <hr>
 
 <h2 id="homepage">🏠 首页界面</h2>
 
-<div class="img-placeholder">
-    <strong>【图片占位】</strong><br>
-    请在此处插入首页截图<br>
-    文件路径建议：yea-master/images/yea-master-homepage.png
-</div>
+<img src="images/yea-master-homepage.png" alt="Yea Master 首页" class="kb-img" style="max-width:100%;">
+<p class="kb-img-caption">▲ Yea Master 首页界面，点击右上角 "☰" 弹出菜单，可关闭音效、联系客服等</p>
 
 <ul>
-    <li>点击首页右上方的 <strong>"☰"</strong> 弹出菜单，可以关闭音效、联系客服等。</li>
-    <li>菜单包含：My Profile、Music、Sound、Support、Inbox、CLUB、Terms Of Service、Privacy Policy。</li>
+<li>点击首页右上方的 <strong>"☰"</strong> 弹出菜单，可以关闭音效、联系客服等。</li>
+<li>菜单包含：My Profile、Music、Sound、Support、Inbox、CLUB、Terms Of Service、Privacy Policy。</li>
+</ul>
+
+<hr>
+
+<h2 id="login">🔐 登录与密码</h2>
+
+<h3>忘记密码</h3>
+<img src="images/login-forgot-password.png" alt="忘记密码界面" class="kb-img">
+<p class="kb-img-caption">▲ 登录界面，点击 "Forgot your password?" 可重置密码</p>
+
+<ul>
+<li>玩家在登录界面点击 <strong>"Forgot your password?"</strong> 进行密码重置</li>
+<li>系统会发送重置链接到注册邮箱</li>
+<li>如果玩家未收到邮件，检查垃圾邮件箱</li>
+</ul>
+
+<hr>
+
+<h2 id="ads">📺 广告活动（Ad Activities）</h2>
+
+<div class="info">
+<strong>活动入口：</strong>游戏主界面左侧菜单栏<br>
+<strong>共同规则：</strong>所有广告活动均有时限限制，频繁点击会提示稍后重试
+</div>
+
+<h3>LUCKY LOTTERY 幸运刮卡</h3>
+<img src="images/lucky-lottery.png" alt="Lucky Lottery 界面" class="kb-img">
+<p class="kb-img-caption">▲ Lucky Lottery 界面，看广告后可刮卡获得随机 GC</p>
+
+<ul>
+<li>看广告获得随机 GC 奖励</li>
+<li>有机会翻倍（COLLECTED x2）</li>
+<li>一天最多 30 次</li>
+<li>倒计时结束后可再次参与</li>
+</ul>
+
+<h3>LUCKY ROULETTE 幸运转盘</h3>
+<img src="images/lucky-roulette.png" alt="Lucky Roulette 界面" class="kb-img">
+<p class="kb-img-caption">▲ Lucky Roulette 界面，看广告后获得转盘机会</p>
+
+<ul>
+<li>看广告获得转盘机会</li>
+<li>转盘奖励包含 GC、SC 等</li>
+<li>倍数区域影响最终奖励</li>
+</ul>
+
+<h3>LUCKY REWARDS 幸运奖励</h3>
+<img src="images/lucky-rewards.png" alt="Lucky Rewards 界面" class="kb-img">
+<p class="kb-img-caption">▲ Lucky Rewards 界面，前三次广告得 GC，第四次得 SC</p>
+
+<ul>
+<li>前三次广告获得 GC 奖励</li>
+<li>第四次广告获得 SC 奖励</li>
+<li>界面显示 "After 3 times can get SC rewards"</li>
+</ul>
+
+<h3>ONLINE REWARDS 在线奖励</h3>
+<img src="images/online-rewards.png" alt="Online Rewards 界面" class="kb-img">
+<p class="kb-img-caption">▲ Online Rewards 界面，看广告获 GC，有机会翻倍</p>
+
+<ul>
+<li>看广告获得 GC 奖励</li>
+<li>有机会翻倍（COLLECT x2）</li>
+<li>倒计时结束后可再次领取</li>
+<li>也有基础领取（JUST COLLECT x1）</li>
+</ul>
+
+<hr>
+
+<h2 id="charge-acts">🎁 充值活动（Purchase Activities）</h2>
+
+<h3>Welcome Offer 新人充值 Offer</h3>
+<img src="images/welcome-offer.png" alt="Welcome Offer 界面" class="kb-img">
+<p class="kb-img-caption">▲ Welcome Offer 界面，充 $3 得 81,000 GC + $4.5 SC + 450 VIP Points</p>
+
+<ul>
+<li>新人专属充值 offer</li>
+<li>充 $3 固定得 4.5 SC + 81,000 GC（具体数值以实际显示为准）</li>
+<li>显示 "270% More" 等优惠标签</li>
+<li>玩家不想充值可点击右上角 X 关闭</li>
+</ul>
+
+<h3>Daily Package 每日礼包（三选一）</h3>
+<img src="images/daily-package.png" alt="Daily Package 界面" class="kb-img">
+<p class="kb-img-caption">▲ Daily Package 三选一界面，每天只能选一档购买</p>
+
+<ul>
+<li>每天只有一次机会从三个 offer 中选一个购买</li>
+<li>三档分别为 $5 / $10 / $15（具体数值以实际显示为准）</li>
+<li>包含 SC + GC + VIP Points</li>
+<li>显示 "180% MORE" / "190% MORE" / "200% MORE" 等优惠标签</li>
+</ul>
+
+<h3>Deposit Rebate 连续充值返利（Purchase Rebate）</h3>
+<img src="images/deposit-rebate.png" alt="Deposit Rebate 界面" class="kb-img">
+<p class="kb-img-caption">▲ Deposit Rebate 界面，5天内充3天即可领取返利</p>
+
+<ul>
+<li>规定X天中，有Y天进行了 purchase 即完成任务</li>
+<li>任务有时限，必须在规定时限内完成，否则清零</li>
+<li>返利额度取决于<strong>每天最高购买项</strong></li>
+<li>必须在倒计时结束前领取奖励，否则活动刷新</li>
+</ul>
+
+<div class="warning">
+<strong>⚠️ 客服话术注意：</strong>回复玩家时只能使用 <strong>"Purchase Rebate"</strong>，不可使用 "Deposit Rebate"。
+</div>
+
+<h3 id="weekly">Weekly Subscription 周订阅</h3>
+<img src="images/weekly-subscription.png" alt="Weekly Subscription 界面" class="kb-img">
+<img src="images/dosh-fever-weekly-subscription.png" alt="Dosh Fever 周订阅界面" class="kb-img">
+<p class="kb-img-caption">▲ Dosh Fever 周订阅界面示例</p>
+<p class="kb-img-caption">▲ Weekly Subscription 界面，三档周卡可选</p>
+
+<ul>
+<li><strong>12-13 UTC 之后改成了 30、90、120 三档。</strong></li>
+<li>玩家充值后会立马获得一部分奖励（Take Rightaway），其他奖励从第二天开始玩家手动领取（Installment）。</li>
+<li>如果玩家没有手动领取，则会通过站内信（Subscription Rewards）在 <strong>UTC+8 16:00:00</strong> 发送。</li>
+<li>玩家点击左上角 "?" 可以获得详细介绍。</li>
+<li>玩家手动领取奖励，在流水里搜 "订阅领奖"。</li>
+<li>该活动会根据玩家的周转率调整，周转率低的玩家会对其隐藏活动。</li>
+</ul>
+
+<h4>周订阅规则说明</h4>
+<img src="images/weekly-subscription-rules.png" alt="周订阅规则弹窗" class="kb-img">
+<p class="kb-img-caption">▲ 周订阅规则弹窗：订阅期间每天可领取奖励，订阅期间可再次订阅</p>
+
+<ul>
+<li>After subscribing to the gift package, you can get some rewards immediately.</li>
+<li>During the duration of the rights, you can receive rewards again on the subscription interface every day.</li>
+<li>And you can subscribe again during the duration of the rights.</li>
+</ul>
+
+<h3>Lucky Flip 翻牌活动</h3>
+<img src="images/lucky-flip.png" alt="Lucky Flip 界面" class="kb-img">
+<p class="kb-img-caption">▲ Lucky Flip 界面，先翻牌再支付，所见即所得</p>
+
+<ul>
+<li>登录游戏触发，<strong>不常驻</strong>界面，多次关闭后一定时间内不弹出</li>
+<li>先在十张卡片中<strong>免费翻出一张</strong>，显示道具内容</li>
+<li>玩家需<strong>付费购买</strong>后才能获得翻出的道具</li>
+<li>付费后可再翻两张牌，内容自动加到账号</li>
+<li>未翻牌则系统随机选择两张牌内容发送</li>
+</ul>
+
+<h4>常见问题处理</h4>
+<ul>
+<li>玩家以为充值未到账 → 让玩家重启游戏触发活动，翻牌后领取</li>
+<li>玩家无法翻牌 → 重启游戏，仍不行则录屏+填工单</li>
+</ul>
+
+<div class="note">
+<strong>注意：</strong>涉及低周转率/高提现比玩家可能看不到活动。
+</div>
+
+<h3>Cash Back 返现活动</h3>
+<img src="images/cash-back.png" alt="Cash Back 界面" class="kb-img">
+<p class="kb-img-caption">▲ Cash Back 界面，购买后提现时减少 10% SC 扣除</p>
+
+<ul>
+<li>活动只出现<strong>一次</strong>，消失后不再出现</li>
+<li>档位：$1、$2、$10 随机出现（图片显示 $100 档）</li>
+<li>购买后立即获得对应 Unplayed SC</li>
+<li>同时获得 <strong>Redemption Reserve / Fund</strong>（不添加到账号余额）</li>
+<li>提现时减少 10% SC 扣除（从 fund 中补给）</li>
+</ul>
+
+<div class="warning">
+<strong>⚠️ 不可向玩家透露分组存在！</strong>玩家随机分成 A/B 组，A组每次提现 10% 从 fund 扣除，B组单笔≥100 返还 1% 或首次返还 10%。
+</div>
+
+<h3>Combo Flip 翻牌活动</h3>
+<img src="images/combo-flip-banner.png" alt="Combo Flip 横幅" class="kb-img">
+<p class="kb-img-caption">▲ Combo Flip 活动横幅：Win up to 20% of your purchase in here!</p>
+
+<img src="images/combo-flip-detail.png" alt="Combo Flip 详情" class="kb-img">
+<p class="kb-img-caption">▲ Combo Flip 翻牌详情界面，翻牌获得 SC 奖励或多翻牌机会</p>
+
+<ul>
+<li>每天前三笔商城充值触发翻牌</li>
+<li>奖励含 SC 或多翻牌机会（+1 Flip）</li>
+<li>翻牌获得随机 SC 奖励（如 1.0 SC、1.6 SC、2.0 SC）</li>
+<li>活动有时限，For next 3 purchase</li>
+</ul>
+
+<h3>节日活动示例（感恩节 Grateful To You）</h3>
+<img src="images/grateful-to-you.png" alt="感恩节活动界面" class="kb-img">
+<p class="kb-img-caption">▲ 感恩节活动界面示例，节日活动通常包含 SC + GC + VIP Points</p>
+
+<ul>
+<li>节日活动为限时活动，不同节日有不同的主题界面</li>
+<li>通常包含：SC 奖励 + GC 奖励 + VIP Points</li>
+<li>图片示例：$5 购买得 5 SC + 100,000 GC + 580 VIP Points</li>
+<li>节日活动规则以当期活动说明为准</li>
 </ul>
 
 <hr>
@@ -99,132 +311,333 @@
 <h2 id="slots">🎮 Yea Master - 专属机台规则</h2>
 
 <h3>部分 PK 机台</h3>
+<img src="images/pk-machine.png" alt="PK 机台示例" class="kb-img" style="max-width:100%;">
+<p class="kb-img-caption">▲ PK 机台示例：屏幕显示金额为当前会话所有玩家总赢取，左下角显示对手 ID，右下角显示玩家自己 ID</p>
+
 <div class="info">
-    <strong>规则说明：</strong>屏幕显示金额（如 1000 SC）反映当前游戏会话中所有玩家的总赢取金额。右下角显示玩家自己的 ID，左下角显示正在竞争的对手 ID。玩家可以看到其他玩家的赢取情况，但奖励会自动分发到各自玩家的账户中。
+<strong>规则说明：</strong>屏幕显示金额（如 1,000.00 SC）反映当前游戏会话中所有玩家的总赢取金额。右下角显示玩家自己的 ID，左下角显示正在竞争的对手 ID。玩家可以看到其他玩家的赢取情况，但奖励会自动分发到各自玩家的账户中。
 </div>
 
 <h3>21点 / Blackjack</h3>
+<img src="images/blackjack-bust.png" alt="21点 Bust 示意图" class="kb-img">
+<p class="kb-img-caption">▲ 21点机台，玩家总点数 21（3+5+2+9+2=21），显示 "NO WIN"，庄家和玩家均为 21 点时牌数少者获胜</p>
+
 <ul>
-    <li>如果庄家和玩家均为 21 点，<strong>牌数少者获胜</strong>。</li>
-    <li>如果总点数超过 21 点，视为 "bust"（爆牌），爆牌方立即输掉该回合。</li>
-    <li>如果玩家认为牌数有问题，请提交工单给支持团队进一步调查。</li>
+<li>如果庄家和玩家均为 21 点，<strong>牌数少者获胜</strong>。</li>
+<li>如果总点数超过 21 点，视为 "bust"（爆牌），爆牌方立即输掉该回合。</li>
+<li>如果玩家认为牌数有问题，请提交工单给支持团队进一步调查。</li>
 </ul>
 
-<h3>Ascent Charge Buff Alo</h3>
+<h3>Ascent Charge Buff Alo / Ascent Charge Buffalo</h3>
+<img src="images/ascent-charge-buffalo.png" alt="Ascent Charge Buffalo 机台" class="kb-img">
+<p class="kb-img-caption">▲ Ascent Charge Buffalo 机台界面，带有 CHARGE 和 SUPER CHARGE 功能</p>
+
+<img src="images/ascent-charge-rules.png" alt="Ascent Charge 规则" class="kb-img">
+<p class="kb-img-caption">▲ 规则说明：箭头可增加转轴高度，黄色箭头到达顶部时触发奖励</p>
+
+<img src="images/ascent-charge-game.png" alt="Ascent Charge 游戏界面" class="kb-img">
+<p class="kb-img-caption">▲ 游戏进行中：CHARGE 符号出现在转轴上，紫色箭头增加转轴高度</p>
+
 <div class="info">
-    <strong>规则说明：</strong>根据该机台规则，只有当黄色箭头到达顶部位置时才会触发奖励。黄色箭头随机到达顶部时，顶部窗口会打开并发放奖励。如果第四列已旋转到顶部但没有黄色箭头出现，则不会发放奖励。
+<strong>规则说明：</strong>
+<ul>
+<li>紫色箭头可以增加转轴上某个符号的高度</li>
+<li>黄色箭头到达顶部时，将转轴提升到 7 个符号的高度，同时获得上方的随机奖励</li>
+<li>只有当黄色箭头到达顶部位置时才会触发奖励</li>
+<li>如果第四列已旋转到顶部但没有黄色箭头出现，则不会发放奖励</li>
+</ul>
 </div>
 
-<h3>Diamonds 7/25</h3>
+<img src="images/scatter-free-rounds.png" alt="Scatter 奖励规则" class="kb-img">
+<p class="kb-img-caption">▲ Scatter 奖励：命中 3、4、5 个 Scatter 分别奖励 8、15、20 次免费回合</p>
+
+<ul>
+<li>命中 3、4 或 5 个 Scatter 符号，分别奖励 8、15 或 20 次免费回合（Free Rounds）</li>
+</ul>
+
+<h3>Diamonds 7 / Diamonds 25</h3>
+<img src="images/diamonds-7-25-machine.png" alt="Diamonds 7/25 机台" class="kb-img">
+<p class="kb-img-caption">▲ Diamonds 7/25 机台界面，最后一转轴带有 Win Multiplier 倍数</p>
+
 <div class="info">
-    <strong>赔付公式：</strong><code>win = bet × layout × multiplier</code><br>
-    <strong>计算示例：</strong><code>0.1 × 0.5 × 2 = 0.1</code>（不是 1）<br>
-    详细的赔付规则请参考机台右侧的 layout table。
+<strong>赔付公式：</strong><code>win = bet × layout × multiplier</code><br>
+<strong>计算示例：</strong><code>0.1 × 0.5 × 2 = 0.1</code>（不是 1）<br>
+详细的赔付规则请参考机台右侧的 Playable Layout。
 </div>
+
+<h4>Playable Layout 赔付表</h4>
+<div class="img-row">
+<img src="images/diamonds-layout-1.png" alt="赔付表上部" class="kb-img" style="max-width:260px;">
+<img src="images/diamonds-layout-2.png" alt="赔付表中部" class="kb-img" style="max-width:260px;">
+</div>
+<div class="img-row">
+<img src="images/diamonds-layout-3.png" alt="赔付表下部" class="kb-img" style="max-width:260px;">
+<img src="images/diamonds-playline.png" alt="赔付线" class="kb-img" style="max-width:260px;">
+</div>
+<p class="kb-img-caption">▲ Diamonds 7/25 完整赔付表（Playable Layout）和赔付线（Playline）</p>
+
+<ul>
+<li>最后一转轴（Last Reel）带有 Win Multiplier，倍数包括 2x、4x、10x、25x</li>
+<li>不同符号组合对应不同赔付倍率：
+  <ul>
+  <li>三个钻石 7（红色）：BET × 25</li>
+  <li>三个紫色 7：BET × 10</li>
+  <li>三个蓝色 7：BET × 7.5</li>
+  <li>三个 BAR：BET × 5</li>
+  <li>任意 2 个钻石 7：BET × 5</li>
+  <li>任意 3 个（钻石7+7+BAR）：BET × 3</li>
+  <li>三个 BAR（双行）：BET × 3</li>
+  <li>三个 BAR（单行）：BET × 2 / BET × 1</li>
+  <li>任意 3 个（紫色7+BAR）：BET × 1</li>
+  <li>任意 3 个（蓝色7+BAR）：BET × 1</li>
+  <li>任意 3 个（7+BAR）：BET × 0.5</li>
+  </ul>
+</li>
+<li>赔付线（Playline）：1 条固定赔付线（中间一行）</li>
+</ul>
+
+<hr>
 
 <hr>
 
 <h2 id="piggy">🐷 金猪（Piggy Bank）</h2>
 
-<div class="img-placeholder">
-    <strong>【图片占位】</strong><br>
-    请在此处插入金猪界面截图<br>
-    文件路径建议：yea-master/images/yea-master-piggy-bank.png
-</div>
+<img src="images/yea-master-piggy-bank.png" alt="金猪界面" class="kb-img" style="max-width:100%;">
+<p class="kb-img-caption">▲ 金猪界面，玩家可在此领取累计的游戏奖励</p>
 
 <ul>
-    <li>金猪的比例是 <strong>1 : 0.005</strong>。</li>
-    <li>玩家在机台内单次消耗 <strong>≥ 0.5 SC</strong> 且累计游戏时间 <strong>> 2 小时</strong>，才会被记录进去。</li>
-    <li>一般是 <strong>UTC-8 的 0 点</strong>领取前一天的奖励。</li>
-    <li>如果玩家没有领取，系统会通过站内信补偿玩家（除 yea master ios 以及 slotchampions 外）。</li>
-    <li>只有 coolspin 的玩家需要通过 KYC 才能领取金猪奖励，其他产品玩家直接手动领取。</li>
-    <li><strong>向下取整规则：</strong>如玩家单次下注是 1，金猪奖励 = 1 × 0.005 = 0.5 美分 → 向下取整为 0。下注额 ≥ 2 时，金猪才有奖励（因资产最多 2 位小数）。</li>
-    <li>如果玩家没有及时领取，则在 <strong>UTC+8 16:00:00</strong> 发送站内信补偿，但 coolspin 会一直累积。</li>
-    <li><strong>金猪 GC 奖励：</strong>1. 单次下注 ≥ 20 GC；2. 金猪 GC 奖励比例为 5%。</li>
-</ul>
-
-<hr>
-
-<h2 id="weekly">📅 周卡（Weekly Subscription）</h2>
-
-<div class="img-placeholder">
-    <strong>【图片占位】</strong><br>
-    请在此处插入周卡界面截图<br>
-    文件路径建议：yea-master/images/yea-master-weekly-subscription.png
-</div>
-
-<ul>
-    <li><strong>12-13 UTC 之后改成了 30、90、120 三档。</strong></li>
-    <li>玩家充值后会立马获得一部分奖励，其他奖励从第二天开始玩家手动领取。</li>
-    <li>如果玩家没有手动领取，则会通过站内信（Subscription Rewards）在 <strong>UTC+8 16:00:00</strong> 发送。</li>
-    <li>玩家点击左上角 "?" 可以获得详细介绍。</li>
-    <li>玩家手动领取奖励，在流水里搜 "订阅领奖"。</li>
-    <li>该活动会根据玩家的周转率调整，周转率低的玩家会对其隐藏活动。</li>
+<li>金猪的比例是 <strong>1 : 0.005</strong>。</li>
+<li>玩家在机台内单次消耗 <strong>≥ 0.5 SC</strong> 且累计游戏时间 <strong>&gt; 2 小时</strong>，才会被记录进去。</li>
+<li>一般是 <strong>UTC-8 的 0 点</strong> 领取前一天的奖励。</li>
+<li>如果玩家没有领取，系统会通过站内信补偿玩家（除 yea master ios 以及 slotchampions 外）。</li>
+<li>只有 coolspin 的玩家需要通过 KYC 才能领取金猪奖励，其他产品玩家直接手动领取。</li>
+<li><strong>向下取整规则：</strong>如玩家单次下注是 1，金猪奖励 = 1 × 0.005 = 0.5 美分 → 向下取整为 0。下注额 ≥ 2 时，金猪才有奖励（因资产最多 2 位小数）。</li>
+<li>如果玩家没有及时领取，则在 <strong>UTC+8 16:00:00</strong> 发送站内信补偿，但 coolspin 会一直累积。</li>
+<li><strong>金猪 GC 奖励：</strong>1. 单次下注 ≥ 20 GC；2. 金猪 GC 奖励比例为 5%。</li>
 </ul>
 
 <hr>
 
 <h2 id="daily">📋 每日任务（Daily Mission）</h2>
 
-<div class="img-placeholder">
-    <strong>【图片占位】</strong><br>
-    请在此处插入每日任务界面截图<br>
-    文件路径建议：yea-master/images/yea-master-daily-mission.png
-</div>
+<img src="images/yea-master-daily-mission.png" alt="每日任务界面" class="kb-img" style="max-width:100%;">
+<p class="kb-img-caption">▲ 每日任务界面，完成任务可获得 SC、GC 和 JP 奖励</p>
 
 <ul>
-    <li>此处 <strong>JP 就是 Jackpot 的道具</strong>。</li>
-    <li>每日任务包含：SPIN 次数、SC SPIN 次数、WIN 金额、SPEND 金额、PURCHASE 次数等。</li>
-    <li>完成任务可获得 SC、GC 和 JP 奖励。</li>
+<li>此处 <strong>JP 就是 Jackpot 的道具</strong>。</li>
+<li>每日任务包含：SPIN 次数、SC SPIN 次数、WIN 金额、SPEND 金额、PURCHASE 次数等。</li>
+<li>完成任务可获得 SC、GC 和 JP 奖励。</li>
 </ul>
 
 <hr>
 
-<h2 id="christmas">🎄 圣诞礼物（Christmas List / Santa's Gift）</h2>
+<h2 id="tournament">🏁 Tournament（锦标赛 / Race）</h2>
 
-<div class="img-placeholder">
-    <strong>【图片占位】</strong><br>
-    请在此处插入圣诞礼物界面截图<br>
-    文件路径建议：yea-master/images/yea-master-christmas-list.png
+<div class="info">
+<strong>入口：</strong>游戏主界面底部点击 <strong>RACE</strong> 按钮进入<br>
+<strong>类型：</strong>Multiplier Rush、Big Hit、Wager Race、Winning Rush 等多种锦标赛模式
 </div>
 
+<h3>RACE 入口</h3>
+<img src="images/tournament-race-entry.png" alt="RACE 入口" class="kb-img">
+<p class="kb-img-caption">▲ 游戏底部 RACE 按钮，点击进入锦标赛界面</p>
+
+<h3>锦标赛列表</h3>
+<img src="images/tournament-list.png" alt="锦标赛列表" class="kb-img">
+<p class="kb-img-caption">▲ 锦标赛列表界面，展示当前进行中的各类赛事</p>
+
+<h3>规则说明</h3>
+<img src="images/tournament-how-it-works.png" alt="锦标赛规则" class="kb-img">
+<p class="kb-img-caption">▲ Tournament 规则说明：How It Works</p>
+
+<h3>排名查看</h3>
+<img src="images/tournament-rank-check.png" alt="排名查看" class="kb-img">
+<p class="kb-img-caption">▲ 实时排名界面，玩家可查看自己在锦标赛中的当前排名</p>
+
+<h3>锦标赛类型</h3>
+
+<h4>Multiplier Rush</h4>
+<img src="images/tournament-multiplier-rush.png" alt="Multiplier Rush" class="kb-img">
+<p class="kb-img-caption">▲ Multiplier Rush 锦标赛：以倍数挑战为核心</p>
+
+<h4>Big Hit</h4>
+<img src="images/tournament-big-hit.png" alt="Big Hit" class="kb-img">
+<p class="kb-img-caption">▲ Big Hit 锦标赛：以单次大额赢取为目标</p>
+
+<h4>Wager Race</h4>
+<img src="images/tournament-wager-race.png" alt="Wager Race" class="kb-img">
+<p class="kb-img-caption">▲ Wager Race 锦标赛：以累计下注金额排名</p>
+
+<h4>Winning Rush</h4>
+<img src="images/tournament-winning-rush.png" alt="Winning Rush" class="kb-img">
+<p class="kb-img-caption">▲ Winning Rush 锦标赛：以累计赢取金额排名</p>
+
 <ul>
-    <li>玩家一共可以完成 <strong>12 个任务</strong>获得全部的奖励，<strong>不是必须完成 12 个</strong>。例如只完成 3 个任务，最后会获得 4.5 SC。</li>
-    <li><strong>任务类型：</strong>
-        <ol>
-            <li><strong>下注：</strong>分别在 3 个机台累计下注 200/500 SC。200 为一档，奖励 2 SC；500 为二档，奖励 4 SC。</li>
-            <li><strong>Jackpot：</strong>
-                <ul>
-                    <li>一档玩家：消耗 25 张 JP 奖励 1 SC，50 张 1.5 SC，75 张 2 SC</li>
-                    <li>二档玩家：消耗 50 张 1.5 SC，100 张 2 SC，150 张 3 SC</li>
-                </ul>
-            </li>
-            <li><strong>充值：</strong>
-                <ul>
-                    <li>一档玩家：充值两次订阅奖励 1 SC，完成一次 deposit rebate 奖励 2 SC，充值六次任意档位的 pick one 奖励 2.5 SC</li>
-                    <li>二档玩家：充值三次订阅奖励 1.5 SC，完成一次 deposit rebate 奖励 2 SC，充值 10 次任意档位的 pick one 奖励 4 SC</li>
-                </ul>
-            </li>
-            <li><strong>提现：</strong>进入一次排行榜前 100，奖励 1 SC（进入后掉出也算）。</li>
-            <li><strong>Rewards 小游戏：</strong>一档玩家累计花费 50 SC 奖励 2 SC，二档花费 100 SC 奖励 4 SC。</li>
-            <li><strong>Finish Christmas List：</strong>完成以上 12 个任务后，一档玩家奖励 5 SC，二档玩家奖励 10 SC。</li>
-        </ol>
-    </li>
+<li>点击底部 <strong>RACE</strong> 参加锦标赛，实时排名。</li>
+<li>不同锦标赛类型有不同的排名规则（倍数、单次赢取、累计下注、累计赢取等）。</li>
+<li>奖励根据最终排名发放，通常包括 SC、GC 等。</li>
+<li>锦标赛为限时活动，具体规则以当期活动说明为准。</li>
+</ul>
+
+<h2 id="christmas">🎄 圣诞礼物（Christmas List / Santa's Gift）</h2>
+
+<img src="images/yea-master-christmas-list.png" alt="Christmas List 界面" class="kb-img" style="max-width:100%;">
+<p class="kb-img-caption">▲ Christmas List 界面：玩家完成 3/12 任务，获得 4.5 SC 奖励</p>
+
+<ul>
+<li>玩家一共可以完成 <strong>12 个任务</strong>获得全部的奖励，<strong>不是必须完成 12 个</strong>。例如只完成 3 个任务，最后会获得 4.5 SC。</li>
+<li><strong>任务类型：</strong>
+<ol>
+<li><strong>下注：</strong>分别在 3 个机台累计下注 200/500 SC。200 为一档，奖励 2 SC；500 为二档，奖励 4 SC。</li>
+<li><strong>Jackpot：</strong>
+<ul>
+<li>一档玩家：消耗 25 张 JP 奖励 1 SC，50 张 1.5 SC，75 张 2 SC</li>
+<li>二档玩家：消耗 50 张 1.5 SC，100 张 2 SC，150 张 3 SC</li>
+</ul>
+</li>
+<li><strong>充值：</strong>
+<ul>
+<li>一档玩家：充值两次订阅奖励 1 SC，完成一次 deposit rebate 奖励 2 SC，充值六次任意档位的 pick one 奖励 2.5 SC</li>
+<li>二档玩家：充值三次订阅奖励 1.5 SC，完成一次 deposit rebate 奖励 2 SC，充值 10 次任意档位的 pick one 奖励 4 SC</li>
+</ul>
+</li>
+<li><strong>提现：</strong>进入一次排行榜前 100，奖励 1 SC（进入后掉出也算）。</li>
+<li><strong>Rewards 小游戏：</strong>一档玩家累计花费 50 SC 奖励 2 SC，二档花费 100 SC 奖励 4 SC。</li>
+<li><strong>Finish Christmas List：</strong>完成以上 12 个任务后，一档玩家奖励 5 SC，二档玩家奖励 10 SC。</li>
+</ol>
+</li>
 </ul>
 
 <hr>
 
 <h2 id="gc-jp">🎰 GC 兑换 JP</h2>
 
-<div class="img-placeholder">
-    <strong>【图片占位】</strong><br>
-    请在此处插入 GC 兑换 JP 界面截图<br>
-    文件路径建议：yea-master/images/yea-master-gc-exchange-jp.png
-</div>
+<img src="images/gc-exchange-jp.png" alt="GC 兑换 JP 界面" class="kb-img">
+<p class="kb-img-caption">▲ Jackpot Special Offer 界面，1,000,000 GC 可兑换 1 JP</p>
 
 <ul>
-    <li><strong>1,000,000 GC 可兑换 1 JP（Jackpot Ticket）</strong>。</li>
-    <li>在 Jackpot Special Offer 界面进行兑换。</li>
+<li><strong>1,000,000 GC 可兑换 1 JP（Jackpot Ticket）</strong>。</li>
+<li>在 Jackpot Special Offer 界面进行兑换。</li>
+<li>当前余额显示为 Current Balance，输入兑换数量后点击 EXCHANGE。</li>
+</ul>
+
+<h3>Jackpot 游戏进行中</h3>
+<img src="images/jackpot-game.png" alt="Jackpot 游戏界面" class="kb-img">
+<h3>Grand Jackpot 活动</h3>
+<img src="images/grand-jackpot.png" alt="Grand Jackpot 活动界面" class="kb-img">
+<p class="kb-img-caption">▲ Grand Jackpot 全局返利活动界面，首页 TASK 按钮进入任务界面</p>
+
+<ul>
+<li>完成每日/每周任务获得 GC/SC/Jackpot Tickets。</li>
+<li>消耗 Tickets 进入 Jackpot 机台转动，每次至少 1 个 Ticket，可调底分。</li>
+<li>产出特殊玩法机会/SC/GC/VIP 经验。</li>
+<li>获得 3 个 hot 7 bonus 进入 jackpot bonus game，开出三个 MINI 获对应奖励。</li>
+</ul>
+
+<h3>JP 道具说明</h3>
+<img src="images/jp-item.png" alt="JP 道具" class="kb-img">
+<p class="kb-img-caption">▲ Jackpot Ticket（JP）道具，用于 Jackpot 机台游戏</p>
+<p class="kb-img-caption">▲ Jackpot 游戏进行中，命中宝箱后进入翻帽子环节</p>
+
+<ul>
+<li>消耗 JP 进行 spin，每次消耗量可调节：1、5、10、20、50</li>
+<li>消耗越多，奖励越丰富</li>
+<li>GOALS = Jackpot 的 paytable</li>
+<li>Paytable 中的 JACKPOT 是总奖池的一部分，不是全部</li>
+<li>777 和 77 对应奖励 = free spin（格式 A×B，B=次数，A=每次相当于多少SC消耗量）</li>
+<li>三个四叶草对应奖励 = VIP Points</li>
+<li>命中 3 颗松鼠脑袋 / 3 Super Win Jackpot 后进入翻帽子环节</li>
+<li>共 9 顶帽子，<strong>必中</strong>（Mini、Minor、Major、Grand）</li>
+<li>翻到 3 个相同奖池后系统自动判定中奖</li>
+</ul>
+
+<hr>
+
+
+<h2 id="club">🏆 CLUB 俱乐部</h2>
+
+<div class="info">
+<strong>入口：</strong>游戏菜单栏 → CLUB 按钮<br>
+<strong>Weekly Bonus：</strong>每周一 UTC-8 0 点发放<br>
+<strong>等级有效期：</strong>每个 Club level 维持一周，新版本发布后一周不降级
+</div>
+
+<h3>CLUB 入口</h3>
+<img src="images/club-entry.png" alt="CLUB 入口" class="kb-img">
+<p class="kb-img-caption">▲ Cool Spin 菜单栏中的 CLUB 入口，点击可进入俱乐部页面</p>
+
+<h3>CLUB 页面概览</h3>
+<img src="images/club-overview.png" alt="CLUB 页面概览" class="kb-img" style="max-width:100%;">
+<p class="kb-img-caption">▲ CLUB 页面概览，包含等级进度、升级所需经验、维持所需经验等</p>
+
+<h3>等级与规则说明</h3>
+<img src="images/club-info-button.png" alt="CLUB 信息按钮" class="kb-img">
+<p class="kb-img-caption">▲ CLUB 页面右上角 "i" 按钮，点击可查看详细规则</p>
+
+<img src="images/club-how-it-works.png" alt="CLUB How It Works" class="kb-img">
+<p class="kb-img-caption">▲ How It Works 说明：Make any purchase / Play SC game → Get CLUB points</p>
+
+<h3>升级与降级规则</h3>
+<img src="images/club-level-up-down.png" alt="CLUB 升级降级示意图" class="kb-img">
+<p class="kb-img-caption">▲ 升级与降级示意图：Level Upgrade Not Downgrade（新版本发布后一周不降级）</p>
+
+<img src="images/club-level-up-popup.png" alt="CLUB 升级弹窗" class="kb-img">
+<p class="kb-img-caption">▲ CLUB Level Up 弹窗，升级后解锁专属礼包和更高奖励</p>
+
+<h3>经验值获取方式</h3>
+<ul>
+<li><strong>a. 通过充值获得经验值：</strong>
+  <ul>
+  <li>玩家每次充值获得的 SC 数量 × 100 = 获得的积分/经验值</li>
+  <li>若玩家购买的是纯金币（不含 SC），则不计入经验值</li>
+  <li>周卡属于持续性发放奖励，但经验值的计算仅基于玩家 immediate rewards 的 SC 数量，additional rewards 不计算</li>
+  </ul>
+</li>
+<li><strong>b. 通过 SC 游戏下注获得经验值：</strong>
+  <ul>
+  <li>玩家每次使用 SC 进行游戏下注时，将按下注的 SC 数量 × 40 = 获得的经验值</li>
+  <li>系统端保留 1 位小数，并在计算后直接舍弃小数部分</li>
+  <li>客户端展示为整数，与实际服务端计算结果保持一致</li>
+  </ul>
+</li>
+<li><strong>c. Jackpot 第一轮能获得经验值</strong></li>
+</ul>
+
+<h3>升级条件</h3>
+<ul>
+<li>VIP 升级 = 在当前 VIP 等级获得的 VIP 经验 >= 升级所需经验</li>
+<li>其他升级降级规则与 Acorn 的 Club 相同</li>
+<li>游戏每次发布新版本后的一周，不会降级</li>
+<li>玩家会在 club 页面看到文字提示</li>
+<li>维持所需经验提示文字：<em>To stay at this level, you need to reach at least xxx points</em></li>
+</ul>
+
+<h3>VIP 等级表</h3>
+<img src="images/club-vip-table.png" alt="VIP 等级表" class="kb-img" style="max-width:100%;">
+<p class="kb-img-caption">▲ VIP 等级表：从 Rookie 到 Immortal 共 10 级</p>
+
+<table>
+<thead><tr><th>VIP 等级</th><th>等级名称</th><th>升级所需经验</th><th>维持所需经验</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Rookie</td><td>6,800</td><td>0</td></tr>
+<tr><td>2</td><td>Skilled</td><td>15,200</td><td>2,800</td></tr>
+<tr><td>3</td><td>Expert</td><td>42,100</td><td>6,500</td></tr>
+<tr><td>4</td><td>Elite</td><td>124,000</td><td>20,000</td></tr>
+<tr><td>5</td><td>Fighter</td><td>548,000</td><td>70,000</td></tr>
+<tr><td>6</td><td>Hero</td><td>2,760,000</td><td>240,000</td></tr>
+<tr><td>7</td><td>Master</td><td>7,500,000</td><td>880,000</td></tr>
+<tr><td>8</td><td>Legend</td><td>23,400,000</td><td>1,440,000</td></tr>
+<tr><td>9</td><td>Supreme</td><td>54,600,000</td><td>2,160,000</td></tr>
+<tr><td>10</td><td>Immortal</td><td>0</td><td>3,000,000</td></tr>
+</tbody>
+</table>
+
+<h3>各等级权益</h3>
+<ul>
+<li>每个等级解锁对应 VIP 专属礼包（每周可购买各 1 次）</li>
+<li>高等级享有更高比例充值返利</li>
+<li>部分等级开放 Personal Manager 和 Quick reward access</li>
+<li>等级越高，Storage Available（金猪）容量越大</li>
 </ul>
 
 <hr>
@@ -233,73 +646,166 @@
 
 <h3>产品信息</h3>
 <table>
-    <tr><th>包名</th><th>Bundle ID</th><th>App ID</th></tr>
-    <tr><td>Dosh Fever APK</td><td>com.apd0shal.ad3c</td><td>231</td></tr>
-    <tr><td>Dosh Fever GP</td><td>com.by.mbq.pifg</td><td>-</td></tr>
-    <tr><td>Dosh Fever SM</td><td>com.d0samer.h1sh</td><td>210</td></tr>
+<tr><th>包名</th><th>Bundle ID</th><th>App ID</th></tr>
+<tr><td>Dosh Fever APK</td><td>com.apd0shal.ad3c</td><td>231</td></tr>
+<tr><td>Dosh Fever GP</td><td>com.by.mbq.pifg</td><td>-</td></tr>
+<tr><td>Dosh Fever SM</td><td>com.d0samer.h1sh</td><td>210</td></tr>
 </table>
 
 <ul>
-    <li>Dosh Fever 与 <strong>Treasure Sorcery</strong> 属于同一个服务器、同一个 brand。</li>
-    <li>Dosh Fever / Treasure Sorcery / Chain Mania Arena 共享同一个操作后台。</li>
+<li>Dosh Fever 与 <strong>Treasure Sorcery</strong> 属于同一个服务器、同一个 brand。</li>
+<li>Dosh Fever / Treasure Sorcery / Chain Mania Arena 共享同一个操作后台。</li>
 </ul>
 
-<h3>AMOE（替代参与方式）</h3>
+<h3>AMOE（替代参与方式 / Postal Request Code）</h3>
+<img src="images/amoe-kyc-notice.png" alt="AMOE KYC 未通过提示" class="kb-img">
+<p class="kb-img-caption">▲ AMOE 活动界面，KYC 未通过时弹出安全验证提示</p>
+
 <ul>
-    <li>针对 Dosh Fever & Treasure Sorcery 的活动。</li>
-    <li>游戏内提供 Post Request Code 入口，玩家点击按钮跳转到 post 界面。</li>
-    <li>玩家如果 KYC 过了，点击界面中的按钮会获得一个验证码，把验证码写在明信片上再寄给我们合作商，合作商校验以后再发给我们，我们就会给他发一些 SC 奖励。</li>
-    <li>所以点按钮的时候会判断他有没有过 KYC，如果没有过会出现 notice 提示。</li>
-    <li>（背后显示 Spin Sorcery 是因为 Dosh Fever 和 Treasure Sorcery 他们的 Brand 是 SS，所以点了按钮后会跳到 Spin Sorcery 页面）</li>
+<li>针对 Dosh Fever & Treasure Sorcery 的活动。</li>
+<li>游戏内提供 Post Request Code 入口，玩家点击按钮跳转到 post 界面。</li>
+<li>玩家如果 KYC 过了，点击界面中的按钮会获得一个验证码，把验证码写在明信片上再寄给我们合作商，合作商校验以后再发给我们，我们就会给他发一些 SC 奖励。</li>
+<li>所以点按钮的时候会判断他有没有过 KYC，如果没有过会出现 notice 提示：<br>
+<strong>"This Account has not passed the security verification. Please pass the in-game security verification first."</strong></li>
+<li>（背后显示 Spin Sorcery 是因为 Dosh Fever 和 Treasure Sorcery 他们的 Brand 是 SS，所以点了按钮后会跳到 Spin Sorcery 页面）</li>
 </ul>
 
 <h3>KYC 奖励</h3>
 <ul>
-    <li>Dosh Fever（geo）：<strong>0.3 Unplayed SC</strong>，通过站内信发放。</li>
+<li>Dosh Fever（geo）：<strong>0.3 Unplayed SC</strong>，通过站内信发放。</li>
 </ul>
 
 <h3>用户等级提升奖励</h3>
 <ul>
-    <li>每十级会有一次 GC 奖励（10000-30000 GC）。</li>
-    <li><strong>Dosh Fever APK 该奖励已下线。</strong></li>
+<li>每十级会有一次 GC 奖励（10000-30000 GC）。</li>
+<li><strong>Dosh Fever APK 该奖励已下线。</strong></li>
 </ul>
+
+<hr>
+
+<h2 id="referral">👥 Cool Spin 邀请功能（Referral Function）</h2>
+
+<div class="info">
+<strong>适用范围：</strong>Cool Spin 系列产品<br>
+<strong>通用规则：</strong>所有玩家均可邀请新玩家
+</div>
+
+<h3>邀请方式</h3>
+
+<h4>1️⃣ Invitation Link 邀请链接</h4>
+<ul>
+<li>分享邀请链接给他人</li>
+<li>被邀请人点击链接 → 前往 App Store → 下载应用 → 注册新账号</li>
+<li>注册完成后邀请绑定<strong>自动建立</strong></li>
+</ul>
+
+<h4>2️⃣ Invitation QR Code 邀请二维码</h4>
+<ul>
+<li>与邀请链接机制相同</li>
+<li>被邀请人扫描二维码 → 跳转 App Store → 下载应用 → 注册</li>
+<li>注册完成后邀请绑定<strong>自动建立</strong></li>
+</ul>
+
+<h4>3️⃣ Invitation Code 邀请码</h4>
+<ul>
+<li>被邀请人可先自行注册</li>
+<li>注册后在游戏内点击 <strong>Bind</strong> 按钮，输入邀请人的邀请码</li>
+<li>注册后<strong>手动建立</strong>绑定关系</li>
+</ul>
+
+<h3>邀请界面</h3>
+<div class="img-row">
+<img src="images/referral-how-it-works.png" alt="邀请功能 How It Works" class="kb-img">
+<img src="images/referral-invitation-code.png" alt="邀请码界面" class="kb-img">
+</div>
+<p class="kb-img-caption">▲ 邀请功能界面：How It Works 说明页（左）/ 邀请码与绑定页面（右）</p>
+
+<img src="images/referral-history.png" alt="邀请好友历史" class="kb-img">
+<p class="kb-img-caption">▲ 邀请好友历史记录，显示已邀请人数、达标人数及奖励状态</p>
+
+<h3>邀请奖励规则</h3>
+<table>
+<tr><th>被邀请人累计购买金额</th><th>邀请人奖励</th></tr>
+<tr><td>$10</td><td>5 SC</td></tr>
+<tr><td>$50</td><td>10 SC</td></tr>
+<tr><td>$100</td><td>15 SC</td></tr>
+</table>
+
+<h3>奖励发放方式</h3>
+<ul>
+<li>邀请奖励通过<strong>站内信</strong>发放</li>
+<li>被邀请人达成购买目标后，邀请人收到站内信：</li>
+</ul>
+
+<div class="template">
+<strong>站内信标题：</strong>You've Earned a Reward from Your Invite!<br><br>
+<strong>站内信内容：</strong><br>
+Your invited friend [User Encrypted ID] has reached the required purchase goal!<br>
+As a result, you've received a reward of [Reward Amount] SC.
+</div>
+
+<h3>未收到邀请奖励的常见原因</h3>
+<ol>
+<li><strong>无有效邀请绑定</strong>：被邀请人未通过链接/二维码/邀请码正确绑定</li>
+<li><strong>被邀请人未达 $10 购买</strong>：必须累计购买超过 $10 才触发奖励</li>
+</ol>
+
+<h3>投诉处理流程（Tickets SOP）</h3>
+<ol>
+<li>后台过滤邀请奖励流水记录</li>
+<li><strong>如果有奖励记录：</strong>向玩家清楚解释 game flow 明细</li>
+<li><strong>如果没有奖励记录：</strong>礼貌解释邀请规则、奖励条件和发放方式</li>
+<li><strong>如果玩家坚持已满足条件：</strong>
+<ul>
+<li>收集被邀请人的 Player ID / 注册邮箱</li>
+<li>提交工单给二线进一步核实</li>
+</ul>
+</li>
+</ol>
 
 <hr>
 
 <h2 id="purchase">💳 Yea Master - Purchase 特殊规则</h2>
 
 <div class="success">
-    <strong>📋 充值项对照表：</strong><br>
-    <a href="yea-master-charge-table.html" class="link-card">Yea Master 系列充值项对照表</a>
-    <a href="dosh-fever-charge-table.html" class="link-card">Dosh Fever 系列充值项对照表</a>
+<strong>📋 充值项对照表：</strong>
+<a href="yea-master-charge-table.html" class="link-card">Yea Master 系列充值项对照表</a>
+<a href="dosh-fever-charge-table.html" class="link-card">Dosh Fever 系列充值项对照表</a>
+</div>
+
+<div class="info">
+<strong>🔗 相关通用规则：</strong>
+<a href="../general/general-purchase.html" class="link-card">通用-Purchase</a>
+<a href="../general/general-purchase.html#failure" class="link-card">充值失败处理</a>
+<a href="../general/general-purchase.html#risk" class="link-card">风控规则</a>
 </div>
 
 <h3>充值渠道</h3>
 <table>
-    <tr><th>渠道</th><th>状态</th><th>备注</th></tr>
-    <tr><td>PayPal</td><td>✅ 可用</td><td>多个供应商</td></tr>
-    <tr><td>Credit Card</td><td>✅ 可用</td><td>直冲 + Apple Pay</td></tr>
-    <tr><td>Debit Card</td><td>✅ 可用</td><td>部分借记卡可直充</td></tr>
-    <tr><td>Apple Pay</td><td>✅ 可用</td><td>不支持 Apple Cash</td></tr>
-    <tr><td>ACH Pay</td><td>❌ 不可用</td><td>仅 Acorn 项目组支持</td></tr>
-    <tr><td>Cash App</td><td>✅ 部分可用</td><td>以下产品支持：Cool Spin iOS、YeaMaster iOS、Chain Mania Arena iOS、Go Gold Minds GP、Slot Champions iOS；<strong>提现暂不支持</strong></td></tr>
+<tr><th>渠道</th><th>状态</th><th>备注</th></tr>
+<tr><td>PayPal</td><td>✅ 可用</td><td>多个供应商</td></tr>
+<tr><td>Credit Card</td><td>✅ 可用</td><td>直冲 + Apple Pay</td></tr>
+<tr><td>Debit Card</td><td>✅ 可用</td><td>部分借记卡可直充</td></tr>
+<tr><td>Apple Pay</td><td>✅ 可用</td><td>不支持 Apple Cash</td></tr>
+<tr><td>ACH Pay</td><td>❌ 不可用</td><td>仅 Acorn 项目组支持</td></tr>
+<tr><td>Cash App</td><td>✅ 部分可用</td><td>以下产品支持：Cool Spin iOS、YeaMaster iOS、Chain Mania Arena iOS、Go Gold Minds GP、Slot Champions iOS；<strong>提现暂不支持</strong></td></tr>
 </table>
 
 <h3>充值渠道问题排查</h3>
 <ul>
-    <li>玩家反馈界面无充值渠道时，先在支付中心确认玩家是否因 <strong>too many cards</strong> 被封禁充值。</li>
-    <li>如果没有被封禁，特殊情况如转换率低的玩家会被隐藏/关闭充值渠道，需要提交工单给二线处理。</li>
-    <li><strong>Cool Spin 低福利版本：</strong>目前整个产品采用低福利版本，所有玩家都没有充值礼包，游戏页面只有签到和 follow facebook 的奖励。短时间内不会恢复。</li>
+<li>玩家反馈界面无充值渠道时，先在支付中心确认玩家是否因 <strong>too many cards</strong> 被封禁充值。</li>
+<li>如果没有被封禁，特殊情况如转换率低的玩家会被隐藏/关闭充值渠道，需要提交工单给二线处理。</li>
+<li><strong>Cool Spin 低福利版本：</strong>目前整个产品采用低福利版本，所有玩家都没有充值礼包，游戏页面只有签到和 follow facebook 的奖励。短时间内不会恢复。</li>
 </ul>
 
 <h3>充值失败处理</h3>
 
 <h4>1. 玩家 Geo 信息验证失败</h4>
 <ul>
-    <li>Cool Spin 因合规需求，用户需通过 geocomply 地理位置验证才能充值。</li>
-    <li>充值后会要求玩家做 kyc-id 的信息验证。</li>
-    <li>如果未通过验证，充值会在 <strong>24 小时后自动退回</strong>。</li>
-    <li>涉及产品：coolspin, slot champions, treasure sorcery, dosh fever。</li>
+<li>Cool Spin 因合规需求，用户需通过 geocomply 地理位置验证才能充值。</li>
+<li>充值后会要求玩家做 kyc-id 的信息验证。</li>
+<li>如果未通过验证，充值会在 <strong>24 小时后自动退回</strong>。</li>
+<li>涉及产品：coolspin, slot champions, treasure sorcery, dosh fever。</li>
 </ul>
 
 <div class="template">
@@ -311,10 +817,10 @@ Thank you for your understanding and cooperation.
 
 <h4>2. 玩家 KYC-id 验证失败</h4>
 <ul>
-    <li>玩家触发充值金额 <strong>> $2000</strong> 时，充值后会触发 kyc-id。</li>
-    <li>玩家必须通过 kyc-id 验证。</li>
-    <li>如果玩家一直未通过，或者充值 <strong>24 小时后</strong>就会进行退款。</li>
-    <li>如果最后玩家的 KYC 被拒不允许通过，<strong>充值不需要全退，只需要退当前这一笔</strong>。</li>
+<li>玩家触发充值金额 <strong>> $2000</strong> 时，充值后会触发 kyc-id。</li>
+<li>玩家必须通过 kyc-id 验证。</li>
+<li>如果玩家一直未通过，或者充值 <strong>24 小时后</strong>就会进行退款。</li>
+<li>如果最后玩家的 KYC 被拒不允许通过，<strong>充值不需要全退，只需要退当前这一笔</strong>。</li>
 </ul>
 
 <div class="template">
@@ -324,8 +830,8 @@ To ensure your uninterrupted gaming experience, we kindly ask you to complete th
 
 <h4>3. 高频充值风控</h4>
 <ul>
-    <li>一般自动风控 <strong>一个小时</strong>，一小时后会自动解封，不需要人工干预。</li>
-    <li>不能直接解封，安抚玩家耐心等待尝试即可。</li>
+<li>一般自动风控 <strong>一个小时</strong>，一小时后会自动解封，不需要人工干预。</li>
+<li>不能直接解封，安抚玩家耐心等待尝试即可。</li>
 </ul>
 
 <div class="template">
@@ -335,20 +841,23 @@ Thanks for contacting us. We suggest you wait patiently first and try again in a
 
 <h4>4. 特殊风控 — Too Many Cards</h4>
 <ul>
-    <li>当一个玩家在一个账户中使用了太多卡，会被风控导致无法充值。</li>
-    <li>需要验证玩家的卡都是他自己的。</li>
-    <li>需要提交工单给二线处理。</li>
-    <li>需要玩家拍摄卡的信息，<strong>务必让玩家遮挡中间的卡号</strong>。</li>
-    <li>需要玩家手持卡拍照，遮挡中间卡号。</li>
-    <li>验证玩家的卡上的名字信息是否和 KYC 上的名字信息一致。</li>
-    <li>验证通过就可以解封。（给玩家的话术是把信息交给了 payment platforms，我们尽量为他们解封）</li>
+<li>当一个玩家在一个账户中使用了太多卡，会被风控导致无法充值。</li>
+<li>需要验证玩家的卡都是他自己的。</li>
+<li>需要提交工单给二线处理。</li>
+<li>需要玩家拍摄卡的信息，<strong>务必让玩家遮挡中间的卡号</strong>。</li>
+<li>需要玩家手持卡拍照，遮挡中间卡号。</li>
+<li>验证玩家的卡上的名字信息是否和 KYC 上的名字信息一致。</li>
+<li>验证通过就可以解封。（给玩家的话术是把信息交给了 payment platforms，我们尽量为他们解封）</li>
 </ul>
 
 <h3>Buy Bonus（机台内购买）</h3>
+<img src="images/buy-bonus.png" alt="Buy Bonus 界面" class="kb-img">
+<p class="kb-img-caption">▲ Buy Bonus 界面：机台内直接购买 Bonus 功能，三档可选（Random Strike / High Strike / Super Strike）</p>
+
 <ul>
-    <li>Buy Bonus 是机台内的 gameplay package。</li>
-    <li><strong>充值 ID 399：</strong>纯 GC 套餐，套餐页面不赠送 SC，但玩家购买之后会<strong>立即通过站内信赠送 20 SC</strong>。</li>
-    <li>若玩家声称没有领取到 SC，先搜索一下流水里的站内信普通邮件。</li>
+<li>Buy Bonus 是机台内的 gameplay package。</li>
+<li><strong>充值 ID 399：</strong>纯 GC 套餐，套餐页面不赠送 SC，但玩家购买之后会<strong>立即通过站内信赠送 20 SC</strong>。</li>
+<li>若玩家声称没有领取到 SC，先搜索一下流水里的站内信普通邮件。</li>
 </ul>
 
 <div class="template">
@@ -365,59 +874,66 @@ Once we receive your information, we will immediately record and investigate the
 
 <h2 id="redemption">💰 Yea Master - Redemption 特殊规则</h2>
 
+<div class="info">
+<strong>🔗 相关通用规则：</strong>
+<a href="../general/general-redemption.html" class="link-card">通用-Redemption</a>
+<a href="../general/general-redemption.html#status-codes" class="link-card">状态码速查</a>
+<a href="../general/general-redemption.html#cancel" class="link-card">取消规则</a>
+</div>
+
 <h3>提现方式</h3>
 <table>
-    <tr><th>方式</th><th>状态</th><th>备注</th></tr>
-    <tr><td>PayPal</td><td>✅ 可用</td><td>Chain Mania Arena 一次性最高 3000；其他产品一次性最高 1500</td></tr>
-    <tr><td>ACH</td><td>✅ 可用</td><td>通用规则</td></tr>
-    <tr><td>Prizeout</td><td>⚠️ 部分可用</td><td>部分玩家可见</td></tr>
-    <tr><td>Debit Card</td><td>✅ 可用</td><td>2025-09-09 新增</td></tr>
-    <tr><td>Cash App</td><td>❌ 已停用</td><td>2025-07-21 起停用</td></tr>
+<tr><th>方式</th><th>状态</th><th>备注</th></tr>
+<tr><td>PayPal</td><td>✅ 可用</td><td>Chain Mania Arena 一次性最高 3000；其他产品一次性最高 1500</td></tr>
+<tr><td>ACH</td><td>✅ 可用</td><td>通用规则</td></tr>
+<tr><td>Prizeout</td><td>⚠️ 部分可用</td><td>部分玩家可见</td></tr>
+<tr><td>Debit Card</td><td>✅ 可用</td><td>2025-09-09 新增</td></tr>
+<tr><td>Cash App</td><td>❌ 已停用</td><td>2025-07-21 起停用</td></tr>
 </table>
 
 <h3>Hyper Email 说明</h3>
 <ul>
-    <li>Hyper email 即 <strong>redemption email / PayPal email</strong>。</li>
-    <li>Yea Master 下所有游戏，玩家只需连续输两次提现邮箱，并进行一次确认即可，<strong>不用验证码</strong>。</li>
-    <li>绑定邮箱后，还需要完成信息认证（年龄/名称/街道等）。</li>
-    <li>点击提现时还需要通过 kyc-id。</li>
-    <li>ACH 提现绑定银行卡后也需要通过 KYC-id。</li>
+<li>Hyper email 即 <strong>redemption email / PayPal email</strong>。</li>
+<li>Yea Master 下所有游戏，玩家只需连续输两次提现邮箱，并进行一次确认即可，<strong>不用验证码</strong>。</li>
+<li>绑定邮箱后，还需要完成信息认证（年龄/名称/街道等）。</li>
+<li>点击提现时还需要通过 kyc-id。</li>
+<li>ACH 提现绑定银行卡后也需要通过 KYC-id。</li>
 </ul>
 
 <h3>最低 / 最高提现金额</h3>
 <table>
-    <tr><th>项目</th><th>规则</th></tr>
-    <tr><td>最低提现金额</td><td>一般会根据玩家的提现历史情况随时变动</td></tr>
-    <tr><td>单日提现金额最高</td><td><strong>5000 SC</strong></td></tr>
-    <tr><td>Chain Mania Arena PayPal 一次性最高</td><td><strong>3000</strong></td></tr>
-    <tr><td>其他产品 PayPal 一次性最高</td><td><strong>1500</strong></td></tr>
+<tr><th>项目</th><th>规则</th></tr>
+<tr><td>最低提现金额</td><td>一般会根据玩家的提现历史情况随时变动</td></tr>
+<tr><td>单日提现金额最高</td><td><strong>5000 SC</strong></td></tr>
+<tr><td>Chain Mania Arena PayPal 一次性最高</td><td><strong>3000</strong></td></tr>
+<tr><td>其他产品 PayPal 一次性最高</td><td><strong>1500</strong></td></tr>
 </table>
 
 <h3>提现手续费</h3>
 <ul>
-    <li>告诉玩家是<strong>第三方银行收取的</strong>，并不是我们收取的。</li>
-    <li>玩家周转率不同，手续费也不同。</li>
+<li>告诉玩家是<strong>第三方银行收取的</strong>，并不是我们收取的。</li>
+<li>玩家周转率不同，手续费也不同。</li>
 </ul>
 
 <h3>提现状态码（Yea Master 特殊状态）</h3>
 <table>
-    <tr><th>状态码</th><th>含义</th><th>处理</th></tr>
-    <tr><td>103</td><td>审核通过</td><td>Processing</td></tr>
-    <tr><td>104</td><td>提交失败</td><td>Processing（message 字段会包含原因）</td></tr>
-    <tr><td>106</td><td>已提交</td><td>Processing（提交到中间付款平台）</td></tr>
-    <tr><td>113</td><td>Hyper 审核通过</td><td>Authorized</td></tr>
-    <tr><td>114</td><td>争议/冻结</td><td>Failed</td></tr>
-    <tr><td>116</td><td>Hyper 已发送打款</td><td>Sent</td></tr>
-    <tr><td>200</td><td>已退款</td><td>Refunded</td></tr>
-    <tr><td>已取消</td><td>Cancelled</td><td>-</td></tr>
+<tr><th>状态码</th><th>含义</th><th>处理</th></tr>
+<tr><td>103</td><td>审核通过</td><td>Processing</td></tr>
+<tr><td>104</td><td>提交失败</td><td>Processing（message 字段会包含原因）</td></tr>
+<tr><td>106</td><td>已提交</td><td>Processing（提交到中间付款平台）</td></tr>
+<tr><td>113</td><td>Hyper 审核通过</td><td>Authorized</td></tr>
+<tr><td>114</td><td>争议/冻结</td><td>Failed</td></tr>
+<tr><td>116</td><td>Hyper 已发送打款</td><td>Sent</td></tr>
+<tr><td>200</td><td>已退款</td><td>Refunded</td></tr>
+<tr><td>已取消</td><td>Cancelled</td><td>-</td></tr>
 </table>
 
 <h3>修改提现邮箱 / 更换 ACH 账号</h3>
 <ul>
-    <li>修改 PP 邮箱：需要请求 FaceAuthentication 链接，验证链接确认是账号所有者在操作。</li>
-    <li>修改 ACH 账号：需要请求 FaceAuthentication 链接，验证通过后解绑当前账号。</li>
-    <li>ACH 账号只能绑定一次，解绑后不能重新绑定同一银行账号。如需重新绑定，需要提供不同的银行账号。</li>
-    <li>验证链接会在几天内发送给玩家。</li>
+<li>修改 PP 邮箱：需要请求 FaceAuthentication 链接，验证链接确认是账号所有者在操作。</li>
+<li>修改 ACH 账号：需要请求 FaceAuthentication 链接，验证通过后解绑当前账号。</li>
+<li>ACH 账号只能绑定一次，解绑后不能重新绑定同一银行账号。如需重新绑定，需要提供不同的银行账号。</li>
+<li>验证链接会在几天内发送给玩家。</li>
 </ul>
 
 <div class="template">
@@ -435,27 +951,30 @@ If we assist you with unbinding your current account, you will not be able to re
 We will need to request a link to initiate the KYC process through FaceAuthentication to confirm that changing the ACH request is being made by the account owner. A verification link will be sent to you within a few days, and we kindly ask for your patience.
 </div>
 
-<h3>SC 转化为 GC</h3>
+<h3>SC 转化为 GC（Bonus Exchange）</h3>
+<img src="images/bonus-exchange.png" alt="Bonus Exchange 界面" class="kb-img">
+<p class="kb-img-caption">▲ Bonus Exchange 界面：玩家可将 winning SC（Redeemable）转化为 normal SC（不可提现）和额外 GC</p>
+
 <ul>
-    <li>玩家提现时会出现弹窗，询问是否愿意将 played SC 转化为 unplayed SC + GC。</li>
-    <li><strong>弹窗触发条件：</strong>
-        <ol>
-            <li>玩家的 SC 余额 ≥ 1</li>
-            <li>玩家注册时间 ≥ 24 h</li>
-            <li>玩家已成功发起一笔提现</li>
-            <li>总提现金额 < 1000</li>
-        </ol>
-    </li>
-    <li>玩家自愿选择，想直接提现就关闭该弹窗，或者按 redeem 去提现。</li>
+<li>玩家提现时会出现弹窗，询问是否愿意将 played SC 转化为 unplayed SC + GC。</li>
+<li><strong>弹窗触发条件：</strong>
+<ol>
+<li>玩家的 SC 余额 ≥ 1</li>
+<li>玩家注册时间 ≥ 24 h</li>
+<li>玩家已成功发起一笔提现</li>
+<li>总提现金额 < 1000</li>
+</ol>
+</li>
+<li>玩家自愿选择，想直接提现就关闭该弹窗，或者按 redeem 去提现。</li>
 </ul>
 
 <h3>提现时长 / 最佳时间 / 超时处理</h3>
 <table>
-    <tr><th>项目</th><th>规则</th></tr>
-    <tr><td>通常时效</td><td>3 天内到账</td></tr>
-    <tr><td>最佳时间</td><td>UTC-8 10:00 - 12:00 PM，约 1-3 小时到账</td></tr>
-    <tr><td>已下架包（0充玩家 / 退无可退玩家 / 充值太少玩家）</td><td><strong>不打款</strong></td></tr>
-    <tr><td>其他包超时</td><td>提交工单给二线，看情况打款</td></tr>
+<tr><th>项目</th><th>规则</th></tr>
+<tr><td>通常时效</td><td>3 天内到账</td></tr>
+<tr><td>最佳时间</td><td>UTC-8 10:00 - 12:00 PM，约 1-3 小时到账</td></tr>
+<tr><td>已下架包（0充玩家 / 退无可退玩家 / 充值太少玩家）</td><td><strong>不打款</strong></td></tr>
+<tr><td>其他包超时</td><td>提交工单给二线，看情况打款</td></tr>
 </table>
 
 <div class="template">
@@ -482,24 +1001,73 @@ Kindly note that our cooperation company's account name is <strong>Essential Tec
 <hr>
 
 <h2 id="kyc">🆔 Yea Master - KYC 特殊规则</h2>
+
+<div class="info">
+<strong>🔗 相关通用规则：</strong>
+<a href="../general/general-kyc.html" class="link-card">通用-KYC</a>
+<a href="../general/general-kyc.html#ssn" class="link-card">SSN 验证</a>
+</div>
+
 <ul>
-    <li>KYC 触发条件：通用规则（提现前需 KYC-ID，2000 以上需 KYC-POA）</li>
-    <li>SSN 验证：通用规则</li>
-    <li>特殊规则：Cool Spin 等部分产品充值后也会触发 KYC-id 验证</li>
-    <li>Dosh Fever（geo）通过 basic KYC 奖励：0.3 Unplayed SC，通过站内信发放</li>
+<li>KYC 触发条件：通用规则（提现前需 KYC-ID，2000 以上需 KYC-POA）</li>
+<li>SSN 验证：通用规则</li>
+<li>特殊规则：Cool Spin 等部分产品充值后也会触发 KYC-id 验证</li>
+<li>Dosh Fever（geo）通过 basic KYC 奖励：0.3 Unplayed SC，通过站内信发放</li>
 </ul>
+
+<hr>
+
+<h2 id="bug">🐛 已知 Bug / 常见问题</h2>
+
+<h3>定位加载问题（Location Loading）</h3>
+<img src="images/location-loading-bug.png" alt="定位加载中" class="kb-img">
+<p class="kb-img-caption">▲ Yea Master iOS 定位加载界面，显示 "Checking Location..."</p>
+
+<ul>
+<li><strong>问题描述：</strong>Yea Master iOS（com.megamaster.01pr）存在定位 bug，少部分玩家进入游戏后会出现 <strong>"Checking Location..."</strong> 加载界面，无法正常进入游戏。</li>
+<li><strong>当前状态：</strong>该问题<strong>已解决</strong>，大部分玩家不再遇到。</li>
+<li><strong>处理流程：</strong>
+<ol>
+<li>让玩家尝试关闭 VPN 或代理工具后重试</li>
+<li>让玩家切换网络（WiFi ↔ 移动数据）后重启游戏</li>
+<li>如果仍无法解决，<strong>提交工单给二线</strong>处理</li>
+</ol>
+</li>
+</ul>
+
+<h3>定位非法州弹窗</h3>
+<img src="images/location-blocked-state.png" alt="定位非法州弹窗" class="kb-img">
+<p class="kb-img-caption">▲ 定位非法州弹窗，提示 "UNAVAILABLE IN YOUR LOCATION"</p>
+
+<ul>
+<li><strong>问题描述：</strong>玩家所在州为禁运州时，进入游戏会弹出此提示，无法继续游戏。</li>
+<li><strong>处理流程：</strong>
+<ol>
+<li>确认玩家是否使用了 VPN 或代理，如有则要求关闭</li>
+<li>确认玩家实际所在州是否在禁运列表中</li>
+<li>如果玩家确实在合法州但仍弹出此提示，提交工单给二线核实 Geo 定位数据</li>
+</ol>
+</li>
+</ul>
+
+<div class="warning">
+<strong>⚠️ 注意：</strong>不可向玩家透露具体禁运州名单，仅告知其所在地区暂不支持服务即可。
+</div>
 
 <hr>
 
 <h2 id="tag">🏷️ Yea Master - 专属 TAG</h2>
 <p>通用 TAG 请查阅 <a href="../general/general-cs-tag.html">通用-CS-TAG</a></p>
-<ul>
-    <li>待补充</li>
-</ul>
+
+<div class="todo-box">
+Yea Master 专属 TAG 待补充 — 请项目组提供常见客诉标签清单
+</div>
 
 <hr>
 
 <p><em>本文档为 Yea Master 项目组专属规则，通用规则请查阅 <a href="../index.html">通用知识库</a>。</em></p>
+
+<a href="#" class="back-to-top" title="返回顶部">↑</a>
 
 </body>
 </html>
