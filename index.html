@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>客服知识库总首页</title>
-<style>
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1000px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
-h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; }
-h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #3498db; padding-left: 12px; background: #f8f9fa; padding: 10px 12px; }
-h3 { color: #555; margin-top: 25px; }
-.project-box { background: #f0f7ff; border: 1px solid #b8d4f0; border-radius: 8px; padding: 15px 20px; margin: 15px 0; }
-.project-box h3 { margin-top: 0; color: #2c3e50; }
-.project-box ul { margin: 10px 0; padding-left: 20px; }
-.project-box li { margin: 6px 0; }
-table { border-collapse: collapse; width: 100%; margin: 15px 0; }
-th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-th { background-color: #4472C4; color: white; }
-tr:nth-child(even) { background-color: #f9f9f9; }
-a { color: #3498db; text-decoration: none; font-weight: 500; }
-a:hover { text-decoration: underline; color: #e74c3c; }
-.tag { display: inline-block; background: #e8f4fd; color: #2980b9; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-right: 5px; }
-.warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
-</style>
-<base target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客服知识库总首页</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; }
+        h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #3498db; padding-left: 12px; background: #f0f7ff; padding: 10px 12px; }
+        h3 { color: #555; margin-top: 20px; }
+        .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
+        .project-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; padding: 15px 20px; margin: 15px 0; }
+        table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #4472C4; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        a { color: #3498db; }
+        ul li { margin: 6px 0; }
+    </style>
 </head>
 <body>
 
-<h1>🎰 客服知识库总首页</h1>
+<h1>📚 客服知识库总首页</h1>
 
 <div class="warning">
-<strong>📌 使用规则：</strong><br>
-1. 先查 <strong>通用知识库</strong> 了解基础规则<br>
-2. 再查对应 <strong>项目组知识库</strong> 了解特殊规则<br>
-3. 两者冲突时，以 <strong>项目组知识库</strong> 为准
+    <strong>📌 使用规则：</strong><br>
+    1. 先查 <strong>通用知识库</strong> 了解基础规则<br>
+    2. 再查对应 <strong>项目组知识库</strong> 了解特殊规则<br>
+    3. 两者冲突时，以 <strong>项目组知识库</strong> 为准
 </div>
 
 <p><strong>最后更新：</strong>2026-06-22</p>
@@ -42,21 +37,66 @@ a:hover { text-decoration: underline; color: #e74c3c; }
 <h2>📚 通用知识库（所有项目组共用）</h2>
 
 <table>
-<thead>
-<tr><th>模块</th><th>内容</th><th>链接</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>通用-Purchase</strong></td><td>充值基础规则、失败处理、风控、退款、Extra Fee、Unauthorized（各项目组通用框架）</td><td><a href="general/general-purchase.html">general/general-purchase.html</a></td></tr>
-<tr><td><strong>通用-Redemption</strong></td><td>提现基础规则、状态码定义、手续费通用说明、取消流程（各项目组通用框架）</td><td><a href="general/general-redemption.html">general/general-redemption.html</a></td></tr>
-<tr><td><strong>通用-KYC</strong></td><td>KYC等级、证件要求、SSN验证、通用处理流程</td><td><a href="general/general-kyc.html">general/general-kyc.html</a></td></tr>
-<tr><td><strong>通用-States</strong></td><td>美国/加拿大非法州、限制州、年龄限制、通用SOP</td><td><a href="general/general-states.html">general/general-states.html</a></td></tr>
-<tr><td><strong>通用-CS-TAG</strong></td><td>全标签体系（Purchase/Account/Redemption/Game Bug等）</td><td><a href="general/general-cs-tag.html">general/general-cs-tag.html</a></td></tr>
-<tr><td><strong>通用-RSG</strong></td><td>RSG通用规则、Take a Break、Self Exclusion、Freeze流程</td><td><a href="general/general-rsg.html">general/general-rsg.html</a></td></tr>
-<tr><td><strong>通用-Account</strong></td><td>账号基础规则、多账号处理、Ban/Freeze通用流程</td><td><a href="general/general-account.html">general/general-account.html</a></td></tr>
-<tr><td><strong>通用-Slots</strong></td><td>机台通用规则、Tada系列、Shoot&Win、已知Bug清单</td><td><a href="general/general-slots.html">general/general-slots.html</a></td></tr>
-<tr><td><strong>通用-Complaint</strong></td><td>投诉处理流程、升级标准、补偿发放标准</td><td><a href="general/general-complaint.html">general/general-complaint.html</a></td></tr>
-<tr><td><strong>通用-AMOE</strong></td><td>AMOE替代参与方式、免费参与流程</td><td><a href="general/general-amoe.html">general/general-amoe.html</a></td></tr>
-</tbody>
+    <thead>
+        <tr><th>模块</th><th>内容</th><th>链接</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>通用-Purchase</strong></td>
+            <td>充值基础规则、失败处理、风控、退款、Extra Fee、Unauthorized（各项目组通用框架）</td>
+            <td><a href="general/general-purchase.html">general/general-purchase.html</a></td>
+        </tr>
+        <tr>
+            <td><strong>通用-Redemption</strong></td>
+            <td>提现基础规则、状态码定义、手续费通用说明、取消流程（各项目组通用框架）</td>
+            <td><a href="general/general-redemption.html">general/general-redemption.html</a></td>
+        </tr>
+        <tr>
+            <td><strong>通用-KYC</strong></td>
+            <td>KYC等级、证件要求、SSN验证、通用处理流程</td>
+            <td><a href="general/general-kyc.html">general/general-kyc.html</a></td>
+        </tr>
+        <tr>
+            <td><strong>通用-Sumsub KYC</strong></td>
+            <td>Sumsub KYC审核面板操作、Tag处理、T2升级规则、拒绝流程话术</td>
+            <td><a href="general/general-sumsub-kyc.html">general/general-sumsub-kyc.html</a></td>
+        </tr>
+        <tr>
+            <td><strong>通用-States</strong></td>
+            <td>美国/加拿大非法州、限制州、年龄限制、通用SOP</td>
+            <td><a href="general/general-states.html">general/general-states.html</a></td>
+        </tr>
+        <tr>
+            <td><strong>通用-CS-TAG</strong></td>
+            <td>全标签体系（Purchase/Account/Redemption/Game Bug等）</td>
+            <td><a href="general/general-cs-tag.html">general/general-cs-tag.html</a></td>
+        </tr>
+        <tr>
+            <td><strong>通用-RSG</strong></td>
+            <td>RSG通用规则、Take a Break、Self Exclusion、Freeze流程</td>
+            <td><a href="general/general-rsg.html">general/general-rsg.html</a></td>
+        </tr>
+        <tr>
+            <td><strong>通用-Account</strong></td>
+            <td>账号基础规则、多账号处理、Ban/Freeze通用流程</td>
+            <td><a href="general/general-account.html">general/general-account.html</a></td>
+        </tr>
+        <tr>
+            <td><strong>通用-Slots</strong></td>
+            <td>机台通用规则、Tada系列、Shoot&Win、已知Bug清单</td>
+            <td><a href="general/general-slots.html">general/general-slots.html</a></td>
+        </tr>
+        <tr>
+            <td><strong>通用-Complaint</strong></td>
+            <td>投诉处理流程、升级标准、补偿发放标准</td>
+            <td><a href="general/general-complaint.html">general/general-complaint.html</a></td>
+        </tr>
+        <tr>
+            <td><strong>通用-AMOE</strong></td>
+            <td>AMOE替代参与方式、免费参与流程</td>
+            <td><a href="general/general-amoe.html">general/general-amoe.html</a></td>
+        </tr>
+    </tbody>
 </table>
 
 <hr>
@@ -64,92 +104,58 @@ a:hover { text-decoration: underline; color: #e74c3c; }
 <h2>🎮 项目组专属知识库</h2>
 
 <div class="project-box">
-<h3>🎯 Yea Master 项目组</h3>
-<ul>
-<li><strong>包含游戏：</strong>Yea Master GP&iOS, Cool Spin, Dosh Fever, Tactical Syndicate, Go Gold Minds, Caishen Rush Slots, Slootopia 等</li>
-<li><strong>特殊规则：</strong>提现限额、充值渠道、RSG设置、专属活动、专属机台规则</li>
-<li><strong>知识库链接：</strong><a href="yea-master/yea-master-index.html">yea-master/yea-master-index.html</a></li>
-</ul>
+    <h3>🎯 Yea Master 项目组</h3>
+    <ul>
+        <li><strong>包含游戏：</strong>Yea Master GP&iOS, Cool Spin, Dosh Fever, Tactical Syndicate, Go Gold Minds, Caishen Rush Slots, Slootopia 等</li>
+        <li><strong>特殊规则：</strong>提现限额、充值渠道、RSG设置、专属活动、专属机台规则</li>
+        <li><strong>知识库链接：</strong><a href="yea-master/yea-master-index.html">yea-master/yea-master-index.html</a></li>
+    </ul>
 </div>
 
 <div class="project-box">
-<h3>🌰 Acorn 项目组</h3>
-<ul>
-<li><strong>包含游戏：</strong>Lucky Acorn, Spin Sorcery, Riches Flow Casino, Coin Keeper Spin, Regal 21 Blackjack, Cash Bridge Slots 等</li>
-<li><strong>特殊规则：</strong>ACH Pay直充、缓存信用卡机制、KYC Merge、账号转移记录</li>
-<li><strong>知识库链接：</strong><a href="acorn/acorn-index.html">acorn/acorn-index.html</a></li>
-</ul>
+    <h3>🌰 Acorn 项目组</h3>
+    <ul>
+        <li><strong>包含游戏：</strong>Lucky Acorn, Spin Sorcery, Riches Flow Casino, Coin Keeper Spin, Regal 21 Blackjack, Cash Bridge Slots 等</li>
+        <li><strong>特殊规则：</strong>ACH Pay直充、缓存信用卡机制、KYC Merge、账号转移记录</li>
+        <li><strong>知识库链接：</strong><a href="acorn/acorn-index.html">acorn/acorn-index.html</a></li>
+    </ul>
 </div>
 
 <div class="project-box">
-<h3>👑 Legends 项目组</h3>
-<ul>
-<li><strong>包含游戏：</strong>Cider Casino, Lavish Luck, Luxe Mirage Reels, Strike and Solve, Lucky Gold Rush, Prowess Spin 等</li>
-<li><strong>特殊规则：</strong>Cash App充值、提现手续费实验、KYC机器人自助开单、Prizeout兑换</li>
-<li><strong>知识库链接：</strong><a href="legends/legends-index.html">legends/legends-index.html</a></li>
-</ul>
+    <h3>👑 Legends 项目组</h3>
+    <ul>
+        <li><strong>包含游戏：</strong>Cider Casino, Lavish Luck, Luxe Mirage Reels, Strike and Solve, Lucky Gold Rush, Prowess Spin 等</li>
+        <li><strong>特殊规则：</strong>Cash App充值、提现手续费实验、KYC机器人自助开单、Prizeout兑换</li>
+        <li><strong>知识库链接：</strong><a href="legends/legends-index.html">legends/legends-index.html</a></li>
+    </ul>
 </div>
 
 <div class="project-box">
-<h3>🃏 Poker Hit 项目组</h3>
-<ul>
-<li><strong>包含游戏：</strong>Poker Hit 系列</li>
-<li><strong>特殊规则：</strong>扑克游戏规则、Poker专属提现限额、Poker专属充值方式、Poker KYC特殊要求</li>
-<li><strong>知识库链接：</strong><a href="poker/poker-index.html">poker/poker-index.html</a></li>
-</ul>
+    <h3>🍀 Luck Hit 项目组</h3>
+    <ul>
+        <li><strong>包含游戏：</strong>Luck Hit 系列, Spin Sorcery Web</li>
+        <li><strong>特殊规则：</strong>更换充值方式、最低提现金额、提现手续费、自行选择提现方式</li>
+        <li><strong>知识库链接：</strong><a href="luck-hit/luck-hit-index.html">luck-hit/luck-hit-index.html</a></li>
+    </ul>
 </div>
 
 <div class="project-box">
-<h3>🎲 Tang Luck 项目组</h3>
-<ul>
-<li><strong>包含游戏：</strong>Tang Luck 系列</li>
-<li><strong>特殊规则：</strong>项目组专属规则（待补充）</li>
-<li><strong>知识库链接：</strong><a href="tang-luck/tang-luck-index.html">tang-luck/tang-luck-index.html</a></li>
-</ul>
+    <h3>🎲 Tang Luck 项目组</h3>
+    <ul>
+        <li><strong>包含游戏：</strong>Tang Luck 系列</li>
+        <li><strong>特殊规则：</strong>（待补充）</li>
+        <li><strong>知识库链接：</strong><a href="tang-luck/tang-luck-index.html">tang-luck/tang-luck-index.html</a></li>
+    </ul>
 </div>
 
 <div class="project-box">
-<h3>🍀 Luck Hit 项目组</h3>
-<ul>
-<li><strong>包含游戏：</strong>Luck Hit 系列（Spin Sorcery Web等）</li>
-<li><strong>特殊规则：</strong>提现方式选择、ACH/PayPal切换、专属活动</li>
-<li><strong>知识库链接：</strong><a href="luck-hit/luck-hit-index.html">luck-hit/luck-hit-index.html</a></li>
-</ul>
+    <h3>🃏 Poker Hit 项目组</h3>
+    <ul>
+        <li><strong>包含游戏：</strong>Poker Hit 系列</li>
+        <li><strong>特殊规则：</strong>扑克游戏规则、Poker专属提现限额、Poker专属充值方式、Poker KYC特殊要求</li>
+        <li><strong>知识库链接：</strong><a href="pokerhit/pokerhit-index.html">pokerhit/pokerhit-index.html</a></li>
+    </ul>
 </div>
-
-<hr>
-
-<h2>🔍 快速查询流程</h2>
-
-<table>
-<thead>
-<tr><th>客诉类型</th><th>查询顺序</th><th>示例</th></tr>
-</thead>
-<tbody>
-<tr><td>充值失败</td><td>1. 通用-Purchase → 2. 项目组-Purchase</td><td>通用查失败话术 → Yea Master查具体渠道</td></tr>
-<tr><td>ACH提现116</td><td>1. 通用-Redemption → 2. 项目组-Redemption</td><td>通用查116话术 → Acorn查ACH特殊规则</td></tr>
-<tr><td>KYC失败</td><td>1. 通用-KYC → 2. 项目组-KYC</td><td>通用查证件要求 → Legends查SSN切换POA</td></tr>
-<tr><td>需要打标签</td><td>直接查 通用-CS-TAG</td><td>全标签体系通用</td></tr>
-<tr><td>非法州弹窗</td><td>直接查 通用-States</td><td>各项目组通用</td></tr>
-<tr><td>RSG设置</td><td>1. 通用-RSG → 2. 项目组-RSG</td><td>通用查流程 → 项目组查具体限制值</td></tr>
-<tr><td>机台争议</td><td>1. 通用-Slots → 2. 项目组-Slots</td><td>通用查Tada规则 → 项目组查专属机台</td></tr>
-</tbody>
-</table>
-
-<hr>
-
-<h2>⚠️ 重要提示</h2>
-
-<ul>
-<li><strong>通用规则 vs 项目组规则冲突时：</strong>以项目组规则为准（项目组规则会标注"覆盖通用规则"）</li>
-<li><strong>新增项目组：</strong>复制任一项目组文件夹，修改专属内容即可</li>
-<li><strong>更新维护：</strong>通用规则更新后，需检查各项目组是否需要同步更新</li>
-<li><strong>TAG体系：</strong>全项目组统一使用通用-CS-TAG，项目组特有标签在项目组知识库中补充</li>
-</ul>
-
-<hr>
-
-<p><em>本知识库由客服团队维护，如有更新请及时同步。</em></p>
 
 </body>
 </html>
