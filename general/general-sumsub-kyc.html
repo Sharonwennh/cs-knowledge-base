@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用-Sumsub KYC 处理指南 | 客服知识库</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1200px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #8e44ad; padding-bottom: 15px; }
+        h2 { color: #34495e; margin-top: 40px; border-left: 5px solid #8e44ad; padding-left: 12px; background: #f5eef8; padding: 10px 12px; font-size: 1.3em; }
+        h3 { color: #555; margin-top: 25px; border-bottom: 2px solid #eee; padding-bottom: 8px; font-size: 1.1em; }
+        h4 { color: #666; margin-top: 20px; font-size: 1em; }
+        .back-link { display: inline-block; margin-bottom: 20px; padding: 8px 16px; background: #3498db; color: white; border-radius: 4px; text-decoration: none; }
+        .back-link:hover { background: #2980b9; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
+        .warning { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px 15px; margin: 15px 0; }
+        .info { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 10px 15px; margin: 15px 0; }
+        .important { background: #fff3cd; border: 2px solid #ffc107; padding: 12px 15px; margin: 15px 0; font-weight: bold; }
+        .script-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; padding: 15px; margin: 10px 0; font-family: 'SF Mono', Monaco, monospace; font-size: 0.9em; white-space: pre-wrap; line-height: 1.5; }
+        table { border-collapse: collapse; width: 100%; margin: 15px 0; font-size: 0.85em; }
+        th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+        th { background-color: #4472C4; color: white; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #eef5ff; }
+        .tag-name { font-family: 'SF Mono', Monaco, monospace; font-weight: bold; color: #c0392b; }
+        .operation { font-weight: bold; color: #27ae60; }
+        .op-no { color: #e74c3c; }
+        .op-reset { color: #f39c12; }
+        .op-approve { color: #27ae60; }
+        .toc { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; padding: 15px 20px; margin: 20px 0; }
+        .toc ul { columns: 2; column-gap: 30px; margin: 10px 0; padding-left: 20px; }
+        .toc li { margin: 4px 0; }
+        .toc a { color: #3498db; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        .section-anchor { display: block; position: relative; top: -20px; visibility: hidden; }
+        .highlight-red { color: #dc3545; font-weight: bold; }
+        .highlight-yellow { background: #fff3cd; padding: 2px 4px; font-weight: bold; }
+        .highlight-green { color: #28a745; font-weight: bold; }
+        ul li { margin: 6px 0; }
+        .panel-desc { margin: 8px 0; padding-left: 15px; border-left: 3px solid #8e44ad; }
+        @media (max-width: 768px) {
+            .toc ul { columns: 1; }
+            table { font-size: 0.75em; }
+            th, td { padding: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="../index.html" class="back-link">&larr; Back to Home / 返回首页</a>
+
+<h1>🔐 通用-Sumsub KYC 处理指南</h1>
+
+<p><strong>最后更新：</strong>2026-06-23</p>
+
+<div class="note">
+    <strong>适用范围：</strong>本文档适用于所有通过 Sumsub 进行 KYC 验证的项目组。处理 KYC 工单时，请务必先查阅本文档，再查阅通用 KYC 规则。
+</div>
+
+<div class="toc">
+    <h3>📋 目录导航</h3>
+    <ul>
+        <li><a href="#notes">Notes / 注意事项（7条）</a></li>
+        <li><a href="#panel">KYC Review Panel 字段说明</a></li>
+        <li><a href="#point1">Point 1: Determining Available Actions</a></li>
+        <li><a href="#point2">Point 2: Tags Requiring T2 Escalation</a></li>
+        <li><a href="#point3">Point 3: Special Cases for T2 Escalation</a></li>
+        <li><a href="#point4">Point 4: KYC Rejection Process (Note 1/2/3)</a></li>
+        <li><a href="#point5">Point 5: Tag Each Ticket Correctly</a></li>
+        <li><a href="#tag-table">Tag 对应回复速查表</a></li>
+    </ul>
+</div>
+
+<a class="section-anchor" id="notes"></a>
+<h2>📝 Notes / 注意事项</h2>
+
+<div class="warning">
+    <strong>处理 KYC 前必读以下 7 条规则：</strong>
+</div>
+
+<ol>
+    <li><strong>以下 7 个标签无需操作，提交任务给 T2 并在描述中包含 Tag：</strong><br>
+        <span class="tag-name">BLACKLIST / BLOCKLIST / DUPLICATE / FORGERY - rejected / WRONG_USER_REGION / Unsatisfactory age / Images limit reached</span></li>
+
+    <li><strong>如果辅助显示表格中未列出的标签，</strong>提交任务给 T2 并在描述中包含该标签和后台截图。</li>
+
+    <li><strong>表格中的 Key Points for Reply 必须由 T1 编辑后才能使用，绝不能直接发送给玩家。</strong><br>
+        部分条目标记为 "Submit a task to the Tier 2 Team" —— 在任何情况下，未经审核不得将此处内容直接发送给玩家。</li>
+
+    <li><strong>如果玩家重置后验证失败 3 次、4 次、5 次或更多次，</strong>拒绝记录和尝试次数可在时间线查看。此类情况请提交任务给 T2，描述中包含失败次数和后台截图。</li>
+
+    <li><strong>如果 Reset 和 Approve 按钮同时出现，</strong>提交任务给 T2，不要在后台随机点击任一按钮。让 T2 了解此情况并在描述中包含后台截图。</li>
+
+    <li><strong>如果操作按钮显示与表格说明不一致，</strong>提交任务给 T2 以防系统潜在错误，并包含后台截图。</li>
+
+    <li><strong>表格中某些标签格式与 Auxiliary 不同。</strong>T1 可以逐个单词搜索以避免遗漏。例如：<br>
+        Auxiliary 格式：<code>SELFIE_MISMATCH</code><br>
+        Sumsub 格式：<code>invalid ID Spam</code>（此格式对 T1 不可见）</li>
+</ol>
+
+<hr>
+
+<a class="section-anchor" id="panel"></a>
+<h2>🖥️ KYC Review Panel 字段说明</h2>
+
+<table>
+    <tr><th style="width:18%">字段</th><th>说明</th></tr>
+    <tr>
+        <td><strong>Operations</strong></td>
+        <td>操作区域。T1 可点击此处按钮更改玩家的 KYC 状态。</td>
+    </tr>
+    <tr>
+        <td><strong>Status</strong></td>
+        <td>KYC 状态。显示当前状态，如：Approved（已通过）、Rejected（已拒绝）、Init（初始提交）、Retry（重新提交）。</td>
+    </tr>
+    <tr>
+        <td><strong>Level</strong></td>
+        <td>KYC 等级。指示玩家当前的验证层级。</td>
+    </tr>
+    <tr>
+        <td><strong>Tags</strong></td>
+        <td>问题标签。识别 KYC 审核中发现的具体问题。T1 必须使用这些标签在 "Key points for reply Sumsub Applicant" 中定位对应的回复模板。</td>
+    </tr>
+    <tr>
+        <td><strong>Note</strong></td>
+        <td>内部备注。如果 KYC 已被最终拒绝，处理方法（如 1/2/3）将显示在此处。详情参考 <a href="#point4">Point 4</a>。</td>
+    </tr>
+    <tr>
+        <td><strong>Timeline</strong></td>
+        <td>审核时间线。以日志格式显示 KYC 申请的完整审核历史。<br>
+            <span class="highlight-red">● Red</span> = 失败验证（具体拒绝原因通常出现在条目最后一行）<br>
+            <span class="highlight-green">● Green</span> = 成功验证<br>
+            <strong>Timestamp</strong> = 每个条目的时间对应特定操作状态被记录的时刻</td>
+    </tr>
+    <tr>
+        <td><strong>Moderation Comment</strong></td>
+        <td>给申请人的消息。对玩家可见的备注，可能包含拒绝原因。客服需要参考此内容，但仍需匹配到 "Key points for reply Sumsub Applicant" 的正式回复模板。</td>
+    </tr>
+    <tr>
+        <td><strong>Action</strong></td>
+        <td>关键操作日志。记录玩家完成的具体验证步骤，如 Face Authentication 或 Payment Verification。<br>
+            <strong>Status Check：</strong>如果验证被拒绝或失败，T1 可在此处找到记录的状态。<br>
+            <span class="highlight-red">● Red</span> = 失败验证尝试<br>
+            <span class="highlight-green">● Green</span> = 成功验证<br>
+            <strong>Timestamp</strong> = 每个日志条目显示的时间是验证状态被记录的精确时刻</td>
+    </tr>
+    <tr>
+        <td><strong>Created At</strong></td>
+        <td>提交时间。玩家首次提交 KYC 申请的确切日期和时间。</td>
+    </tr>
+</table>
+
+<hr>
+
+<a class="section-anchor" id="point1"></a>
+<h2>📍 Point 1: Determining Available Actions</h2>
+
+<h3>如果 Operations 下没有按钮：</h3>
+<ol>
+    <li><strong>检查 KYC 状态。</strong>如果显示 <span class="highlight-red">Init (Initial Submission)</span> 或 <span class="highlight-red">Retry</span>，玩家仍可自行更新信息。我方无需操作，也无法从后台操作。<br>
+        你可以根据玩家当前的 KYC Level 和 Overview 中玩家的 KYC 验证状态，引导玩家继续完成验证。</li>
+    <li><strong>如果玩家声称无法更新信息，</strong>请提供录屏并提交任务给 <strong>KYC T2</strong>。</li>
+</ol>
+
+<h3>如果状态是 Rejected：</h3>
+<p>通常 <strong>Reset</strong> 或 <strong>Approve</strong> 按钮会出现在 Operations 下。</p>
+
+<ol>
+    <li><strong>Approve：</strong>点击此按钮通过 KYC。然后通知玩家。<br>
+        <div class="important">
+            ⚠️ 重要：此按钮通常只在 Reason 列指定 AML 且 Tags 列显示 <span class="tag-name">COMPROMISED_PERSONS</span>、<span class="tag-name">ADVERSE_MEDIA</span> 或 <span class="tag-name">PEP</span> 时出现。<br>
+            如果 Tags 列显示任何其他不属于 Approve 的标签，<span class="highlight-red">不要点击 Approve</span>。而是提交问题给 KYC T2 团队，包括描述和截图。
+        </div>
+    </li>
+    <li><strong>Reset：</strong>点击重置。然后在 "Key points for reply Sumsub Applicant" 中搜索对应标签的回复。<br>
+        <div class="note">
+            💡 提示：你可能在 Moderation Comment 列找到通知，但你仍必须将其匹配到 "Key points for reply Sumsub Applicant" 中的回复。
+        </div>
+    </li>
+</ol>
+
+<hr>
+
+<a class="section-anchor" id="point2"></a>
+<h2>📍 Point 2: Tags Requiring T2 Escalation</h2>
+
+<h3>立即提交任务给 KYC T2 如果遇到以下 7 个标签：</h3>
+<ol>
+    <li><span class="tag-name">BLACKLIST</span></li>
+    <li><span class="tag-name">BLOCKLIST</span></li>
+    <li><span class="tag-name">DUPLICATE</span> (multiple accounts issue)</li>
+    <li><span class="tag-name">FORGERY</span> - rejected</li>
+    <li><span class="tag-name">WRONG_USER_REGION</span></li>
+    <li><span class="tag-name">Unsatisfactory age</span></li>
+    <li><span class="tag-name">Images limit reached</span></li>
+</ol>
+
+<div class="warning">
+    <strong>注意：</strong>如果 <span class="tag-name">FORGERY</span> 状态是 <span class="highlight-red">Init</span>，玩家仍可更新信息，<span class="highlight-red">不要</span>提交给 KYC T2。
+</div>
+
+<div class="warning">
+    <strong>注意：</strong>如果在回复文档中找不到匹配标签且带有 reset 按钮，<span class="highlight-red">不要点击 reset</span>，提交任务给 KYC T2。
+</div>
+
+<hr>
+
+<a class="section-anchor" id="point3"></a>
+<h2>📍 Point 3: Special Cases for T2 Escalation</h2>
+
+<ul>
+    <li><strong>如果 Reset 和 Approve 按钮同时出现在 Operations 下，</strong>提交任务给 KYC T2。不要在描述中随意操作，包含后台截图。</li>
+    <li><strong>如果 Operations 下的按钮标签与表格说明不一致，</strong>提交任务给 KYC T2 以防系统潜在错误，并包含后台截图。</li>
+</ul>
+
+<hr>
+
+<a class="section-anchor" id="point4"></a>
+<h2>📍 Point 4: KYC Rejection Process: Note Column 1 & 2 & 3</h2>
+
+<div class="info">
+    <strong>场景：</strong>当玩家的 KYC 被拒绝且 NOTE 指定 <strong>1/2 或 3</strong> 时，表示 KYC 已被双重检查且无法通过。按以下流程处理。<br>
+    如果 Note 列有中文文字，请提交 KYC T2 任务并复制此备注请求进一步检查，同时包含截图。
+</div>
+
+<h3>Note 1 — Player HAS Account Balance（玩家有账户余额）</h3>
+<div class="panel-desc">
+    <p><strong>Action：</strong>T2 将退还余额并冻结游戏账户。（通常可在退款工作表中找到退款，如果找不到，T2 将在 1 个工作日内录入。）</p>
+    <p><span class="highlight-yellow">如果 T2 尚未冻结此玩家，T1 需要先冻结此玩家。</span></p>
+    <p><strong>T1 Reply（标准话术）：</strong></p>
+    <div class="script-box">Dear Player,
+We are writing to inform you that, following a review, your account has been permanently suspended due to a failure to pass our mandatory KYC verification.
+Our team will now process a refund of your remaining account balance. If your total purchase amount is less than the balance to be refunded, the outstanding sum will be issued to you via a direct transfer.
+This decision is final. Should you have any questions, please contact our support team.</div>
+</div>
+
+<h4>对于 Outstanding Sum（未结清金额）：</h4>
+<ul>
+    <li>如果检查退款工作表发现 T2 填写的 <strong>Player Account Balance &gt; Refund amount</strong>，意味着有未结清金额，T2 需要跟进处理。</li>
+    <li>此时，在回复玩家上述绿色标准话术后，需要：
+        <ol>
+            <li>写下工单备注：
+                <ul>
+                    <li><strong>a.</strong> @Jane 在工单备注中</li>
+                    <li><strong>b.</strong> 清楚说明玩家 Played SC 余额（例如 80.09 played sc）和实际退款金额（例如 21.99 dollars）导致未结清余额</li>
+                    <li><strong>c.</strong> 玩家 KYC 被拒绝，风控团队要求退还账户余额（Note 1）</li>
+                </ul>
+            </li>
+            <li>转派工单给 Jane 并添加 <strong>need reply</strong> 标签</li>
+        </ol>
+    </li>
+    <li>然后 Jane 将接管此工单直到玩家完全获得未结清退款。</li>
+    <li>如果实际退款 &gt; 玩家余额（意味着退款成功且完成，如果玩家无其他问题，可以封禁玩家并解决工单）或实际退款待处理（如果玩家询问退款进度，请耐心等待），这是正常的。</li>
+</ul>
+
+<h3>Note 2 — Player HAS NO Account Balance（玩家无账户余额）</h3>
+<div class="panel-desc">
+    <p><strong>Action：</strong>T2 仅冻结游戏账户。</p>
+    <p><span class="highlight-yellow">如果 T2 尚未冻结此玩家，T1 需要先冻结此玩家。</span></p>
+    <p><strong>T1 Reply（标准话术）：</strong></p>
+    <div class="script-box">Dear Player,
+We are writing to inform you that, following a review, your account has been permanently suspended due to a failure to pass our mandatory KYC verification.
+This decision is final. Should you have any questions, please contact our support team.</div>
+</div>
+
+<h3>Note 3 — Refund All Purchase（退还所有购买）</h3>
+<div class="panel-desc">
+    <p><strong>Action：</strong>T2 将退还所有购买并冻结游戏账户。（通常可在退款工作表中找到退款，如果找不到，T2 将在 1 个工作日内录入。）</p>
+    <p><span class="highlight-yellow">如果 T2 尚未冻结此玩家，T1 需要先冻结此玩家。</span></p>
+    <p><strong>T1 Reply（标准话术）：</strong>同 Note 1（包含退款说明）。</p>
+</div>
+
+<hr>
+
+<a class="section-anchor" id="point5"></a>
+<h2>📍 Point 5: Tag Each Ticket Correctly Based on Actual Operation</h2>
+
+<table>
+    <tr><th style="width:20%">Tag</th><th>使用场景</th></tr>
+    <tr>
+        <td><span class="tag-name">SA-Approve</span></td>
+        <td>当你点击 "Approve" 通过玩家的 KYC（通过 Sumsub）。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SA-Reset</span></td>
+        <td>当你通过 Sumsub 重置玩家的 KYC 流程。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SA-T2-Other</span></td>
+        <td>当你无法处理 KYC 工单，且 Sumsub applicant 标签<strong>不属于</strong>以下 7 种场景（BLACKLIST / BLOCKLIST / DUPLICATE / FORGERY / WUR / Unsat-Age / Image-limit）。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SA-T2-BLACKLIST</span></td>
+        <td>由于 Sumsub 后台 <span class="tag-name">BLACKLIST</span> 标签无法处理 KYC 工单，需提交给 Tier 2。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SA-T2-BLOCKLIST</span></td>
+        <td>由于 Sumsub 后台 <span class="tag-name">BLOCKLIST</span> 标签无法处理 KYC 工单，需提交给 Tier 2。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SA-T2-DUP</span></td>
+        <td>由于 Sumsub 后台 <span class="tag-name">Duplicate</span> 标签无法处理 KYC 工单，需提交给 Tier 2。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SA-T2-FORGERY</span></td>
+        <td>由于 Sumsub 后台 <span class="tag-name">FORGERY</span> 标签无法处理 KYC 工单，需提交给 Tier 2。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SA-T2-WUR</span></td>
+        <td>由于 Sumsub 后台 <span class="tag-name">WRONG_USER_REGION</span> 标签无法处理 KYC 工单，需提交给 Tier 2。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SA-T2-Unsat-Age</span></td>
+        <td>由于 Sumsub 后台 <span class="tag-name">Unsatisfactory age</span> 标签无法处理 KYC 工单，需提交给 Tier 2。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SA-T2-Image-limit</span></td>
+        <td>由于 Sumsub 后台 <span class="tag-name">Images limit reached</span> 标签无法处理 KYC 工单，需提交给 Tier 2。</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SA-IR</span></td>
+        <td>不需要 Sumsub 按钮时，只需告诉玩家继续 KYC。或玩家 KYC 被拒需要冻结。</td>
+    </tr>
+</table>
+
+<hr>
+
+<a class="section-anchor" id="tag-table"></a>
+<h2>📋 Tag 对应回复速查表</h2>
+
+<div class="warning">
+    <strong>⚠️ 重要提醒：</strong>表格中的 Key Points for Reply 必须由 T1 编辑后才能使用，<span class="highlight-red">绝不能直接发送给玩家</span>。部分条目标记为 "Submit a task to the Tier 2 Team" —— 在任何情况下，未经审核不得将此处内容直接发送给玩家。
+</div>
+
+<table>
+    <tr>
+        <th style="width:22%">Tag</th>
+        <th style="width:12%">Operation</th>
+        <th style="width:33%">Key Points for Reply</th>
+        <th style="width:33%">Sample Script</th>
+    </tr>
+    <tr>
+        <td><span class="tag-name">COMPROMISED_PERSONS<br>ADVERSE_MEDIA<br>PEP</span></td>
+        <td><span class="op-approve">Approve</span></td>
+        <td>If there is no approve button also under note column there is no number. Submit a task to the Tier 2 Team.</td>
+        <td>Examples: NLVPDZPA, document requested=init, BBG1Z5HP, resubmission requested=retry, RVZ5KX8N, rejected - reset, CWZ26EU3, rejected - T2, DG7DCLNR, approved, FMUWMR4, Reject have approve button, MFSFHEFR/GPL23BZA, Reject and refunded, AL9KT936, Payment check action, R4JW2LAU, Face authentication check action</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">BLACKLIST<br>BLOCKLIST<br>DUPLICATE<br>FORGERY - rejected<br>WRONG_USER_REGION<br>Unsatisfactory age<br>Images limit reached</span></td>
+        <td><span class="op-no">no button</span></td>
+        <td>Submit a task to the Tier 2 Team</td>
+        <td>—</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">SELFIE_MISMATCH<br>BAD_FACE_MATCHING<br>BAD_AVATAR<br>BAD_VIDEO_SELFIE<br>INCONSISTENT_PROFILE<br>FRAUDULENT_LIVENESS</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>The system can not match the player with the photo on the ID. Please try again with better lighting. Remove glasses and any other accessories that may obscure the player's face. And please look at the camera when doing the selfie.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-Try again with better lighting.
+-Remove glasses and any other accessories that may obscure your face.
+-Please look at the camera when doing the selfie.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">Invalid ID Spam<br>ID_INVALID</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>The document must be complete, clear, and valid, and all four sides of the document must not be obscured.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-The document must be complete, clear, and valid.
+-All four sides of the document must not be obscured.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">document requested-init</span></td>
+        <td><span class="op-no">no button</span></td>
+        <td>The player is able uploading. If not, please provide a screen recording then submit KYC T2 task.</td>
+        <td>—</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">resubmission requested-retry</span></td>
+        <td><span class="op-no">no button</span></td>
+        <td>Players in the "Resubmission Requested" state can continue uploading. If upload fails, please provide a screen recording then submit KYC T2 task.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">Third party involvement</span></td>
+        <td><span class="op-reset">reset</span></td>
+        <td>The player can try again now.</td>
+        <td><div class="script-box">Dear Player,
+Please be informed that you may try to complete the verification process again on your end.
+Don't hesitate to contact us back if you still have questions.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">BAD_PROOF_OF_ADDRESS</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>The player can try again now usually. The reason is one of the following: -documents should not be older than 3 month(s). -contain the address you provided in the previous step and the user's full name must on the document.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-Documents should not be older than 3 month(s).
+-Contain the address you provided in the previous step and the your full name must on the document.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">FORGERY init</span></td>
+        <td><span class="op-no">no button</span></td>
+        <td>If other tags appear simultaneously, reply according to those tags. If only this tag appears, reply as follows: The player is able uploading. If not, please provide a screen recording then submit KYC T2 task.</td>
+        <td>—</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">FORGERY rejected</span></td>
+        <td><span class="op-no">no button</span></td>
+        <td>Submit a task to the Tier 2 Team</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">EXPIRATION_DATE<br>DOCUMENT_DAMAGED<br>DOCUMENT_EXPIRED<br>DOCUMENT_UNREADABLE<br>ISSUE_DATE_MISSING<br>INCOMPLETE_DOCUMENT</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>Usually, the reason is one of the following: -Please make sure the document is readable, in valid time, and all corners of the document are visible. -Please upload an original, colored image. Screenshots, document printouts, and edited images are not accepted.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-Please make sure the document is readable, in valid time, and all corners of the document are visible.
+-Please upload an original, colored image. Screenshots, document printouts, and edited images are not accepted.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">PROBLEMATIC_APPLICANT_DATA</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>Usually, the reason is one of the following: -Please make sure the document is readable, in valid time, and all corners of the document are visible. -Please upload an original, colored image. Screenshots, document printouts, and edited images are not accepted.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-Please make sure the document is readable, in valid time, and all corners of the document are visible.
+-Please upload an original, colored image. Screenshots, document printouts, and edited images are not accepted.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">UNSATISFACTORY_PHOTOS<br>ID_INVALID</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>The required fields of the document are not readable. Please upload a clear photo or another suitable document to continue your verification. Make sure that all corners of the document are visible.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-The required fields of the document are not readable. Please upload a clear photo or another suitable document to continue your verification. Kindly make sure that all corners of the document are visible.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">MISMATCH_WITH_EXTERNAL_DATABASE<br>ID_INVALID</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>The names in the file are inconsistent. Usually, the reason is one of the following: -Invalid document number. -Inconsistent names in the file. -The name is listed as deceased. -Please check the information and try again.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end.
+Don't hesitate to contact us back if you still have questions.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">ad POA<br>ad POI</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>The player can try again now usually. The reason is one of the following: -Documents should not be older than 3 month(s). -Contain the address you provided in the previous step and the user's full name must on the document.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-Documents should not be older than 3 month(s).
+-Contain the address you provided in the previous step and the user's full name must on the document.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">NOT_A_DOCUMENT<br>not a document</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>Please upload an original, colored image. Screenshots, document printouts, and edited images are not accepted.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-Please upload an original, colored image.
+-Screenshots, document printouts, and edited images are not accepted.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">ad POI</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>Usually, the reason is one of the following: -Wrong document type. -The required fields of the document are not readable. Please upload a clear photo or another suitable document to continue your verification. Make sure that all corners of the document are visible.</td>
+        <td><div class="script-box">Dear Player,
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-Document should be correct and accepted.
+-The required fields of the document are not readable. Please upload a clear photo or another suitable document to continue your verification. Make sure that all corners of the document are visible.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">Third party involvement</span></td>
+        <td><span class="op-reset">reset</span></td>
+        <td>The player can try again now.</td>
+        <td><div class="script-box">Dear Player,
+Please be informed that you may try to complete the verification process again on your end.
+Don't hesitate to contact us back if you still have questions.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">black and white</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>Please upload an original, colored image. Screenshots, document printouts, and edited images are not accepted.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-Upload an original, colored image.
+-Screenshots, document printouts, and edited images are not accepted.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">graphics editing software<br>unsatisfactory photos</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>Please upload an original, colored image. Screenshots, document printouts, and edited images are not accepted.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.
+-Upload an original, colored image.
+-Screenshots, document printouts, and edited images are not accepted.
+Don't hesitate to contact us back if you still have questions.
+Thank you.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">incorrect social number</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>Please provide correct SSN number. If Player does not have SSN for verification, Submit KYC T2 for KYC-POA verification link for Player.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end. Kindly refer to the information below for guidance.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">TOLEN_DOCS</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>The player can try again now.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please be informed that you may try to complete the verification process again on your end.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">0 tag</span></td>
+        <td><span class="op-no">no button / init</span></td>
+        <td>Player did not update information.</td>
+        <td><div class="script-box">Dear Player,
+We do apologize about this inconvenience.
+Please update information to complete the verification process on your end.</div></td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">suspected automation<br>incompatible languages<br>other</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>Submit a task to the Tier 2 Team.</td>
+        <td>—</td>
+    </tr>
+    <tr>
+        <td><span class="tag-name">FRAUDULENT_PATTERNS</span></td>
+        <td><span class="op-reset">no button / reset</span></td>
+        <td>Submit a task to the Tier 2 Team.</td>
+        <td>—</td>
+    </tr>
+</table>
+
+<div class="note">
+    <strong>补充说明：</strong>当搜索 "Key points for reply Sumsub Applicant" 时，建议使用关键词逐个搜索而非完整短语（例如搜索 "Compromised" 而非 "COMPROMISED_PERSONS"），因为 Auxiliary 标签格式变化可能导致完整短语搜索失败。
+</div>
+
+<hr>
+
+<p><em>本文档为 Sumsub KYC 处理专属指南，通用 KYC 规则请查阅<a href="general-kyc.html">通用-KYC</a>。</em></p>
+
+</body>
+</html>
