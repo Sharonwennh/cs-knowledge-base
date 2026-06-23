@@ -85,7 +85,8 @@ pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; 
 <a href="#kyc">🆔 KYC</a>
 <a href="#bug">🐛 已知Bug</a>
 <a href="#tag">🏷️ TAG</a>
-</div>
+
+    <a href="#updates">📋 Updates</a></div>
 
 <hr>
 
@@ -104,8 +105,8 @@ pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; 
 
 <h2 id="homepage">🏠 首页界面</h2>
 
-<img src="images/yea-master-homepage.png" alt="Yea Master 首页" class="kb-img" style="max-width:100%;">
-<p class="kb-img-caption">▲ Yea Master 首页界面，点击右上角 "☰" 弹出菜单，可关闭音效、联系客服等</p>
+<img src="images/yea-master-homepage.png" alt="Dosh Fever 首页示例" class="kb-img" style="max-width:100%;">
+<p class="kb-img-caption">▲ Dosh Fever 首页界面示例（Yea Master 系列包首页风格类似），点击右上角 "☰" 弹出菜单，可关闭音效、联系客服等</p>
 
 <ul>
 <li>点击首页右上方的 <strong>"☰"</strong> 弹出菜单，可以关闭音效、联系客服等。</li>
@@ -116,14 +117,35 @@ pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; 
 
 <h2 id="login">🔐 登录与密码</h2>
 
+<h3>注册账号</h3>
+<ul>
+<li>玩家登录游戏后点击 <strong>Bind Email</strong> 完成注册。</li>
+<li><strong>邮箱格式要求：</strong>XXX@XXX.XX，最大长度 50 个字符。</li>
+<li><strong>密码要求：</strong>8-20 个字符，至少包含 1 个数字和 1 个大写字母。</li>
+<li><strong>Yea Master Webapp</strong> 没有注册功能，需引导新玩家前往 <strong>Cool Spin Slots</strong> 进行游戏。</li>
+</ul>
+
 <h3>忘记密码</h3>
 <img src="images/login-forgot-password.png" alt="忘记密码界面" class="kb-img">
 <p class="kb-img-caption">▲ 登录界面，点击 "Forgot your password?" 可重置密码</p>
 
 <ul>
-<li>玩家在登录界面点击 <strong>"Forgot your password?"</strong> 进行密码重置</li>
-<li>系统会发送重置链接到注册邮箱</li>
-<li>如果玩家未收到邮件，检查垃圾邮件箱</li>
+<li>玩家在登录界面点击 <strong>"Forgot your password?"</strong> 进行密码重置。</li>
+<li>系统会发送重置链接到注册邮箱。</li>
+<li>如果玩家未收到邮件，检查垃圾邮件箱。</li>
+<li><strong>Yea Master GP（com.slots.yeamaster）已知 Bug：</strong>部分玩家登录界面没有 "Forgot your password?" 按钮。
+  <ul>
+  <li>如遇此情况，请提交工单给二线处理。</li>
+  <li>二线会在后台操作，向该玩家的注册邮箱发送密码重置链接。</li>
+  <li>重置链接<strong>有效期为 7 天</strong>，成功修改密码后该链接自动失效。</li>
+  </ul>
+</li>
+</ul>
+
+<h3>修改账号邮箱</h3>
+<ul>
+<li>修改邮箱需<strong>提交工单给二线</strong>处理。</li>
+<li>注意：<strong>一个邮箱只能绑定一个账号</strong>。</li>
 </ul>
 
 <hr>
@@ -220,8 +242,6 @@ pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; 
 
 <h3 id="weekly">Weekly Subscription 周订阅</h3>
 <img src="images/weekly-subscription.png" alt="Weekly Subscription 界面" class="kb-img">
-<img src="images/dosh-fever-weekly-subscription.png" alt="Dosh Fever 周订阅界面" class="kb-img">
-<p class="kb-img-caption">▲ Dosh Fever 周订阅界面示例</p>
 <p class="kb-img-caption">▲ Weekly Subscription 界面，三档周卡可选</p>
 
 <ul>
@@ -398,86 +418,27 @@ pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; 
 
 <hr>
 
-<hr>
-
-<h2 id="piggy">🐷 金猪（Piggy Bank）</h2>
-
-<img src="images/yea-master-piggy-bank.png" alt="金猪界面" class="kb-img" style="max-width:100%;">
-<p class="kb-img-caption">▲ 金猪界面，玩家可在此领取累计的游戏奖励</p>
+<h3>Buy Bonus（机台内购买）</h3>
+<img src="images/buy-bonus.png" alt="Buy Bonus 界面" class="kb-img">
+<p class="kb-img-caption">▲ Buy Bonus 界面：机台内直接购买 Bonus 功能，三档可选（Random Strike / High Strike / Super Strike）</p>
 
 <ul>
-<li>金猪的比例是 <strong>1 : 0.005</strong>。</li>
-<li>玩家在机台内单次消耗 <strong>≥ 0.5 SC</strong> 且累计游戏时间 <strong>&gt; 2 小时</strong>，才会被记录进去。</li>
-<li>一般是 <strong>UTC-8 的 0 点</strong> 领取前一天的奖励。</li>
-<li>如果玩家没有领取，系统会通过站内信补偿玩家（除 yea master ios 以及 slotchampions 外）。</li>
-<li>只有 coolspin 的玩家需要通过 KYC 才能领取金猪奖励，其他产品玩家直接手动领取。</li>
-<li><strong>向下取整规则：</strong>如玩家单次下注是 1，金猪奖励 = 1 × 0.005 = 0.5 美分 → 向下取整为 0。下注额 ≥ 2 时，金猪才有奖励（因资产最多 2 位小数）。</li>
-<li>如果玩家没有及时领取，则在 <strong>UTC+8 16:00:00</strong> 发送站内信补偿，但 coolspin 会一直累积。</li>
-<li><strong>金猪 GC 奖励：</strong>1. 单次下注 ≥ 20 GC；2. 金猪 GC 奖励比例为 5%。</li>
+<li>Buy Bonus 是机台内的 gameplay package。</li>
+<li><strong>充值 ID 399：</strong>纯 GC 套餐，套餐页面不赠送 SC，但玩家购买之后会<strong>立即通过站内信赠送 20 SC</strong>。</li>
+<li>若玩家声称没有领取到 SC，先搜索一下流水里的站内信普通邮件。</li>
 </ul>
 
-<hr>
-
-<h2 id="daily">📋 每日任务（Daily Mission）</h2>
-
-<img src="images/yea-master-daily-mission.png" alt="每日任务界面" class="kb-img" style="max-width:100%;">
-<p class="kb-img-caption">▲ 每日任务界面，完成任务可获得 SC、GC 和 JP 奖励</p>
-
-<ul>
-<li>此处 <strong>JP 就是 Jackpot 的道具</strong>。</li>
-<li>每日任务包含：SPIN 次数、SC SPIN 次数、WIN 金额、SPEND 金额、PURCHASE 次数等。</li>
-<li>完成任务可获得 SC、GC 和 JP 奖励。</li>
-</ul>
-
-<hr>
-
-<h2 id="tournament">🏁 Tournament（锦标赛 / Race）</h2>
-
-<div class="info">
-<strong>入口：</strong>游戏主界面底部点击 <strong>RACE</strong> 按钮进入<br>
-<strong>类型：</strong>Multiplier Rush、Big Hit、Wager Race、Winning Rush 等多种锦标赛模式
+<div class="template">
+Dear Player,<br><br>
+If you have encountered a situation where you purchased bonus package but did not receive them, please provide us with the following information:<br>
+1. The specific time of your bonus purchase (please try to provide the time in UTC+0)<br>
+2. The amount you spent on the purchase<br>
+3. The quantity of spins purchased<br>
+4. The name of the slot machine<br><br>
+Once we receive your information, we will immediately record and investigate the issue. We look forward to hearing back from you soon.
 </div>
 
-<h3>RACE 入口</h3>
-<img src="images/tournament-race-entry.png" alt="RACE 入口" class="kb-img">
-<p class="kb-img-caption">▲ 游戏底部 RACE 按钮，点击进入锦标赛界面</p>
 
-<h3>锦标赛列表</h3>
-<img src="images/tournament-list.png" alt="锦标赛列表" class="kb-img">
-<p class="kb-img-caption">▲ 锦标赛列表界面，展示当前进行中的各类赛事</p>
-
-<h3>规则说明</h3>
-<img src="images/tournament-how-it-works.png" alt="锦标赛规则" class="kb-img">
-<p class="kb-img-caption">▲ Tournament 规则说明：How It Works</p>
-
-<h3>排名查看</h3>
-<img src="images/tournament-rank-check.png" alt="排名查看" class="kb-img">
-<p class="kb-img-caption">▲ 实时排名界面，玩家可查看自己在锦标赛中的当前排名</p>
-
-<h3>锦标赛类型</h3>
-
-<h4>Multiplier Rush</h4>
-<img src="images/tournament-multiplier-rush.png" alt="Multiplier Rush" class="kb-img">
-<p class="kb-img-caption">▲ Multiplier Rush 锦标赛：以倍数挑战为核心</p>
-
-<h4>Big Hit</h4>
-<img src="images/tournament-big-hit.png" alt="Big Hit" class="kb-img">
-<p class="kb-img-caption">▲ Big Hit 锦标赛：以单次大额赢取为目标</p>
-
-<h4>Wager Race</h4>
-<img src="images/tournament-wager-race.png" alt="Wager Race" class="kb-img">
-<p class="kb-img-caption">▲ Wager Race 锦标赛：以累计下注金额排名</p>
-
-<h4>Winning Rush</h4>
-<img src="images/tournament-winning-rush.png" alt="Winning Rush" class="kb-img">
-<p class="kb-img-caption">▲ Winning Rush 锦标赛：以累计赢取金额排名</p>
-
-<ul>
-<li>点击底部 <strong>RACE</strong> 参加锦标赛，实时排名。</li>
-<li>不同锦标赛类型有不同的排名规则（倍数、单次赢取、累计下注、累计赢取等）。</li>
-<li>奖励根据最终排名发放，通常包括 SC、GC 等。</li>
-<li>锦标赛为限时活动，具体规则以当期活动说明为准。</li>
-</ul>
 
 <h2 id="christmas">🎄 圣诞礼物（Christmas List / Santa's Gift）</h2>
 
@@ -523,20 +484,6 @@ pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; 
 
 <h3>Jackpot 游戏进行中</h3>
 <img src="images/jackpot-game.png" alt="Jackpot 游戏界面" class="kb-img">
-<h3>Grand Jackpot 活动</h3>
-<img src="images/grand-jackpot.png" alt="Grand Jackpot 活动界面" class="kb-img">
-<p class="kb-img-caption">▲ Grand Jackpot 全局返利活动界面，首页 TASK 按钮进入任务界面</p>
-
-<ul>
-<li>完成每日/每周任务获得 GC/SC/Jackpot Tickets。</li>
-<li>消耗 Tickets 进入 Jackpot 机台转动，每次至少 1 个 Ticket，可调底分。</li>
-<li>产出特殊玩法机会/SC/GC/VIP 经验。</li>
-<li>获得 3 个 hot 7 bonus 进入 jackpot bonus game，开出三个 MINI 获对应奖励。</li>
-</ul>
-
-<h3>JP 道具说明</h3>
-<img src="images/jp-item.png" alt="JP 道具" class="kb-img">
-<p class="kb-img-caption">▲ Jackpot Ticket（JP）道具，用于 Jackpot 机台游戏</p>
 <p class="kb-img-caption">▲ Jackpot 游戏进行中，命中宝箱后进入翻帽子环节</p>
 
 <ul>
@@ -613,8 +560,7 @@ pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; 
 </ul>
 
 <h3>VIP 等级表</h3>
-<img src="images/club-vip-table.png" alt="VIP 等级表" class="kb-img" style="max-width:100%;">
-<p class="kb-img-caption">▲ VIP 等级表：从 Rookie 到 Immortal 共 10 级</p>
+
 
 <table>
 <thead><tr><th>VIP 等级</th><th>等级名称</th><th>升级所需经验</th><th>维持所需经验</th></tr></thead>
@@ -850,26 +796,6 @@ Thanks for contacting us. We suggest you wait patiently first and try again in a
 <li>验证通过就可以解封。（给玩家的话术是把信息交给了 payment platforms，我们尽量为他们解封）</li>
 </ul>
 
-<h3>Buy Bonus（机台内购买）</h3>
-<img src="images/buy-bonus.png" alt="Buy Bonus 界面" class="kb-img">
-<p class="kb-img-caption">▲ Buy Bonus 界面：机台内直接购买 Bonus 功能，三档可选（Random Strike / High Strike / Super Strike）</p>
-
-<ul>
-<li>Buy Bonus 是机台内的 gameplay package。</li>
-<li><strong>充值 ID 399：</strong>纯 GC 套餐，套餐页面不赠送 SC，但玩家购买之后会<strong>立即通过站内信赠送 20 SC</strong>。</li>
-<li>若玩家声称没有领取到 SC，先搜索一下流水里的站内信普通邮件。</li>
-</ul>
-
-<div class="template">
-Dear Player,<br><br>
-If you have encountered a situation where you purchased bonus package but did not receive them, please provide us with the following information:<br>
-1. The specific time of your bonus purchase (please try to provide the time in UTC+0)<br>
-2. The amount you spent on the purchase<br>
-3. The quantity of spins purchased<br>
-4. The name of the slot machine<br><br>
-Once we receive your information, we will immediately record and investigate the issue. We look forward to hearing back from you soon.
-</div>
-
 <hr>
 
 <h2 id="redemption">💰 Yea Master - Redemption 特殊规则</h2>
@@ -914,19 +840,6 @@ Once we receive your information, we will immediately record and investigate the
 <li>告诉玩家是<strong>第三方银行收取的</strong>，并不是我们收取的。</li>
 <li>玩家周转率不同，手续费也不同。</li>
 </ul>
-
-<h3>提现状态码（Yea Master 特殊状态）</h3>
-<table>
-<tr><th>状态码</th><th>含义</th><th>处理</th></tr>
-<tr><td>103</td><td>审核通过</td><td>Processing</td></tr>
-<tr><td>104</td><td>提交失败</td><td>Processing（message 字段会包含原因）</td></tr>
-<tr><td>106</td><td>已提交</td><td>Processing（提交到中间付款平台）</td></tr>
-<tr><td>113</td><td>Hyper 审核通过</td><td>Authorized</td></tr>
-<tr><td>114</td><td>争议/冻结</td><td>Failed</td></tr>
-<tr><td>116</td><td>Hyper 已发送打款</td><td>Sent</td></tr>
-<tr><td>200</td><td>已退款</td><td>Refunded</td></tr>
-<tr><td>已取消</td><td>Cancelled</td><td>-</td></tr>
-</table>
 
 <h3>修改提现邮箱 / 更换 ACH 账号</h3>
 <ul>
@@ -1040,7 +953,16 @@ Kindly note that our cooperation company's account name is <strong>Essential Tec
 <p class="kb-img-caption">▲ 定位非法州弹窗，提示 "UNAVAILABLE IN YOUR LOCATION"</p>
 
 <ul>
-<li><strong>问题描述：</strong>玩家所在州为禁运州时，进入游戏会弹出此提示，无法继续游戏。</li>
+<li><strong>通用规则：</strong>玩家所在州为禁运州时，进入游戏会弹出此提示，无法继续游戏。通用禁运州规则适用于所有游戏包。</li>
+<li><strong>Cool Spin 特殊规则：</strong>
+<ul>
+<li>以下 NY / CA 州玩家<strong>可以正常登录和充值</strong>，但<strong>不能提现</strong>：
+<a href="coolspin-ny-blocked.html" class="link-card">NY州清退列表</a>
+<a href="coolspin-ca-blocked.html" class="link-card">CA州清退列表</a>
+</li>
+<li>表外的 NY / CA 州玩家及其他禁运州玩家，无法登录游戏。</li>
+</ul>
+</li>
 <li><strong>处理流程：</strong>
 <ol>
 <li>确认玩家是否使用了 VPN 或代理，如有则要求关闭</li>
@@ -1054,8 +976,6 @@ Kindly note that our cooperation company's account name is <strong>Essential Tec
 <strong>⚠️ 注意：</strong>不可向玩家透露具体禁运州名单，仅告知其所在地区暂不支持服务即可。
 </div>
 
-<hr>
-
 <h2 id="tag">🏷️ Yea Master - 专属 TAG</h2>
 <p>通用 TAG 请查阅 <a href="../general/general-cs-tag.html">通用-CS-TAG</a></p>
 
@@ -1068,6 +988,33 @@ Yea Master 专属 TAG 待补充 — 请项目组提供常见客诉标签清单
 <p><em>本文档为 Yea Master 项目组专属规则，通用规则请查阅 <a href="../index.html">通用知识库</a>。</em></p>
 
 <a href="#" class="back-to-top" title="返回顶部">↑</a>
+
+<hr>
+
+<h2 id="updates">📋 Updates 更新日志</h2>
+
+<table>
+<thead><tr><th>日期</th><th>更新内容</th></tr></thead>
+<tbody>
+<tr><td>2026-06-23</td><td>
+<ul style="margin:0">
+<li>新增金猪（Piggy Bank）、每日任务（Daily Mission）、Tournament 章节</li>
+<li>新增 Cool Spin 邀请功能（Referral）章节</li>
+<li>新增 CLUB 俱乐部完整规则及 VIP 等级表</li>
+<li>新增 Jackpot 游戏及 GC 兑换 JP 规则</li>
+<li>新增 Christmas List / Santa's Gift 活动规则</li>
+<li>新增 Ascent Charge Buffalo、Diamonds 7/25 等机台规则</li>
+<li>新增 Dosh Fever 专属规则（AMOE、KYC 奖励等）</li>
+<li>新增 Buy Bonus 机台内购买规则</li>
+<li>新增 SC 转化为 GC（Bonus Exchange）规则</li>
+<li>新增 Weekly Subscription 周订阅规则</li>
+<li>新增 Cash Back / Combo Flip / Lucky Flip 等充值活动</li>
+<li>新增已知 Bug（定位加载、非法州弹窗）</li>
+<li>新增所有相关界面截图</li>
+</ul>
+</td></tr>
+</tbody>
+</table>
 
 </body>
 </html>
