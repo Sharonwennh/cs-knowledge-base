@@ -166,6 +166,34 @@
       font-weight: 700;
       margin-bottom: 0.4rem;
     }
+    .img-ref {
+      margin: 1.2rem 0;
+      text-align: center;
+    }
+    .img-ref img {
+      max-width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .img-caption {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+    .img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+    .img-grid .img-ref img {
+      width: 100%;
+    }
+    @media (max-width: 640px) {
+      .img-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -240,6 +268,17 @@
     <span class="lang-zh">我们游戏目前 <strong>只支持明信片邮寄 AMOE</strong>。玩家必须按照游戏内 AMOE 页面的说明发送实体明信片或信件。</span>
   </p>
 
+  <div class="img-grid">
+    <div class="img-ref">
+      <img src="assets/images/amoe-postal-request-codes.png" alt="Postal Request Codes - Acorn & Legends">
+      <p class="img-caption">Figure 1: Postal Request Codes — In-game page (Acorn & Legends) / 游戏内邮寄请求码页面（Acorn & Legends）</p>
+    </div>
+    <div class="img-ref">
+      <img src="assets/images/amoe-gleaming-display.png" alt="Get Free SC - Acorn Gleaming">
+      <p class="img-caption">Figure 2: "Get Free SC" popup — Acorn Gleaming / Acorn Gleaming 游戏 "Get Free SC" 弹窗</p>
+    </div>
+  </div>
+
   <h3>How It Works / 流程说明</h3>
   <ol>
     <li><span class="lang-en">Player opens the in-game AMOE page (e.g., "Get Free SC").</span> <span class="lang-zh">玩家打开游戏内 AMOE 页面（如 "Get Free SC"）。</span></li>
@@ -257,8 +296,8 @@
 
   <h3>Applicable Projects / 适用产品</h3>
   <p>
-    <span class="lang-en">Acorn, Legends Display (and other projects using the postal AMOE system).</span><br>
-    <span class="lang-zh">Acorn、Legends Display（及其他使用邮寄 AMOE 系统的项目）。</span>
+    <span class="lang-en">Acorn, Legends Display, Acorn Gleaming (and other projects using the postal AMOE system).</span><br>
+    <span class="lang-zh">Acorn、Legends Display、Acorn Gleaming（及其他使用邮寄 AMOE 系统的项目）。</span>
   </p>
 
   <!-- 4. Key Refresh -->
@@ -276,6 +315,11 @@
     <span class="lang-en">If a player reports that the key is not refreshing, do not promise a specific refresh time. Use the standard reply below.</span><br>
     <span class="lang-zh">如果玩家报告请求码未刷新，不要承诺具体的刷新时间。使用下方标准回复。</span>
   </p>
+
+  <div class="img-ref">
+    <img src="assets/images/amoe-key-refresh.png" alt="AMOE Key Refresh - Get Free SC Page">
+    <p class="img-caption">Figure 3: "GET FREE SC" page with Key Refresh tip — "Get your KEY after binding email and completing KYC" / "GET FREE SC" 页面含 Key 刷新提示</p>
+  </div>
 
   <!-- 5. Processing Time -->
   <h2 id="processing-time">5. Processing Time & Escalation / 处理时间与升级规则</h2>
