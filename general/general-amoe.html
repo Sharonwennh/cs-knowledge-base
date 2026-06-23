@@ -1,82 +1,450 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>通用-AMOE 替代参与方式知识库</title>
-<style>
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
-h1 { color: #2c3e50; border-bottom: 3px solid #f39c12; padding-bottom: 15px; }
-h2 { color: #34495e; margin-top: 30px; border-left: 4px solid #f39c12; padding-left: 10px; background: #fdf8f0; padding: 8px 10px; }
-h3 { color: #555; margin-top: 20px; }
-.warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
-.note { background: #e8f4fd; border-left: 4px solid #3498db; padding: 10px 15px; margin: 15px 0; }
-table { border-collapse: collapse; width: 100%; margin: 15px 0; }
-th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-th { background-color: #f39c12; color: white; }
-tr:nth-child(even) { background-color: #f9f9f9; }
-a { color: #3498db; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General AMOE Knowledge Base</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #dbeafe;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --bg: #ffffff;
+      --bg-alt: #f9fafb;
+      --border: #e5e7eb;
+      --code-bg: #f3f4f6;
+      --warning: #f59e0b;
+      --warning-bg: #fffbeb;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --success: #16a34a;
+      --success-bg: #f0fdf4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg-alt);
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg);
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    .subtitle {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-light);
+      color: var(--primary);
+    }
+    h3 {
+      font-size: 1.15rem;
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: var(--text);
+    }
+    h4 {
+      font-size: 1rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    p, ul, ol {
+      margin-bottom: 1rem;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    thead th {
+      background: #4472C4;
+      color: #fff;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 600;
+    }
+    tbody td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr:nth-child(even) { background: #D9E2F3; }
+    tbody tr:nth-child(odd) { background: #fff; }
+    code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 0.9em;
+      color: var(--primary);
+    }
+    .highlight-box {
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      border-left: 4px solid;
+    }
+    .highlight-box.warning {
+      background: var(--warning-bg);
+      border-color: var(--warning);
+    }
+    .highlight-box.danger {
+      background: var(--danger-bg);
+      border-color: var(--danger);
+    }
+    .highlight-box.success {
+      background: var(--success-bg);
+      border-color: var(--success);
+    }
+    .highlight-box.info {
+      background: var(--primary-light);
+      border-color: var(--primary);
+    }
+    .toc {
+      background: var(--bg-alt);
+      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .toc h3 { margin-top: 0; font-size: 1.1rem; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin-bottom: 0.3rem; }
+    .toc a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .toc a:hover { text-decoration: underline; }
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-item strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--primary);
+    }
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2rem 0;
+    }
+    .lang-en { color: #374151; }
+    .lang-zh { color: #6b7280; font-size: 0.95em; }
+    .internal-note {
+      background: #fef3c7;
+      border: 1px dashed #f59e0b;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #92400e;
+      margin: 1rem 0;
+    }
+    .internal-note::before {
+      content: "🚨 INTERNAL ONLY — DO NOT SHARE WITH PLAYERS / 内部信息，请勿告知玩家";
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+  </style>
 </head>
 <body>
+<div class="container">
 
-<h1>🎁 通用-AMOE 替代参与方式知识库</h1>
+  <h1>General AMOE Knowledge Base</h1>
+  <p class="subtitle">AMOE 通用知识库 | Last Updated: 2026-06-23</p>
 
-<div class="warning">
-<strong>⚠️ 适用范围：</strong>本文档适用于所有项目组的AMOE替代参与方式。各项目组可能有不同的AMOE活动形式和参与渠道。
+  <div class="highlight-box warning">
+    <strong>Scope / 适用范围：</strong> This document applies to all project teams. Each project may have different AMOE activity formats and participation channels. / 本文档适用于所有项目组的 AMOE 替代参与方式。各项目组可能有不同的 AMOE 活动形式和参与渠道。
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>Table of Contents / 目录</h3>
+    <ul>
+      <li><a href="#overview">1. Overview / 概述</a></li>
+      <li><a href="#prerequisites">2. Prerequisites / 前置条件</a></li>
+      <li><a href="#postal-amoe">3. Postal AMOE (Current Supported Method) / 明信片邮寄 AMOE</a></li>
+      <li><a href="#key-refresh">4. Postal Request Code Key Refresh / 邮寄请求码刷新规则</a></li>
+      <li><a href="#processing-time">5. Processing Time & Escalation / 处理时间与升级规则</a></li>
+      <li><a href="#cs-guidelines">6. CS Guidelines / 客服规范</a></li>
+      <li><a href="#reply-templates">7. Reply Templates / 回复模板</a></li>
+      <li><a href="#faq">8. FAQ / 常见问题</a></li>
+      <li><a href="#internal-notes">9. Internal Notes / 内部备注</a></li>
+    </ul>
+  </div>
+
+  <!-- 1. Overview -->
+  <h2 id="overview">1. Overview / 概述</h2>
+  <p>
+    <span class="lang-en"><strong>AMOE (Alternative Method of Entry)</strong> is a free participation method that allows players to receive Sweepstakes Coins (SC) without making a purchase.</span><br>
+    <span class="lang-zh"><strong>AMOE（替代参与方式）</strong> 是一种免费参与活动的方式，允许玩家在不充值的情况下获得 Sweepstakes Coins (SC)。</span>
+  </p>
+  <p>
+    <span class="lang-en"><strong>Do not proactively discuss AMOE with players unless the player asks first.</strong></span><br>
+    <span class="lang-zh"><strong>除非玩家主动询问，否则不要主动向玩家提及 AMOE。</strong></span>
+  </p>
+
+  <h3>1.1 Common AMOE Methods / 常见 AMOE 方式</h3>
+  <ul>
+    <li><span class="lang-en">Postal mail (postcard / letter) — <strong>Currently the only supported method in our games.</strong></span> <span class="lang-zh">邮寄参与（明信片/信件）— <strong>目前我们游戏中唯一支持的方式。</strong></span></li>
+    <li><span class="lang-en">Online form submission</span> <span class="lang-zh">线上表单提交</span></li>
+    <li><span class="lang-en">Phone participation</span> <span class="lang-zh">电话参与</span></li>
+    <li><span class="lang-en">Other project-specific methods</span> <span class="lang-zh">其他项目组指定方式</span></li>
+  </ul>
+
+  <h3>1.2 General Principles / 通用原则</h3>
+  <ul>
+    <li><span class="lang-en">AMOE has participation limits and eligibility requirements.</span> <span class="lang-zh">AMOE 有参与次数限制和资格要求。</span></li>
+    <li><span class="lang-en">Guide players to comply with the activity terms and Sweeps Rules.</span> <span class="lang-zh">需引导玩家遵守活动条款和 Sweeps Rules。</span></li>
+    <li><span class="lang-en">AMOE benefits must not conflict with paying players' rights.</span> <span class="lang-zh">不可与充值玩家权益冲突。</span></li>
+    <li><span class="lang-en">Specific methods vary by activity and project.</span> <span class="lang-zh">具体方式因活动和项目组而异。</span></li>
+  </ul>
+
+  <!-- 2. Prerequisites -->
+  <h2 id="prerequisites">2. Prerequisites / 前置条件</h2>
+  <div class="highlight-box danger">
+    <strong>Mandatory Requirement / 强制要求：</strong><br>
+    <span class="lang-en">Players must complete <strong>Basic KYC</strong> before they can participate in AMOE and receive the free SC reward.</span><br>
+    <span class="lang-zh">玩家必须先完成 <strong>Basic KYC</strong>，才能参与 AMOE 并领取免费 SC 奖励。</span>
+  </div>
+  <p>
+    <span class="lang-en">If a player has not completed Basic KYC, they will not be able to generate a Postal Request Code or receive the AMOE reward. Instruct the player to complete KYC first.</span><br>
+    <span class="lang-zh">如果玩家未完成 Basic KYC，将无法生成邮寄请求码或收到 AMOE 奖励。请引导玩家先完成 KYC。</span>
+  </p>
+
+  <!-- 3. Postal AMOE -->
+  <h2 id="postal-amoe">3. Postal AMOE (Current Supported Method) / 明信片邮寄 AMOE</h2>
+  <p>
+    <span class="lang-en">Our games currently <strong>only support postal mail (postcard) AMOE</strong>. Players must follow the instructions on the in-game AMOE page to send a physical postcard or letter.</span><br>
+    <span class="lang-zh">我们游戏目前 <strong>只支持明信片邮寄 AMOE</strong>。玩家必须按照游戏内 AMOE 页面的说明发送实体明信片或信件。</span>
+  </p>
+
+  <h3>How It Works / 流程说明</h3>
+  <ol>
+    <li><span class="lang-en">Player opens the in-game AMOE page (e.g., "Get Free SC").</span> <span class="lang-zh">玩家打开游戏内 AMOE 页面（如 "Get Free SC"）。</span></li>
+    <li><span class="lang-en">Player enters their registered email and clicks <strong>"Get Key"</strong> to acquire a <strong>one-time unique Postal Request Code</strong>.</span> <span class="lang-zh">玩家输入注册邮箱，点击 <strong>"Get Key"</strong> 获取<strong>一次性唯一的邮寄请求码</strong>。</span></li>
+    <li><span class="lang-en">Player writes the Postal Request Code on a standard postcard or piece of white paper (Request Card) that meets the size requirements (typically 4"×6"), unfolded, blank, and unlined.</span> <span class="lang-zh">玩家将邮寄请求码写在符合尺寸要求（通常为 4"×6"）的标准明信片或白纸上，不可折叠、空白、无横线。</span></li>
+    <li><span class="lang-en">Player places the postcard inside a stamped #10 envelope, handwrites the return residential address registered to their game account, and mails it to the address specified on the AMOE page.</span> <span class="lang-zh">玩家将明信片放入贴好邮票的 #10 信封内，手写与游戏账户注册一致的居住地址作为回邮地址，寄往 AMOE 页面指定的地址。</span></li>
+    <li><span class="lang-en">After the support center processes the mail and verifies the request, the SC is credited to the player's game account.</span> <span class="lang-zh">支持中心处理邮件并核实请求后，将 SC 发放至玩家游戏账户。</span></li>
+  </ol>
+
+  <div class="highlight-box warning">
+    <strong>Important / 重要提示：</strong><br>
+    <span class="lang-en">Players must include the <strong>one-time unique Postal Request Code</strong> on their request. Failure to follow the proper procedures outlined in the <strong>Sweeps Rules</strong> may void the request.</span><br>
+    <span class="lang-zh">玩家必须在请求中附上<strong>一次性唯一的邮寄请求码</strong>。未按照 <strong>Sweeps Rules</strong> 中的正确流程操作可能导致请求无效。</span>
+  </div>
+
+  <h3>Applicable Projects / 适用产品</h3>
+  <p>
+    <span class="lang-en">Acorn, Legends Display (and other projects using the postal AMOE system).</span><br>
+    <span class="lang-zh">Acorn、Legends Display（及其他使用邮寄 AMOE 系统的项目）。</span>
+  </p>
+
+  <!-- 4. Key Refresh -->
+  <h2 id="key-refresh">4. Postal Request Code Key Refresh / 邮寄请求码刷新规则</h2>
+  <div class="highlight-box info">
+    <strong>Updated Guidance / 更新说明 (2026-01-16)：</strong><br>
+    <span class="lang-en">Some players may have the impression that the key refreshes within 10 minutes. <strong>This information is outdated.</strong></span><br>
+    <span class="lang-zh">有些玩家可能以为请求码在 10 分钟内刷新。<strong>该信息已过时。</strong></span>
+  </div>
+  <p>
+    <span class="lang-en">The AMOE Postal Code Key requires a <strong>certain period to refresh</strong>. We recommend players wait patiently and try again <strong>the next day</strong>.</span><br>
+    <span class="lang-zh">AMOE 邮寄请求码需要<strong>一定周期才能刷新</strong>。我们建议玩家耐心等待，<strong>第二天再尝试</strong>。</span>
+  </p>
+  <p>
+    <span class="lang-en">If a player reports that the key is not refreshing, do not promise a specific refresh time. Use the standard reply below.</span><br>
+    <span class="lang-zh">如果玩家报告请求码未刷新，不要承诺具体的刷新时间。使用下方标准回复。</span>
+  </p>
+
+  <!-- 5. Processing Time -->
+  <h2 id="processing-time">5. Processing Time & Escalation / 处理时间与升级规则</h2>
+  <h3>5.1 Standard Processing Timeline / 标准处理时间</h3>
+  <table>
+    <thead>
+      <tr><th>Stage / 阶段</th><th>Timeframe / 时间</th><th>CS Action / 客服操作</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Normal Processing / 正常处理</td>
+        <td>~15 days (half a month) / 约15天（半个月）</td>
+        <td>Advise player to wait patiently. / 建议玩家耐心等待。</td>
+      </tr>
+      <tr>
+        <td>Standard Maximum / 标准上限</td>
+        <td>Within 1 month / 1个月内</td>
+        <td>Advise player to wait patiently. / 建议玩家耐心等待。</td>
+      </tr>
+      <tr>
+        <td>Exceeded 1 Month / 超过1个月</td>
+        <td>Over 30 days / 超过30天</td>
+        <td><strong>Escalate to Tier 2 (T2)</strong> / <strong>升级至二线 (T2)</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>5.2 Escalation Rules (Updated 2026-06-17) / 升级规则</h3>
+  <div class="highlight-box warning">
+    <strong>Exceed 1 Month (Over 30 Days) / 超过1个月（30天以上）：</strong><br>
+    <span class="lang-en"><strong>Action:</strong> Escalate to Tier 2 (T2). T2 will forward the case to the Project Team to investigate.</span><br>
+    <span class="lang-zh"><strong>操作：</strong>升级至二线 (T2)。T2 将转交项目组调查。</span>
+  </div>
+  <p>
+    <span class="lang-en">For standard AMOE inquiries that are still within the 1-month window, kindly advise the player to wait patiently. Do not escalate prematurely.</span><br>
+    <span class="lang-zh">对于仍在1个月标准期限内的 AMOE 咨询，请建议玩家耐心等待。不要过早升级。</span>
+  </p>
+
+  <!-- 6. CS Guidelines -->
+  <h2 id="cs-guidelines">6. CS Guidelines / 客服规范</h2>
+  <h3>Do's / 应该做</h3>
+  <ul>
+    <li><span class="lang-en">Only discuss AMOE when the <strong>player asks first</strong>.</span> <span class="lang-zh">仅在<strong>玩家主动询问</strong>时讨论 AMOE。</span></li>
+    <li><span class="lang-en">Verify the player has completed <strong>Basic KYC</strong> before discussing AMOE eligibility.</span> <span class="lang-zh">在讨论 AMOE 资格前，确认玩家已完成 <strong>Basic KYC</strong>。</span></li>
+    <li><span class="lang-en">Direct players to the in-game AMOE page and the <strong>Sweeps Rules</strong> for detailed instructions.</span> <span class="lang-zh">引导玩家前往游戏内 AMOE 页面和 <strong>Sweeps Rules</strong> 查看详细说明。</span></li>
+    <li><span class="lang-en">For delays within 1 month, reassure the player and ask them to wait patiently.</span> <span class="lang-zh">对于1个月内的延迟，安抚玩家并请其耐心等待。</span></li>
+    <li><span class="lang-en">For delays exceeding 1 month, escalate to T2 promptly.</span> <span class="lang-zh">对于超过1个月的延迟，及时升级至 T2。</span></li>
+  </ul>
+
+  <h3>Don'ts / 不应该做</h3>
+  <ul>
+    <li><span class="lang-en">Do <strong>NOT</strong> proactively promote or mention AMOE to players.</span> <span class="lang-zh"><strong>不要</strong>主动向玩家推广或提及 AMOE。</span></li>
+    <li><span class="lang-en">Do <strong>NOT</strong> promise exact delivery dates for AMOE rewards.</span> <span class="lang-zh"><strong>不要</strong>承诺 AMOE 奖励的确切到账日期。</span></li>
+    <li><span class="lang-en">Do <strong>NOT</strong> tell players that the support center missed a callback or failed to process their mail.</span> <span class="lang-zh"><strong>不要</strong>告诉玩家支持中心遗漏了回调或未能处理其邮件。</span></li>
+    <li><span class="lang-en">Do <strong>NOT</strong> accuse players of using automation tools to write postcards, even if suspected.</span> <span class="lang-zh"><strong>不要</strong>指责玩家使用自动化工具写明信片，即使有所怀疑。</span></li>
+    <li><span class="lang-en">Do <strong>NOT</strong> provide outdated refresh time information (e.g., "10 minutes").</span> <span class="lang-zh"><strong>不要</strong>提供过时的刷新时间信息（如"10分钟"）。</span></li>
+  </ul>
+
+  <!-- 7. Reply Templates -->
+  <h2 id="reply-templates">7. Reply Templates / 回复模板</h2>
+
+  <h3>7.1 General AMOE Inquiry / 一般 AMOE 咨询</h3>
+  <div class="highlight-box success">
+    <p>Hi player, thanks for your patience.</p>
+    <p>Please kindly note that the Postal Request Code is an alternative method of entry in our game to receive free SC. For further information, please refer to the Sweeps Rules Policy.</p>
+    <p>You can follow the process on the AMOE page and mail the envelope out. These envelopes will be processed, and this process might need some time to proceed. After the process, we will issue the SC to your game account.</p>
+    <p>Please let us know if you need further assistance. Have a great day.</p>
+    <hr style="margin: 1rem 0; border: 0; border-top: 1px solid #ccc;">
+    <p>您好玩家，感谢您的耐心。</p>
+    <p>请注意，邮寄请求码是我们游戏中获取免费 SC 的替代参与方式。更多信息请参考 Sweeps Rules 政策。</p>
+    <p>您可以按照 AMOE 页面的流程操作并寄出信封。这些信封会被处理，整个过程可能需要一些时间。处理完成后，我们会将 SC 发放至您的游戏账户。</p>
+    <p>如果您需要进一步帮助，请随时告诉我们。祝您愉快。</p>
+  </div>
+
+  <h3>7.2 Key Not Refreshing / 请求码未刷新</h3>
+  <div class="highlight-box success">
+    <p>Hi player, thanks for your patience.</p>
+    <p>Please kindly note that the AMOE Postal Code Key requires a certain period to refresh. We recommend you wait patiently and try again the next day.</p>
+    <p>Thanks for your understanding.</p>
+    <hr style="margin: 1rem 0; border: 0; border-top: 1px solid #ccc;">
+    <p>您好玩家，感谢您的耐心。</p>
+    <p>请注意，AMOE 邮寄请求码需要一定周期才能刷新。我们建议您耐心等待，第二天再尝试。</p>
+    <p>感谢您的理解。</p>
+  </div>
+
+  <h3>7.3 Delayed Reward (Within 1 Month) / 奖励延迟（1个月内）</h3>
+  <div class="highlight-box success">
+    <p>Hi player, thanks for your patience.</p>
+    <p>We understand you are waiting for your AMOE reward. AMOE requests are usually completed within 1 month. The process involves physical mail handling and verification, which may take some time. We kindly ask you to wait a bit longer. Your SC will be credited to your account once the process is complete.</p>
+    <p>Please let us know if you still haven't received it after 1 month, and we will look into it for you right away.</p>
+    <p>Thanks for your understanding.</p>
+    <hr style="margin: 1rem 0; border: 0; border-top: 1px solid #ccc;">
+    <p>您好玩家，感谢您的耐心。</p>
+    <p>我们理解您正在等待 AMOE 奖励。AMOE 请求通常在 1 个月内完成。该流程涉及实体邮件的处理和核实，可能需要一些时间。恳请您再耐心等待一段时间。流程完成后，SC 将发放至您的账户。</p>
+    <p>如果超过 1 个月仍未收到，请告诉我们，我们会立即为您跟进。</p>
+    <p>感谢您的理解。</p>
+  </div>
+
+  <h3>7.4 Delayed Reward (Over 1 Month — Escalation) / 奖励延迟（超过1个月 — 升级）</h3>
+  <div class="highlight-box success">
+    <p>Hi player, thanks for your patience.</p>
+    <p>We sincerely apologize for the delay in your AMOE reward. Since your request has exceeded the standard processing time, we have escalated this to our specialized team for further investigation. We will update you as soon as we have more information.</p>
+    <p>Thank you for your patience and understanding.</p>
+    <hr style="margin: 1rem 0; border: 0; border-top: 1px solid #ccc;">
+    <p>您好玩家，感谢您的耐心。</p>
+    <p>对于您的 AMOE 奖励延迟，我们深表歉意。由于您的请求已超出标准处理时间，我们已将其升级至专业团队进一步调查。一有进展我们会立即通知您。</p>
+    <p>感谢您的耐心与理解。</p>
+  </div>
+
+  <!-- 8. FAQ -->
+  <h2 id="faq">8. FAQ / 常见问题</h2>
+
+  <div class="faq-item">
+    <strong>Q: What is AMOE? / 什么是 AMOE？</strong>
+    <p><span class="lang-en">AMOE (Alternative Method of Entry) is a free way for players to receive Sweepstakes Coins (SC) without making a purchase, by following the entry methods outlined in the Sweeps Rules.</span></p>
+    <p><span class="lang-zh">AMOE（替代参与方式）是玩家按照 Sweeps Rules 中的说明，在不充值的情况下免费获得 Sweepstakes Coins (SC) 的途径。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: Why can't I get a Postal Request Code? / 为什么我无法获取邮寄请求码？</strong>
+    <p><span class="lang-en">Please ensure you have completed <strong>Basic KYC</strong> first. Only players who have passed Basic KYC are eligible to generate a Postal Request Code. Also, the key requires a certain period to refresh — please try again the next day if you recently requested one.</span></p>
+    <p><span class="lang-zh">请确保您已完成 <strong>Basic KYC</strong>。只有通过 Basic KYC 的玩家才有资格生成邮寄请求码。此外，请求码需要一定周期刷新 — 如果您最近刚请求过，请第二天再尝试。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: How long does AMOE take? / AMOE 需要多久？</strong>
+    <p><span class="lang-en">AMOE requests are typically processed within 1 month. The timeline depends on physical mail delivery and our support center's processing queue. If it has been over 1 month, please contact us and we will escalate the case.</span></p>
+    <p><span class="lang-zh">AMOE 请求通常在 1 个月内处理完成。时间取决于实体邮件的投递和我们的支持中心处理队列。如果已超过 1 个月，请联系我们，我们会升级处理。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: I sent my postcard but haven't received SC. / 我寄了明信片但没收到 SC。</strong>
+    <p><span class="lang-en">Please allow up to 1 month for processing. Ensure you followed all instructions on the AMOE page, including using the correct Postal Request Code, envelope size, and return address. If it has been over 1 month, please contact us with your mailing details and we will investigate.</span></p>
+    <p><span class="lang-zh">请预留最多 1 个月的处理时间。请确认您按照 AMOE 页面的所有说明操作，包括使用正确的邮寄请求码、信封尺寸和回邮地址。如果已超过 1 个月，请联系我们并提供邮寄详情，我们会进行调查。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: Can I participate in AMOE multiple times? / 我可以多次参与 AMOE 吗？</strong>
+    <p><span class="lang-en">AMOE has participation limits and eligibility requirements as outlined in the Sweeps Rules. Please refer to the in-game AMOE page or the Sweeps Rules for the specific limits applicable to your account.</span></p>
+    <p><span class="lang-zh">AMOE 有参与次数限制和资格要求，具体请参阅游戏内 AMOE 页面或 Sweeps Rules 中适用于您账户的限制。</span></p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Q: Can I use AMOE if I am in a restricted state? / 如果我在限制州，可以使用 AMOE 吗？</strong>
+    <p><span class="lang-en">AMOE participation is subject to the same state restrictions as regular gameplay. Players in fully restricted states are not eligible. Please refer to the state restrictions list for details.</span></p>
+    <p><span class="lang-zh">AMOE 参与受与常规游戏相同的州限制约束。完全限制州的玩家不符合资格。详情请参考州限制列表。</span></p>
+  </div>
+
+  <!-- 9. Internal Notes -->
+  <h2 id="internal-notes">9. Internal Notes / 内部备注</h2>
+  <div class="internal-note">
+    <p><strong>1. Support Center Callback Issues / 支持中心回调问题</strong></p>
+    <p>When a player reports not receiving AMOE SC after the standard timeframe, it is often due to the support center missing the callback or failing to process the mail in the queue. In such cases, escalate to T2 so the Project Team can push the support center to complete the callback.</p>
+    <p>当玩家报告在标准时间内未收到 AMOE SC 时，通常是因为支持中心遗漏了回调或未能处理队列中的邮件。此类情况升级至 T2，由项目组推动支持中心完成回调。</p>
+
+    <p><strong>2. Automation Tool Suspicion / 自动化工具怀疑</strong></p>
+    <p>If there is suspicion that a player is using automation tools to mass-produce AMOE postcards, do NOT mention this to the player. Escalate to T2 / Risk Team for internal review and handling.</p>
+    <p>如果怀疑玩家使用自动化工具批量生成 AMOE 明信片，<strong>不要向玩家提及此事</strong>。升级至 T2 / 风控团队进行内部审查和处理。</p>
+
+    <p><strong>3. Reward Timeline Reference / 奖励时间参考</strong></p>
+    <p>While the official standard is "within 1 month," in practice rewards are usually processed within approximately 15 days (half a month). Use the 1-month standard when communicating with players, but be aware that internal processing typically takes ~15 days.</p>
+    <p>虽然官方标准为"1个月内"，但实际奖励通常在约 15 天（半个月）内处理完成。与玩家沟通时使用 1 个月标准，但内部处理通常约需 15 天。</p>
+  </div>
+
+  <div class="divider"></div>
+  <p style="text-align: center; color: var(--text-light); font-size: 0.85rem;">
+    CS Knowledge Base — General AMOE | sharonwennh.github.io/cs-knowledge-base
+  </p>
+
 </div>
-
-<p><strong>最后更新：</strong>2026-06-22</p>
-
-<hr>
-
-<h2>一、AMOE 概述</h2>
-
-<p>AMOE（Alternative Method of Entry）为免费参与活动的替代方式，提供不充值即可参与活动的途径。</p>
-
-<h3>1.1 常见AMOE方式</h3>
-<ul>
-<li>邮寄参与</li>
-<li>线上表单提交</li>
-<li>电话参与</li>
-<li>其他项目组指定方式</li>
-</ul>
-
-<h3>1.2 通用原则</h3>
-<ul>
-<li>AMOE有参与次数限制和资格要求</li>
-<li>需引导玩家遵守活动条款</li>
-<li>不可与充值玩家权益冲突</li>
-<li>具体方式因活动而异</li>
-</ul>
-
-<hr>
-
-<h2>二、AMOE 处理流程（通用）</h2>
-
-<ol>
-<li>确认玩家咨询的AMOE活动名称</li>
-<li>查阅对应项目组AMOE规则（参与方式、资格要求、截止日期）</li>
-<li>向玩家说明具体参与步骤</li>
-<li>记录玩家AMOE参与情况</li>
-</ol>
-
-<hr>
-
-<h2>三、AMOE 常见咨询（通用）</h2>
-
-<table>
-<thead><tr><th>咨询类型</th><th>处理方式</th></tr></thead>
-<tbody>
-<tr><td>如何参与AMOE</td><td>查阅项目组AMOE规则，提供具体步骤</td></tr>
-<tr><td>AMOE资格确认</td><td>核实玩家是否符合活动要求</td></tr>
-<tr><td>AMOE奖励未到账</td><td>查询AMOE处理记录，确认是否成功参与</td></tr>
-<tr><td>AMOE与充值冲突</td><td>解释AMOE不影响充值玩家权益，两者独立</td></tr>
-</tbody>
-</table>
-
-<hr>
-
-<p><em>本文档为通用规则，项目组专属AMOE活动请查阅对应项目组知识库。</em></p>
-
 </body>
 </html>
