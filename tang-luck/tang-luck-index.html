@@ -9,6 +9,7 @@
         h1 { color: #2c3e50; border-bottom: 3px solid #1abc9c; padding-bottom: 15px; }
         h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #1abc9c; padding-left: 12px; background: #e8f8f5; padding: 10px 12px; scroll-margin-top: 20px; }
         h3 { color: #555; margin-top: 25px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+        h4 { color: #666; margin-top: 20px; margin-bottom: 10px; }
         .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
         .warning { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px 15px; margin: 15px 0; }
         .info { background: #e8f4fd; border-left: 4px solid #3498db; padding: 10px 15px; margin: 15px 0; font-size: 14px; }
@@ -34,6 +35,27 @@
 
         .link-card { display: inline-block; padding: 6px 14px; background: #e8f8f5; color: #1abc9c; border-radius: 4px; text-decoration: none; margin: 3px 5px 3px 0; font-size: 13px; border: 1px solid #b8e0d6; }
         .link-card:hover { background: #1abc9c; color: #fff; }
+
+        /* 图片样式 */
+        .img-block { text-align: center; margin: 15px 0; }
+        .img-block img { max-width: 320px; width: 100%; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+        
+        .zh { color: #666; font-size: 13px; margin-top: 2px; font-style: italic; }
+        .zh-block { background: #f8f9fa; border-left: 3px solid #adb5bd; padding: 8px 12px; margin: 6px 0 10px 0; color: #555; font-size: 13.5px; line-height: 1.5; }
+        .zh-block p { margin: 4px 0; }
+        .zh-block ul, .zh-block ol { margin: 4px 0; padding-left: 18px; }
+        .zh-block li { margin: 3px 0; }
+        .zh-inline { color: #666; font-size: 13px; }
+.img-caption { font-size: 13px; color: #666; margin-top: 6px; }
+        .img-row { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 15px 0; }
+        .img-row .img-block { flex: 1 1 280px; max-width: 320px; margin: 0; }
+
+        /* FAQ 样式 */
+        .faq-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .faq-table th { background: #1abc9c; color: #fff; padding: 10px; text-align: left; }
+        .faq-table td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
+        .faq-table tr:nth-child(even) { background: #f9f9f9; }
+        .faq-q { font-weight: bold; color: #2c3e50; min-width: 180px; }
     </style>
 </head>
 <body>
@@ -49,31 +71,509 @@
     3. 两者冲突时，以本文档为准
 </div>
 
-<p><strong>最后更新：</strong>2026-06-22</p>
+<p><strong>最后更新：</strong>2026-06-24</p>
 
 <div class="toc">
     <strong>📑 快速导航</strong>
     <a href="#games">📱 包含游戏</a>
+    <a href="#general">📖 General</a>
     <a href="#purchase">💳 Purchase</a>
     <a href="#redemption">💰 Redemption</a>
     <a href="#kyc">🆔 KYC</a>
     <a href="#slots">🎮 机台/活动</a>
     <a href="#tag">🏷️ TAG</a>
-
-    <a href="#updates">📋 Updates</a></div>
+    <a href="#updates">📋 Updates</a>
+</div>
 
 <hr>
 
-<h2 id="games">📱 包含游戏</h2>
+
+
+<!-- ==================== GENERAL 章节 ==================== -->
+<h2 id="general">📖 General</h2>
+
+<h3>🎮 Game Introduction</h3>
+<p>It's a <strong>slots-based</strong> game, offering a wide variety of exciting slot machines for players to enjoy.</p>
+<div class="zh-block">这是一款以<strong>老虎机</strong>为核心的游戏，为玩家提供多种精彩刺激的老虎机玩法。</div>
+
+<p><strong>Bundles / 游戏包：</strong></p>
 <ul>
-    <li>Tang Luck 系列</li>
+    <li>Tang Luck (App ID: IOS387/GP494)</li>
+    <li>Magic Wheel Deluxe (App ID: 471)</li>
+    <li>Win Win Spins (App ID: 472)</li>
 </ul>
 
+<div class="warning">
+    <strong>Attention:</strong><br>
+    Tickets from Tang Luck will be tagged <strong>TL</strong> on AI Help and please process these tickets by referring to the Tang Luck Knowledge Base.<br>
+    <span class="zh">Tang Luck 的工单在 AI Help 上会被标记为 <strong>TL</strong>，请参照 Tang Luck 知识库处理这些工单。</span>
+</div>
+
+<div class="img-row">
+    <div class="img-block">
+        <img src="images/tang-luck-slots-lobby.png" alt="Slots Lobby">
+        <div class="img-caption">▲ Slots 游戏大厅 — 点击 LOBBY → SLOTS 查看各类老虎机</div>
+    </div>
+    <div class="img-block">
+        <img src="images/tang-luck-table-lobby.png" alt="Table Lobby">
+        <div class="img-caption">▲ Table 游戏大厅 — 点击 LOBBY → TABLE 查看桌面游戏（Blackjack、Texas Hold'em、Baccarat、Roulette 等）</div>
+    </div>
+</div>
+
+<h3>💰 Played SC & Forfeited SC</h3>
+<p><strong>What is played SC? / 什么是 Played SC（已玩 SC）？</strong></p>
+<p>Played SC is earned through gameplay, and played SC is redeemable.</p>
+<div class="zh-block">Played SC 是通过 gameplay 赢得的，可以提现。</div>
+
+<div class="warning">
+    <strong>Attention / 注意：</strong> Played SC from Bonus SC spins will be forfeited if players want to initiate the new redemption before fulfilling the 5x Bonus SC playthrough.<br>
+    <span class="zh">如果玩家在未完成 Bonus SC 的 5 倍投注要求之前发起新的提现，来自 Bonus SC 旋转的 Played SC 将被没收。</span>
+</div>
+
+<div class="img-row">
+    <div class="img-block">
+        <img src="images/tang-luck-redemption-page.png" alt="Redemption Page">
+        <div class="img-caption">▲ 提现页面：显示 Your redeemable balance，点击 "i" 可查看余额详情</div>
+    </div>
+    <div class="img-block">
+        <img src="images/tang-luck-sc-balance.png" alt="SC Balance Overview">
+        <div class="img-caption">▲ Sweeps Coins Balance 详情：Total Balance / Redeemable Balance / Unplayed Balance<br>注：1 SC = $1，Only SC won in games can be redeemed.</div>
+    </div>
+</div>
+
+<h3>🎁 Bonus SC</h3>
+
+<p><strong>Bonus SC for Tang Luck — What is the main difference from other slot games?</strong></p>
+
+<h4>How to get Bonus SC?</h4>
+<p>Players can get bonus SC through two ways:</p>
+
+<p><strong>1. One is from purchase promotions.</strong></p>
+<p><strong>For example:</strong></p>
+<p>If a player purchase $3 via the Newbie Promotion (150%), except the GC (Gold Coins) the player purchase, our game will also give them 3 free SC (unplayed) plus 1.5 bonus SC (unplayed).</p>
+<div class="zh-block"><strong>例如：</strong>如果玩家通过新手促销（150%）充值 $3，除了玩家购买的 GC（金币）外，游戏还会赠送 3 个免费 SC（unplayed）+ 1.5 个 bonus SC（unplayed）。</div>
+
+<p><strong>2. One is Bonus SC rewards from other free promotions</strong> (e.g., those from the Rewards Center).</p>
+
+<h4>What is Unplayed SC?</h4>
+<p><strong>Unplayed SC</strong> is SC that has not been used for gameplay including bonus SC, and all unplayed SC is <strong style="color:#dc3545">unredeemable</strong>.</p>
+<div class="zh-block">Unplayed SC 是尚未用于 gameplay 的 SC（包括 bonus SC），所有 unplayed SC 均<strong style="color:#dc3545">不可提现</strong>。</div>
+
+<p><strong>How to get unplayed SC?</strong></p>
+<ol>
+    <li>One way to get unplayed SC (free) is from free SC given after players make purchases. Normally, players will receive an equal amount of standard unplayed SC after regular purchases. For promotional purchases such as the weekly card bonus, players can earn the same amount of standard unplayed SC plus additional unplayed bonus SC.<br>
+    <em>Note: Players do not necessarily receive free SC with every purchase. (Not all shop packages come with free SC)</em><br>
+    <span class="zh">一种方式是在玩家 purchase 后获得 free SC。通常，regular purchase 后玩家会获得等量的 standard unplayed SC。对于 promotional purchase（如 weekly card bonus），玩家可获得等量 standard unplayed SC 加上额外的 unplayed bonus SC。<em>注意：并非每次 purchase 都会获得 free SC（不是所有 shop packages 都包含 free SC）。</em></span></li>
+    <li>Another way to obtain unplayed bonus SC (free) is via in-game activities (such as buyin rebate bonus, rewards center reward).<br>
+    <span class="zh">另一种方式是通过 in-game activities 获得 unplayed bonus SC（如 buyin rebate bonus、rewards center reward）。</span></li>
+</ol>
+
+<h4>What is Played SC?</h4>
+<p>Played SC is earned through gameplay, and played SC is redeemable.</p>
+
+<div class="warning">
+    <strong>Attention / 注意：</strong> Played SC from Bonus SC spins will be forfeited if players want to initiate the new redemption before fulfilling the 5x Bonus SC playthrough.<br>
+    <span class="zh">如果玩家在未完成 Bonus SC 的 5 倍投注要求之前发起新的提现，来自 Bonus SC 旋转的 Played SC 将被没收。</span>
+</div>
+
+<p><strong>Priority of Funds:</strong> Bonus SC is always <strong>used first</strong> before any other balances are used.</p>
+<div class="zh-block">Bonus SC 始终优先于其他任何 balance 被首先使用。</div>
+
+<p><strong>Spin Amount Requirement:</strong> All bonus SC is subject to a <strong>5x playthrough (spin) requirement</strong> before the redemption feature is unlocked.</p>
+<div class="zh-block">所有 bonus SC 在 redemption 功能解锁前需满足 5x playthrough（spin）要求。</div>
+
+<p><strong>Automatic Unlocking:</strong> If bonus SC balance reaches zero, any remaining playthrough requirements are automatically waived, and the redemption feature will be restored.</p>
+<div class="zh-block">如果 bonus SC balance 归零，所有剩余的 playthrough requirements 将自动免除，redemption 功能将恢复。</div>
+
+<p><strong>Examples for Clarity:</strong></p>
+<ul>
+    <li><strong>Example A:</strong> If a player has 1 Bonus SC, they must place a total of 5 SC in spin amount to satisfy the requirement and initiate a new redemption.<br>
+    <span class="zh">如果玩家有 1 个 Bonus SC，必须总共下注 5 SC 才能满足要求并发起新的 redemption。</span></li>
+    <li><strong>Example B:</strong> If a player has 1 Bonus SC, spin 1 SC, and lose that spin, their bonus SC is gone. Since the player no longer holds bonus SC, the redemption feature will unlock immediately.<br>
+    <span class="zh">如果玩家有 1 个 Bonus SC，spin 1 SC 并输掉，bonus SC 将消失。由于玩家不再持有 bonus SC，redemption 功能将立即解锁。</span></li>
+</ul>
+
+<h4>What is playthrough 5x?</h4>
+<p>All bonus SC is subject to a <strong>5x playthrough (spin) requirement</strong> before the redemption feature is unlocked.</p>
+<div class="zh-block">所有 bonus SC 在 redemption 功能解锁前需满足 5x playthrough（spin）要求。</div>
+
+<h4>What does it mean if a player's game account has bonus SC?</h4>
+<ol>
+    <li>Players with bonus SC in their account will have bonus SC <strong>used first</strong>.<br>
+    <span class="zh">账户中有 bonus SC 的玩家将优先使用 bonus SC。</span></li>
+    <li>Bonus SC will <strong>lock</strong> the player from initiating <strong>new redemption</strong>.<br>
+    <span class="zh">Bonus SC 将 lock 玩家发起 new redemption 的功能。</span></li>
+    <li>Redemption feature will be unlocked once players complete the required <strong>playthrough (5x)</strong>.<br>
+    <span class="zh">玩家完成所需的 playthrough（5x）后，redemption 功能将解锁。</span></li>
+    <li>Players may also <strong>forfeit</strong> the bonus SC and any rewards generated from bonus SC to unlock redemption feature immediately.<br>
+    <span class="zh">玩家也可以 forfeit bonus SC 及由此产生的任何 rewards，以立即解锁 redemption 功能。</span></li>
+</ol>
+
+<p><strong>Example:</strong> If a player's account has 5 redeemable SC and they receive 0.1 bonus SC, the player's redemption will be locked. There are two ways to unlock redemption:</p>
+<div class="zh-block">如果玩家账户有 5 个 redeemable SC，并收到 0.1 bonus SC，玩家的 redemption 将被锁定。有两种解锁方式：</div>
+<ul>
+    <li><strong>a.</strong> When the player spins a total of 0.5 SC (<strong>0.1×5 playthrough</strong>), redemption will be unlocked.<br>
+    If the player only spins 0.1 bonus SC and wins 2 SC, then clicks to unlock and confirms forfeit, 2 SC will be forfeited.<br>
+    <span class="zh">当玩家总共 spin 0.5 SC（0.1×5 playthrough）时，redemption 将解锁。如果玩家仅 spin 0.1 bonus SC 并 wins 2 SC，然后点击解锁并确认 forfeit，2 SC 将被 forfeited。</span></li>
+    <li><strong>b.</strong> The player can directly forfeit the 0.1 bonus SC to unlock redemption.<br>
+    <span class="zh">玩家可以直接 forfeit 0.1 bonus SC 以解锁 redemption。</span></li>
+</ul>
+
+<div class="img-row">
+    <div class="img-block">
+        <img src="images/tang-luck-weekly-subscription.png" alt="Weekly Subscription">
+        <div class="img-caption">▲ 7-Day Jade 周订阅：购买后可获得 Daily bonus SC（如 Jade Lite 每日 bonus 0.5 SC）</div>
+    </div>
+    <div class="img-block">
+        <img src="images/tang-luck-inbox-free-bonus.png" alt="Inbox Free Bonus">
+        <div class="img-caption">▲ Inbox 站内信：10 Free Bonus 奖励，玩家可在 Inbox 中领取</div>
+    </div>
+</div>
+
+<h4>Forfeit Bonus SC Procedure in the game</h4>
+<ol>
+    <li><strong>Locked Status:</strong> The redemption feature is locked.</li>
+    <li>Players click the unlock button then a <strong>Forfeit Warning Pop-Up</strong> appears:<br>
+    "Unlock Redemption? Forfeit remaining xx Bonus SC."</li>
+    <li><strong>Confirm:</strong> Click "Forfeit — Unlock now" → Relevant SC Deducted from account balance → Redemption is Unlocked.</li>
+    <li>Then players can click redeem button to redeem.</li>
+</ol>
+
+<p><strong>Backend:</strong> The backend game flow displays the <strong>Forfeit Bonus SC</strong>.</p>
+
+<div class="img-block">
+    <img src="images/tang-luck-forfeit-warning.png" alt="Forfeit Warning Pop-Up">
+    <div class="img-caption">▲ 游戏内 Forfeit Warning 弹窗：玩家点击 "Forfeit — Unlock now" 可放弃 Bonus SC 并解锁提现功能</div>
+</div>
+
+<h4>Forfeit Bonus SC Issue SOP (Tier 1)</h4>
+<p><strong>Scenario:</strong> A player claims they accidentally forfeited their Bonus SC or did not intend to do so and requests a restoration.</p>
+<div class="zh-block">玩家声称不小心 forfeited Bonus SC 或并非有意为之，要求恢复。</div>
+
+<div class="warning">
+    <strong>Tier 1 agents are authorized to handle this directly without creating a task.</strong><br>
+    <span class="zh">一线客服有权直接处理，无需创建工单。</span>
+</div>
+
+<ol>
+    <li><strong>Explain:</strong> Inform the player on the official Bonus SC rules so they understand how the forfeiture occurred.<br>
+    <span class="zh">向玩家说明官方 Bonus SC 规则，让其了解 forfeiture 如何发生。</span></li>
+    <li><strong>Clarify the Incident:</strong> Based on the backend game flow, explain the specific details of how/when the forfeiture was triggered to prevent future occurrences.<br>
+    <span class="zh">根据 backend game flow，解释 forfeiture 触发的时间/方式细节，防止未来再次发生。</span></li>
+    <li><strong>Process the Return:</strong> Calculate and return the <strong>Total SC Forfeited</strong> (this includes the sum of Unplayed SC + Played SC).<br>
+    <span class="zh">计算并返还 Total SC Forfeited（包括 Unplayed SC + Played SC 的总和）。</span></li>
+    <li><strong>Final Notification:</strong> Inform the player that the forfeited SC has been restored and they can claim it directly from their in-game inbox.<br>
+    <span class="zh">告知玩家 forfeited SC 已恢复，可直接从 in-game inbox 领取。</span></li>
+</ol>
+
+<h4>⚠️ Critical Requirements & Attention</h4>
+<ol>
+    <li><strong>The "Once-Only" Rule:</strong> A forfeited bonus can only be returned once.<br>
+    <span class="zh">Forfeited bonus 只能返还一次。</span></li>
+    <li><strong>Action:</strong> Before processing, you must search the Player ID in the Approval List and check compensation details to avoid duplicate compensation for one forfeiture.<br>
+    <span class="zh">处理前，必须在 Approval List 中搜索 Player ID 并检查 compensation details，避免重复补偿。</span></li>
+    <li><strong>Verification:</strong> Confirm if a previous "Forfeiture Return" has already been applied. If it has, the request must be denied.<br>
+    <span class="zh">确认是否已应用过 "Forfeiture Return"，如已应用则拒绝请求。</span></li>
+    <li><strong>Compensation sent:</strong> * Only send <strong>unplayed SC</strong> via an in-game message.<br>
+    <span class="zh">仅通过 in-game message 发送 unplayed SC。</span></li>
+    <li><strong>Calculation:</strong> The amount sent is the combined total of [Forfeited Played SC] + [Forfeited Unplayed SC].<br>
+    <span class="zh">发送金额 = [Forfeited Played SC] + [Forfeited Unplayed SC] 的总和。</span></li>
+</ol>
+
+<h4>In game message template</h4>
+<ul>
+    <li><strong>Reason:</strong> Forfeited Bonus SC Return</li>
+    <li><strong>Forfeit Time:</strong> 2026-03-12 04:11:38</li>
+    <li><strong>Forfeit Amount:</strong> xxSC = xx played + unplayed SC</li>
+</ul>
+<div class="zh-block">站内信模板：Reason 为 Forfeited Bonus SC Return，Forfeit Time 为放弃时间，Forfeit Amount 为被放弃的 played + unplayed SC 总和。</div>
+
+<p><strong>Title:</strong> Forfeited Bonus SC Return</p>
+<div class="zh-block">标题：Forfeited Bonus SC Return</div>
+<p><strong>Content:</strong> Dear player, our records show that XX Bonus SC was forfeited on 2026-03-12 04:11:38 UTC+0. We have processed a one-time restoration for you. Please claim your Forfeited Bonus SC Return now!</p>
+
+<h4>Bonus SC — How It Works</h4>
+
+<div class="img-block">
+    <img src="images/tang-luck-bonus-sc-rules.png" alt="Bonus SC Rules">
+    <div class="img-caption">▲ Bonus SC 规则详解：暂停提现直到完成 playthrough（当前为 5x）</div>
+</div>
+
+<ul>
+    <li><strong>Bonus SC locks redemption.</strong> It unlocks when you finish the playthrough or forfeit the bonus.<br>
+    <span class="zh">Bonus SC locks redemption，完成 playthrough 或 forfeit bonus 后解锁。</span></li>
+    <li><strong>Playthrough</strong> = each bonus amount × its multiplier (currently 5x, subject to change).<br>
+    <span class="zh">Playthrough = 每个 bonus amount × multiplier（当前 5x，可能变动）。</span></li>
+    <li><strong>Progress</strong> = your SC plays × the game coefficient. Outcome doesn't matter. GC plays don't count.<br>
+    <span class="zh">Progress = SC plays × game coefficient，Outcome 不重要，GC plays 不计入。</span></li>
+    <li>Each game uses a fixed coefficient based on its RTP (e.g., 96% → 1.0, 99% → 0.25).<br>
+    <span class="zh">每个游戏根据 RTP 使用 fixed coefficient（例如 96% → 1.0，99% → 0.25）。</span></li>
+    <li><strong>Protection:</strong> if your redeemable SC returns to the level before you claimed this bonus, redemption unlocks automatically.<br>
+    <span class="zh">如果 redeemable SC 回到领取此 bonus 前的水平，redemption 自动解锁。</span></li>
+    <li><strong>Stacking:</strong> multiple bonuses add up. No expiry. You can forfeit remaining Bonus SC anytime to unlock; the forfeited Bonus SC and its locked winnings are removed.<br>
+    <span class="zh">多个 bonuses 累加，无 expiry，可随时 forfeit 剩余 Bonus SC 以解锁；forfeited Bonus SC 及其 locked winnings 被移除。</span></li>
+</ul>
+<h3>🔄 SC / GC Switch</h3>
+<p>玩家可通过点击首页右上角的 <strong>SC / GC</strong> 按钮，在两种游戏模式之间自由切换。</p>
+
+<div class="img-row">
+    <div class="img-block">
+        <img src="images/tang-luck-sc-mode.png" alt="SC Mode">
+        <div class="img-caption">▲ SC 模式：点击右上角 SC 按钮，使用 Sweeps Coins 进行游戏</div>
+    </div>
+    <div class="img-block">
+        <img src="images/tang-luck-gc-mode.png" alt="GC Mode">
+        <div class="img-caption">▲ GC 模式：点击右上角 GC 按钮，使用 Gold Coins 进行游戏</div>
+    </div>
+</div>
+
+<h3>👤 ME Page</h3>
+<p>点击底部导航栏的 <strong>ME</strong> 按钮，可进入个人中心页面，包含以下功能入口：</p>
+
+<div class="img-block">
+    <img src="images/tang-luck-me-page.png" alt="ME Page">
+    <div class="img-caption">▲ ME 页面：包含 Rewards Center、Daily Mission、Redemptions、Transaction、How It Work、Help、Setting 等功能</div>
+</div>
+
+<h4>(1) Setting</h4>
+<p>点击 ME 页面的 <strong>Setting</strong> 按钮进入设置页面。</p>
+
+<p><strong>a. Sound & Music 开关</strong></p>
+<p>玩家可在 Setting 页面顶部开启或关闭 <strong>Sound（音效）</strong> 和 <strong>Music（音乐）</strong>。</p>
+
+<div class="img-block">
+    <img src="images/tang-luck-settings-sound.png" alt="Settings Sound & Music">
+    <div class="img-caption">▲ Setting 页面：Sound 和 Music 开关位于顶部，可自由开启/关闭</div>
+</div>
+
+<p><strong>b. Logout 登出</strong></p>
+<p>Setting 页面最下方提供 <strong>Logout</strong> 按钮，玩家点击即可退出当前账号登录。</p>
+
+<div class="img-block">
+    <img src="images/tang-luck-settings-logout.png" alt="Settings Logout">
+    <div class="img-caption">▲ Setting 页面最下方：Logout 按钮，点击可退出当前账号</div>
+</div>
+
+<p><strong>c. Promo Code 兑换码</strong></p>
+<p>玩家可通过 <strong>ME → SETTINGS → Promo Code</strong> 输入兑换码。</p>
+<p>Promo codes are typically shared through our official social media channels. Suggest players follow us and keep an eye on our event posts here: Facebook, Twitter, Instagram etc.</p>
+<div class="zh-block">Promo codes 通过官方社交媒体渠道分享，建议玩家关注 Facebook、Twitter、Instagram 等获取最新活动信息。</div>
+
+<div class="img-block">
+    <img src="images/tang-luck-about-page.png" alt="About Tang Luck">
+    <div class="img-caption">▲ About Tang Luck 页面：底部显示官方社交媒体链接（Facebook、Instagram、YouTube、X/Twitter），建议玩家关注以获取最新 Promo Code 和活动信息</div>
+</div>
+
+<p><strong>d. About Tang Luck 关于页面</strong></p>
+<p>玩家在 Setting 页面中点击 <strong>About Tang Luck</strong> 可进入关于页面，包含以下 5 个功能按钮：</p>
+<ul>
+    <li><strong>Privacy Policy</strong> — 隐私政策</li>
+    <li><strong>Terms Of Services</strong> — 服务条款</li>
+    <li><strong>Responsible Social Gameplay</strong> — 负责任社交游戏</li>
+    <li><strong>Sweeps Rules</strong> — 抽奖规则</li>
+    <li><strong>Postal Request SC</strong> — AMOE 替代参与方式：玩家可通过邮寄方式申请免费 SC</li>
+</ul>
+
+<div class="img-block">
+    <img src="images/tang-luck-about-tang-luck.png" alt="About Tang Luck Page">
+    <div class="img-caption">▲ About Tang Luck 页面：包含 Privacy Policy、Terms Of Services、Responsible Social Gameplay、Sweeps Rules、Postal Request SC 五个入口</div>
+</div>
+
+<h4>(2) How It Work</h4>
+<p>点击 ME 页面的 <strong>How It Work</strong> 按钮，可查看游戏的重要规则说明，包括以下内容：</p>
+<ul>
+    <li>Redemption Rules</li>
+    <li>Safety and Privacy</li>
+    <li>Fair Games (RNG)</li>
+    <li>Eligibility & Check (Non-operation Regions)</li>
+    <li>Bonus SC</li>
+</ul>
+
+<div class="img-block">
+    <img src="images/tang-luck-how-it-work-menu.png" alt="How It Work Menu">
+    <div class="img-caption">▲ How It Work 菜单：包含 Redemption Rules、Safety and Privacy、Fair Games (RNG)、Eligibility & Check、Bonus SC 等规则入口</div>
+</div>
+
+<p><strong>Getting You Money / 提现说明</strong></p>
+<ul>
+    <li><strong>3-Day Redemption Promise.</strong> Late? Speed Credit. If a redemption takes longer than 3 business days after approval, we add Speed Credit: 1% per late business day, up to 10%, auto-credited as Bonus SC (5x playthrough).<br>
+    <span class="zh">Redemption 批准后超过 3 个工作日，将添加 Speed Credit：每延迟一个工作日 1%，最高 10%，自动作为 Bonus SC（5x playthrough）发放。</span></li>
+    <li><strong>How Redeem Works:</strong> Get GC → Get SC (free) → Win SC → Redeem<br>
+    <span class="zh">获得 GC → 获得 SC（free）→ Win SC → Redeem。</span></li>
+    <li>GC = Gold Coins, for fun, not redeemable.<br>
+    <span class="zh">GC = Gold Coins，仅供娱乐，不可 redeemable。</span></li>
+    <li>SC = Sweeps Coins; only your SC winnings are redeemable.<br>
+    <span class="zh">SC = Sweeps Coins，只有 SC winnings 可 redeemable。</span></li>
+    <li><strong>Example:</strong> You start with 100 SC gifted and Win 70 SC → Redeemable = 70 SC.<br>
+    <span class="zh">以 100 SC gifted 开始，Win 70 SC → Redeemable = 70 SC。</span></li>
+</ul>
+
+<div class="img-block">
+    <img src="images/tang-luck-how-it-work-redeem.png" alt="How It Work Redeem">
+    <div class="img-caption">▲ How It Work — Getting You Money：3-Day Redemption Promise、How Redeem Works 流程说明</div>
+</div>
+
+<p><strong>Limits And Fees / 限额与手续费</strong></p>
+<ul>
+    <li>No minimum. No limit.<br>
+    <span class="zh">无最低限额，无上限。</span></li>
+    <li>Daily cap: $5,000 (Club $15,000).<br>
+    <span class="zh">Daily cap: $5,000（Club $15,000）。</span></li>
+    <li>Fee 5% base (Club 2%).<br>
+    <span class="zh">Fee 5% base（Club 2%）。</span></li>
+    <li>Methods: PayPal、ACH、Debit Card、Venmo<br>
+    <span class="zh">方式：PayPal、ACH、Debit Card、Venmo。</span></li>
+</ul>
+
+<p><strong>Safety And Privacy / 安全与隐私</strong></p>
+<ul>
+    <li>Privacy protected. Payments via trusted partners.<br>
+    <span class="zh">Privacy 受保护，Payments 通过可信合作伙伴。</span></li>
+</ul>
+
+<p><strong>Fair Games / 公平游戏</strong></p>
+<ul>
+    <li>Independent RNG tests<br>
+    <span class="zh">Independent RNG 测试。</span></li>
+    <li>RTP shown per game (~96%)<br>
+    <span class="zh">每款游戏显示 RTP（~96%）。</span></li>
+    <li>Gaming Labs Certified<br>
+    <span class="zh">Gaming Labs Certified。</span></li>
+</ul>
+
+<div class="img-block">
+    <img src="images/tang-luck-how-it-work-limits.png" alt="How It Work Limits">
+    <div class="img-caption">▲ How It Work — Limits And Fees：Daily cap $5,000、Fee 5% base；Safety And Privacy；Fair Games (RNG Certified)</div>
+</div>
+
+<p><strong>Eligibility & Checks / 资格与地区检查</strong></p>
+<ul>
+    <li>SC play needs Geolocation.</li>
+    <li>To buy coins we verify Age.</li>
+    <li>To redeem we verify ID.</li>
+    <li>Over $2,000 we ask for SSN.</li>
+    <li>Over $20,000 we ask for POA.</li>
+</ul>
+
+<div class="warning">
+    <strong>Restricted States（非法州）：</strong> Connecticut, Delaware, Kentucky, Michigan, Washington, New York, Montana, Louisiana, Nevada, New Jersey<br>
+    <em>注：Tang Luck 的非法州与通用知识库中的非法州一致，具体请查阅 <a href="../general/general-states.html">通用-States</a>。</em>
+</div>
+
+<div class="img-block">
+    <img src="images/tang-luck-how-it-work-eligibility.png" alt="How It Work Eligibility">
+    <div class="img-caption">▲ How It Work — Eligibility & Checks：SC play 需要地理位置验证；提现需验证 ID；$2,000+ 需 SSN；$20,000+ 需 POA；下方显示美国非法州地图</div>
+</div>
+
+<p><strong>Bonus SC / 奖励 SC 规则</strong></p>
+<ul>
+    <li>Extra SC from promos.</li>
+    <li>Pauses redemption until you finish the playthrough (currently 5x).</li>
+</ul>
+
+<div class="img-block">
+    <img src="images/tang-luck-how-it-work-bonus-sc.png" alt="How It Work Bonus SC">
+    <div class="img-caption">▲ How It Work — Bonus SC：Extra SC from promos，暂停提现直到完成 playthrough（当前 5x）</div>
+</div>
+
+<h4>(3) Redemptions</h4>
+<p>点击 ME 页面的 <strong>Redemptions</strong> 按钮，玩家可查看自己的提现历史记录。</p>
+<ul>
+    <li>页面显示所有提现申请的状态：ALL / COMPLETED / PENDING / DECLINED</li>
+    <li>每条记录显示：提现方式（如 ACH）、尾号、状态、金额、时间</li>
+</ul>
+
+<div class="img-block">
+    <img src="images/tang-luck-redemptions-history.png" alt="Redemptions History">
+    <div class="img-caption">▲ Redemptions 页面：显示玩家提现历史，包含 ALL / COMPLETED / PENDING / DECLINED 四个标签页</div>
+</div>
+
+<h4>(4) Transaction</h4>
+<p>点击 ME 页面的 <strong>Transaction</strong> 按钮，进入交易记录页面。</p>
+<p>请注意：<strong>SC 模式下仅显示 SC 交易记录</strong>。玩家可在此页面查看自己的交易历史。</p>
+
+<p><strong>a. Balance（余额变动）</strong></p>
+<p>该页面显示每次游戏时的交易记录（同一老虎机游戏的一轮），按所选日期展示每笔变动的时间、原因和金额。</p>
+
+<div class="img-block">
+    <img src="images/tang-luck-transaction-balance.png" alt="Transaction Balance">
+    <div class="img-caption">▲ Transaction — Balance：显示每次游戏时的余额变动记录（Date、Change Reason、金额），底部显示 Total SC Change 和日期范围</div>
+</div>
+
+<p><strong>b. Game Play（游戏汇总）</strong></p>
+<p>该页面显示每天的总下注 SC 和总赢/亏金额。</p>
+
+<div class="img-block">
+    <img src="images/tang-luck-transaction-gameplay.png" alt="Transaction Game Play">
+    <div class="img-caption">▲ Transaction — Game Play：显示每天的总下注 SC 和总赢/亏金额（Total Period、Play Amount、Win/Loss）</div>
+</div>
+
+<p><strong>c. Specific Game Play Transaction（具体机台交易）</strong></p>
+<p>点击某条 Game Play 记录后，可查看该日期下具体每个机台的输赢明细，包括每次旋转的下注金额和赢取金额。</p>
+
+<div class="img-block">
+    <img src="images/tang-luck-transaction-specific.png" alt="Specific Game Play Transaction">
+    <div class="img-caption">▲ Specific Game Play Transaction：显示所选日期下具体机台的每次旋转记录（Game、Play Amount、Win Amount）</div>
+</div>
+
+<h4>(5) Help</h4>
+<p>点击 ME 页面的 <strong>Help</strong> 按钮，可直接进入游戏内客服聊天界面，联系客服支持团队。</p>
+
+<div class="img-block">
+    <img src="images/tang-luck-help-chat.png" alt="Help Customer Service">
+    <div class="img-caption">▲ Help 页面：Customer Service 聊天界面，玩家可直接发送消息联系客服</div>
+</div>
+
+<h3>⬇️ Download</h3>
+<p><strong>Tang Luck Official Website：</strong> <a href="https://tangluck.com" target="_blank">https://tangluck.com</a></p>
+<p>当玩家询问下载链接时，请发送官方网址给玩家，引导按以下步骤操作：</p>
+<ol>
+    <li>点击官网页面的 <strong>"Play Now"</strong> 按钮</li>
+    <li>Android 手机将自动跳转至 <strong>Google Play Store</strong></li>
+    <li>iPhone 将自动跳转至 <strong>iOS App Store</strong></li>
+</ol>
+
+<div class="img-block">
+    <img src="images/tang-luck-download.png" alt="Download Instructions">
+    <div class="img-caption">▲ 下载指引：引导玩家访问 tangluck.com，点击 Play Now 按钮，根据设备自动跳转至对应应用商店</div>
+</div>
+
+<h3>❓ FAQ</h3>
+
+<table class="faq-table">
+    <thead>
+        <tr><th style="width:20%">Question</th><th style="width:40%">Reference Reply</th><th style="width:40%">中文参考回复</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="faq-q">Can earn real money?</td>
+            <td>Hello! Thank you for reaching out to us. You can earn SC through our SC games, and the SC you win is redeemable, with 1 SC equivalent to $1. Please feel free to contact us if you have any further questions or concerns. We are always here to assist you and ensure your gaming experience is enjoyable.</td>
+            <td>您好！感谢您联系我们。您可以通过我们的 SC 游戏赚取 SC，赢得的 SC 可以提现，1 SC = $1。如有任何疑问，请随时联系我们。我们随时为您提供帮助，确保您拥有愉快的游戏体验！</td>
+        </tr>
+        <tr>
+            <td class="faq-q">Transaction</td>
+            <td>Hello! After reviewing your game account, we found everything to be in order. You can easily check your transaction history on your end. Please navigate to your profile page and click on the transactions to view the details of your game history. Thank you for your understanding!</td>
+            <td>您好！经审核您的游戏账户，一切正常。您可以在您的设备上轻松查看交易历史。请进入个人资料页面，点击 transactions 查看游戏历史详情。感谢您的理解！</td>
+        </tr>
+        <tr>
+            <td class="faq-q">How to play with GC/SC?</td>
+            <td>Hello! You can easily switch the game mode by clicking the SC/GC button located in the top right corner. If you have any further questions or concerns, please feel free to reach out to us. We're always here to assist you and ensure you have an enjoyable gaming experience!</td>
+            <td>您好！您可以轻松切换游戏模式，只需点击右上角的 SC/GC 按钮。如有任何疑问，请随时联系我们。我们随时为您提供帮助，确保您拥有愉快的游戏体验！</td>
+        </tr>
+        <tr>
+            <td class="faq-q">Sign up bonus/reward?</td>
+            <td>Dear player, thank you for supporting our game! Please check to see if you have successfully registered your game account. If not, kindly register using your email address, and all players will receive a Welcome Gift (0.6 SC + 100 GC) after successful registration. If you have any further concerns or issues, please feel free to reach out to us.</td>
+            <td>亲爱的玩家，感谢您支持我们的游戏！请确认您是否已成功注册游戏账户。如果尚未注册，请使用您的邮箱地址注册，所有玩家在成功注册后将获得 Welcome Gift（0.6 SC + 100 GC）。如有任何疑问，请随时联系我们。</td>
+        </tr>
+    </tbody>
+</table>
+
 <hr>
 
-<h2 id="purchase">💳 Tang Luck - Purchase 特殊规则</h2>
+<!-- ==================== PURCHASE ==================== -->
+<h2 id="purchase">💳 Purchase</h2>
 
-<h3>充值渠道</h3>
+<h3>Recharge Channels</h3>
 <table>
     <tr><th>渠道</th><th>状态</th><th>备注</th></tr>
     <tr><td>PayPal</td><td>✅ 可用</td><td>多个供应商</td></tr>
@@ -97,9 +597,10 @@
 
 <hr>
 
-<h2 id="redemption">💰 Tang Luck - Redemption 特殊规则</h2>
+<!-- ==================== REDEMPTION ==================== -->
+<h2 id="redemption">💰 Redemption</h2>
 
-<h3>提现方式</h3>
+<h3>Withdrawal Methods</h3>
 <table>
     <tr><th>方式</th><th>状态</th><th>备注</th></tr>
     <tr><td>PayPal</td><td>✅ 可用</td><td>通用规则</td></tr>
@@ -122,7 +623,8 @@
 
 <hr>
 
-<h2 id="kyc">🆔 Tang Luck - KYC 特殊规则</h2>
+<!-- ==================== KYC ==================== -->
+<h2 id="kyc">🆔 KYC</h2>
 <ul>
     <li>KYC 触发条件：通用规则（提现前需 KYC-ID，2000 以上需 KYC-POA）</li>
     <li>SSN 验证：通用规则</li>
@@ -139,21 +641,414 @@
 
 <hr>
 
-<h2 id="slots">🎮 Tang Luck - 专属机台/活动</h2>
+<!-- ==================== SLOTS / ACTIVITIES ==================== -->
+<h2 id="slots">🎮 Game Events</h2>
 
-<div class="todo-box">
-    Tang Luck 专属机台规则、专属活动规则待补充 — 请项目组提供文档后更新
+<h3>🏪 Store</h3>
+<p>Players have the option to select <strong>various Offers</strong> from the store to receive GC along with corresponding free SC.</p>
+<div class="zh-block">在 store 中选择 various offers，获得 GC 和相应的 free SC。</div>
+
+<div class="img-block">
+    <img src="images/tang-luck-store.png" alt="Store">
+    <div class="img-caption">▲ Store 商店页面：玩家可选择不同档位的 GC + 免费 SC 套餐（$2 / $10 / $20 / $50 / $100 / $200）</div>
 </div>
 
-<hr>
+<h3>🎫 Jade Pass</h3>
+<p>It's a <strong>purchase event</strong>. Players can purchase to receive the GC along with the corresponding free SC instantly, and enjoy <strong>7 consecutive days of daily login bonuses</strong>.</p>
+<div class="zh-block">Purchase event，购买后立即获得 GC 和 free SC，享受连续 7 天 daily login bonuses。</div>
 
-<h2 id="tag">🏷️ Tang Luck - 专属 TAG</h2>
+<p><strong>Three tiers of Jade Passes:</strong></p>
+<ul>
+    <li>7-Day Jade Lite</li>
+    <li>7-Day Jade Plus</li>
+    <li>7-Day Jade Royal</li>
+</ul>
+
+<p><strong>Notes：</strong></p>
+<p>Players can purchase multiple Jade Passes, but the rebate bonuses work in specific ways:</p>
+<div class="zh-block">可购买多个 Jade Passes，rebate bonuses 按特定方式运作。</div>
+<ol>
+    <li><strong>Same Tier Purchases：</strong> Bonus days stack, but the bonus amount doesn't increase.<br>
+    <strong>Example:</strong> Purchasing 3 Jade Pass Lite → Gives 21 days (3 × 7 days) of 0.5 bonus SC per day, not 1.5 Bonus SC per day.<br>
+    <span class="zh">Bonus days 累加，但 bonus amount 不增加。例如：购买 3 个 Jade Pass Lite → 获得 21 天（3 × 7 天）每天 0.5 bonus SC，不是每天 1.5 Bonus SC。</span></li>
+    <li><strong>Different Tier Purchases：</strong> Bonuses from different tiers are claimed separately and simultaneously.<br>
+    <strong>Example:</strong> Purchasing both Jade Pass Lite and Jade Pass Plus → Gives 0.5 bonus SC (from Lite) AND 2 bonus SC (from Plus) each day for the duration of both passes.<br>
+    <span class="zh">不同 tiers 的 bonuses 分别且同时领取。例如：同时购买 Jade Pass Lite 和 Jade Pass Plus → 每天获得 0.5 bonus SC（来自 Lite）和 2 bonus SC（来自 Plus），持续两个 pass 的有效期。</span></li>
+</ol>
+
+<p><strong>Backend:</strong></p>
+<ul>
+    <li>The backend displays the Purchase Type as <strong>week card</strong> for Jade Pass purchase.<br>
+    <span class="zh">Backend 显示 Purchase Type 为 week card。</span></li>
+    <li>The backend game flow displays the <strong>Jade Pass Bonus</strong> reason.<br>
+    <span class="zh">Backend game flow 显示 Jade Pass Bonus reason。</span></li>
+</ul>
+
+<div class="warning">
+    <strong>* If player missed to collect the rewards, no compensation will be issued.</strong><br>
+    <span class="zh">如果玩家错过领取奖励，将不予补偿。</span>
+</div>
+
+<div class="img-block">
+    <img src="images/tang-luck-jade-pass.png" alt="Jade Pass">
+    <div class="img-caption">▲ Jade Pass 三档：Lite ($7)、Plus ($30)、Royal ($90)，每档包含 GC + 免费 SC + 每日 bonus SC</div>
+</div>
+
+<h3>🆕 Newbie Package</h3>
+<p>The <strong>Newbie Package</strong> is a purchase promotion available to new players. It is displayed in the inbox interface, or a pop-up window will automatically appear upon login.</p>
+<div class="zh-block">面向 new players 的 purchase promotion，显示在 inbox 中或登录时自动弹出。</div>
+
+<p><strong>Purchase Types (4 tiers in total)：</strong></p>
+<ul>
+    <li><strong>Newbie ($3):</strong> 150% SC → 3 free SC + 1.5 bonus + 450 GC</li>
+    <li><strong>Level Up ($10):</strong> 150% SC → 10 free SC + 5 bonus + 1500 GC</li>
+    <li><strong>Power Boost ($20):</strong> 125% SC → 20 free SC + 5 bonus + 2500 GC</li>
+    <li><strong>Final Boost ($30):</strong> 120% SC → 30 free SC + 6 bonus + 3600 GC</li>
+</ul>
+
+<p><strong>Backend：</strong>The backend displays the Purchase Type as <strong>first_charge_gear</strong> for Newbie purchase.</p>
+
+<div class="img-row">
+    <div class="img-block">
+        <img src="images/tang-luck-newbie-inbox.png" alt="Newbie Inbox">
+        <div class="img-caption">▲ Inbox 中的 Newbie 50% Boost 入口：点击 INBOX 查看新人促销</div>
+    </div>
+    <div class="img-block">
+        <img src="images/tang-luck-newbie-popup.png" alt="Newbie Popup">
+        <div class="img-caption">▲ Newbie 150% SC 弹窗：$3 得 3 free SC + 1.5 bonus SC + 450 GC</div>
+    </div>
+</div>
+
+<h3>🎡 Fortune Wheel <span style="color:#dc3545;font-size:14px">(Offline)</span></h3>
+<div class="warning">
+    <strong>⚠️ 该活动已下线，仅供了解历史规则。</strong>
+</div>
+<p>The promotion activity for <strong>New Players</strong>.</p>
+<div class="zh-block">面向 New Players 的 promotion activity。</div>
+<p>Fortune Wheel: It will <strong>pop up</strong> as a mandatory one-time exposure when a new player returns to the lobby from the slots machine for the first time, with no prior purchase record. After closing the Fortune Wheel, its entrance will be moved to the inbox page. Each device is eligible to participate in the event only once.</p>
+<div class="zh-block">New player 首次从 slots machine 返回 lobby 且无 prior purchase record 时强制弹出，关闭后入口移至 inbox page，每台设备限参与一次。</div>
+
+<p><strong>Purchase Rules：</strong></p>
+<ol>
+    <li>Click either the fortune wheel itself or the "Spin" button at the bottom.</li>
+    <li>Complete a spin purchase of $10.</li>
+    <li>Once payment is successful, the wheel will start spinning.</li>
+    <li>The wheel will land on a designated reward.</li>
+    <li>The player will receive the reward automatically.</li>
+    <li>The event will then close and disappear.</li>
+</ol>
+<div class="zh-block">点击转盘本身或底部 "Spin" 按钮 → 完成 $10 的 spin purchase → 支付成功后转盘开始旋转 → 转盘停在指定奖励 → 玩家自动获得奖励 → 活动关闭并消失。</div>
+
+<p><strong>Reward Types：</strong></p>
+<ul>
+    <li>888 Free SC</li>
+    <li>Jade Pendant: 1.5 Bonus SC + 8 Free SC + 2000 GC</li>
+    <li>888 GC</li>
+    <li>88 Bonus SC</li>
+    <li>8 Bonus SC</li>
+    <li>Lantern (wait for confirmation)</li>
+    <li>No Winning</li>
+</ul>
+<div class="zh-block">奖励类型：888 Free SC、Jade Pendant（1.5 Bonus SC + 8 Free SC + 2000 GC）、888 GC、88 Bonus SC、8 Bonus SC、Lantern（待确认）、No Winning。</div>
+
+<div class="img-block">
+    <img src="images/tang-luck-fortune-wheel.png" alt="Fortune Wheel">
+    <div class="img-caption">▲ Fortune Wheel 幸运转盘：Top up $10 可赢取最高 888 SC（已下线）</div>
+</div>
+
+<h3>📦 Daily Package <span style="color:#dc3545;font-size:14px">(Offline)</span></h3>
+<div class="warning">
+    <strong>⚠️ 该活动已下线，仅供了解历史规则。</strong>
+</div>
+<p><strong>Regular Purchasing Promotion</strong></p>
+<p>Players can purchase one of three packages at different price.</p>
+
+<p><strong>Package Items：</strong></p>
+<ul>
+    <li>$5 → 5.25 Bonus SC + 600 GC</li>
+    <li>$15 → 15.75 Bonus SC + 2025 GC</li>
+    <li>$50 → 52.5 Bonus SC + 8000 GC</li>
+</ul>
+<div class="zh-block">套餐内容：$5 得 5.25 Bonus SC + 600 GC；$15 得 15.75 Bonus SC + 2025 GC；$50 得 52.5 Bonus SC + 8000 GC。</div>
+
+<div class="img-block">
+    <img src="images/tang-luck-daily-package.png" alt="Daily Package">
+    <div class="img-caption">▲ Daily Package 每日礼包：三档 $5 可选，每档包含 450 GC + 5 SC + 5 bonus SC（已下线）</div>
+</div>
+
+<h3>💰 Buy-in Rebate</h3>
+<p><strong>Event Unlock Conditions</strong></p>
+<p>Currently, the event has two tiers only.</p>
+<ul>
+    <li>This event is unlocked after the player's <strong>first purchase</strong>.<br>
+    <span class="zh">First purchase 后解锁。</span></li>
+    <li>The initial tier requires purchases on <strong>3 different days within 5 days</strong>.<br>
+    <span class="zh">初始 tier 要求 5 天内于 3 个不同 days purchase。</span></li>
+    <li>After completing the 3-day requirement within 5 days, players may claim the buy-in rebate reward, and the next tier (5 purchase days within 7 days) will be unlocked.<br>
+    <span class="zh">5 天内完成 3-day requirement 后可领取 buy-in rebate reward，下一 tier（7 天内 purchase 5 天）解锁。</span></li>
+    <li>If the initial tier expires before completion, the next tier (5 purchase days within 7 days) will still be unlocked.<br>
+    <span class="zh">初始 tier 在 completion 前过期，下一 tier（7 天内 purchase 5 天）仍将解锁。</span></li>
+    <li>All subsequent buy-in rebates follow the <strong>5 purchase days within 7 days</strong> rule.<br>
+    <span class="zh">后续 buy-in rebates 遵循 5 purchase days within 7 days 规则。</span></li>
+</ul>
+
+<p><strong>Event Time Calculation</strong></p>
+<p>The event period is calculated based on natural days (UTC-8), starting from the time of the player's first purchase.</p>
+<div class="zh-block">按 natural days（UTC-8）计算，从 first purchase 时间开始。</div>
+<p><strong>Example:</strong> If a player makes their first purchase at 23:22 on January 26 (UTC-8), the event will end at 23:59:59 on January 30 (UTC-8). Even if only a few minutes remain on the first day, it still counts as one full natural day. In this example, valid purchase days are: January 26, 27, 28, 29, and 30 (UTC-8).</p>
+<div class="zh-block">例如：玩家于 1 月 26 日 23:22（UTC-8）首次 purchase，活动将于 1 月 30 日 23:59:59（UTC-8）结束。即使第一天仅剩几分钟，仍计为一个完整 natural day。Valid purchase days：1 月 26、27、28、29、30 日（UTC-8）。</div></p>
+
+<p><strong>Event Rules</strong></p>
+<ul>
+    <li>To unlock the full rebate, players must make purchases on different valid days within the required period.<br>
+    <span class="zh">解锁 full rebate 需在 required period 内的不同 valid days purchase。</span></li>
+    <li>Only the <strong>highest purchase amount per day</strong> is counted toward event progress.<br>
+    <span class="zh">每天仅 highest purchase amount 计入 event progress。</span></li>
+</ul>
+
+<div class="img-block">
+    <img src="images/tang-luck-buyin-rebate.png" alt="Buy-in Rebate">
+    <div class="img-caption">▲ Buy-in Rebate：5天内充值3天解锁返利，每日最高充值金额计入进度</div>
+</div>
+
+<h3>👑 Loyalty Club</h3>
+<p><strong>Club System</strong></p>
+<p><strong>Club Level：</strong> Loyalty Level is granted by invitation, based on overall account history, account standing, and ongoing activity.</p>
+<div class="zh-block">忠诚度等级通过邀请授予，基于整体账户历史、账户状态和持续活动。</div>
+
+<p><strong>Level setting（Total 6 levels）：</strong></p>
+<ul>
+    <li>Novice (level 0)</li>
+    <li>Horse (level 1)</li>
+    <li>Monkey (level 2)</li>
+    <li>Panda (level 3)</li>
+    <li>Tiger (level 4)</li>
+    <li>Phoenix (level 5)</li>
+    <li>Dragon (level 6)</li>
+</ul>
+<div class="zh-block">共 6 个等级：Novice（0 级）、Horse（1 级）、Monkey（2 级）、Panda（3 级）、Tiger（4 级）、Phoenix（5 级）、Dragon（6 级）。</div>
+
+<p><strong>Club Benefits：</strong></p>
+<ol>
+    <li><strong>Lower Redemption fee</strong> — Players from different club levels pay different redemption processing fees.<br>
+    <span class="zh">不同 club levels 的玩家支付不同的 redemption processing fees。</span></li>
+    <li><strong>Higher Daily Redemption Limit</strong> — At higher levels, players can redeem more per day.<br>
+    <span class="zh">更高 levels 的玩家每天可以 redeem 更多。</span></li>
+    <li><strong>Birthday Bonus (level 3+)</strong> — Players at PANDA Level 3 and above can claim an exclusive Birthday Gift during their birthday month.<br>
+    Reward Distribution Time: 12:00 AM (UTC-8) on the Birthday day<br>
+    Reward Distribution Method: Bonus SC via game inbox.<br>
+    <span class="zh">PANDA Level 3 及以上的玩家可以在生日月领取 exclusive Birthday Gift。Reward Distribution Time：生日当天 12:00 AM（UTC-8）。Reward Distribution Method：Bonus SC 通过 game inbox。</span></li>
+    <li><strong>Weekly Bonus (Level 3+)</strong> — Players at PANDA Level 3 and above can receive a weekly bonus SC.<br>
+    Reward Distribution Time: Every Monday at 8:00 AM (UTC-8)<br>
+    Reward Distribution Method: Bonus SC via game inbox.<br>
+    <span class="zh">PANDA Level 3 及以上的玩家可以每周领取 bonus SC。Reward Distribution Time：每周一 8:00 AM（UTC-8）。Reward Distribution Method：Bonus SC 通过 game inbox。</span></li>
+    <li><strong>VIP Priority Support (Level 4+)</strong> — Player will get VIP priority support, Dedicated Agents, Faster Replies, Quick help for your account and redemption issue.<br>
+    <span class="zh">玩家将获得 VIP priority support、Dedicated Agents、Faster Replies、Quick help for account 和 redemption issue。</span></li>
+</ol>
+
+<p><strong>Entry：</strong>点击 ME 页面左上角的 Club 图标进入 Loyalty 页面。</p>
+
+<div class="img-row">
+    <div class="img-block">
+        <img src="images/tang-luck-club-entry.png" alt="Club Entry">
+        <div class="img-caption">▲ ME 页面左上角 Club 图标：点击进入 Loyalty Club</div>
+    </div>
+    <div class="img-block">
+        <img src="images/tang-luck-club-novice.png" alt="Club Novice">
+        <div class="img-caption">▲ Novice (Lv.0) 等级权益：Redemption Fee 5%、Daily Redemption Limit $5,000</div>
+    </div>
+    <div class="img-block">
+        <img src="images/tang-luck-club-panda.png" alt="Club Panda">
+        <div class="img-caption">▲ Panda (Lv.3) 等级权益：Redemption Fee 3.50%、Daily Limit $30,000、Fast Redemption、Weekly Rewards</div>
+    </div>
+</div>
+
+<h3>👥 Referral System <span style="color:#dc3545;font-size:14px">(Offline)</span></h3>
+<div class="warning">
+    <strong>⚠️ 该功能已下线，目前无邀请奖励功能。</strong>
+</div>
+<p>Currently there is no invitation reward, even if players have a referral code bind feature. If players are asking about the invitation function, please tell the player that there is no Referral feature just like before.</p>
+<div class="zh-block">目前没有 invitation reward，即使玩家有 referral code bind feature。如玩家询问 invitation function，请告知没有 Referral feature。</div>
+
+<p><strong>Script:</strong></p>
+<div class="info">
+Dear Player,<br><br>
+Sorry for the inconvenience.<br><br>
+Currently, we have no invitation function. However, please rest assured that we are actively working towards implementing one.<br><br>
+We greatly appreciate your understanding and patience during this process.
+</div>
+<h2 id="tag">🏷️ TAG</h2>
 <p>通用 TAG 请查阅 <a href="../general/general-cs-tag.html">通用-CS-TAG</a></p>
 
 <div class="todo-box">
     Tang Luck 专属 TAG 待补充 — 请项目组提供常见客诉标签清单
 </div>
 
+
+<h3>🎁 Tomorrow Bonus <span style="color:#dc3545;font-size:14px">(Offline)</span></h3>
+<div class="warning">
+    <strong>⚠️ 该活动已下线，仅供了解历史规则。</strong>
+</div>
+<p>Players will receive an in-game email notifying them about the Tomorrow Bonus.</p>
+<div class="zh-block">玩家将收到 in-game email 通知 Tomorrow Bonus。</div>
+<ul>
+    <li>The Tomorrow Bonus is available daily.<br><span class="zh">明日奖励每日可领取。</span></li>
+    <li>Players can claim the bonus in-game once the reward has refreshed.<br><span class="zh">奖励刷新后，玩家可在游戏内领取。</span></li>
+</ul>
+
+<p><strong>Refresh Time：</strong> The Tomorrow Bonus refreshes every day at 12:00 AM (UTC-8).</p>
+
+<p><strong>Bonus Rewards：</strong></p>
+<ul>
+    <li>Players can claim the Tomorrow Bonus a total of 30 times.<br><span class="zh">玩家总共可领取 30 次明日奖励。</span></li>
+    <li>The total reward is 10 SC.<br><span class="zh">总奖励为 10 SC。</span></li>
+    <li>The daily Tomorrow Bonus is random.<br><span class="zh">每日明日奖励是随机的。</span></li>
+</ul>
+
+<div class="note">
+    <strong>注意：</strong>Do not disclose the reward range to players — simply emphasize that the Tomorrow Bonus is distributed randomly and that 10 SC is the total reward.
+</div>
+
+<p><strong>Backend：</strong> The backend game flow displays the <strong>Tomorrow Bonus</strong> reason.</p>
+<div class="zh-block">后台游戏流水显示 <strong>Tomorrow Bonus</strong> 原因。</div>
+
+<div class="img-block">
+    <img src="images/tang-luck-tomorrow-bonus.png" alt="Tomorrow Bonus">
+    <div class="img-caption">▲ Tomorrow Bonus 站内信："$ Reserved for You $ — Tomorrow Bonus Inside"，提醒玩家次日登录领取（bonus SC 需 5x playthrough）</div>
+</div>
+
+<h3>🎯 Rewards Center</h3>
+
+<h4>Free Bonus</h4>
+<p>Players can access the Rewards Center via <strong>ME page → Rewards Center</strong>.</p>
+<div class="zh-block">通过 ME page → Rewards Center 进入。</div>
+<p>Currently, the Rewards Center includes four sections:</p>
+<div class="zh-block">包含四个 sections：</div>
+
+<ol>
+    <li><strong>Blue Scratch Card</strong><br>
+    Available every 15 minutes<br>
+    Random reward: Up to 5 SC<br>
+    Players receive one card immediately; the countdown starts only after it is claimed<br>
+    <span class="zh">每 15 分钟可用，随机奖励最高 5 SC，玩家立即获得一张 card，countdown 在领取后才开始。</span>.</li>
+    <li><strong>Red Scratch Card</strong><br>
+    Available every 3 hours<br>
+    Random reward: Up to 25 SC<br>
+    Players receive one card immediately; the countdown starts only after it is claimed<br>
+    <span class="zh">每 3 小时可用，随机奖励最高 25 SC，玩家立即获得一张 card，countdown 在领取后才开始。</span>.</li>
+    <li><strong>Wild Machine</strong><br>
+    Every 5 Red Scratch Cards completed grants 1 wheel spin<br>
+    Supposed maximum win: up to 100 SC<br>
+    <span class="zh">每完成 5 个 Red Scratch Cards 获得 1 次 wheel spin，最高 win 100 SC。</span></li>
+    <li><strong>Plinko</strong><br>
+    Every 3 wheel spins grants 1 Plinko play<br>
+    Potential payout: up to 250×<br>
+    <span class="zh">每 3 次 wheel spins 获得 1 次 Plinko play，potential payout 最高 250×。</span></li>
+</ol>
+
+<p><strong>Backend：</strong> The backend game flow displays the <strong>"Blue Scratch Card/Red Scratch Card/Wild Machine/PLINKO"</strong> reason.</p>
+<div class="zh-block">后台游戏流水显示 <strong>"Blue Scratch Card/Red Scratch Card/Wild Machine/PLINKO"</strong> 原因。</div>
+
+<div class="img-block">
+    <img src="images/tang-luck-rewards-center.png" alt="Rewards Center">
+    <div class="img-caption">▲ Rewards Center 奖励中心：Blue Scratch Card（最高 5 SC）、Red Scratch Card（最高 25 SC）、Wild Machine（最高 100 SC）、Plinko（最高 250×）</div>
+</div>
+
+<h4>Login Bonus</h4>
+<p><strong>1. Daily Bonus System</strong></p>
+<p>Players are eligible to claim a <strong>Free Daily Bonus</strong> every day. Please note the following logic:</p>
+<div class="zh-block">每天可领取 Free Daily Bonus。</div>
+<ul>
+    <li><strong>a. Streak Reset：</strong> Missing a single day will reset the daily reward progression back to Day 1.</li>
+    <li><strong>b. "Remind Me" Feature：</strong> Players may select the "Remind Me" option, which automatically adds a notification to their device's system calendar.</li>
+    <li><strong>c. Refresh Schedule：</strong> The Daily Bonus now refreshes at <strong>12:00 UTC-8</strong>.</li>
+</ul>
+
+<p><strong>2. Accumulated Rewards</strong></p>
+<p>In addition to the daily claim, players can track their Total Accumulated Days at the top of the interface.</p>
+<div class="zh-block">除 daily claim 外，可在 interface 顶部追踪 Total Accumulated Days。</div>
+<ul>
+    <li><strong>a. Milestone Bonuses：</strong> Extra rewards are unlocked once the player <strong>reaches specific accumulation targets</strong>.</li>
+    <li><strong>b. Persistent Progress：</strong> Unlike the daily streak, accumulated days <strong>will not reset</strong>, even if a player misses their daily bonus.</li>
+</ul>
+
+<p><strong>Backend：</strong> The backend game flow displays the <strong>"Sign Bonus"</strong> reason.</p>
+<div class="zh-block">后台游戏流水显示 <strong>"Sign Bonus"</strong> 原因。</div>
+
+<h3>📋 Daily Mission & Challenges</h3>
+<ol>
+    <li>Players can complete the corresponding daily missions and daily challenges to earn reward (GC/SC/Mission Points 🔥).</li>
+    <li>The "🔥" collected from missions or challenges can be used to unlock the treasure chest for Bonus SC.</li>
+</ol>
+
+<div class="img-block">
+    <img src="images/tang-luck-daily-challenge.png" alt="Daily Challenge">
+    <div class="img-caption">▲ Blazing Challenge 每日挑战：完成任务获得 Mission Points（🔥），进度条满 500 可解锁宝箱获得 Bonus SC</div>
+</div>
+
+<h3>💎 Jackpot</h3>
+
+<p><strong>1. Event Overview</strong></p>
+<p>The Tangluck Jackpot is an opt-in, progressive jackpot system integrated into the slot machine experience. Players can choose to contribute an additional spin cost to participate, increasing their potential winnings.</p>
+<div class="zh-block">Tangluck Jackpot 是 opt-in progressive jackpot system，集成在 slot machine 中，玩家可贡献额外 spin cost 参与，增加 potential winnings。</div>
+
+<p><strong>Participation Mechanics：</strong></p>
+<ul>
+    <li><strong>Access：</strong> Players can enter the event via the "Tang Luck" icon located on the main Lobby page.<br>
+    <span class="zh">玩家可通过 main Lobby page 上的 "Tang Luck" icon 进入活动。</span></li>
+    <li><strong>Opt-in/Opt-out：</strong> Upon entering the event page, players may set their desired Jackpot contribution amount.<br>
+    <span class="zh">进入 event page 后，玩家可设置 desired Jackpot contribution amount。</span></li>
+    <li><strong>Participating：</strong> By setting a value above 0.00, <strong>an extra SC</strong> is deducted from the player's balance with every spin of the slot machine.<br>
+    <span class="zh">设置 value 高于 0.00 后，每次 spin slot machine 将从 balance 扣除 extra SC。</span></li>
+    <li><strong>Opting Out：</strong> Players can opt out of the event by adjusting their contribution amount to 0.00.<br>
+    <span class="zh">玩家可将 contribution amount 调整为 0.00 以 opt out。</span></li>
+    <li><strong>Reward Scaling：</strong> The jackpot prize pool scales with the contribution amount; the higher the contribution set by the player, the larger the potential Jackpot prize pool triggered.<br>
+    <span class="zh">Jackpot prize pool 随 contribution amount 缩放；contribution 越高，触发的 potential Jackpot prize pool 越大。</span></li>
+    <li><strong>Prize Reset：</strong> Once a Jackpot Pool Prize is claimed, the pool is automatically reset.<br>
+    <span class="zh">Jackpot Pool Prize 被 claim 后，pool 自动 reset。</span></li>
+</ul>
+
+<p><strong>2. Interface</strong></p>
+<p>The Tangluck Jackpot is seamlessly integrated into both the Lobby and the gameplay environment.</p>
+<div class="zh-block">Tangluck Jackpot 无缝集成在 Lobby 和 gameplay environment 中。</div>
+<ul>
+    <li><strong>Lobby Entry：</strong> A "Tang Luck" icon is displayed at the bottom of the Lobby page for easy access.<br>
+    <span class="zh">Lobby page 底部显示 "Tang Luck" icon 以便访问。</span></li>
+    <li><strong>Event Page：</strong> The event page displays the four distinct Jackpot prize pools. Players can select any of the four pools to view the history and prize claim records.<br>
+    <span class="zh">Event page 显示四个不同的 Jackpot prize pools，玩家可选择任意 pool 查看 history 和 prize claim records。</span></li>
+    <li><strong>In-Game Display：</strong> The current Jackpot Prize Pool amount is dynamically displayed on the slot machine game page during play, ensuring constant visibility of the potential reward.<br>
+    <span class="zh">当前 Jackpot Prize Pool amount 在 slot machine game page 上动态显示，确保 potential reward 始终可见。</span></li>
+</ul>
+
+<p><strong>3. Backend</strong></p>
+<p>The Backend will show <strong>Jackpot bet</strong> for each Jackpot Cost and <strong>Jackpot Chance</strong> for the total Jackpot Cost of the last round (enter the slots machine → exit the slots machine). <strong>tang luck jackpot</strong> is the reward of Jackpot.</p>
+<div class="zh-block">Backend 显示每个 Jackpot Cost 的 Jackpot bet 和最后一轮 total Jackpot Cost 的 Jackpot Chance（enter slots machine → exit slots machine）。tang luck jackpot 是 Jackpot 的 reward。</div>
+
+<div class="img-row">
+    <div class="img-block">
+        <img src="images/tang-luck-jackpot-lobby.png" alt="Jackpot Lobby Entry">
+        <div class="img-caption">▲ Lobby 页面底部 Tang Luck Jackpot 入口：显示当前奖池金额 SC 17,274.94</div>
+    </div>
+    <div class="img-block">
+        <img src="images/tang-luck-jackpot-off.png" alt="Jackpot Off">
+        <div class="img-caption">▲ Jackpot 设置页面：0.00 SC = Jackpot Off，玩家可调整贡献金额</div>
+    </div>
+    <div class="img-block">
+        <img src="images/tang-luck-jackpot-on.png" alt="Jackpot On">
+        <div class="img-caption">▲ Jackpot 开启：1.00 SC Chance x10，Extra 1.00 SC per spin，显示四个奖池（Grand / Daily / Hourly / Quick）</div>
+    </div>
+</div>
+
+<div class="img-row">
+    <div class="img-block">
+        <img src="images/tang-luck-jackpot-winners.png" alt="Jackpot Winners">
+        <div class="img-caption">▲ Recent Prize Winners：显示最近中奖玩家列表（Player ID、Time、Prize）</div>
+    </div>
+    <div class="img-block">
+        <img src="images/tang-luck-jackpot-backend.png" alt="Jackpot Backend">
+        <div class="img-caption">▲ 后台记录：显示 Jackpot bet（每轮额外 SC 成本）和 Jackpot Chance（总成本），以及 tang luck jackpot 奖励</div>
+    </div>
+</div>
 <hr>
 
 <p><em>本文档为 Tang Luck 项目组专属规则，通用规则请查阅<a href="../index.html">通用知识库</a>。</em></p>
@@ -162,11 +1057,40 @@
 
 <hr>
 
-<h2 id="updates">📋 Updates 更新日志</h2>
+<!-- ==================== UPDATES ==================== -->
+<h2 id="updates">📋 Updates</h2>
 
 <table>
 <thead><tr><th>日期</th><th>更新内容</th></tr></thead>
-<tbody>
+<tbody><tr><td>2026-06-24</td><td>
+<ul style="margin:0">
+<li><strong>Game Events 续更：</strong>新增 Tomorrow Bonus（已下线）、Rewards Center（Free Bonus + Login Bonus）、Daily Mission & Challenges、Tang Luck Jackpot（4 奖池渐进式奖池系统）</li>
+<li>新增 8 张活动界面示意图</li>
+</ul>
+</td></tr>
+<tr><td>2026-06-24</td><td>
+<ul style="margin:0">
+<li><strong>Game Events 专属活动更新：</strong>新增 Store 商店、Jade Pass 翡翠通行证、Newbie Package 新人礼包、Fortune Wheel 幸运转盘（已下线）、Daily Package 每日礼包（已下线）、Buy-in Rebate 连续充值返利、Tang Luck Loyalty Club 忠诚度俱乐部（6级体系+5项权益）、Referral System 推荐系统（已下线+话术）</li>
+<li>新增 10 张活动界面示意图</li>
+</ul>
+</td></tr>
+<tr><td>2026-06-24</td><td>
+<ul style="margin:0">
+<li><strong>Bonus SC 详细内容更新：</strong>新增 How to get Bonus SC、Unplayed SC 定义与获取方式、Played SC 定义、Playthrough 5x 详解、Account has bonus SC 的 4 条规则及示例、Forfeit Bonus SC 游戏内操作流程（含弹窗截图）、Forfeit Bonus SC Issue SOP（Tier 1 处理流程 + Critical Requirements + 站内信模板）</li>
+</ul>
+</td></tr>
+
+<tr><td>2026-06-24</td><td>
+<ul style="margin:0">
+<li>新增 General 通用介绍章节，包含：Game Introduction、Played SC & Forfeited SC、Bonus SC (Free)、Bonus SC How It Works、SC/GC 模式切换</li>
+<li>新增 ME Page 详情：Setting（Sound&Music、Logout、Promo Code、About Tang Luck）、How It Work（Redemption Rules、Limits & Fees、Safety & Privacy、Fair Games、Eligibility & Checks、Bonus SC）、Redemptions、Transaction（Balance / Game Play / Specific Game Play）、Help</li>
+<li>新增 Download 游戏下载指引</li>
+<li>新增 FAQ 玩家常问问题（Can earn real money / Transaction / How to play with GC/SC / Sign up bonus）</li>
+<li>新增 14 张游戏界面示意图</li>
+<li>新增图片响应式样式（.img-block、.img-row、.img-caption）</li>
+<li>新增 FAQ 表格样式（.faq-table）</li>
+</ul>
+</td></tr>
 <tr><td>2026-06-23</td><td>
 <ul style="margin:0">
 <li>初始版本上线，包含 Tang Luck 项目组基础框架</li>
