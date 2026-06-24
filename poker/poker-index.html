@@ -37,6 +37,137 @@
     </style>
 </head>
 <body>
+<style>
+.top-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #9b59b6;
+    color: white;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 14px;
+}
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    font-weight: 500;
+}
+.top-nav a:hover { background: rgba(255,255,255,0.2); }
+.top-nav .nav-left { display: flex; gap: 10px; align-items: center; }
+.top-nav .nav-right { display: flex; gap: 8px; align-items: center; }
+.top-nav select {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    background: white;
+    color: #333;
+}
+.top-nav .search-box {
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: none;
+    font-size: 13px;
+    width: 180px;
+}
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    align-items: center;
+    justify-content: center;
+}
+#back-to-top.show { display: flex; }
+body { padding-top: 50px; }
+.highlight {
+    background: #fff3cd;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+</style>
+
+<div class="top-nav">
+    <div class="nav-left">
+        <a href="../index.html">🏠 知识库首页</a>
+        <a href="#top">📍 Poker Hit 首页</a>
+    </div>
+    <div class="nav-right">
+        <input type="text" class="search-box" id="pageSearch" placeholder="🔍 搜索本页..." onkeyup="searchPage()">
+        <select onchange="if(this.value)location.href=this.value">
+            <option value="">📑 快速跳转</option>
+            <option value="#games">📱 包含游戏</option>
+            <option value="#purchase">💳 Purchase</option>
+            <option value="#redemption">💰 Redemption</option>
+            <option value="#kyc">🆔 KYC</option>
+            <option value="#slots">🎮 机台/活动</option>
+            <option value="#tag">🏷️ TAG</option>
+            <option value="#updates">📋 Updates</option>
+        </select>
+    </div>
+</div>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+
+<script>
+const btn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 300));
+
+function searchPage() {
+    const query = document.getElementById('pageSearch').value.toLowerCase();
+    document.querySelectorAll('.highlight').forEach(el => {
+        const parent = el.parentNode;
+        parent.replaceChild(document.createTextNode(el.textContent), el);
+        parent.normalize();
+    });
+    if (!query) return;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    const nodes = [];
+    let node;
+    while (node = walker.nextNode()) {
+        if (node.nodeValue.toLowerCase().includes(query) && !node.parentNode.closest('.top-nav')) {
+            nodes.push(node);
+        }
+    }
+    nodes.forEach(node => {
+        const span = document.createElement('span');
+        const regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+        const parts = node.nodeValue.split(regex);
+        parts.forEach(part => {
+            if (part.toLowerCase() === query) {
+                const mark = document.createElement('span');
+                mark.className = 'highlight';
+                mark.textContent = part;
+                span.appendChild(mark);
+            } else {
+                span.appendChild(document.createTextNode(part));
+            }
+        });
+        node.parentNode.replaceChild(span, node);
+    });
+    if (nodes.length > 0) nodes[0].parentNode.scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+</script>
+
+
 
 <a href="../index.html" class="back-link">← Back to Home / 返回首页</a>
 
