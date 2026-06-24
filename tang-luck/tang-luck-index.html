@@ -56,9 +56,132 @@
         .faq-table td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
         .faq-table tr:nth-child(even) { background: #f9f9f9; }
         .faq-q { font-weight: bold; color: #2c3e50; min-width: 180px; }
-    </style>
+    
+        /* ===== 顶部导航栏 ===== */
+        .top-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #1abc9c;
+            color: white;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            font-size: 14px;
+        }
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background 0.2s;
+            font-weight: 500;
+        }
+        .top-nav a:hover { background: rgba(255,255,255,0.2); }
+        .top-nav .nav-left { display: flex; gap: 10px; align-items: center; }
+        .top-nav .nav-right { display: flex; gap: 8px; align-items: center; }
+        .top-nav select {
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: none;
+            font-size: 13px;
+            cursor: pointer;
+            background: white;
+            color: #333;
+        }
+        .top-nav .search-box {
+            padding: 5px 12px;
+            border-radius: 4px;
+            border: none;
+            font-size: 13px;
+            width: 180px;
+        }
+
+        /* ===== 折叠功能 ===== */
+        .section-header {
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-header::after {
+            content: '▼';
+            font-size: 12px;
+            color: #1abc9c;
+            transition: transform 0.3s;
+        }
+        .section-header.collapsed::after {
+            transform: rotate(-90deg);
+        }
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        .section-content.collapsed {
+            max-height: 0 !important;
+        }
+
+        /* ===== 回到顶部按钮 ===== */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: #1abc9c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: opacity 0.3s, transform 0.2s;
+        }
+        #back-to-top:hover {
+            transform: translateY(-3px);
+            background: #16a085;
+        }
+        #back-to-top.show { display: flex; align-items: center; justify-content: center; }
+
+        /* ===== 搜索高亮 ===== */
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        /* 调整 body padding 给导航栏留空间 */
+        body { padding-top: 50px; }
+</style>
 </head>
 <body>
+<div class="top-nav">
+    <div class="nav-left">
+        <a href="../index.html">🏠 知识库首页</a>
+        <a href="#top">📍 Tang Luck 首页</a>
+    </div>
+    <div class="nav-right">
+        <input type="text" class="search-box" id="pageSearch" placeholder="🔍 搜索本页内容..." onkeyup="searchPage()">
+        <select onchange="if(this.value)location.href=this.value">
+            <option value="">📑 快速跳转</option>
+            <option value="#general">📖 General</option>
+            <option value="#purchase">💳 Purchase</option>
+            <option value="#redemption">💰 Redemption</option>
+            <option value="#kyc">🆔 KYC</option>
+            <option value="#game-events">🎮 Game Events</option>
+            <option value="#tag">🏷️ TAG</option>
+            <option value="#faq">❓ FAQ</option>
+            <option value="#updates">📋 Updates</option>
+        </select>
+    </div>
+</div>
+
+
 
 <a href="../index.html" class="back-link">← Back to Home / 返回首页</a>
 
@@ -1861,6 +1984,92 @@ We greatly appreciate your understanding and patience during this process.<br><b
 </td></tr>
 </tbody>
 </table>
+
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+
+<script>
+// ===== 回到顶部按钮 =====
+const backToTopBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+// ===== 折叠功能 =====
+document.querySelectorAll('h2').forEach(h2 => {
+    h2.classList.add('section-header');
+    h2.addEventListener('click', function() {
+        this.classList.toggle('collapsed');
+        let next = this.nextElementSibling;
+        let content = [];
+        while (next && !next.matches('h2') && !next.matches('hr')) {
+            content.push(next);
+            next = next.nextElementSibling;
+        }
+        content.forEach(el => el.classList.toggle('collapsed'));
+    });
+});
+
+// ===== 页面内搜索 =====
+function searchPage() {
+    const query = document.getElementById('pageSearch').value.toLowerCase();
+    // 清除旧高亮
+    document.querySelectorAll('.highlight').forEach(el => {
+        const parent = el.parentNode;
+        parent.replaceChild(document.createTextNode(el.textContent), el);
+        parent.normalize();
+    });
+
+    if (!query) return;
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    const nodes = [];
+    let node;
+    while (node = walker.nextNode()) {
+        if (node.nodeValue.toLowerCase().includes(query) && !node.parentNode.closest('.top-nav')) {
+            nodes.push(node);
+        }
+    }
+
+    nodes.forEach(node => {
+        const span = document.createElement('span');
+        span.className = 'highlight';
+        const regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\]/g, '\$&') + ')', 'gi');
+        const parts = node.nodeValue.split(regex);
+        parts.forEach((part, i) => {
+            if (part.toLowerCase() === query) {
+                const mark = document.createElement('span');
+                mark.className = 'highlight';
+                mark.textContent = part;
+                span.appendChild(mark);
+            } else {
+                span.appendChild(document.createTextNode(part));
+            }
+        });
+        node.parentNode.replaceChild(span, node);
+    });
+
+    if (nodes.length > 0) {
+        nodes[0].parentNode.scrollIntoView({behavior: 'smooth', block: 'center'});
+    }
+}
+
+// ===== 默认展开前3个章节，其余折叠 =====
+document.querySelectorAll('h2').forEach((h2, index) => {
+    if (index >= 3) {
+        h2.classList.add('collapsed');
+        let next = h2.nextElementSibling;
+        while (next && !next.matches('h2') && !next.matches('hr')) {
+            next.classList.add('collapsed');
+            next = next.nextElementSibling;
+        }
+    }
+});
+</script>
 
 </body>
 </html>

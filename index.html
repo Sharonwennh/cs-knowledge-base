@@ -3,222 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>客服知识库总首页</title>
+    <title>CS Knowledge Base | 客服知识库总览</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1100px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
-        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 15px; }
-        h2 { color: #34495e; margin-top: 35px; border-left: 5px solid #3498db; padding-left: 12px; background: #f0f7ff; padding: 10px 12px; }
-        h3 { color: #555; margin-top: 20px; }
-        .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
-        .project-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; padding: 15px 20px; margin: 15px 0; }
-        table { border-collapse: collapse; width: 100%; margin: 15px 0; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #4472C4; color: white; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
-        a { color: #3498db; }
-        ul li { margin: 6px 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .header h1 { font-size: 32px; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        .section-title {
+            font-size: 20px;
+            margin: 30px 0 15px 0;
+            color: #555;
+            padding-left: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 22px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border-left: 4px solid #667eea;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .project-card .icon { font-size: 32px; margin-bottom: 10px; }
+        .project-card h3 { font-size: 17px; color: #333; margin-bottom: 6px; }
+        .project-card p { font-size: 12px; color: #666; line-height: 1.5; }
+        .project-card .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-top: 8px;
+        }
+
+        .general-card { border-left-color: #ff9800; }
+        .general-card .tag { background: #fff3e0; color: #e65100; }
+        .game-card { border-left-color: #4caf50; }
+        .game-card .tag { background: #e8f5e9; color: #2e7d32; }
+
+        .updates-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .updates-section h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #667eea;
+            color: #333;
+        }
+        .updates-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .updates-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .updates-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        .updates-table tr:nth-child(even) { background: #f9f9f9; }
+        .updates-table tr:hover { background: #f0f4ff; }
+        .updates-table a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .updates-table a:hover { text-decoration: underline; }
+        .updates-table .date { white-space: nowrap; color: #888; font-size: 13px; }
+        .updates-table .module { white-space: nowrap; font-weight: 600; }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-size: 13px;
+            margin-top: 30px;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            align-items: center;
+            justify-content: center;
+        }
+        #back-to-top.show { display: flex; }
     </style>
 </head>
 <body>
+<div class="container">
 
-<h1>📚 客服知识库总首页</h1>
+    <div class="header">
+        <h1>📚 CS Knowledge Base</h1>
+        <p>客服知识库总览 | 各项目专属知识库入口与更新记录</p>
+    </div>
 
-<div class="warning">
-    <strong>📌 使用规则：</strong><br>
-    1. 先查 <strong>通用知识库</strong> 了解基础规则<br>
-    2. 再查对应 <strong>项目组知识库</strong> 了解特殊规则<br>
-    3. 两者冲突时，以 <strong>项目组知识库</strong> 为准
+    <!-- 通用模块 -->
+    <h2 class="section-title">📋 通用模块</h2>
+    <div class="projects-grid">
+        <a href="general-purchase.html" class="project-card general-card">
+            <div class="icon">💳</div>
+            <h3>通用-Purchase</h3>
+            <p>充值通用规则、充值渠道、支付问题处理</p>
+            <span class="tag">通用模块</span>
+        </a>
+
+        <a href="general-redemption.html" class="project-card general-card">
+            <div class="icon">💰</div>
+            <h3>通用-Redemption</h3>
+            <p>提现通用规则、提现方式、限额与手续费</p>
+            <span class="tag">通用模块</span>
+        </a>
+
+        <a href="general-kyc.html" class="project-card general-card">
+            <div class="icon">🆔</div>
+            <h3>通用-KYC</h3>
+            <p>KYC 验证流程、证件要求、审核标准</p>
+            <span class="tag">通用模块</span>
+        </a>
+
+        <a href="sumsub-kyc.html" class="project-card general-card">
+            <div class="icon">📱</div>
+            <h3>Sumsub KYC</h3>
+            <p>Sumsub KYC 系统操作指南</p>
+            <span class="tag">通用模块</span>
+        </a>
+
+        <a href="general-states.html" class="project-card general-card">
+            <div class="icon">🗺️</div>
+            <h3>通用-States</h3>
+            <p>运营州限制、非运营地区说明</p>
+            <span class="tag">通用模块</span>
+        </a>
+
+        <a href="general-cs-tag.html" class="project-card general-card">
+            <div class="icon">🏷️</div>
+            <h3>通用-CS-TAG</h3>
+            <p>客服标签系统、分类标准</p>
+            <span class="tag">通用模块</span>
+        </a>
+
+        <a href="general-rsg.html" class="project-card general-card">
+            <div class="icon">🎰</div>
+            <h3>通用-RSG</h3>
+            <p>Slots 机台通用规则、赔付线、特殊功能</p>
+            <span class="tag">通用模块</span>
+        </a>
+
+        <a href="general-account.html" class="project-card general-card">
+            <div class="icon">👤</div>
+            <h3>通用-Account</h3>
+            <p>账户通用规则、注册、绑定、安全</p>
+            <span class="tag">通用模块</span>
+        </a>
+
+        <a href="general-complaint.html" class="project-card general-card">
+            <div class="icon">📋</div>
+            <h3>通用-Complaint</h3>
+            <p>投诉处理框架、升级标准、补偿发放标准</p>
+            <span class="tag">通用模块</span>
+        </a>
+
+        <a href="general-amoe.html" class="project-card general-card">
+            <div class="icon">🎁</div>
+            <h3>通用-AMOE</h3>
+            <p>AMOE 替代参与方式、免费参与流程</p>
+            <span class="tag">通用模块</span>
+        </a>
+    </div>
+
+    <!-- 游戏项目 -->
+    <h2 class="section-title">🎮 游戏项目</h2>
+    <div class="projects-grid">
+        <a href="yea-master/yea-master-index.html" class="project-card game-card">
+            <div class="icon">🎰</div>
+            <h3>Yea Master</h3>
+            <p>设备兼容性、账号管理、VIP 福利、CLUB、Jackpot、金猪等</p>
+            <span class="tag">游戏项目</span>
+        </a>
+
+        <a href="acorn/acorn-index.html" class="project-card game-card">
+            <div class="icon">🌰</div>
+            <h3>Acorn</h3>
+            <p>Bundles、Daily Rewards、Cash Back、Lucky Flip、Buyin Rebate 等</p>
+            <span class="tag">游戏项目</span>
+        </a>
+
+        <a href="legends/legends-index.html" class="project-card game-card">
+            <div class="icon">⚔️</div>
+            <h3>Legends</h3>
+            <p>Purchase/Redemption/KYC 特殊规则、Cash App、KYC Merge 等</p>
+            <span class="tag">游戏项目</span>
+        </a>
+
+        <a href="luck-hit/luck-hit-index.html" class="project-card game-card">
+            <div class="icon">🎯</div>
+            <h3>Luck Hit</h3>
+            <p>充值方式、最低提现、ACH/PayPal、取消提现、Face Auth 等</p>
+            <span class="tag">游戏项目</span>
+        </a>
+
+        <a href="tang-luck/tang-luck-index.html" class="project-card game-card">
+            <div class="icon">🎲</div>
+            <h3>Tang Luck</h3>
+            <p>Game Events、Jackpot、Buy-in Rebate、Jade Pass、Account、FAQ 等</p>
+            <span class="tag">游戏项目</span>
+        </a>
+
+        <a href="poker-hit/poker-hit-index.html" class="project-card game-card">
+            <div class="icon">♠️</div>
+            <h3>Poker Hit</h3>
+            <p>扑克游戏规则、专属提现限额、充值方式、KYC 特殊要求</p>
+            <span class="tag">游戏项目</span>
+        </a>
+    </div>
+
+    <!-- Updates -->
+    <div class="updates-section">
+        <h2>📋 Updates 更新记录</h2>
+        <table class="updates-table">
+            <thead>
+                <tr><th style="width:12%">日期</th><th style="width:18%">知识库/模块</th><th>更新内容</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="date">2026-06-24</td><td class="module"><a href="tang-luck/tang-luck-index.html">Tang Luck</a></td><td>全面更新：Account 注册/绑定/修改/删除/恢复/合并/冻结、Redemption 完整规则、FAQ 扩充 20+ 问题、新增导航栏/折叠/搜索功能</td></tr>
+                <tr><td class="date">2026-06-23</td><td class="module"><a href="general-complaint.html">通用-Complaint</a></td><td>新增投诉处理框架、升级标准、补偿发放标准</td></tr>
+                <tr><td class="date">2026-06-23</td><td class="module"><a href="general-amoe.html">通用-AMOE</a></td><td>新增 AMOE 替代参与方式、免费参与流程</td></tr>
+                <tr><td class="date">2026-06-23</td><td class="module"><a href="yea-master/yea-master-index.html">Yea Master</a></td><td>新增设备兼容性、账号管理、封号/冻结处理、VIP 福利、广告活动、充值活动、机台规则、CLUB、Jackpot、GC 兑换 JP、Referral、金猪、其他活动规则等完整模块</td></tr>
+                <tr><td class="date">2026-06-23</td><td class="module"><a href="acorn/acorn-index.html">Acorn</a></td><td>初始版本上线：Bundles 列表、Referral、Daily Rewards、Daily Package、Weekly Sub、Cash Back、Lucky Flip、Buyin Rebate、Newbie Protection、Storage/Golden PIG、Money Bank、Jackpot、Daily Mission、Daily Challenge、Leaderboard、Compensation 补偿标准、公平性投诉处理等</td></tr>
+                <tr><td class="date">2026-06-23</td><td class="module"><a href="legends/legends-index.html">Legends</a></td><td>初始版本上线：Purchase/Redemption/KYC 特殊规则、Cash App 部分保留、信用卡缓存机制、提现手续费实验、KYC 机器人自助开单、KYC Merge 处理、子页面链接汇总</td></tr>
+                <tr><td class="date">2026-06-23</td><td class="module"><a href="luck-hit/luck-hit-index.html">Luck Hit</a></td><td>初始版本上线：Purchase/Redemption/KYC 特殊规则、游戏内更换充值方式、最低提现金额/手续费、自选提现方式（ACH/PayPal）、游戏内取消提现、Face Authentication 后换绑 PP 邮箱</td></tr>
+                <tr><td class="date">2026-06-23</td><td class="module"><a href="tang-luck/tang-luck-index.html">Tang Luck</a></td><td>初始版本上线：基础框架、Purchase 充值渠道状态表、Redemption 提现方式状态表、KYC 通用规则引用</td></tr>
+                <tr><td class="date">2026-06-23</td><td class="module"><a href="poker-hit/poker-hit-index.html">Poker Hit</a></td><td>初始版本上线：扑克游戏规则、Poker 专属提现限额、Poker 专属充值方式、Poker KYC 特殊要求</td></tr>
+                <tr><td class="date">2026-06-22</td><td class="module"><a href="index.html">通用知识库</a></td><td>初始版本上线，包含 Purchase、Redemption、KYC、Sumsub KYC、States、CS-TAG、RSG、Account、Slots 等通用模块框架</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>CS Knowledge Base | 最后更新：2026-06-24</p>
+    </div>
+
 </div>
 
-<p><strong>最后更新：</strong>2026-06-23</p>
-
-<hr>
-
-<h2>📚 通用知识库（所有项目组共用）</h2>
-
-<table>
-    <thead>
-        <tr><th>模块</th><th>内容</th><th>链接</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>通用-Purchase</strong></td>
-            <td>充值基础规则、失败处理、风控、退款、Extra Fee、Unauthorized（各项目组通用框架）</td>
-            <td><a href="general/general-purchase.html">general/general-purchase.html</a></td>
-        </tr>
-        <tr>
-            <td><strong>通用-Redemption</strong></td>
-            <td>提现基础规则、状态码定义、手续费通用说明、取消流程（各项目组通用框架）</td>
-            <td><a href="general/general-redemption.html">general/general-redemption.html</a></td>
-        </tr>
-        <tr>
-            <td><strong>通用-KYC</strong></td>
-            <td>KYC等级、证件要求、SSN验证、通用处理流程</td>
-            <td><a href="general/general-kyc.html">general/general-kyc.html</a></td>
-        </tr>
-        <tr>
-            <td><strong>通用-Sumsub KYC</strong></td>
-            <td>Sumsub KYC审核面板操作、Tag处理、T2升级规则、拒绝流程话术</td>
-            <td><a href="general/general-sumsub-kyc.html">general/general-sumsub-kyc.html</a></td>
-        </tr>
-        <tr>
-            <td><strong>通用-States</strong></td>
-            <td>美国/加拿大非法州、限制州、年龄限制、通用SOP</td>
-            <td><a href="general/general-states.html">general/general-states.html</a></td>
-        </tr>
-        <tr>
-            <td><strong>通用-CS-TAG</strong></td>
-            <td>全标签体系（Purchase/Account/Redemption/Game Bug等）</td>
-            <td><a href="general/general-cs-tag.html">general/general-cs-tag.html</a></td>
-        </tr>
-        <tr>
-            <td><strong>通用-RSG</strong></td>
-            <td>RSG通用规则、Take a Break、Self Exclusion、Freeze流程</td>
-            <td><a href="general/general-rsg.html">general/general-rsg.html</a></td>
-        </tr>
-        <tr>
-            <td><strong>通用-Account</strong></td>
-            <td>账号基础规则、多账号处理、Ban/Freeze通用流程</td>
-            <td><a href="general/general-account.html">general/general-account.html</a></td>
-        </tr>
-        <tr>
-            <td><strong>通用-Slots</strong></td>
-            <td>机台通用规则、Tada系列、Shoot&Win、已知Bug清单</td>
-            <td><a href="general/general-slots.html">general/general-slots.html</a></td>
-        </tr>
-        <tr>
-            <td><strong>通用-Complaint</strong></td>
-            <td>投诉处理流程、升级标准、补偿发放标准</td>
-            <td><a href="general/general-complaint.html">general/general-complaint.html</a></td>
-        </tr>
-        <tr>
-            <td><strong>通用-AMOE</strong></td>
-            <td>AMOE替代参与方式、免费参与流程</td>
-            <td><a href="general/general-amoe.html">general/general-amoe.html</a></td>
-        </tr>
-    </tbody>
-</table>
-
-<hr>
-
-<h2>🎮 项目组专属知识库</h2>
-
-<div class="project-box">
-    <h3>🎯 Yea Master 项目组</h3>
-    <ul>
-        <li><strong>包含游戏：</strong>Yea Master GP&iOS, Cool Spin, Dosh Fever, Tactical Syndicate, Go Gold Minds, Caishen Rush Slots, Slootopia 等</li>
-        <li><strong>特殊规则：</strong>提现限额、充值渠道、RSG设置、专属活动、专属机台规则</li>
-        <li><strong>知识库链接：</strong><a href="yea-master/yea-master-index.html">yea-master/yea-master-index.html</a></li>
-    </ul>
-</div>
-
-<div class="project-box">
-    <h3>🌰 Acorn 项目组</h3>
-    <ul>
-        <li><strong>包含游戏：</strong>Lucky Acorn, Spin Sorcery, Riches Flow Casino, Coin Keeper Spin, Regal 21 Blackjack, Cash Bridge Slots 等</li>
-        <li><strong>特殊规则：</strong>ACH Pay直充、缓存信用卡机制、KYC Merge、账号转移记录</li>
-        <li><strong>知识库链接：</strong><a href="acorn/acorn-index.html">acorn/acorn-index.html</a></li>
-    </ul>
-</div>
-
-<div class="project-box">
-    <h3>👑 Legends 项目组</h3>
-    <ul>
-        <li><strong>包含游戏：</strong>Cider Casino, Lavish Luck, Luxe Mirage Reels, Strike and Solve, Lucky Gold Rush, Prowess Spin 等</li>
-        <li><strong>特殊规则：</strong>Cash App充值、提现手续费实验、KYC机器人自助开单、Prizeout兑换</li>
-        <li><strong>知识库链接：</strong><a href="legends/legends-index.html">legends/legends-index.html</a></li>
-    </ul>
-</div>
-
-<div class="project-box">
-    <h3>🍀 Luck Hit 项目组</h3>
-    <ul>
-        <li><strong>包含游戏：</strong>Luck Hit 系列, Spin Sorcery Web</li>
-        <li><strong>特殊规则：</strong>更换充值方式、最低提现金额、提现手续费、自行选择提现方式</li>
-        <li><strong>知识库链接：</strong><a href="luck-hit/luck-hit-index.html">luck-hit/luck-hit-index.html</a></li>
-    </ul>
-</div>
-
-<div class="project-box">
-    <h3>🎲 Tang Luck 项目组</h3>
-    <ul>
-        <li><strong>包含游戏：</strong>Tang Luck 系列</li>
-        <li><strong>特殊规则：</strong>（待补充）</li>
-        <li><strong>知识库链接：</strong><a href="tang-luck/tang-luck-index.html">tang-luck/tang-luck-index.html</a></li>
-    </ul>
-</div>
-
-<div class="project-box">
-    <h3>🃏 Poker Hit 项目组</h3>
-    <ul>
-        <li><strong>包含游戏：</strong>Poker Hit 系列</li>
-        <li><strong>特殊规则：</strong>扑克游戏规则、Poker专属提现限额、Poker专属充值方式、Poker KYC特殊要求</li>
-        <li><strong>知识库链接：</strong><a href="pokerhit/pokerhit-index.html">pokerhit/pokerhit-index.html</a></li>
-    </ul>
-</div>
-
-<hr>
-
-<h2>📋 Updates 更新日志</h2>
-
-<table>
-    <thead>
-        <tr><th>日期</th><th>知识库/模块</th><th>更新内容</th></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>2026-06-23</td>
-            <td><strong>通用-Complaint</strong></td>
-            <td>新增投诉处理框架、升级标准、补偿发放标准</td>
-        </tr>
-        <tr>
-            <td>2026-06-23</td>
-            <td><strong>通用-AMOE</strong></td>
-            <td>新增 AMOE 替代参与方式、免费参与流程</td>
-        </tr>
-        <tr>
-            <td>2026-06-23</td>
-            <td><strong>Yea Master</strong></td>
-            <td>新增设备兼容性、账号管理、封号/冻结处理、VIP 福利、广告活动、充值活动、机台规则、CLUB、Jackpot、GC 兑换 JP、Referral、金猪、其他活动规则等完整模块</td>
-        </tr>
-        <tr>
-            <td>2026-06-23</td>
-            <td><strong>Acorn</strong></td>
-            <td>初始版本上线：Bundles 列表、Referral、Daily Rewards、Daily Package、Weekly Sub、Cash Back、Lucky Flip、Buyin Rebate、Newbie Protection、Storage/Golden PIG、Money Bank、Jackpot、Daily Mission、Daily Challenge、Leaderboard、Compensation 补偿标准、公平性投诉处理等</td>
-        </tr>
-        <tr>
-            <td>2026-06-23</td>
-            <td><strong>Legends</strong></td>
-            <td>初始版本上线：Purchase/Redemption/KYC 特殊规则、Cash App 部分保留、信用卡缓存机制、提现手续费实验、KYC 机器人自助开单、KYC Merge 处理、子页面链接汇总</td>
-        </tr>
-        <tr>
-            <td>2026-06-23</td>
-            <td><strong>Luck Hit</strong></td>
-            <td>初始版本上线：Purchase/Redemption/KYC 特殊规则、游戏内更换充值方式、最低提现金额/手续费、自选提现方式（ACH/PayPal）、游戏内取消提现、Face Authentication 后换绑 PP 邮箱</td>
-        </tr>
-        <tr>
-            <td>2026-06-23</td>
-            <td><strong>Tang Luck</strong></td>
-            <td>初始版本上线：基础框架、Purchase 充值渠道状态表、Redemption 提现方式状态表、KYC 通用规则引用</td>
-        </tr>
-        <tr>
-            <td>2026-06-23</td>
-            <td><strong>Poker Hit</strong></td>
-            <td>初始版本上线：扑克游戏规则、Poker 专属提现限额、Poker 专属充值方式、Poker KYC 特殊要求</td>
-        </tr>
-        <tr>
-            <td>2026-06-22</td>
-            <td><strong>通用知识库</strong></td>
-            <td>初始版本上线，包含 Purchase、Redemption、KYC、Sumsub KYC、States、CS-TAG、RSG、Account、Slots 等通用模块框架</td>
-        </tr>
-    </tbody>
-</table>
-
-<hr>
-
-<p style="text-align:center; color:#888; font-size:13px; margin-top:30px;">
-    © 2026 CS Knowledge Base | 客服知识库总首页
-</p>
-
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+<script>
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 300));
+</script>
 </body>
 </html>
