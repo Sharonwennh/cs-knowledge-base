@@ -1,283 +1,1153 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>通用-Redemption 提现知识库</title>
-<style>
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
-h1 { color: #2c3e50; border-bottom: 3px solid #27ae60; padding-bottom: 15px; }
-h2 { color: #34495e; margin-top: 30px; border-left: 4px solid #27ae60; padding-left: 10px; background: #f0fdf4; padding: 8px 10px; }
-h3 { color: #555; margin-top: 20px; }
-.warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
-.note { background: #e8f4fd; border-left: 4px solid #3498db; padding: 10px 15px; margin: 15px 0; }
-table { border-collapse: collapse; width: 100%; margin: 15px 0; }
-th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-th { background-color: #27ae60; color: white; }
-tr:nth-child(even) { background-color: #f9f9f9; }
-a { color: #3498db; }
-.status-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; padding: 15px; margin: 10px 0; }
-.status-box h4 { margin-top: 0; color: #2c3e50; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Knowledge Base - Redemption</title>
+    <style>
+        :root {
+            --primary: #2F5597;
+            --secondary: #4472C4;
+            --light-blue: #D9E2F3;
+            --bg: #f5f7fa;
+            --card-bg: #ffffff;
+            --text: #333333;
+            --border: #e0e0e0;
+            --warning: #fff3cd;
+            --warning-border: #ffc107;
+            --danger: #f8d7da;
+            --danger-border: #dc3545;
+            --success: #d4edda;
+            --success-border: #28a745;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h1 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: var(--primary);
+            margin-top: 40px;
+            padding-left: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+        h3 { color: var(--secondary); margin-top: 25px; }
+        h4 { color: #555; margin-top: 20px; }
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .toc h3 { margin-top: 0; color: var(--primary); }
+        .toc ul { columns: 2; column-gap: 40px; }
+        .toc li { margin-bottom: 6px; break-inside: avoid; }
+        .toc a { color: var(--secondary); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        details {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        summary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 14px 20px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 20px;
+            transition: transform 0.2s;
+        }
+        details[open] summary::after { content: '−'; }
+        details[open] summary { border-bottom: 1px solid var(--border); }
+        .content { padding: 20px; }
+        .alert {
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid;
+        }
+        .alert-warning { background: var(--warning); border-color: var(--warning-border); }
+        .alert-danger { background: var(--danger); border-color: var(--danger-border); }
+        .alert-success { background: var(--success); border-color: var(--success-border); }
+        .alert-info { background: #e7f3ff; border-color: #2196F3; }
+        .template-box {
+            background: #f8f9fa;
+            border: 1px dashed #adb5bd;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 12px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            font-size: 13px;
+            color: #495057;
+        }
+        .bilingual { display: flex; gap: 20px; margin: 10px 0; }
+        .bilingual > div { flex: 1; }
+        .en { border-left: 3px solid var(--secondary); padding-left: 12px; }
+        .cn { border-left: 3px solid #e74c3c; padding-left: 12px; color: #555; }
+        .tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        tr:nth-child(even) { background: var(--light-blue); }
+        .status-table th { background: #2F5597; }
+        .status-table td { border: 1px solid #ccc; }
+        .highlight { background: #fffde7; padding: 2px 6px; border-radius: 3px; }
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .method-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .method-card h4 { margin-top: 0; color: var(--primary); }
+        .img-container {
+            margin: 15px 0;
+            text-align: center;
+            background: #f8f9fa;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .img-container img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .img-caption {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 6px; }
+        hr { border: none; border-top: 1px solid var(--border); margin: 30px 0; }
+        .update-date {
+            float: right;
+            font-size: 12px;
+            color: #888;
+            font-weight: normal;
+        }
+        .disabled-method {
+            opacity: 0.7;
+            background: #f0f0f0;
+        }
+        .disabled-method h4 { color: #999; }
+        @media (max-width: 768px) {
+            .toc ul { columns: 1; }
+            .bilingual { flex-direction: column; }
+            .img-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
+<div class="container">
 
-<h1>💰 通用-Redemption 提现知识库</h1>
+<h1>🔄 General Knowledge Base — Redemption (提现)</h1>
 
-<div class="warning">
-<strong>⚠️ 项目组特殊规则覆盖提示：</strong><br>
-本文档为通用框架，各项目组可能有特殊规则（如最低提现金额差异、手续费差异、状态码显示差异、PayPal限额差异等）。<br>
-处理客诉时，请先查本文档，再查对应项目组知识库确认是否有特殊规则。
+<div class="alert alert-danger">
+    <strong>Key Notes!</strong> Updated on 2025-07-21: All project teams have currently <strong>disabled the Cash APP redemption Method</strong>.<br>
+    <strong>关键提示：</strong> 2025-07-21更新：所有项目组目前已禁用 Cash App 提现方式。
 </div>
 
-<p><strong>最后更新：</strong>2026-06-22</p>
+<div class="toc">
+    <h3>📑 Table of Contents / 目录</h3>
+    <ul>
+        <li><a href="#currency">Redemption Currency</a></li>
+        <li><a href="#how-to">How to Redeem</a></li>
+        <li><a href="#minimum">Minimum Amount</a></li>
+        <li><a href="#fee">Transaction Fee</a></li>
+        <li><a href="#kyc">Redemption Requirements (KYC)</a></li>
+        <li><a href="#methods">Redemption Methods</a></li>
+        <li><a href="#status">Status / Process</a></li>
+        <li><a href="#payer">Payer Account</a></li>
+        <li><a href="#mechanism">Mechanism by Method</a></li>
+        <li><a href="#account">Redemption Account</a></li>
+        <li><a href="#cancel">Cancel Redemption</a></li>
+        <li><a href="#processing-time">Processing Time</a></li>
+        <li><a href="#overdue">Redemption Overdue</a></li>
+        <li><a href="#limits">PayPal Limits</a></li>
+        <li><a href="#maintenance">PayPal Maintenance</a></li>
+        <li><a href="#transaction-id">Requesting Transaction ID</a></li>
+        <li><a href="#canada">Canadian Players</a></li>
+        <li><a href="#payment-check">Payment Check Before Redemption</a></li>
+        <li><a href="#table-rules">Table Format Rules</a></li>
+    </ul>
+</div>
+<!-- ==================== CURRENCY ==================== -->
+<h2 id="currency">💱 Redemption Currency / 提现货币</h2>
+<div class="alert alert-info">
+    Currently, both US and Canadian players redeem US dollars in our game.<br>
+    <strong>1 Sweepstakes Coin = 1 USD</strong><br><br>
+    目前美国和加拿大玩家在游戏中均兑换美元。<br>
+    <strong>1 SC = 1 USD</strong>
+</div>
+
+<!-- ==================== HOW TO REDEEM ==================== -->
+<h2 id="how-to">📝 How to Redeem / 如何提现</h2>
+<details open>
+    <summary>General Redemption Guide / 通用提现指南</summary>
+    <div class="content">
+        <div class="bilingual">
+            <div class="en">
+                <p>Please click <strong>REDEEM</strong> to check the rules.</p>
+                <ul>
+                    <li>1 sweepstakes coin = 1 USD</li>
+                    <li>Sweepstakes coins must be used to play at least once to be eligible for redemption.</li>
+                    <li>All the SC you win can be redeemed.</li>
+                    <li>GC cannot be redeemed or converted to SC.</li>
+                    <li>Normally a redemption takes less than 3 days to process.</li>
+                    <li>Each redemption request is reviewed manually to ensure account safety.</li>
+                </ul>
+            </div>
+            <div class="cn">
+                <p>请点击 <strong>REDEEM（提现）</strong> 查看规则。</p>
+                <ul>
+                    <li>1 SC = 1 USD</li>
+                    <li>SC 必须至少玩过 1 次才能提现。</li>
+                    <li>所有赢得的 SC 均可提现。</li>
+                    <li>GC 不能提现，也不能转换为 SC。</li>
+                    <li>通常提现处理时间不超过 3 天。</li>
+                    <li>每笔提现请求均人工审核，以确保账户安全。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="template-box">Dear Player,
+
+Thanks for your patience.
+Please click REDEEM to check the rules. 1 sweepstakes coin = 1 USD, sweepstakes coins must be used to play at least once to be eligible for redemption. All the SC you win can be redeemed. GC cannot be redeemed or converted to SC.
+
+Normally a redemption takes less than 3 days to process, each redemption request is reviewed manually by our agents to ensure the safety of players' accounts. So it may need a little bit more time. Thanks for your patience.
+
+If you have more questions please kindly send us screenshots of your issue so we can help you check further.
+
+Have a great day.</div>
+    </div>
+</details>
+
+<!-- ==================== MINIMUM AMOUNT ==================== -->
+<h2 id="minimum">💰 Minimum Redemption Amount / 最低提现金额</h2>
+<details>
+    <summary>Minimum Amount by Project Team / 各项目组最低提现金额</summary>
+    <div class="content">
+        <table>
+            <tr><th>Project Team</th><th>Details</th><th>Script</th></tr>
+            <tr>
+                <td><strong>Poker Hit</strong></td>
+                <td>See Poker Knowledge Base — Minimum Redemption Amount</td>
+                <td rowspan="3" style="vertical-align:top">
+                    <div class="template-box">Dear Player,
+
+Thank you for reaching out to us.
+When you submit a redemption, there is a minimum limit of how much you can redeem. Please kindly check the redemption rules on the REDEEM interface for further information.
+
+Hope you have a lovely day!</div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Luck Hit</strong></td>
+                <td>See Luckhit Knowledge Base — Transaction Fee</td>
+            </tr>
+            <tr>
+                <td><strong>Acorn & Legends</strong></td>
+                <td>Some players may see minimum redemption amount is not 1 SC or 0.5 SC. This is normal. The rules displayed on the Redemption page shall prevail.</td>
+            </tr>
+        </table>
+    </div>
+</details>
+
+<!-- ==================== TRANSACTION FEE ==================== -->
+<h2 id="fee">💳 Transaction Fee / 交易手续费</h2>
+<details>
+    <summary>Fee Rules by Project Team / 各项目组手续费规则</summary>
+    <div class="content">
+        <div class="alert alert-warning">
+            <strong>Poker Hit:</strong> See Poker Knowledge Base — Transaction Fee<br>
+            <strong>Luck Hit:</strong> See Luckhit Knowledge Base — Transaction Fee<br>
+            <strong>Acorn & Legends:</strong> Both teams are conducting experiments on applying different redemption fees to different players. All players' fees will be <strong>dynamically displayed on the Redeem page</strong>.
+        </div>
+
+        <!-- INSERT IMAGE 1: Transaction Fee Display -->
+        <div class="img-container">
+            <img src="assets/images/redemption/2025-07-21-transaction-fee-display.png" alt="Transaction Fee Display - 1% service charge on Redeem page">
+            <div class="img-caption">Figure 1: Transaction Fee displayed on Redeem page (e.g., 1% service charge, minimum 0.5 SC)</div>
+        </div>
+
+        <p><strong>Fee Feedback Process:</strong> If a player complains about the fee, submit a task promptly. Include: whether the fee ratio is correctly displayed and the specific fee ratio charged.</p>
+        <p><strong>手续费反馈流程：</strong> 如玩家反馈手续费问题，需立即提交工单反馈，包含：玩家提现页面手续费比例是否正确显示、具体收取的手续费比例。</p>
+        <div class="template-box">We have recorded your feedback as a suggestion and submitted it to the relevant team (logged in the Suggestion Form). Please pay attention to the fee displayed on the redemption interface to adjust your redemption amount accordingly.</div>
+    </div>
+</details>
+
+<!-- ==================== KYC REQUIREMENTS ==================== -->
+<h2 id="kyc">🛡️ Redemption Requirements (KYC) / 提现验证要求</h2>
+<details>
+    <summary>KYC Verification Levels / KYC 验证等级</summary>
+    <div class="content">
+        <table class="status-table">
+            <tr><th>Level</th><th>Requirement</th><th>Trigger Condition</th></tr>
+            <tr>
+                <td><strong>Basic KYC-ID</strong></td>
+                <td>Must pass basic KYC-ID verification</td>
+                <td>All players — required for any redemption</td>
+            </tr>
+            <tr>
+                <td><strong>Advanced KYC-SSN</strong></td>
+                <td>Must pass advanced KYC-SSN verification</td>
+                <td>Total redeemed amount <strong>exceeding $2,000</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Advanced KYC-POA</strong></td>
+                <td>Must pass advanced KYC-POA verification</td>
+                <td>Total redeemed amount <strong>exceeding $20,000</strong></td>
+            </tr>
+        </table>
+        <p class="cn">所有玩家必须通过基础 KYC-ID 验证才能提现。累计提现超过 $2,000 需通过 KYC-SSN 验证；超过 $20,000 需通过 KYC-POA 验证。</p>
+    </div>
+</details>
+
+<!-- ==================== METHODS OVERVIEW ==================== -->
+<h2 id="methods">🏦 Redemption Methods / 提现方式</h2>
+<div class="alert alert-danger">
+    <strong>Updated 2025-07-21:</strong> Cash App redemption method has been disabled for all project teams.<br>
+    <strong>2025-07-21更新：</strong> 所有项目组已禁用 Cash App 提现方式。
+</div>
+
+<div class="method-grid">
+    <div class="method-card">
+        <h4>PayPal</h4>
+        <p>Funds transferred to player's PayPal account via partnered platform.</p>
+        <p>Total Time: <strong>Within 24 hours</strong></p>
+        <p>Available: Most teams</p>
+    </div>
+    <div class="method-card">
+        <h4>ACH / EFT</h4>
+        <p>Funds transferred to player's Bank Account.</p>
+        <p>EFT is the Canadian equivalent of ACH.</p>
+        <p>Total Time: <strong>Within 3 business days</strong></p>
+    </div>
+    <div class="method-card disabled-method">
+        <h4>Cash App <span style="color:red">(Disabled)</span></h4>
+        <p><strong>DISABLED</strong> as of 2025-07-21 for all teams.</p>
+        <p>Previously: Funds to player's Cash App account.</p>
+    </div>
+    <div class="method-card">
+        <h4>Prizeout</h4>
+        <p>SC converted to gift cards via third-party platform.</p>
+        <p>Min after fee: <strong>5 SC</strong></p>
+        <p>Total Time: <strong>Within 3 hours</strong></p>
+    </div>
+    <div class="method-card">
+        <h4>Debit Card</h4>
+        <p>Funds transferred to player's Debit Card.</p>
+        <p>Total Time: <strong>Within 24 hours</strong></p>
+    </div>
+    <div class="method-card">
+        <h4>Venmo</h4>
+        <p>Funds transferred to player's Venmo account.</p>
+        <p><strong>USA users only</strong></p>
+        <p>Total Time: <strong>Within 24 hours</strong></p>
+    </div>
+    <div class="method-card">
+        <h4>Skrill</h4>
+        <p>Funds transferred to player's Skrill account.</p>
+        <p>Method column shows "10"</p>
+        <p>Total Time: <strong>Within 24 hours</strong></p>
+    </div>
+    <div class="method-card">
+        <h4>Royal Roll Card</h4>
+        <p>Funds transferred to player's Royal Roll Card directly.</p>
+        <p>Available only in <strong>Lavish game</strong></p>
+        <p>Method column shows "9"</p>
+    </div>
+    <div class="method-card">
+        <h4>Refund</h4>
+        <p>Funds refunded via original payment method.</p>
+        <p>Determined by internal risk control. Not visible to players.</p>
+    </div>
+</div>
+
+<div class="alert alert-info">
+    <strong>Method Selection Rule:</strong> Depending on the product and version, some players can freely choose between two or more redemption methods, while others only have access to fewer methods. <strong>If a player only has one method available, do not reveal that another redemption method exists.</strong><br><br>
+    <strong>Script:</strong> You can use the available redemption method on your redeem page to redeem. If you have any further problem, please feel free to contact us.
+</div>
+<!-- ==================== STATUS / PROCESS ==================== -->
+<h2 id="status">📊 Status / Process / 提现状态与流程</h2>
+
+<details>
+    <summary>Internal Process Time (Review Stage) / 内部处理时间（审核阶段）</summary>
+    <div class="content">
+        <table class="status-table">
+            <tr><th>Backend Status</th><th>App Display</th><th>Meaning</th><th>Cancellable?</th></tr>
+            <tr>
+                <td>1/Pending<br>103/Pending<br>Luckhit: 0/Pending</td>
+                <td>Pending / Reviewing</td>
+                <td>Player successfully submitted redemption. Waiting for internal review.</td>
+                <td>✅ Yes</td>
+            </tr>
+            <tr>
+                <td>106/Reviewing</td>
+                <td>Reviewing</td>
+                <td>Sent to review server, pending review.</td>
+                <td>✅ Yes</td>
+            </tr>
+            <tr>
+                <td>2/Lockin<br>Luck Hit: 2/Begin<br>2/Reviewing</td>
+                <td>Reviewing</td>
+                <td>Payment Team is processing. Time: several hours to a few days (max 1 week).</td>
+                <td>❌ No</td>
+            </tr>
+            <tr>
+                <td>113/Queuing</td>
+                <td>Queuing</td>
+                <td>Approved and queued for fund transfer. Larger amount = longer queue.</td>
+                <td>❌ No</td>
+            </tr>
+        </table>
+        <p class="cn"><strong>注意：</strong> 以上数字状态仅后台可见，向玩家展示时只使用文字状态（Pending/Reviewing/Queuing等）。</p>
+    </div>
+</details>
+
+<details>
+    <summary>External Process Time (Transfer Stage) / 外部处理时间（转账阶段）</summary>
+    <div class="content">
+        <table class="status-table">
+            <tr><th>Backend Status</th><th>App Display</th><th>Meaning</th></tr>
+            <tr>
+                <td>116/To be Claimed</td>
+                <td>Need to Collect / Reviewing</td>
+                <td>Submitted to third party. PayPal: needs manual claim. ACH/EFT: bank processing.</td>
+            </tr>
+            <tr>
+                <td>116/First Time Failed<br>(Debit Card / Skrill / Royal Roll Card)</td>
+                <td>Reviewing</td>
+                <td>First transfer failed. Retrying. Results usually within 1 business day. If second attempt fails, funds returned as SC.</td>
+            </tr>
+            <tr>
+                <td>3/Redeemed</td>
+                <td>Succeed</td>
+                <td>Third party has processed the transfer.</td>
+            </tr>
+            <tr>
+                <td>4/Failed</td>
+                <td>Failed</td>
+                <td>Fund transfer failed. SC returned to player's account.</td>
+            </tr>
+            <tr>
+                <td>5/Canceled<br>6/Canceled (Luck Hit & Poker)</td>
+                <td>Canceled</td>
+                <td>Redemption request canceled by player or CS.</td>
+            </tr>
+            <tr>
+                <td>105/Problematic</td>
+                <td>Pending / Reviewing</td>
+                <td>Redemption deemed suspicious. Submit task to Tier 2.</td>
+            </tr>
+            <tr>
+                <td>200/Refund<br>Luckhit: 5/Refund</td>
+                <td>Refund / Succeed</td>
+                <td>Funds sent via refund to original payment method.</td>
+            </tr>
+        </table>
+        <div class="alert alert-danger">
+            <strong>CRITICAL:</strong> In all player-facing tables and communications, status must be displayed as text only (e.g., "Redeemed", "Failed", "Pending", "Reviewing", "Queuing", "Canceled", "Refund"). <strong>Never include backend numbers</strong> like "3/Redeemed" or "116/To be Claimed".<br><br>
+            <strong>关键：</strong> 所有面向玩家的表格和沟通中，状态必须以纯文字显示（如 Redeemed、Failed、Pending、Reviewing、Queuing、Canceled、Refund）。<strong>严禁包含后台数字</strong>如 "3/Redeemed" 或 "116/To be Claimed"。
+        </div>
+    </div>
+</details>
+
+<!-- ==================== PAYPAL MECHANISM ==================== -->
+<h2 id="mechanism">⚙️ Mechanism by Method / 各方式机制详解</h2>
+
+<details>
+    <summary>PayPal Redemption / PayPal 提现</summary>
+    <div class="content">
+        <h4>User Information / 用户信息</h4>
+        <p>Player must verify a <strong>PayPal email address</strong>. This email must be linked to their PayPal account to receive funds.</p>
+        <p>玩家必须验证 <strong>PayPal 邮箱地址</strong>。该邮箱必须已绑定 PayPal 账户才能收款。</p>
+
+        <h4>Prolonged Status 1/103/106 / 长时间处于审核状态</h4>
+        <div class="template-box">Dear Player,
+
+Thank you for your patience.
+Typically, you can expect to receive the redemption within 24 Hours. We have confirmed that your redemption request was successfully submitted and is currently under review. Please note that each request is manually reviewed by our agents to ensure the safety and security of all player accounts, which may take a little extra time.
+
+Verified PayPal email: xxxx
+Kindly note that the sender of the redemption will be either Essentials Tech, Westline Tech Limited or Citcon USA LLC.
+
+If you don't have a PayPal account linked to this email, please create one or add this email to your existing PayPal account.
+We greatly appreciate your understanding and support.</div>
+
+        <h4>Prolonged Status 113 / 长时间处于排队状态</h4>
+        <div class="template-box">Dear Player,
+
+Thank you so much for your patience!
+Your redemption request has successfully passed the review stage and is now locked for processing — the final step before the payment is sent out.
+Typically, it takes about 24 hours for the transaction to appear in your PayPal account (xxx).
+We truly appreciate your understanding during this time.
+
+Wishing you a wonderful day ahead!</div>
+        <div class="alert alert-warning">
+            <strong>2026-03-16 Update:</strong> PP 113 status OT after 24 hrs — do not need to submit task. Ask player to wait patiently.<br>
+            Due to issues with our payment partner, processing speed is slower. It may take 4–5 business days. We recommend using other redemption methods.
+        </div>
+
+        <h4>Status 116 / Need to Collect / 待领取状态</h4>
+        <p><strong>PayPal Inactive Accounts:</strong> Player needs to find the payment receipt email from PayPal and click "Claim your payment".</p>
+        <div class="template-box">Dear Player,
+
+Thank you for your patience.
+We have sent your redemption request of $xxxx (net of fees) to PayPal on xxxxxxx (UTC+0). Please check the PayPal email address you verified in the game (xxxxxx) to see if you have received an email from service@paypal.com. You will need to click [Claim your payment] in the email to collect your redemption.
+
+Kindly note that the sender of the redemption will be either Essentials Tech, Westline Tech Limited or Citcon USA LLC.
+Please note that if you do not claim the redemption within 30 days, it will be returned to us and subsequently credited back to your game account.
+
+If you have any further questions or concerns, please do not hesitate to reach out.</div>
+
+        <h4>Status 3/Redeemed (Succeed) / 成功状态</h4>
+        <div class="template-box">Dear Player,
+
+Thank you for your patience.
+Typically, you can expect to receive the redemption within 24 Hours. After our review, your redemption of $xxxxxx (net of fees) was successfully processed on xxxx (UTC+0) via PayPal.
+
+Verified PayPal email: xxxx
+Kindly note that the sender of the redemption will be either Essentials Tech, Westline Tech Limited or Citcon USA LLC.
+If you don't have a PayPal account linked to this email, please create one or add this email to your existing PayPal account. (A reminder is mandatory for the first redemption to PayPal.)
+
+We greatly appreciate your understanding and support.</div>
+
+        <h4>Status 4/Failed / 失败状态</h4>
+        <p><strong>Acorn & Legends:</strong> After Face Authentication, players unbind/re-bind PayPal/ACH independently.</p>
+        <p><strong>Poker Hit & Luck Hit:</strong> After Face Authentication, provide new PayPal email for project team to assist re-binding.</p>
+
+        <h4>PayPal Email Not Linked / 邮箱未绑定PayPal</h4>
+        <p>If the verified email is not a PayPal email:</p>
+        <ol>
+            <li>Create a PayPal account using this email</li>
+            <li>Merge this email into existing PayPal account</li>
+            <li>Wait 30 days — funds will be returned to game account</li>
+        </ol>
+    </div>
+</details>
+
+<details>
+    <summary>ACH / EFT Redemption / ACH 提现</summary>
+    <div class="content">
+        <h4>User Information / 用户信息</h4>
+        <p>Player must provide:</p>
+        <ul>
+            <li>Full Name</li>
+            <li>Bank Account Number (NOT card number)</li>
+            <li>ABA Code / Routing Value (9 digits)</li>
+            <li>Address details (accurate to house number)</li>
+            <li>ZIP Code</li>
+            <li>Date of birth</li>
+        </ul>
+        <p class="cn">玩家必须提供：全名、银行账号（<strong>不是卡号</strong>）、ABA/路由号码（9位）、详细地址、邮编、出生日期。</p>
+
+        <h4>ACH / EFT — Poker Hit Method Selection</h4>
+        <!-- INSERT IMAGE 2: Redemption Method Selection -->
+        <div class="img-container">
+            <img src="assets/images/redemption/2025-07-21-redemption-method-selection.png" alt="Redemption Method Selection - Bank Account (ACH) vs PayPal">
+            <div class="img-caption">Figure 2: Poker Hit Redemption Method Selection — Bank Account (ACH Transfer) vs PayPal</div>
+        </div>
+
+        <h4>Status 116 / Need to Collect / 待领取状态</h4>
+        <div class="template-box">Dear Player,
+
+Sorry for the delayed response.
+Please kindly note that the "need to collect" status means that we have sent your redemption transaction to bank already and they are now issuing your transaction to your bank account ending with XXXX.
+Normally, bank will issue you the transaction in the next few business days.
+Please kindly check later, if you have further questions, please let us know.
+Hope you have a great day.</div>
+        <p class="cn"><strong>注意：</strong> 116 状态表示已发送至银行排队处理，不是失败。ACH 银行处理通常需最多 3 个工作日。Redemption Account 显示的是银行账户尾号，不是银行卡号。</p>
+
+        <h4>Status 3/Redeemed (Succeed) / 成功状态</h4>
+        <div class="template-box">Dear player,
+
+Thank you for your patience. We confirmed that $xxxxx (net of fees) was sent to the bank on xxxxxxxx (UTC+0). However, please be advised that the bank may require up to three business days to process the transaction and credit the funds to your bank account ending in xxxx.
+
+Please check your transaction records. If you encounter any issues or do not receive the funds after three business days, please contact us again.
+
+Have a nice day!</div>
+
+        <h4>Status 4/Failed / 失败状态</h4>
+        <p>Almost always due to incorrect player information (especially Bank Account Number vs Card Number confusion).</p>
+        <div class="template-box">Dear Player,
+
+Apologies for the delayed response.
+We have found that the failed redemption $XXX (net of fees) via ACH / EFT bank account with ending xxx may be due to incorrect information provided by you.
+Please pay special attention to the fact that the Bank Account Number is not the Card Number.
+As a result, the redemption SC xxx has been returned to your game account on xxx (UTC+0).
+Also, kindly refrain from initiating new redemption requests to the same account to avoid payments being sent to the unintended account or consecutive redemption failures.
+If we assist you with unbinding your current account, you will not be able to rebind it as each bank account can only be linked once.
+Kindly advise us whether you would like us to assist you to update your ACH / EFT account.</div>
+
+        <h4>Weekend Delay / 周末延迟</h4>
+        <div class="template-box">Dear Player,
+
+Thank you for your patience.
+Kindly note bank will need a few business days to issue the transfer to your bank account. Because during the weekend banks are not working, so the waiting time will be a little bit longer than weekdays.
+Please kindly wait for another 1-2 business days for bank to send the transactions to your bank account if you redeem during the weekend.
+If you need further assistance, please let us know.
+Hope you have a wonderful day.</div>
+    </div>
+</details>
+<details>
+    <summary>Debit Card Redemption / 借记卡提现</summary>
+    <div class="content">
+        <h4>User Information / 用户信息</h4>
+        <p>No additional info needed if player previously used Debit Card for purchases. System auto-directs to Pay to Debit Card page showing:</p>
+        <ul>
+            <li>Schema (Visa or Master)</li>
+            <li>First 6 and last 4 digits of the card</li>
+        </ul>
+        <p>If multiple cards used, only the <strong>latest</strong> bound card is shown.</p>
+
+        <!-- INSERT IMAGE 9: Debit Card Pay Page -->
+        <div class="img-container">
+            <img src="assets/images/redemption/2025-07-21-debit-card-pay-page.png" alt="Debit Card Pay Page - showing card schema and masked number">
+            <div class="img-caption">Figure 9: Debit Card Pay Page — displays card schema (Visa/Master) and masked number (first 6 + last 4 digits)</div>
+        </div>
+
+        <h4>Status 116 / First Time Failed / 首次转账失败</h4>
+        <div class="template-box">Dear Player,
+
+We would like to inform you that the initial attempt to transfer $XXX (net of fees) for your debit card redemption was unsuccessful.
+
+We are currently retrying the transfer, and the outcome is typically available within one business day. If the second attempt also fails, the funds will be returned to your in-game account in the form of SC once the redemption status changes to "Failed."
+
+At that point, you'll be able to choose an alternative redemption method.
+Thank you for your patience and understanding.</div>
+
+        <h4>Status 4/Failed — Checkbook Limit / 失败-支票限额</h4>
+        <div class="template-box">Dear Player,
+
+Regarding the redemption you submitted on [xxx UTC+0], after our check, the Redemption failure is associated with the transaction limit of your debit card set by your bank (this is not a restriction from our platform).
+
+To help you successfully receive funds for your subsequent redemptions, we'd like to share 2 useful tips:
+1. Confirm your card limit first: We recommend checking the specific transaction limit of your debit card before initiating a new redemption.
+
+2. Split into smaller redemptions: If the amount of your intended redemption exceeds your card's daily/weekly limit, divide the total redemption amount into multiple smaller sums.
+
+If you encounter any other issues, please feel free to contact us at any time.
+Thank you for your understanding.</div>
+    </div>
+</details>
+
+<details>
+    <summary>Cash App Redemption (DISABLED) / Cash App 提现（已停用）</summary>
+    <div class="content">
+        <div class="alert alert-danger">
+            <strong>DISABLED as of 2025-07-21 for all project teams.</strong><br>
+            <strong>2025-07-21起所有项目组已停用。</strong>
+        </div>
+
+        <h4>Historical Reference / 历史参考</h4>
+        <p><strong>User Information:</strong> Player must enter their Cash Tag (letters, numbers, underscores; case-sensitive; cannot be numbers only).</p>
+        <p><strong>Process:</strong></p>
+        <ul>
+            <li>Funds transferred to player's Cash App account via partnered platform.</li>
+            <li>Player must manually click "Accept" to receive funds within 14 days.</li>
+            <li>Unaccepted funds returned after 14 days.</li>
+            <li>Status 3/Redeemed: Funds sent. Status 4/Failed: Transfer failed.</li>
+        </ul>
+        <p><strong>Status 116:</strong> Redemption approved and queued. Usually received within 30 minutes (max 4 hours).</p>
+        <p><strong>External Process:</strong> Cash App has no "pending acceptance" status from our side. After Payment Team processes, player receives within 30 min (max 4h). Final status updated within 5 minutes.</p>
+        <p class="cn"><strong>历史记录：</strong> Cash App 提现需玩家手动点击 "Accept" 接受，14天内未接受将退回。资金通常在30分钟内到账（最长4小时）。</p>
+    </div>
+</details>
+
+<details>
+    <summary>Prizeout Redemption / Prizeout 礼品卡提现</summary>
+    <div class="content">
+        <h4>How to Redeem / 如何提现</h4>
+        <ol>
+            <li>Select "Redeem Gift Cards"</li>
+            <li>Verify redemption email via verification code</li>
+            <li>Enter redemption amount (Minimum: 5 SC after fee)</li>
+            <li>Prizeout account auto-created</li>
+            <li>Use balance to purchase gift cards</li>
+        </ol>
+        <p><strong>Important:</strong> Players can ONLY use our game's provided URL or in-game links to access Prizeout. Do not register independently.</p>
+
+        <!-- INSERT IMAGES 3,4,5: Prizeout Screenshots -->
+        <div class="img-grid">
+            <div class="img-container">
+                <img src="assets/images/redemption/2025-07-21-prizeout-gift-cards.png" alt="Prizeout Gift Cards page - various store gift cards">
+                <div class="img-caption">Figure 3: Prizeout Gift Cards — available stores and bonus offers</div>
+            </div>
+            <div class="img-container">
+                <img src="assets/images/redemption/2025-07-21-prizeout-coinbase-details.png" alt="Prizeout Coinbase Gift Card Details - QR code and gift card code">
+                <div class="img-caption">Figure 4: Prizeout Gift Card Details — QR code, gift card code, and PIN</div>
+            </div>
+            <div class="img-container">
+                <img src="assets/images/redemption/2025-07-21-prizeout-how-to-use.png" alt="Prizeout How to Use - step-by-step instructions">
+                <div class="img-caption">Figure 5: Prizeout How to Use — step-by-step redemption instructions</div>
+            </div>
+        </div>
+
+        <h4>Prizeout Redemption Page Examples / Prizeout 提现页面示例</h4>
+        <!-- INSERT IMAGES 6,7: Prizeout Redeem Buttons -->
+        <div class="img-grid">
+            <div class="img-container">
+                <img src="assets/images/redemption/2025-07-21-prizeout-redeem-button.png" alt="Prizeout Redeem Gift Cards button on Redeem page">
+                <div class="img-caption">Figure 6: In-game Redeem page — "REDEEM GIFT CARDS" button (Acorn style)</div>
+            </div>
+            <div class="img-container">
+                <img src="assets/images/redemption/2025-07-21-prizeout-check-redeem.png" alt="Prizeout Click to Check and Redeem Gift Card">
+                <div class="img-caption">Figure 7: Redeem page — "CLICK TO CHECK AND REDEEM GIFT CARD" button</div>
+            </div>
+        </div>
+
+        <h4>Status 3/Redeemed / 成功状态</h4>
+        <p><strong>Legends:</strong> Sends email with "GO to redeem" link to Prizeout platform.</p>
+        <p><strong>Acorn:</strong> Prizeout Gift cards redemption button on redemption page.</p>
+
+        <!-- INSERT IMAGE 8: Redemption Succeeded Email -->
+        <div class="img-container">
+            <img src="assets/images/redemption/2025-07-21-redemption-succeeded-email.png" alt="Redemption Succeeded email - Go to Redeem Gifts link">
+            <div class="img-caption">Figure 8: Redemption Succeeded email — contains "Go to Redeem Gifts" link to Prizeout platform (Legends)</div>
+        </div>
+    </div>
+</details>
+
+<details>
+    <summary>Venmo / Skrill / Royal Roll Card / 其他方式</summary>
+    <div class="content">
+        <h4>Venmo</h4>
+        <ul>
+            <li>Verify Venmo account's linked phone number</li>
+            <li>USA users only</li>
+            <li>Total time: Within 24 hours</li>
+        </ul>
+        <h4>Skrill</h4>
+        <ul>
+            <li>Verify Skrill account's linked email address</li>
+            <li>Method column shows "10"</li>
+            <li>Total time: Within 24 hours</li>
+        </ul>
+        <h4>Royal Roll Card</h4>
+        <ul>
+            <li>Only available in Lavish game</li>
+            <li>Method column shows "9"</li>
+            <li>Player must activate card via Royal Roll Card App first</li>
+            <li>Web app: https://app.royalrollcard.com/index.html#/login</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>Refund Redemption / 退款提现</summary>
+    <div class="content">
+        <h4>Rules / 规则</h4>
+        <ul>
+            <li>Refund must go via original path: same player, same account, same payment platform</li>
+            <li>Total refund amount cannot exceed total historical purchase amount</li>
+            <li>PayPal/Debit Card/Cash App refunds: instantaneous</li>
+            <li>Credit card/ACH refunds: up to one week (bank processing time)</li>
+            <li>Multiple refunds may be split across multiple original purchases</li>
+        </ul>
+        <div class="template-box">Dear Player,
+
+Thank you for your patience.
+We are deeply sorry for the inconveniences you have experienced.
+The redemption has been sent to you via multiple refunds of your previous purchases.
+Your total redemption was $xxx (after deducting transaction fees).
+You would receive the amount via the original payment method as below:
+(Provide screenshot/list out the status to player)
+
+Kindly be noted that the refunds may take a week to be credited since the platform needs some time to process them.
+Thank you for your understanding!</div>
+    </div>
+</details>
+<!-- ==================== REDEMPTION ACCOUNT ==================== -->
+<h2 id="account">🔐 Redemption Account / 提现账户</h2>
+
+<details>
+    <summary>Changing Redemption Account / 更换提现账户</summary>
+    <div class="content">
+        <div class="alert alert-warning">
+            <strong>General Rule:</strong> Face Authentication is required before changing any redemption account (PayPal, ACH/EFT, Venmo, Skrill, Cash App).<br>
+            <strong>通用规则：</strong> 更换任何提现账户前，玩家必须完成 Face Authentication（人脸识别验证）。
+        </div>
+
+        <h4>PayPal — Acorn & Legends</h4>
+        <p>After Face Authentication: Tier 2 unbinds the account → player independently binds new PayPal email in game.</p>
+
+        <h4>PayPal — Poker Hit</h4>
+        <p>Player can independently change bound PayPal email within the game.</p>
+
+        <h4>PayPal — Luck Hit</h4>
+        <p>After Face Authentication: player provides new PayPal email → project team assists with re-binding.</p>
+
+        <h4>ACH / EFT</h4>
+        <p>After Face Authentication: Tier 2 resets ACH/EFT profile → player updates correct info on their end.</p>
+        <p><strong>Important:</strong> Once unlinked, the account cannot be re-linked. Each bank account can only be linked once.</p>
+
+        <h4>Debit Card</h4>
+        <p>Player can update by making a new purchase with a different Debit Card. The redemption page will show the latest card.</p>
+
+        <h4>Royal Roll Card</h4>
+        <p>Cannot be modified. One player can only activate one card.</p>
+
+        <h4>Prizeout</h4>
+        <p>Currently, players cannot change linked Prizeout account. Advise using other redemption methods.</p>
+    </div>
+</details>
+
+<!-- ==================== CANCEL REDEMPTION ==================== -->
+<h2 id="cancel">❌ Cancel Redemption / 取消提现</h2>
+
+<details>
+    <summary>Cancel Rules by Status / 按状态取消规则</summary>
+    <div class="content">
+        <table class="status-table">
+            <tr><th>Status</th><th>Acorn & Legends</th><th>Poker Hit & Luck Hit</th></tr>
+            <tr>
+                <td>1/Pending<br>103/Pending<br>106/Reviewing</td>
+                <td>CS must fill out <strong>Cancel Redemption Form</strong></td>
+                <td>Player can cancel independently in game<br>(Spin Sorcery Web still requires form)</td>
+            </tr>
+            <tr>
+                <td>113/Queuing</td>
+                <td colspan="2">Cannot cancel. Redemption is approved and locked.</td>
+            </tr>
+            <tr>
+                <td>116/Need to Collect</td>
+                <td colspan="2">Cannot cancel. Funds already sent to third party/bank.</td>
+            </tr>
+            <tr>
+                <td>3/Redeemed (Succeed)</td>
+                <td colspan="2">Cannot cancel. Already processed.</td>
+            </tr>
+        </table>
+
+        <h4>Acorn & Legends Cancel Script</h4>
+        <div class="template-box">Dear Player,
+
+Thank you for your patience.
+We have submitted a request to cancel your redemption.
+However, please note that if the redemption is processed before the cancellation request is approved, the transaction may still go through. Therefore, we cannot guarantee that the redemption will be successfully canceled.
+If the redemption is successfully canceled, the SC amount will be returned to your account within 24 hours.
+Please keep an eye on the redemption status on the redemption page as well as any changes in your account balance.
+
+If you have any further questions, feel free to contact us again.</div>
+    </div>
+</details>
+
+<!-- ==================== PROCESSING TIME ==================== -->
+<h2 id="processing-time">⏱️ Redemption Processing Time / 提现处理时间</h2>
+
+<details>
+    <summary>Standard Processing Times / 标准处理时间</summary>
+    <div class="content">
+        <table class="status-table">
+            <tr><th>Method</th><th>Total Time</th><th>First Inquiry Script</th><th>Second Inquiry (Escalation)</th></tr>
+            <tr><td>PayPal</td><td>Within 24 hours</td><td>24h arrival expected</td><td>Escalate to supervisor</td></tr>
+            <tr><td>ACH / EFT</td><td>Within 3 business days</td><td>3 business days expected</td><td>Escalate to supervisor</td></tr>
+            <tr><td>Cash App</td><td>Within 24 hours</td><td>24h arrival expected</td><td>Escalate to supervisor</td></tr>
+            <tr><td>Prizeout</td><td>Within 3 hours</td><td>3h arrival expected</td><td>Escalate to supervisor</td></tr>
+            <tr><td>Debit Card</td><td>Within 24 hours</td><td>24h arrival expected</td><td>Escalate to supervisor</td></tr>
+            <tr><td>Venmo</td><td>Within 24 hours</td><td>24h arrival expected</td><td>Escalate to supervisor</td></tr>
+            <tr><td>Skrill</td><td>Within 24 hours</td><td>24h arrival expected</td><td>Escalate to supervisor</td></tr>
+            <tr><td>Royal Roll Card</td><td>Within 24 hours</td><td>24h arrival expected</td><td>Escalate to supervisor</td></tr>
+        </table>
+        <div class="alert alert-info">
+            <strong>Note:</strong> For all "Second Inquiry" scenarios, submit a task to Tier 2 to contact the project team. <strong>This does NOT count as redemption timeout.</strong> Tier 2 must NOT fill out the fund transfer expediting form.<br><br>
+            <strong>注意：</strong> 所有"二次咨询"场景，提交工单给二线联系项目组。这不属于提现超时，二线不得填写资金转账加急表单。
+        </div>
+    </div>
+</details>
+
+<!-- ==================== OVERDUE ==================== -->
+<h2 id="overdue">⏰ Redemption Overdue / 提现超时</h2>
+
+<details>
+    <summary>Overdue Rules / 超时规则</summary>
+    <div class="content">
+        <table class="status-table">
+            <tr><th>Status</th><th>Overdue Threshold</th><th>Action</th></tr>
+            <tr>
+                <td>2/Lockin (Luck Hit: 2/Begin)<br>2/Reviewing</td>
+                <td>More than 7 days</td>
+                <td>Submit task, describe in detail</td>
+            </tr>
+            <tr>
+                <td>104/Temporary Failure<br>105/Problematic</td>
+                <td>More than 3 hours</td>
+                <td>Submit task, describe in detail</td>
+            </tr>
+        </table>
+    </div>
+</details>
+
+<!-- ==================== PAYPAL LIMITS ==================== -->
+<h2 id="limits">🚫 PayPal Redemption Limits / PayPal 提现限额</h2>
+
+<details>
+    <summary>Limit Rules / 限额规则</summary>
+    <div class="content">
+        <div class="alert alert-warning">
+            <strong>Single Redemption Limit:</strong> Either 1,500 SC or 5,000 SC (varies by project team). Any amount exceeding the limit will be manually marked as failed by the project team.<br>
+            <strong>Daily Cumulative Limit (UTC-8):</strong>
+            <ul>
+                <li>No prior PayPal purchases: 1,500 SC/day</li>
+                <li>With prior PayPal purchase records: 5,000 SC/day</li>
+            </ul>
+        </div>
+        <p><strong>If limit triggered:</strong> Do NOT explain the reason. Advise player to use ACH/EFT or Debit Card instead.</p>
+        <p><strong>Script:</strong> The daily limit for PayPal redemption is now [1,500/5,000] SC. Thank you for your understanding.</p>
+        <div class="alert alert-info">
+            <strong>Recent Update:</strong> Players will not be restricted from initiating redemption requests even if exceeding the limit. Excess amount will be processed with a delay. Suggest using ACH/EFT as alternative.<br>
+            <strong>近期更新：</strong> 即使超过限额，玩家仍可发起提现请求，超额部分将延迟处理。建议改用 ACH/EFT。
+        </div>
+    </div>
+</details>
+
+<!-- ==================== PAYPAL MAINTENANCE ==================== -->
+<h2 id="maintenance">🔧 PayPal Maintenance / PayPal 维护</h2>
+
+<details>
+    <summary>Maintenance Schedule / 维护安排</summary>
+    <div class="content">
+        <div class="alert alert-warning">
+            <strong>Acorn & Legends:</strong> Unscheduled weekly maintenance.<br>
+            Maintenance completed every <strong>Thursday at 00:00 UTC+0</strong>.<br>
+            During maintenance, players may not see PayPal redemption method.
+        </div>
+        <p><strong>Acorn:</strong> Advise ACH redemption instead.</p>
+        <p><strong>Legends:</strong> Advise another available redemption method.</p>
+    </div>
+</details>
+
+<!-- ==================== REQUESTING TRANSACTION ID ==================== -->
+<h2 id="transaction-id">📋 Requesting Transaction ID or Fund Transfer Proof / 申请交易ID或转账凭证</h2>
+
+<details>
+    <summary>PayPal — Status 116 / 待领取状态申请交易ID</summary>
+    <div class="content">
+        <ol>
+            <li>First, guide player to check redemption email for "Claim Redemption" email.</li>
+            <li>If player insists no email received: Request screen recording showing:
+                <ul>
+                    <li>Inbox of redemption email, confirming correct address</li>
+                    <li>Search for emails from Essentials Tech, Westline Tech Limited or Citcon USA LLC</li>
+                </ul>
+            </li>
+            <li>If screen recording confirms no results: Submit task to Tier 2 for Transaction ID from third party.</li>
+        </ol>
+    </div>
+</details>
+
+<details>
+    <summary>PayPal — Status 3/Redeemed / 成功状态申请交易ID</summary>
+    <div class="content">
+        <ol>
+            <li>First, guide player to check PayPal transaction history.</li>
+            <li>If player insists no receipt: Request screen recording showing:
+                <ul>
+                    <li>PayPal email confirming ownership</li>
+                    <li>Complete 10-day transaction history from redemption sent date (UTC+0)</li>
+                </ul>
+            </li>
+            <li>If recording confirms no records: Submit task to Tier 2 for Transaction ID.</li>
+        </ol>
+    </div>
+</details>
+
+<details>
+    <summary>ACH / EFT / Debit Card / Venmo / Skrill / Royal Roll Card / 其他方式</summary>
+    <div class="content">
+        <p><strong>General Process:</strong></p>
+        <ol>
+            <li>Guide player to check their account/transaction history first.</li>
+            <li>If player insists no receipt: Request screen recording showing:
+                <ul>
+                    <li>Correct account ownership confirmation</li>
+                    <li>Complete transaction history for specified period (usually 10 days from status change, UTC+0)</li>
+                </ul>
+            </li>
+            <li>If recording confirms no records: Submit task to Tier 2 for fund transfer proof.</li>
+        </ol>
+        <div class="alert alert-danger">
+            <strong>Critical:</strong> Tier 1 must confirm the screen recording includes all required content before submitting the task. If incomplete, guide player to re-record.<br>
+            <strong>关键：</strong> 一线必须在提交工单前确认录屏包含所有要求内容。如不完整，引导玩家重新录制。
+        </div>
+    </div>
+</details>
+<!-- ==================== CANADIAN PLAYERS ==================== -->
+<h2 id="canada">🇨🇦 Canadian Players Update (2025-10-23) / 加拿大玩家更新</h2>
+
+<details>
+    <summary>Canadian Redemption Rules / 加拿大玩家提现规则</summary>
+    <div class="content">
+        <div class="alert alert-warning">
+            Currently, the <strong>only redemption method available for Canadian players is PayPal</strong>.<br>
+            PayPal has a daily total redemption limit. If the limit is exhausted, players will not receive any response when clicking "Redeem".
+        </div>
+        <div class="template-box">Dear Player,
+
+The issue you reported may be caused by the high volume of redemption requests at the moment. We recommend that you try redeeming again after the daily refresh at 00:00 UTC-8.
+We apologize for the inconvenience and are working to optimize this situation as soon as possible.</div>
+        <p class="cn">目前加拿大玩家唯一的提现方式是 PayPal。PayPal 有每日总提现限额，达到限额后玩家点击 "Redeem" 将无响应。请建议玩家在 UTC-8 00:00 每日刷新后重试。</p>
+    </div>
+</details>
+
+<!-- ==================== PAYMENT CHECK ==================== -->
+<h2 id="payment-check">🔒 Payment Check Before Redemption (2026-03-23) / 提现前支付验证</h2>
+
+<details open>
+    <summary>Payment Check Rules / 支付验证规则</summary>
+    <div class="content">
+        <p>If player verification info is inconsistent, a <strong>Payment Check</strong> pop-up will appear when trying to redeem.</p>
+        <ul>
+            <li>Player can close the pop-up and still submit redemption normally.</li>
+            <li>Pop-up will continue to appear in future redemption attempts until Payment Check is completed.</li>
+            <li>We recommend players complete Payment Check to secure their account.</li>
+        </ul>
+
+        <!-- INSERT IMAGES 10, 11: Payment Check Popups -->
+        <div class="img-grid">
+            <div class="img-container">
+                <img src="assets/images/redemption/2026-03-23-payment-check-popup.png" alt="Payment Check popup - asking player to complete payment check">
+                <div class="img-caption">Figure 10: Payment Check popup — "Dear Player, we have noticed you have provided two different names... please complete the payment check"</div>
+            </div>
+            <div class="img-container">
+                <img src="assets/images/redemption/2026-03-23-security-verification-popup.png" alt="Security Verification Required popup - Verify Now button">
+                <div class="img-caption">Figure 11: Security Verification Required — "To protect your funds... verify your information before your request can be reviewed"</div>
+            </div>
+        </div>
+
+        <h4>How to Complete / 如何完成</h4>
+        <ol>
+            <li>Click Confirm or verify in the system prompt</li>
+            <li>Game redirects to Sumsub platform</li>
+            <li>Provide: clear selfie + photos of front and back of credit card used for previous purchases</li>
+        </ol>
+        <p class="cn">如玩家验证信息不一致，提现时会出现 Payment Check 弹窗。玩家可关闭弹窗正常提交提现，但弹窗会在后续提现时持续出现。建议玩家完成验证：点击 Confirm → 跳转 Sumsub 平台 → 提供清晰自拍 + 之前购买使用的信用卡正反面照片。</p>
+    </div>
+</details>
+
+<!-- ==================== TABLE FORMAT RULES ==================== -->
+<h2 id="table-rules">📐 Table Format Rules / 表格格式规范</h2>
+
+<details open>
+    <summary>Redemption Table Format Requirements / 提现表格制作要求</summary>
+    <div class="content">
+        <div class="alert alert-danger">
+            <strong>STATUS DISPLAY RULE — CRITICAL UPDATE:</strong><br>
+            In all player-facing tables, <strong>status must be displayed as TEXT ONLY</strong>. Backend numeric codes are for internal use only and must NEVER be shown to players.<br><br>
+            <table style="width:auto; margin:10px 0;">
+                <tr><th>Backend Status</th><th>Player-Facing Display</th></tr>
+                <tr><td>1/Pending, 103/Pending, 0/Pending</td><td>Pending / Reviewing</td></tr>
+                <tr><td>106/Reviewing</td><td>Reviewing</td></tr>
+                <tr><td>113/Queuing</td><td>Queuing</td></tr>
+                <tr><td>116/To be Claimed</td><td>Need to Collect / Reviewing</td></tr>
+                <tr><td>3/Redeemed</td><td>Redeemed / Succeed</td></tr>
+                <tr><td>4/Failed</td><td>Failed</td></tr>
+                <tr><td>5/Canceled, 6/Canceled</td><td>Canceled</td></tr>
+                <tr><td>200/Refund, 5/Refund</td><td>Refund / Succeed</td></tr>
+            </table>
+            <strong>Examples of WRONG display:</strong> "3redeemed", "116 Need to Collect", "4Failed", "5 Canceled"<br>
+            <strong>Correct display:</strong> "Redeemed", "Need to Collect", "Failed", "Canceled"
+        </div>
+
+        <h4>General Table Format / 通用表格格式</h4>
+        <ul>
+            <li>Header: Dark blue (#2F5597 or #4472C4), white text</li>
+            <li>Data rows: White / Light blue (#D9E2F3) alternating</li>
+            <li>Column names in English: Player ID, Created Time(UTC), Status, etc.</li>
+            <li>Time columns must be labeled UTC</li>
+            <li>Amount columns: Use $ symbol for player-facing amounts</li>
+            <li>Title format: <code>Redemption Record(s) — [PlayerID]</code></li>
+        </ul>
+
+        <h4>Required Columns for Redemption Tables / 提现表格必含列</h4>
+        <ul>
+            <li>Player ID / Nickname</li>
+            <li>Account Email</li>
+            <li>Status (text only, no numbers)</li>
+            <li>Redemption Amount (with $)</li>
+            <li>Created Time (UTC)</li>
+            <li>Redemption Method</li>
+        </ul>
+
+        <div class="alert alert-info">
+            <strong>Image Embedding Rule:</strong> Do NOT embed table images in the reply body using Markdown. Only provide pure download links at the end of the reply.<br>
+            <strong>图片嵌入规则：</strong> 不要在回复正文中用 Markdown 嵌入表格图片。仅在回复末尾以纯下载链接形式提供。
+        </div>
+    </div>
+</details>
 
 <hr>
 
-<h2>一、提现基础规则（全项目组通用）</h2>
-
-<h3>1.1 基本原则</h3>
-<ul>
-<li>1 sweepstakes coin = 1 USD</li>
-<li>SC 必须<strong>至少玩过1次</strong>才能提现（Redeemable/Played SC）</li>
-<li><strong>GC 不可提现</strong></li>
-<li>提现前必须完成 <strong>KYC-ID</strong> 验证</li>
-<li>已提现金额 2000 以上需完成 <strong>KYC-POA</strong> 验证</li>
-</ul>
-
-<h3>1.2 通用提现方式</h3>
-<table>
-<thead><tr><th>方式</th><th>通用说明</th><th>项目组差异</th></tr></thead>
-<tbody>
-<tr><td><strong>PayPal</strong></td><td>通过合作平台向玩家PayPal账户打款</td><td>单笔限额不同（1500SC/500SC）</td></tr>
-<tr><td><strong>ACH</strong></td><td>通过合作平台向玩家银行账户打款</td><td>通用</td></tr>
-<tr><td><strong>Cash App</strong></td><td>2025-07-21 起所有项目组已停用</td><td>通用停用</td></tr>
-<tr><td><strong>Prizeout</strong></td><td>第三方Gift Card兑换平台</td><td>Legends/Acorn部分玩家可见</td></tr>
-<tr><td><strong>Debit Card</strong></td><td>通过合作平台向玩家借记卡打款</td><td>2025-09-09新增</td></tr>
-<tr><td><strong>Refund</strong></td><td>对之前充值进行退款实现等效益打款</td><td>由支付组风控决定</td></tr>
-</tbody>
-</table>
-
-<h3>1.3 通用最低提现金额</h3>
-<ul>
-<li>大部分项目组最低 <strong>1SC</strong> 或 <strong>0.5SC</strong></li>
-<li>部分玩家可能看到不同的最低金额，以 Redemption page 显示为准</li>
-<li>Prizeout 手续费后最低 <strong>5SC</strong>（因为平台最低兑换额度为5刀）</li>
-</ul>
-
-<h3>1.4 通用手续费说明</h3>
-<ul>
-<li>各项目组手续费根据配置动态显示在 redeem page</li>
-<li>Debit Card 提现手续费固定 <strong>$1/笔</strong>（2025-09-09更新）</li>
-<li>必须清晰说明两个金额：扣除前原始金额 + 实际到账金额</li>
-</ul>
-
-<hr>
-
-<h2>二、提现状态码通用定义</h2>
-
-<div class="status-box">
-<h4>🟡 1/Pending / 103/Pending / 106/Reviewing / Luckhit 0/Pending</h4>
-<p><strong>含义：</strong>玩家成功提交提现请求，正在审核中</p>
-<p><strong>处理：</strong>可为玩家提供取消提现服务</p>
-<p><strong>时效：</strong>通常不超过3天</p>
-<p><strong>话术：</strong>Each request is reviewed manually by our agents to ensure the safety of players' accounts.</p>
+<div class="alert alert-success">
+    <strong>Last Updated:</strong> 2026-06-25<br>
+    <strong>最后更新：</strong> 2026-06-25<br>
+    <strong>Document Version:</strong> General Knowledge Base — Redemption Section<br>
+    <strong>文档版本：</strong> 通用知识库 — 提现部分
 </div>
 
-<div class="status-box">
-<h4>🟡 113/Queuing</h4>
-<p><strong>含义：</strong>审核通过，正在排队打款</p>
-<p><strong>处理：</strong>金额越大排队时间越长，无法取消</p>
-<p><strong>PayPal时效：</strong>通常24小时内到账</p>
-<p><strong>ACH时效：</strong>银行处理通常最多3个工作日</p>
-<p><strong>Debit Card时效：</strong>即时到账</p>
-<p><strong>Prizeout时效：</strong>通常3小时内到账</p>
 </div>
-
-<div class="status-box">
-<h4>🟢 116/To be Claimed (PayPal/ACH)</h4>
-<p><strong>含义：</strong>已发送到第三方，等待玩家领取/银行处理</p>
-<p><strong>PayPal：</strong>不活跃账户需手动点击 claim 邮件领取，30天不领取退回</p>
-<p><strong>ACH：</strong>银行正在处理，最多3个工作日</p>
-<p><strong>处理：</strong>无法取消，安抚玩家耐心等待</p>
-</div>
-
-<div class="status-box">
-<h4>🟢 3/Redeemed (Succeed)</h4>
-<p><strong>含义：</strong>第三方已打出款项</p>
-<p><strong>PayPal：</strong>通常即时到账，但取决于玩家PayPal账户状态</p>
-<p><strong>ACH：</strong>第三方已打款给银行，银行还需处理到账</p>
-<p><strong>Debit Card：</strong>通常即时到账，银行可能需几分钟处理</p>
-<p><strong>注意：</strong>此状态不代表玩家已收到，只是第三方已发出</p>
-</div>
-
-<div class="status-box">
-<h4>🔴 4/Failed</h4>
-<p><strong>含义：</strong>打款失败</p>
-<p><strong>PayPal失败原因：</strong>邮箱未注册PayPal、PayPal账户被封、30天未领取超时退回</p>
-<p><strong>ACH失败原因：</strong>Bank Account Number错误（不是Card Number）、ABA Code错误</p>
-<p><strong>处理：</strong>金额退回游戏账户，让玩家修正信息后重新提现</p>
-</div>
-
-<div class="status-box">
-<h4>🔴 5/Canceled / 6/Canceled</h4>
-<p><strong>含义：</strong>玩家取消提现请求</p>
-<p><strong>处理：</strong>SC金额24小时内退回游戏账户</p>
-<p><strong>注意：</strong>系统不会自动取消，所有取消均由玩家主动发起</p>
-</div>
-
-<div class="status-box">
-<h4>🟡 105/Problematic</h4>
-<p><strong>含义：</strong>该笔提现被视为可疑</p>
-<p><strong>处理：</strong>填写工单说明情况，二线向项目组咨询</p>
-</div>
-
-<div class="status-box">
-<h4>🟢 200/Refund / 5/Refund</h4>
-<p><strong>含义：</strong>提现以退款方式发送给玩家</p>
-<p><strong>处理：</strong>退款到原支付渠道，信用卡/ACH需一周，PayPal即时</p>
-</div>
-
-<hr>
-
-<h2>三、通用提现时间说明</h2>
-
-<table>
-<thead><tr><th>方式</th><th>正常时效</th><th>超时处理</th></tr></thead>
-<tbody>
-<tr><td>PayPal</td><td>24小时内</td><td>超过24小时提工单二线加速</td></tr>
-<tr><td>ACH</td><td>最多3个工作日</td><td>超过3天提工单二线查询</td></tr>
-<tr><td>Cash App</td><td>已停用</td><td>-</td></tr>
-<tr><td>Prizeout</td><td>3小时内</td><td>超过3小时提工单二线加速</td></tr>
-<tr><td>Debit Card</td><td>即时到账</td><td>超过1天提工单二线核实</td></tr>
-</tbody>
-</table>
-
-<h3>3.1 周末延迟说明（ACH）</h3>
-<div class="note">
-Dear Player,<br>
-Thank you for your patience.<br>
-Kindly note bank will need a few business days to issue the transfer to your bank account. Because during the weekend banks are not working, so the waiting time will be a little bit longer than weekdays.<br>
-Please kindly wait for another 1-2 business days for bank to send the transactions to your bank account if you redeem during the weekend.<br>
-If you need further assistance, please let us know.<br>
-Hope you have a wonderful day.
-</div>
-
-<hr>
-
-<h2>四、取消提现通用规则</h2>
-
-<table>
-<thead><tr><th>状态</th><th>能否取消</th><th>操作</th></tr></thead>
-<tbody>
-<tr><td>1/103/106 Pending</td><td>✅ 可以</td><td>部分项目组玩家可自行取消，部分需客服填表</td></tr>
-<tr><td>113/Queuing</td><td>❌ 不可以</td><td>已锁定准备打款，无法取消</td></tr>
-<tr><td>116/To be Claimed</td><td>❌ 不可以</td><td>已发送给第三方，无法取消</td></tr>
-<tr><td>3/Redeemed</td><td>❌ 不可以</td><td>已成功打款，无法取消</td></tr>
-<tr><td>4/Failed</td><td>❌ 已失败</td><td>金额已退回账户，重新提现即可</td></tr>
-</tbody>
-</table>
-
-<h3>4.1 取消通用话术</h3>
-<div class="note">
-Dear Player,<br>
-Thank you for your patience.<br>
-We have submitted a request to cancel your redemption.<br>
-However, please note that if the redemption is processed before the cancellation request is approved, the transaction may still go through. Therefore, we cannot guarantee that the redemption will be successfully canceled.<br>
-If the redemption is successfully canceled, the SC amount will be returned to your account within 24 hours.<br>
-Please keep an eye on the redemption status on the redemption page as well as any changes in your account balance.<br>
-If you have any further questions, feel free to contact us again.
-</div>
-
-<hr>
-
-<h2>五、PayPal 提现通用限制</h2>
-
-<ul>
-<li>单笔 PayPal redemption 不能超过 <strong>1500SC</strong> 或 <strong>500SC</strong></li>
-<li>超过会被手动标记失败，退回账户让玩家重新提现</li>
-<li>单日累积 PayPal redemption 限额（UTC-8 时区计算）：
-  <ul>
-    <li>没有 PayPal 充值记录的：每日限额 <strong>1500SC</strong></li>
-    <li>之前有过 PayPal 充值记录的：每日限额 <strong>5000SC</strong></li>
-  </ul>
-</li>
-<li>超过限额只能选择第二天再次 PayPal 提现，或尝试 ACH 提现</li>
-<li><strong>不需要跟玩家说明原因</strong>，让玩家尝试 ACH 提现即可</li>
-</ul>
-
-<hr>
-
-<h2>六、提现账户管理通用规则</h2>
-
-<h3>6.1 PayPal 邮箱唯一性</h3>
-<ul>
-<li>一个 PayPal 邮箱只能供一个账号提现使用</li>
-<li>如果在另一个账号上使用同一个 redemption email，会提示 "Email bound to another account"</li>
-</ul>
-
-<h3>6.2 修改提现账户通用流程</h3>
-<ol>
-<li>先搜索是否有可取消的提现，如有则取消避免打款到错误账号</li>
-<li>填写工单向二线索取 Face Authentication 链接</li>
-<li>玩家完成验证后，二线帮忙重置或换绑</li>
-</ol>
-
-<h3>6.3 ACH 账户修改</h3>
-<ul>
-<li>需 Face Authentication 验证</li>
-<li>验证通过后二线重置 ACH profile，玩家自行更新正确信息</li>
-<li>客服绝不能索要银行账号/路由号码等敏感信息</li>
-</ul>
-
-<hr>
-
-<h2>七、索要 Transaction ID / 打款凭证通用流程</h2>
-
-<h3>7.1 通用步骤</h3>
-<ol>
-<li>先按对应状态话术引导玩家自行查询（PayPal流水/银行流水/Cash App Activity）</li>
-<li>如果玩家坚持说没收到，要求提供录屏/截图</li>
-<li>录屏需包含：账户确认 + 规定时间段内完整流水</li>
-<li>确认录屏符合要求后，提交工单让二线问支付组索要凭证</li>
-</ol>
-
-<h3>7.2 各渠道录屏要求</h3>
-<table>
-<thead><tr><th>渠道</th><th>录屏要求</th><th>时间段</th></tr></thead>
-<tbody>
-<tr><td>PayPal</td><td>确认PayPal邮箱 + 搜索Pagsmile/Essentials + 10天流水</td><td>3/Redeemed后10天内 UTC-0</td></tr>
-<tr><td>ACH</td><td>确认ACH账号尾号 + 10天银行流水</td><td>3/Redeemed后10天内 UTC-0</td></tr>
-<tr><td>Cash App</td><td>确认Cash App账户 + Activity页面 + 2天流水</td><td>3/Redeemed后2天内 UTC-0</td></tr>
-<tr><td>Debit Card</td><td>确认卡号前6后4 + 10天Bank Statement</td><td>3/Redeemed后10天内 UTC-0</td></tr>
-</tbody>
-</table>
-
-<hr>
-
-<h2>八、退款方式提现通用规则</h2>
-
-<h3>8.1 原则</h3>
-<ul>
-<li>退款只能原路径退回</li>
-<li>退款历史额度之和 = 玩家历史充值额度之和</li>
-<li>退款只退订单金额，不进行部分退款</li>
-</ul>
-
-<h3>8.2 时效</h3>
-<ul>
-<li>PayPal 和 Cash App：即时到账</li>
-<li>信用卡和 ACH：需银行处理，一般一周</li>
-</ul>
-
-<h3>8.3 多笔退款</h3>
-<ul>
-<li>可能退很多笔，多平台退款到账时间不一致</li>
-<li>需从支付中心查出所有对应退款明细给玩家</li>
-</ul>
-
-<hr>
-
-<p><em>本文档为通用规则，项目组特殊规则（如限额、手续费比例、界面差异）请查阅对应项目组知识库。</em></p>
-
 </body>
 </html>
